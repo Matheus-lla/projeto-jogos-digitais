@@ -1,30 +1,36 @@
-class_name Player extends CharacterBody2D
+class_name Enemy extends CharacterBody2D
 
 var cardinal_direction: Vector2 = Vector2.DOWN
 var direction: Vector2 = Vector2.ZERO
+var invulnerable: bool = false
+var player: Player
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var sprite: Sprite2D = $PlayerSprite
-@onready var state_machine: PlayerStateMachine = $StateMachine
+@export var hp: int = 3
+
+@onready var sprite: Sprite2D = $Body
+@onready var animation: AnimationPlayer = $AnimationPlayer
+@onready var state_machine: EnemyStateMachine = $EnemyStateMachine
+@onready var hit_box: HitBox = $HitBox
+
 signal DirectionChanged(new_directions: Vector2)
+signal EnemyDamaged()
+signal EnemyDestroyed()
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GlobalPlayerManager.player = self
 	state_machine.init(self)
+	player = GlobalPlayerManager.player
+	hit_box.Damaged.connect(on_damaged)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	direction = Vector2(
-		Input.get_axis("left", "right"),
-		Input.get_axis("up", "down"),
-	).normalized()
+	pass
 	
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
+
+func set_direction(_new_direction: Vector2) -> bool:
+	direction = _new_direction
 	
-func set_direction() -> bool:
 	if direction == Vector2.ZERO:
 		return false
 		
@@ -40,10 +46,22 @@ func set_direction() -> bool:
 	return true
 	
 func update_animation(state_str: String) -> void:
-	animation_player.play(state_str + "_" + animation_direction())
+	animation.play(state_str + "_" + animation_direction())
 	return
 	
 func animation_direction() -> String:
 	if cardinal_direction == Vector2.DOWN: return "down"
 	elif cardinal_direction == Vector2.UP: return "up"
 	return "side"
+
+func on_damaged(damage: int):
+	if invulnerable:
+		return
+	
+	hp -= damage
+	
+	if hp > 0:
+		EnemyDamaged.emit()
+		return
+	
+	EnemyDestroyed.emit()
