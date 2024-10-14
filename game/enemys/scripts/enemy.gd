@@ -60,8 +60,8 @@ func on_damaged(hurt_box: HurtBox):
 	
 	hp -= hurt_box.damage
 	
-	if hp > 0:
-		EnemyDamaged.emit(hurt_box)
+	if hp <= 0:
+		EnemyDestroyed.emit(hurt_box)
 		return
 	
-	EnemyDestroyed.emit(hurt_box)
+	EnemyDamaged.emit(hurt_box)

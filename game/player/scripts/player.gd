@@ -4,7 +4,7 @@ var cardinal_direction: Vector2 = Vector2.DOWN
 var direction: Vector2 = Vector2.ZERO
 var invulnerable: bool = false
 var hp: int = 6
-var max_hp: int = 6
+var max_hp: int = 12
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -21,7 +21,7 @@ func _ready() -> void:
 	GlobalPlayerManager.player = self
 	state_machine.init(self)
 	hit_box.Damaged.connect(on_damaged)
-	update_hp(max_hp)
+	update_hp(0)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -58,7 +58,8 @@ func animation_direction() -> String:
 	return "side"
 	
 func update_hp(delta: int):
-	hp = (hp + delta) % max_hp
+	hp = clampi(hp + delta, 0, max_hp)
+	PlayerHud.update_hp(hp, max_hp)
 	
 func make_invulnerable(duration: float):
 	if duration <= 0:
