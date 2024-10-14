@@ -769,13 +769,6 @@ position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_774fb")
 debug_color = Color(0.7, 0, 0, 0.419608)
 
-[node name="HurtBox" parent="." instance=ExtResource("7_apnvt")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(0, -10)
-shape = SubResource("CircleShape2D_774fb")
-debug_color = Color(0.74, 0.518, 0, 0.529412)
-
 [node name="Shadow" type="Sprite2D" parent="."]
 modulate = Color(1, 0.52, 0.2, 0.454902)
 position = Vector2(0, -1)
@@ -830,3 +823,10 @@ next_state = NodePath("../Idle")
 
 [node name="Destroy" type="Node" parent="EnemyStateMachine"]
 script = ExtResource("12_lxhb6")
+
+[node name="HurtBox" parent="." instance=ExtResource("7_apnvt")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_774fb")
+debug_color = Color(0.74, 0.518, 0, 0.529412)

@@ -9,6 +9,6 @@ func _ready() -> void:
 
 func area_entrered_callback(a: Area2D):
 	if a is HitBox:
-		a.take_damage(damage)
+		a.take_damage(self)
 	
 	pass

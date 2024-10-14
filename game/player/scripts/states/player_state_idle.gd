@@ -3,6 +3,9 @@ class_name Idle extends PlayerState
 @onready var walk: PlayerState = $"../Walk"
 @onready var attack: PlayerState = $"../Attack"
 
+func init():
+	pass
+
 func enter() -> void:
 	player.update_animation("idle")
 	pass

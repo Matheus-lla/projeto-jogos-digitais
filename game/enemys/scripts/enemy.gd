@@ -14,8 +14,8 @@ const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 @onready var hit_box: HitBox = $HitBox
 
 signal DirectionChanged(new_directions: Vector2)
-signal EnemyDamaged()
-signal EnemyDestroyed()
+signal EnemyDamaged(hurt_box: HurtBox)
+signal EnemyDestroyed(hurt_box: HurtBox)
 
 func _ready() -> void:
 	state_machine.init(self)
@@ -54,14 +54,14 @@ func animation_direction() -> String:
 	elif cardinal_direction == Vector2.UP: return "up"
 	return "side"
 
-func on_damaged(damage: int):
+func on_damaged(hurt_box: HurtBox):
 	if invulnerable:
 		return
 	
-	hp -= damage
+	hp -= hurt_box.damage
 	
 	if hp > 0:
-		EnemyDamaged.emit()
+		EnemyDamaged.emit(hurt_box)
 		return
 	
-	EnemyDestroyed.emit()
+	EnemyDestroyed.emit(hurt_box)

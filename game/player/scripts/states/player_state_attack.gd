@@ -10,6 +10,8 @@ var attacking: bool = false
 @export var attack_sound: AudioStream
 @export_range(1, 20, 0.5) var decelerate_speed: float = 10
 
+func init():
+	pass
 
 func enter() -> void:
 	player.update_animation("attack")

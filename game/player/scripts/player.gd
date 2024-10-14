@@ -2,17 +2,26 @@ class_name Player extends CharacterBody2D
 
 var cardinal_direction: Vector2 = Vector2.DOWN
 var direction: Vector2 = Vector2.ZERO
+var invulnerable: bool = false
+var hp: int = 6
+var max_hp: int = 6
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
 @onready var sprite: Sprite2D = $PlayerSprite
 @onready var state_machine: PlayerStateMachine = $StateMachine
+@onready var hit_box: HitBox = $HitBox
+
 signal DirectionChanged(new_directions: Vector2)
+signal PlayerDamaged(hurt_box: HurtBox)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GlobalPlayerManager.player = self
 	state_machine.init(self)
+	hit_box.Damaged.connect(on_damaged)
+	update_hp(max_hp)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -47,3 +56,27 @@ func animation_direction() -> String:
 	if cardinal_direction == Vector2.DOWN: return "down"
 	elif cardinal_direction == Vector2.UP: return "up"
 	return "side"
+	
+func update_hp(delta: int):
+	hp = (hp + delta) % max_hp
+	
+func make_invulnerable(duration: float):
+	if duration <= 0:
+		return
+	
+	invulnerable = true
+	hit_box.monitoring = false
+	await get_tree().create_timer(duration).timeout
+	invulnerable = false
+	hit_box.monitoring = true
+	
+func on_damaged(hurt_box: HurtBox):
+	if invulnerable:
+		return
+		
+	update_hp(-hurt_box.damage)
+	
+	if hp <= 0:
+		update_hp(max_hp)
+	
+	PlayerDamaged.emit(hurt_box)
