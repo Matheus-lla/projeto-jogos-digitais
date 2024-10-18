@@ -3,8 +3,8 @@ class_name Player extends CharacterBody2D
 var cardinal_direction: Vector2 = Vector2.DOWN
 var direction: Vector2 = Vector2.ZERO
 var invulnerable: bool = false
-var hp: int = 6
-var max_hp: int = 12
+var hp: int
+var max_hp: int = 2
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -12,6 +12,8 @@ const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 @onready var sprite: Sprite2D = $PlayerSprite
 @onready var state_machine: PlayerStateMachine = $StateMachine
 @onready var hit_box: HitBox = $HitBox
+@onready var idle: Idle = $StateMachine/Idle
+@onready var spawn_place = $"../Spawn"
 
 signal DirectionChanged(new_directions: Vector2)
 signal PlayerDamaged(hurt_box: HurtBox)
@@ -21,7 +23,7 @@ func _ready() -> void:
 	GlobalPlayerManager.player = self
 	state_machine.init(self)
 	hit_box.Damaged.connect(on_damaged)
-	update_hp(0)
+	spawn()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -78,6 +80,17 @@ func on_damaged(hurt_box: HurtBox):
 	update_hp(-hurt_box.damage)
 	
 	if hp <= 0:
-		update_hp(max_hp)
+		self.spawn()
+		return	
 	
 	PlayerDamaged.emit(hurt_box)
+
+func spawn():
+	update_hp(max_hp)
+	self.global_position = spawn_place.global_position
+	direction = Vector2.DOWN
+	cardinal_direction	= Vector2.DOWN		
+	set_direction()
+	animation_player.play("idle_down")
+	state_machine.change_state(idle)
+	

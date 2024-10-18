@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4g0yvj01mxhw"]
+
+[ext_resource type="Script" path="res://general_nodes/spawn/spawn.gd" id="1_w6xyg"]
+[ext_resource type="Texture2D" uid="uid://bk65lxbyacy4j" path="res://icon.svg" id="2_645xt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_na4fn"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3fai"]
+size = Vector2(32, 21.5)
+
+[node name="Spawn" type="Node2D"]
+script = ExtResource("1_w6xyg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.443137)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_645xt")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_na4fn")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 4.75)
+shape = SubResource("RectangleShape2D_s3fai")
+debug_color = Color(0.880692, 0.000356938, 0.821152, 0.42)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -49.0
+offset_top = 16.0
+offset_right = 50.0
+offset_bottom = 39.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 10
+text = "Checkpoint Updated"
+horizontal_alignment = 1
