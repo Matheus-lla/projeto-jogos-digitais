@@ -33,7 +33,13 @@ position = Vector2(405, 144)
 position = Vector2(46, -46)
 
 [node name="Player" parent="." instance=ExtResource("1_djl2i")]
+show_behind_parent = true
 position = Vector2(314, 175)
+
+[node name="dash_timer" type="Timer" parent="Player"]
+wait_time = 0.2
+
+[node name="can_dash_timer" type="Timer" parent="Player"]
 
 [node name="Slime" parent="." instance=ExtResource("4_s82md")]
 position = Vector2(585, 366)
@@ -46,3 +52,6 @@ position = Vector2(406, 234)
 
 [node name="Slime3" parent="." instance=ExtResource("4_s82md")]
 position = Vector2(-30, 237)
+
+[connection signal="timeout" from="Player/dash_timer" to="Player" method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="Player/can_dash_timer" to="Player" method="_on_can_dash_timer_timeout"]

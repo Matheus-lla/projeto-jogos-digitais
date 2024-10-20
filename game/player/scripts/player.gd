@@ -5,7 +5,11 @@ var direction: Vector2 = Vector2.ZERO
 var invulnerable: bool = false
 var hp: int
 var max_hp: int = 2
+var dashing = false
+var can_dash = true
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
+const SPEED = 200.0
+const DASH_VELOCITY = 3000.0
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
@@ -34,6 +38,20 @@ func _process(_delta: float) -> void:
 	
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
+	dash()
+	
+
+func dash():
+	if dashing:
+		velocity = direction * DASH_VELOCITY
+	else:
+		velocity = direction * SPEED
+	
+	if Input.is_action_just_pressed("dash") and can_dash:
+		dashing = true
+		can_dash = false
+		$dash_timer.start()
+		$can_dash_timer.start()
 	
 func set_direction() -> bool:
 	if direction == Vector2.ZERO:
@@ -94,3 +112,11 @@ func spawn():
 	animation_player.play("idle_down")
 	state_machine.change_state(idle)
 	
+
+
+func _on_dash_timer_timeout() -> void:
+	dashing = false
+
+
+func _on_can_dash_timer_timeout() -> void:
+	can_dash = true
