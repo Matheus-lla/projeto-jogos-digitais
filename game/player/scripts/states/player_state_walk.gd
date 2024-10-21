@@ -8,7 +8,7 @@ func init():
 	pass
 
 func enter() -> void:
-	player.update_animation("walk")
+	player.update_animation("walking")
 	pass
 
 func exit() -> void:
@@ -21,7 +21,7 @@ func process( _delta: float) -> PlayerState:
 	player.velocity = move_speed * player.direction
 	
 	if player.set_direction():
-		player.update_animation("walk")
+		player.update_animation("walking")
 		
 	return null
 	
@@ -31,5 +31,8 @@ func physics(_delta: float) -> PlayerState:
 func handle_input(event: InputEvent) -> PlayerState:
 	if event.is_action("attack"):
 		return attack
+		
+	if event.is_action("interact"):
+		GlobalPlayerManager.interact_pressed.emit()
 		
 	return null
