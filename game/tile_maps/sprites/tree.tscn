@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://0dtpkqs71lll"]
+
+[ext_resource type="Texture2D" uid="uid://c0xd65aht6oif" path="res://tile_maps/sprites/tree.png" id="1_hvcj2"]
+
+[node name="Tree" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(18, -96)
+texture = ExtResource("1_hvcj2")
