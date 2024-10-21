@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b677pllce5nsa"]
+
+[ext_resource type="Texture2D" uid="uid://8iauey8hxtyc" path="res://tile_maps/sprites/tilemap/arbusto.png" id="1_6gsmw"]
+
+[node name="arbusto" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6gsmw")
