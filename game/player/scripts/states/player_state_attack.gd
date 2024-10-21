@@ -14,8 +14,8 @@ func init():
 	pass
 
 func enter() -> void:
-	player.update_animation("attack")
-	effect_animation.play("attack_" + player.animation_direction())
+	player.update_animation("spear_attack")
+	#effect_animation.play("spear_attack_" + player.animation_direction())
 	attack_animation.animation_finished.connect(end_attack)
 	audio.stream = attack_sound
 	audio.pitch_scale = randf_range(0.9, 1.1)
