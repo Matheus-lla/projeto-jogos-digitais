@@ -2,7 +2,6 @@ class_name Attack extends PlayerState
 
 var attacking: bool = false
 @onready var attack_animation: AnimationPlayer = $"../../AnimationPlayer"
-@onready var effect_animation: AnimationPlayer = $"../../PlayerSprite/AttackEffect/AttackEffect"
 @onready var audio: AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
 @onready var idle: PlayerState = $"../Idle"
 @onready var walk: PlayerState = $"../Walk"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://d1ljdqm0sawam"]
+[gd_scene load_steps=27 format=4 uid="uid://cy6n5kjownfd7"]
 
 [ext_resource type="Texture2D" uid="uid://c42p7oa3i62ak" path="res://tile_maps/sprites/grass_01.png" id="1_kjc2q"]
 [ext_resource type="Texture2D" uid="uid://ga2jd6bg8lyy" path="res://tile_maps/sprites/beach_tiles.png" id="2_d0lio"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://8iauey8hxtyc" path="res://tile_maps/sprites/tilemap/arbusto.png" id="11_ua75i"]
 [ext_resource type="Texture2D" uid="uid://d2djm5pxx4rc0" path="res://tile_maps/sprites/tilemap/cabana.png" id="13_cyrvm"]
 [ext_resource type="Texture2D" uid="uid://cb6kheswrl1kv" path="res://tile_maps/sprites/tilemap/tronco.png" id="15_stdp7"]
+[ext_resource type="PackedScene" uid="uid://d4g0yvj01mxhw" path="res://general_nodes/spawn/spawn.tscn" id="16_tlhy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fdbcc"]
 texture = ExtResource("1_kjc2q")
@@ -5359,3 +5360,7 @@ texture = ExtResource("15_stdp7")
 position = Vector2(827, -428)
 rotation = -0.0309306
 texture = ExtResource("15_stdp7")
+
+[node name="Spawn" parent="." instance=ExtResource("16_tlhy4")]
+position = Vector2(1240, -80)
+scale = Vector2(0.507485, 0.373912)
