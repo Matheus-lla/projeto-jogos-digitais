@@ -5,5 +5,5 @@ class_name Plant extends Node
 func _ready() -> void:
 	hit_box.Damaged.connect(take_damage)
 
-func take_damage(hurt_box: HurtBox):
+func take_damage(_hurt_box: HurtBox):
 	queue_free()

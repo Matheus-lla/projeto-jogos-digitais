@@ -687,6 +687,10 @@ _data = {
 "walking_up": SubResource("Animation_ujkxi")
 }
 
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_ij73r"]
+resource_name = "Triangle"
+points = PackedVector2Array(0, 0, 20, 32, -20, 32)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_omd1j"]
 radius = 13.0
 
@@ -807,7 +811,7 @@ autoplay = "off"
 [node name="Shadow" type="Sprite2D" parent="PlayerSprite"]
 modulate = Color(0, 0, 0, 0.552941)
 show_behind_parent = true
-position = Vector2(0, -11)
+position = Vector2(1, -2)
 texture = ExtResource("4_kpb26")
 offset = Vector2(0, 20)
 
@@ -856,6 +860,15 @@ max_polyphony = 4
 
 [node name="Interactions" type="Node2D" parent="."]
 script = ExtResource("10_10sp5")
+
+[node name="Area2D" type="Area2D" parent="Interactions"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Area2D"]
+shape = SubResource("ConvexPolygonShape2D_ij73r")
+debug_color = Color(0.401867, 0.467818, 1, 0.42)
 
 [node name="HitBox" parent="." instance=ExtResource("13_r47ef")]
 collision_layer = 2

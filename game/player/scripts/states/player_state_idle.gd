@@ -26,5 +26,8 @@ func physics(_delta: float) -> PlayerState:
 func handle_input(event: InputEvent) -> PlayerState:
 	if event.is_action("attack"):
 		return attack
+		
+	if event.is_action("interact"):
+		GlobalPlayerManager.interact_pressed.emit()
 	
 	return null
