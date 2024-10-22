@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8iauey8hxtyc"
-path="res://.godot/imported/arbusto.png-6eafe849bdc37d706bf59e0f151c770b.ctex"
+uid="uid://c0xd65aht6oif"
+path="res://.godot/imported/tree.png-c05e8551a1e23154d3f00eadd70cffbf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tile_maps/sprites/tilemap/arbusto.png"
-dest_files=["res://.godot/imported/arbusto.png-6eafe849bdc37d706bf59e0f151c770b.ctex"]
+source_file="res://props/tree/tree.png"
+dest_files=["res://.godot/imported/tree.png-c05e8551a1e23154d3f00eadd70cffbf.ctex"]
 
 [params]
 

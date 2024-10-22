@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3jcfmpli0rtq"
-path="res://.godot/imported/fogueira.png-726abbea2b2307a7c5f66afe07c4c402.ctex"
+uid="uid://di1vbhtb285vj"
+path="res://.godot/imported/Props.png-029013d1d5856d0fcada784bbd298641.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tile_maps/sprites/tilemap/fogueira.png"
-dest_files=["res://.godot/imported/fogueira.png-726abbea2b2307a7c5f66afe07c4c402.ctex"]
+source_file="res://props/plants/Props.png"
+dest_files=["res://.godot/imported/Props.png-029013d1d5856d0fcada784bbd298641.ctex"]
 
 [params]
 

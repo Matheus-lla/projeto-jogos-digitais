@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0xd65aht6oif"
-path="res://.godot/imported/tree.png-8200d216f28e20dd63a1bc9f33d96aba.ctex"
+uid="uid://8iauey8hxtyc"
+path="res://.godot/imported/bush.png-cd8c001545a89827dd2c6edc1513be96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tile_maps/sprites/tree.png"
-dest_files=["res://.godot/imported/tree.png-8200d216f28e20dd63a1bc9f33d96aba.ctex"]
+source_file="res://props/bush/bush.png"
+dest_files=["res://.godot/imported/bush.png-cd8c001545a89827dd2c6edc1513be96.ctex"]
 
 [params]
 

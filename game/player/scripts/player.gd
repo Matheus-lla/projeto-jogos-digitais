@@ -13,7 +13,7 @@ const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 @onready var state_machine: PlayerStateMachine = $StateMachine
 @onready var hit_box: HitBox = $HitBox
 @onready var idle: Idle = $StateMachine/Idle
-@onready var spawn_place = $"../Spawn"
+@onready var spawn_place: Spawn = $"../Spawn"
 
 signal DirectionChanged(new_directions: Vector2)
 signal PlayerDamaged(hurt_box: HurtBox)
