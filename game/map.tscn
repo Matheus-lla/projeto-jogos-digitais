@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://d2djm5pxx4rc0" path="res://tile_maps/sprites/tilemap/cabana.png" id="13_hbd86"]
 [ext_resource type="PackedScene" uid="uid://0dtpkqs71lll" path="res://props/tree/tree.tscn" id="15_l5mnu"]
 [ext_resource type="Texture2D" uid="uid://cb6kheswrl1kv" path="res://tile_maps/sprites/tilemap/tronco.png" id="16_w8enl"]
-[ext_resource type="PackedScene" uid="uid://cp6p8qd6jkb7g" path="res://player/player.tscn" id="17_wy7iu"]
+[ext_resource type="PackedScene" uid="uid://cp6p8qd6jkb7g" path="res://player/player.tscn" id="17_5y2ph"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fdbcc"]
 texture = ExtResource("1_kdhk8")
@@ -5375,5 +5375,4 @@ texture = ExtResource("16_w8enl")
 position = Vector2(1240, -80)
 scale = Vector2(2, 1.476)
 
-[node name="Player" parent="." instance=ExtResource("17_wy7iu")]
-position = Vector2(1459, -8)
+[node name="Player" parent="." instance=ExtResource("17_5y2ph")]
