@@ -2,7 +2,6 @@ class_name Attack extends PlayerState
 
 var attacking: bool = false
 @onready var attack_animation: AnimationPlayer = $"../../AnimationPlayer"
-@onready var effect_animation: AnimationPlayer = $"../../PlayerSprite/AttackEffect/AttackEffect"
 @onready var audio: AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
 @onready var idle: PlayerState = $"../Idle"
 @onready var walk: PlayerState = $"../Walk"
@@ -14,8 +13,8 @@ func init():
 	pass
 
 func enter() -> void:
-	player.update_animation("attack")
-	effect_animation.play("attack_" + player.animation_direction())
+	player.update_animation("spear_attack")
+	#effect_animation.play("spear_attack_" + player.animation_direction())
 	attack_animation.animation_finished.connect(end_attack)
 	audio.stream = attack_sound
 	audio.pitch_scale = randf_range(0.9, 1.1)

@@ -17,7 +17,7 @@ const DASH_VELOCITY = 3000.0
 @onready var state_machine: PlayerStateMachine = $StateMachine
 @onready var hit_box: HitBox = $HitBox
 @onready var idle: Idle = $StateMachine/Idle
-@onready var spawn_place = $"../Spawn"
+@onready var spawn_place: Spawn = $"../Spawn"
 
 signal DirectionChanged(new_directions: Vector2)
 signal PlayerDamaged(hurt_box: HurtBox)
@@ -65,7 +65,7 @@ func set_direction() -> bool:
 		
 	cardinal_direction = new_direction
 	DirectionChanged.emit(new_direction)
-	sprite.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1
+	#sprite.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1
 	return true
 	
 func update_animation(state_str: String) -> void:
@@ -75,7 +75,8 @@ func update_animation(state_str: String) -> void:
 func animation_direction() -> String:
 	if cardinal_direction == Vector2.DOWN: return "down"
 	elif cardinal_direction == Vector2.UP: return "up"
-	return "side"
+	elif cardinal_direction == Vector2.RIGHT: return "right"
+	return "left"
 	
 func update_hp(delta: int):
 	hp = clampi(hp + delta, 0, max_hp)

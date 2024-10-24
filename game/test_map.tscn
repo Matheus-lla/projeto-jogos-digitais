@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://bus1ixdb1t6ro"]
+
+[ext_resource type="PackedScene" uid="uid://dsre7sufd7jce" path="res://tile_maps/grass_01.tscn" id="1_65n33"]
+[ext_resource type="PackedScene" uid="uid://b1txr8547jmte" path="res://props/plants/plant.tscn" id="2_013br"]
+[ext_resource type="PackedScene" uid="uid://d4g0yvj01mxhw" path="res://props/spawn/spawn.tscn" id="3_7d168"]
+[ext_resource type="PackedScene" uid="uid://cp6p8qd6jkb7g" path="res://player/player_REMOTE_4759.tscn" id="4_gw21c"]
+[ext_resource type="PackedScene" uid="uid://b88rtmgccpgu0" path="res://enemys/slime/slime.tscn" id="5_kyqx6"]
+
+[node name="Map" type="Node2D"]
+y_sort_enabled = true
+
+[node name="grass_01" parent="." instance=ExtResource("1_65n33")]
+
+[node name="Plant5" parent="." instance=ExtResource("2_013br")]
+position = Vector2(-10, 138)
+
+[node name="Plant4" parent="." instance=ExtResource("2_013br")]
+position = Vector2(142, 211)
+
+[node name="Plant3" parent="." instance=ExtResource("2_013br")]
+position = Vector2(522, 237)
+
+[node name="Plant2" parent="." instance=ExtResource("2_013br")]
+position = Vector2(609, 150)
+
+[node name="Plant" parent="." instance=ExtResource("2_013br")]
+position = Vector2(405, 144)
+
+[node name="Spawn2" parent="." instance=ExtResource("3_7d168")]
+position = Vector2(46, -46)
+
+[node name="Player" parent="." instance=ExtResource("4_gw21c")]
+position = Vector2(314, 175)
+
+[node name="Slime" parent="." instance=ExtResource("5_kyqx6")]
+position = Vector2(585, 366)
+
+[node name="Slime2" parent="." instance=ExtResource("5_kyqx6")]
+position = Vector2(301, -26)
+
+[node name="Slime4" parent="." instance=ExtResource("5_kyqx6")]
+position = Vector2(406, 234)
+
+[node name="Slime3" parent="." instance=ExtResource("5_kyqx6")]
+position = Vector2(-30, 237)
+
+[node name="Spawn" parent="." instance=ExtResource("3_7d168")]
+position = Vector2(664, 285)

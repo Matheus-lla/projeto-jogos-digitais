@@ -1,6 +1,6 @@
 class_name Spawn extends Node2D
 
-@onready var interect_area: Area2D = $Area2D
+@onready var interect_area: Area2D = $InteractionArea
 @onready var label: Label = $Label
 
 func _ready() -> void:

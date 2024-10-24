@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfkwuttburqk3"
-path="res://.godot/imported/AttackSprite01.png-0575abc50558d56ec8c30b16d172511d.ctex"
+uid="uid://5hl4ijoqj8yy"
+path="res://.godot/imported/pedra submersa.png-565455d2a677d24291f684839e5fe85f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/sprites/AttackSprite01.png"
-dest_files=["res://.godot/imported/AttackSprite01.png-0575abc50558d56ec8c30b16d172511d.ctex"]
+source_file="res://tile_maps/sprites/tilemap/pedra submersa.png"
+dest_files=["res://.godot/imported/pedra submersa.png-565455d2a677d24291f684839e5fe85f.ctex"]
 
 [params]
 
