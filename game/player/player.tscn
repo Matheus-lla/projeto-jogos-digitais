@@ -669,6 +669,9 @@ script = ExtResource("3_6l1xu")
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("4_nkwl0")
 
+[node name="Dash" type="Node" parent="StateMachine"]
+script = ExtResource("4_nkwl0")
+
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("5_7x5vp")
 
