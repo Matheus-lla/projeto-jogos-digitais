@@ -1,602 +1,986 @@
-[gd_scene load_steps=14 format=3 uid="uid://cy6n5kjownfd7"]
+[gd_scene load_steps=8 format=3 uid="uid://cy6n5kjownfd7"]
 
 [ext_resource type="PackedScene" uid="uid://ctp446wbt3g8p" path="res://tile_maps/terrain.tscn" id="1_uo6ai"]
+[ext_resource type="PackedScene" uid="uid://0a35r0d3rnn7" path="res://props/huts/cabanas.tscn" id="5_71r4l"]
 [ext_resource type="PackedScene" uid="uid://d4g0yvj01mxhw" path="res://props/spawn/spawn.tscn" id="5_ab8ve"]
-[ext_resource type="Texture2D" uid="uid://c0xd65aht6oif" path="res://props/tree/tree.png" id="6_e52gp"]
-[ext_resource type="Texture2D" uid="uid://c3jcfmpli0rtq" path="res://props/spawn/campfire.png" id="7_t801a"]
-[ext_resource type="Texture2D" uid="uid://5hl4ijoqj8yy" path="res://tile_maps/sprites/tilemap/pedra submersa.png" id="8_1a80o"]
-[ext_resource type="Texture2D" uid="uid://dguj1ohin587l" path="res://tile_maps/sprites/ponte.png" id="9_u6d1k"]
-[ext_resource type="Texture2D" uid="uid://bou7r4k78ngby" path="res://tile_maps/sprites/tilemap/guaraná.png" id="10_a1tr5"]
-[ext_resource type="Texture2D" uid="uid://bgaagc40r76kp" path="res://tile_maps/sprites/tilemap/arvore.png" id="11_kttb1"]
-[ext_resource type="Texture2D" uid="uid://8iauey8hxtyc" path="res://props/bush/bush.png" id="12_i0sq5"]
-[ext_resource type="Texture2D" uid="uid://d2djm5pxx4rc0" path="res://tile_maps/sprites/tilemap/cabana.png" id="13_hbd86"]
+[ext_resource type="PackedScene" uid="uid://cbrqu0ljsvhhi" path="res://props/tree1/tree1.tscn" id="6_fl1ub"]
+[ext_resource type="PackedScene" uid="uid://b677pllce5nsa" path="res://props/bush/bush.tscn" id="7_i8s12"]
 [ext_resource type="PackedScene" uid="uid://0dtpkqs71lll" path="res://props/tree/tree.tscn" id="15_l5mnu"]
-[ext_resource type="Texture2D" uid="uid://cb6kheswrl1kv" path="res://tile_maps/sprites/tilemap/tronco.png" id="16_w8enl"]
 [ext_resource type="PackedScene" uid="uid://cp6p8qd6jkb7g" path="res://player/player.tscn" id="17_5y2ph"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(196, 2914)
 
 [node name="Terrain" parent="." instance=ExtResource("1_uo6ai")]
+position = Vector2(-3, 17)
 
-[node name="arvores" type="Sprite2D" parent="."]
-position = Vector2(398, -732)
-scale = Vector2(0.507485, 0.373912)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores2" type="Sprite2D" parent="."]
-position = Vector2(428, -729)
-scale = Vector2(0.428172, 0.335123)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores3" type="Sprite2D" parent="."]
-position = Vector2(369, -732)
-scale = Vector2(0.507485, 0.373912)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores4" type="Sprite2D" parent="."]
-position = Vector2(457, -737)
-scale = Vector2(0.507485, 0.373912)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores5" type="Sprite2D" parent="."]
-position = Vector2(487, -730)
-scale = Vector2(0.507485, 0.373912)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores6" type="Sprite2D" parent="."]
-position = Vector2(522, -731)
-scale = Vector2(0.409031, 0.347458)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores7" type="Sprite2D" parent="."]
-position = Vector2(593, -752)
-scale = Vector2(0.428172, 0.335123)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores8" type="Sprite2D" parent="."]
-position = Vector2(608, -773)
-scale = Vector2(0.507485, 0.373912)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores9" type="Sprite2D" parent="."]
-position = Vector2(584, -734)
-scale = Vector2(0.428172, 0.335123)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores10" type="Sprite2D" parent="."]
-position = Vector2(622, -756)
-scale = Vector2(0.428172, 0.335123)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores11" type="Sprite2D" parent="."]
-position = Vector2(555, -726)
-scale = Vector2(0.428172, 0.335123)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores12" type="Sprite2D" parent="."]
-position = Vector2(644, -779)
-scale = Vector2(0.427402, 0.351172)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores13" type="Sprite2D" parent="."]
-position = Vector2(738, -786)
-scale = Vector2(0.427402, 0.351172)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores14" type="Sprite2D" parent="."]
-position = Vector2(707, -791)
-scale = Vector2(0.427402, 0.351172)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores15" type="Sprite2D" parent="."]
-position = Vector2(675, -789)
-scale = Vector2(0.427402, 0.351172)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores16" type="Sprite2D" parent="."]
-position = Vector2(841, -787)
-scale = Vector2(0.427402, 0.351172)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores17" type="Sprite2D" parent="."]
-position = Vector2(804, -792)
-scale = Vector2(0.427402, 0.351172)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores18" type="Sprite2D" parent="."]
-position = Vector2(769, -786)
-scale = Vector2(0.427402, 0.351172)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores19" type="Sprite2D" parent="."]
-position = Vector2(841, -787)
-scale = Vector2(0.427402, 0.351172)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores20" type="Sprite2D" parent="."]
-position = Vector2(977, -792)
-scale = Vector2(0.427402, 0.351172)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores21" type="Sprite2D" parent="."]
-position = Vector2(1010, -794)
-scale = Vector2(0.427402, 0.351172)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores22" type="Sprite2D" parent="."]
-position = Vector2(959, -757)
-scale = Vector2(0.427402, 0.351172)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores23" type="Sprite2D" parent="."]
-position = Vector2(1036, -793)
-scale = Vector2(0.427402, 0.351172)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores24" type="Sprite2D" parent="."]
-position = Vector2(927, -752)
-scale = Vector2(0.427402, 0.351172)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores25" type="Sprite2D" parent="."]
-position = Vector2(903, -758)
-scale = Vector2(0.427402, 0.351172)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores26" type="Sprite2D" parent="."]
-position = Vector2(882, -784)
-scale = Vector2(0.427402, 0.351172)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores27" type="Sprite2D" parent="."]
-position = Vector2(1177, -789)
-scale = Vector2(0.427402, 0.351172)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores28" type="Sprite2D" parent="."]
-position = Vector2(1152, -798)
-scale = Vector2(0.427402, 0.351172)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores29" type="Sprite2D" parent="."]
-position = Vector2(1107, -797)
-scale = Vector2(0.427402, 0.351172)
-texture = ExtResource("6_e52gp")
-
-[node name="arvores30" type="Sprite2D" parent="."]
-position = Vector2(1067, -800)
-scale = Vector2(0.427402, 0.351172)
-texture = ExtResource("6_e52gp")
-
-[node name="fogueira" type="Sprite2D" parent="."]
-position = Vector2(1352, -82)
-scale = Vector2(2.36076, 2.12319)
-texture = ExtResource("7_t801a")
-
-[node name="PedraSubmersa" type="Sprite2D" parent="."]
-position = Vector2(1764, 424)
-texture = ExtResource("8_1a80o")
-
-[node name="PedraSubmersa2" type="Sprite2D" parent="."]
-position = Vector2(1715, 498)
-texture = ExtResource("8_1a80o")
-
-[node name="PedraSubmersa3" type="Sprite2D" parent="."]
-position = Vector2(1655, 610)
-texture = ExtResource("8_1a80o")
-
-[node name="PedraSubmersa4" type="Sprite2D" parent="."]
-position = Vector2(1670, 701)
-texture = ExtResource("8_1a80o")
-
-[node name="Ponte" type="Sprite2D" parent="."]
-position = Vector2(954, 1006)
-scale = Vector2(1, 2.47863)
-texture = ExtResource("9_u6d1k")
-
-[node name="Guaraná" type="Sprite2D" parent="."]
-position = Vector2(1161, 19)
-texture = ExtResource("10_a1tr5")
-
-[node name="Guaraná2" type="Sprite2D" parent="."]
-position = Vector2(1228, 9)
-texture = ExtResource("10_a1tr5")
-
-[node name="Guaraná3" type="Sprite2D" parent="."]
-position = Vector2(1019, -27)
-texture = ExtResource("10_a1tr5")
-
-[node name="Arvore" type="Sprite2D" parent="."]
-position = Vector2(1237, -723)
-scale = Vector2(0.504601, 0.411017)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore2" type="Sprite2D" parent="."]
-position = Vector2(1200, -763)
-scale = Vector2(0.481595, 0.394068)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore3" type="Sprite2D" parent="."]
-position = Vector2(1277.5, -678.5)
-scale = Vector2(0.644172, 0.402543)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore4" type="Sprite2D" parent="."]
-position = Vector2(1310, -639)
-scale = Vector2(0.496933, 0.332627)
-texture = ExtResource("11_kttb1")
-
-[node name="Tree" type="Sprite2D" parent="."]
-position = Vector2(1865, -480)
-scale = Vector2(0.489522, 0.343478)
-texture = ExtResource("6_e52gp")
-
-[node name="Tree2" type="Sprite2D" parent="."]
-position = Vector2(1736, -516.25)
-scale = Vector2(0.537425, 0.389131)
-texture = ExtResource("6_e52gp")
-
-[node name="Tree3" type="Sprite2D" parent="."]
-position = Vector2(1644, -546)
-scale = Vector2(0.607784, 0.4)
-texture = ExtResource("6_e52gp")
-
-[node name="Tree4" type="Sprite2D" parent="."]
-position = Vector2(1416, -599.75)
-scale = Vector2(0.553892, 0.280435)
-texture = ExtResource("6_e52gp")
-
-[node name="Tree5" type="Sprite2D" parent="."]
-position = Vector2(1477, -570)
-scale = Vector2(0.44012, 0.269565)
-texture = ExtResource("6_e52gp")
-
-[node name="Tree6" type="Sprite2D" parent="."]
-position = Vector2(1349, -621)
-scale = Vector2(0.432636, 0.23913)
-texture = ExtResource("6_e52gp")
-
-[node name="Tree7" type="Sprite2D" parent="."]
-position = Vector2(1384, -616)
-scale = Vector2(0.422156, 0.273913)
-texture = ExtResource("6_e52gp")
-
-[node name="Tree8" type="Sprite2D" parent="."]
-position = Vector2(1451, -587)
-scale = Vector2(0.356287, 0.269565)
-texture = ExtResource("6_e52gp")
-
-[node name="Tree9" type="Sprite2D" parent="."]
-position = Vector2(1515, -563)
-scale = Vector2(0.326347, 0.278261)
-texture = ExtResource("6_e52gp")
-
-[node name="Tree10" type="Sprite2D" parent="."]
-position = Vector2(1552, -559)
-scale = Vector2(0.284431, 0.26087)
-texture = ExtResource("6_e52gp")
-
-[node name="Tree11" type="Sprite2D" parent="."]
-position = Vector2(1582, -557.75)
-scale = Vector2(0.314371, 0.254348)
-texture = ExtResource("6_e52gp")
-
-[node name="Tree12" type="Sprite2D" parent="."]
-position = Vector2(1619, -559)
-scale = Vector2(0.290419, 0.243478)
-texture = ExtResource("6_e52gp")
-
-[node name="Tree13" type="Sprite2D" parent="."]
-position = Vector2(1613, -546)
-scale = Vector2(0.392216, 0.234783)
-texture = ExtResource("6_e52gp")
-
-[node name="Tree14" type="Sprite2D" parent="."]
-position = Vector2(1684, -528)
-scale = Vector2(0.290419, 0.269565)
-texture = ExtResource("6_e52gp")
-
-[node name="Tree15" type="Sprite2D" parent="."]
-position = Vector2(1711, -519)
-scale = Vector2(0.363773, 0.276087)
-texture = ExtResource("6_e52gp")
-
-[node name="Tree16" type="Sprite2D" parent="."]
-position = Vector2(1776, -508)
-scale = Vector2(0.428144, 0.369565)
-texture = ExtResource("6_e52gp")
-
-[node name="Tree17" type="Sprite2D" parent="."]
-position = Vector2(1814, -494)
-scale = Vector2(0.423653, 0.269565)
-texture = ExtResource("6_e52gp")
-
-[node name="Tree18" type="Sprite2D" parent="."]
-position = Vector2(1840, -486)
-scale = Vector2(0.284431, 0.26087)
-texture = ExtResource("6_e52gp")
-
-[node name="arbusto" type="Sprite2D" parent="."]
-position = Vector2(1103, 135)
-texture = ExtResource("12_i0sq5")
-
-[node name="Cabana" type="Sprite2D" parent="."]
-position = Vector2(1060, -175.75)
-scale = Vector2(1.25, 1.21845)
-texture = ExtResource("13_hbd86")
-
-[node name="Cabana2" type="Sprite2D" parent="."]
-position = Vector2(1295, -215)
-texture = ExtResource("13_hbd86")
-
-[node name="Cabana3" type="Sprite2D" parent="."]
-position = Vector2(962, -117.25)
-scale = Vector2(1.10294, 1.33495)
-texture = ExtResource("13_hbd86")
-
-[node name="Cabana4" type="Sprite2D" parent="."]
-position = Vector2(944, 7)
-scale = Vector2(1.20588, 1.33495)
-texture = ExtResource("13_hbd86")
-
-[node name="Cabana5" type="Sprite2D" parent="."]
-position = Vector2(1062.5, 48)
-scale = Vector2(1.28676, 1.45631)
-texture = ExtResource("13_hbd86")
-
-[node name="Cabana6" type="Sprite2D" parent="."]
-position = Vector2(1209, 78)
-scale = Vector2(1.75368, 1.50243)
-texture = ExtResource("13_hbd86")
-
-[node name="Cabana7" type="Sprite2D" parent="."]
-position = Vector2(1374, 80)
-scale = Vector2(1.42647, 1.24757)
-texture = ExtResource("13_hbd86")
-
-[node name="Cabana8" type="Sprite2D" parent="."]
-position = Vector2(1467, -214)
-scale = Vector2(1.57353, 1.14078)
-texture = ExtResource("13_hbd86")
-
-[node name="Cabana9" type="Sprite2D" parent="."]
-position = Vector2(1525, -84)
-scale = Vector2(2.39706, 2.03398)
-texture = ExtResource("13_hbd86")
-
-[node name="Cabana10" type="Sprite2D" parent="."]
-position = Vector2(1169, -215)
-texture = ExtResource("13_hbd86")
-
-[node name="Cabana11" type="Sprite2D" parent="."]
-position = Vector2(1559, 82)
-scale = Vector2(1.61029, 1.22816)
-texture = ExtResource("13_hbd86")
-
-[node name="Arbusto" type="Sprite2D" parent="."]
-position = Vector2(1139, 137)
-texture = ExtResource("12_i0sq5")
-
-[node name="Arbusto2" type="Sprite2D" parent="."]
-position = Vector2(1173, 138)
-texture = ExtResource("12_i0sq5")
-
-[node name="Arbusto3" type="Sprite2D" parent="."]
-position = Vector2(1211, 137)
-texture = ExtResource("12_i0sq5")
-
-[node name="Arbusto4" type="Sprite2D" parent="."]
-position = Vector2(1251, 140)
-texture = ExtResource("12_i0sq5")
-
-[node name="Arbusto5" type="Sprite2D" parent="."]
-position = Vector2(1289, 146)
-texture = ExtResource("12_i0sq5")
-
-[node name="Arbusto6" type="Sprite2D" parent="."]
-position = Vector2(1396, 148)
-texture = ExtResource("12_i0sq5")
-
-[node name="Arbusto7" type="Sprite2D" parent="."]
-position = Vector2(1354, 147)
-texture = ExtResource("12_i0sq5")
-
-[node name="Arbusto8" type="Sprite2D" parent="."]
-position = Vector2(1437, 145)
-texture = ExtResource("12_i0sq5")
-
-[node name="Arbusto9" type="Sprite2D" parent="."]
-position = Vector2(1471, 147)
-texture = ExtResource("12_i0sq5")
-
-[node name="Arbusto10" type="Sprite2D" parent="."]
-position = Vector2(1507, 146)
-texture = ExtResource("12_i0sq5")
-
-[node name="Arbusto11" type="Sprite2D" parent="."]
-position = Vector2(1548, 143)
-texture = ExtResource("12_i0sq5")
-
-[node name="Arbusto12" type="Sprite2D" parent="."]
-position = Vector2(1588, 152)
-texture = ExtResource("12_i0sq5")
-
-[node name="Arbusto13" type="Sprite2D" parent="."]
-position = Vector2(1325, 148)
-texture = ExtResource("12_i0sq5")
-
-[node name="Guaraná4" type="Sprite2D" parent="."]
-position = Vector2(1069, -116)
-texture = ExtResource("10_a1tr5")
-
-[node name="Guaraná5" type="Sprite2D" parent="."]
-position = Vector2(1173, -171)
-texture = ExtResource("10_a1tr5")
-
-[node name="Guaraná6" type="Sprite2D" parent="."]
-position = Vector2(1599, -260)
-texture = ExtResource("10_a1tr5")
-
-[node name="Guaraná7" type="Sprite2D" parent="."]
-position = Vector2(1684, -227)
-texture = ExtResource("10_a1tr5")
-
-[node name="Arbusto14" type="Sprite2D" parent="."]
-position = Vector2(1773, -385)
-texture = ExtResource("12_i0sq5")
-
-[node name="Arbusto15" type="Sprite2D" parent="."]
-position = Vector2(931, 67)
-texture = ExtResource("12_i0sq5")
-
-[node name="Arbusto16" type="Sprite2D" parent="."]
-position = Vector2(970, 79)
-texture = ExtResource("12_i0sq5")
-
-[node name="Arbusto17" type="Sprite2D" parent="."]
-position = Vector2(988, 106)
-texture = ExtResource("12_i0sq5")
-
-[node name="Arbusto18" type="Sprite2D" parent="."]
-position = Vector2(1025, 125)
-texture = ExtResource("12_i0sq5")
-
-[node name="Arbusto19" type="Sprite2D" parent="."]
-position = Vector2(1063, 135)
-texture = ExtResource("12_i0sq5")
-
-[node name="Arvore5" type="Sprite2D" parent="."]
-position = Vector2(360, -377)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore11" type="Sprite2D" parent="."]
-position = Vector2(381, -508)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore6" type="Sprite2D" parent="."]
-position = Vector2(423, -377)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore7" type="Sprite2D" parent="."]
-position = Vector2(497, -402)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore10" type="Sprite2D" parent="."]
-position = Vector2(275, -459)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore8" type="Sprite2D" parent="."]
-position = Vector2(320, -404)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore9" type="Sprite2D" parent="."]
-position = Vector2(243, -370)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore12" type="Sprite2D" parent="."]
-position = Vector2(98, 346)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore13" type="Sprite2D" parent="."]
-position = Vector2(79, 443)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore14" type="Sprite2D" parent="."]
-position = Vector2(660, 600)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore15" type="Sprite2D" parent="."]
-position = Vector2(295, 375)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore16" type="Sprite2D" parent="."]
-position = Vector2(388, 380)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore17" type="Sprite2D" parent="."]
-position = Vector2(403, 446)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore18" type="Sprite2D" parent="."]
-position = Vector2(769, 670)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore19" type="Sprite2D" parent="."]
-position = Vector2(331, 433)
-texture = ExtResource("11_kttb1")
-
-[node name="Tree22" parent="." instance=ExtResource("15_l5mnu")]
-position = Vector2(819, 172)
-
-[node name="Tree21" parent="." instance=ExtResource("15_l5mnu")]
-position = Vector2(879, 683)
-
-[node name="Tree19" parent="." instance=ExtResource("15_l5mnu")]
-position = Vector2(1102, -41)
-
-[node name="Tree20" parent="." instance=ExtResource("15_l5mnu")]
-position = Vector2(1001, 685)
-
-[node name="Arvore20" type="Sprite2D" parent="."]
-position = Vector2(469, 426)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore21" type="Sprite2D" parent="."]
-position = Vector2(500, 549)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore22" type="Sprite2D" parent="."]
-position = Vector2(276, 503)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore23" type="Sprite2D" parent="."]
-position = Vector2(119, 522)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore24" type="Sprite2D" parent="."]
-position = Vector2(338, 642)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore25" type="Sprite2D" parent="."]
-position = Vector2(569, 655)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore26" type="Sprite2D" parent="."]
-position = Vector2(153, 649)
-texture = ExtResource("11_kttb1")
-
-[node name="Arvore27" type="Sprite2D" parent="."]
-position = Vector2(904, -528.5)
-scale = Vector2(1.81902, 1.62288)
-texture = ExtResource("11_kttb1")
-
-[node name="Tronco5" type="Sprite2D" parent="."]
-position = Vector2(1826.92, -116.946)
-rotation = -0.135838
-scale = Vector2(0.429358, 0.687)
-texture = ExtResource("16_w8enl")
-
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="Tronco2" type="Sprite2D" parent="Node2D"]
-position = Vector2(1015, -423)
-texture = ExtResource("16_w8enl")
-
-[node name="Tronco" type="Sprite2D" parent="Node2D"]
-position = Vector2(797, -322)
-texture = ExtResource("16_w8enl")
-
-[node name="Tronco4" type="Sprite2D" parent="Node2D"]
-position = Vector2(1015, -324)
-texture = ExtResource("16_w8enl")
-
-[node name="Tronco3" type="Sprite2D" parent="Node2D"]
-position = Vector2(827, -428)
-rotation = -0.0309306
-texture = ExtResource("16_w8enl")
+[node name="floreta norte" parent="." instance=ExtResource("15_l5mnu")]
+position = Vector2(522, -667)
+
+[node name="Sprite2D" parent="floreta norte" index="0"]
+position = Vector2(7.99999, -55)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte" instance=ExtResource("15_l5mnu")]
+position = Vector2(69.4116, -53.3936)
+
+[node name="Sprite2D" parent="floreta norte/Tree23" index="0"]
+position = Vector2(7.99999, -55)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(41.3801, -22.0248)
+
+[node name="Sprite2D" parent="floreta norte/Tree23/Tree23" index="0"]
+position = Vector2(7.99999, -55)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(46.052, 7.34161)
+
+[node name="Sprite2D" parent="floreta norte/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.99999, -55)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(56.7307, -8.00903)
+
+[node name="Sprite2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.99999, -55)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(44.7172, 4.67194)
+
+[node name="Sprite2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.99999, -55)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(64.0721, -8.67645)
+
+[node name="Sprite2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.99999, -55)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(89.4344, 18.0203)
+
+[node name="Sprite2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.99999, -55)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(-37.3755, -10.0113)
+
+[node name="Sprite2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.99999, -55)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(73.8918, 0.114868)
+
+[node name="Sprite2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.99999, -55)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(34.6478, -1.25989)
+
+[node name="Sprite2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.99999, -55)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(45.3571, 6.29956)
+
+[node name="Sprite2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.99999, -55)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(40.9475, 1.25995)
+
+[node name="Sprite2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.99999, -55)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(33.3879, 1.88989)
+
+[node name="Sprite2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.99999, -55)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(-102.684, -3.77979)
+
+[node name="Sprite2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.99999, -55)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(127.782, -1.49512)
+
+[node name="Sprite2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.99999, -55)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(33.2155, 5.46582)
+
+[node name="Sprite2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree24" parent="floreta norte" instance=ExtResource("15_l5mnu")]
+position = Vector2(683.075, -35.104)
+
+[node name="Sprite2D" parent="floreta norte/Tree24" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24" instance=ExtResource("15_l5mnu")]
+position = Vector2(14.0157, 18.6877)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(41.3801, 41.38)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(34.7058, 34.0385)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(55.3958, 22.6923)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(46.052, -4.00452)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(40.0452, 41.38)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(30.927, 5.68066)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(40.4788, 11.9055)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(83.3385, 8.73071)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(38.0975, -5.55591)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(29.3669, -3.1748)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(30.1606, 47.6221)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(-31.748, -26.9858)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(64.2898, 34.1292)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(30.1606, 5.55585)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(96.8314, 6.34961)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(15.874, 15.0803)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(-79.37, -26.9858)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(26.9857, 3.1748)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(-400.025, -103.975)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(-1073.88, -98.419)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(38.0977, -7.93701)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(22.2236, 7.14331)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(62.7023, 3.96851)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(26.1921, 0.793701)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(96.0378, -34.9229)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(-25.3984, 30.1606)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(26.9858, -24.6047)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(30.9543, -38.0976)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(35.7166, -3.96851)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
+
+[node name="Tree23" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" instance=ExtResource("15_l5mnu")]
+position = Vector2(185.726, 10.3181)
+
+[node name="Sprite2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23" index="0"]
+position = Vector2(7.76049, -54.1832)
+scale = Vector2(0.531437, 0.51087)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/StaticBody2D" index="0"]
+position = Vector2(-1.55139, -6.117)
 
 [node name="Spawn" parent="." instance=ExtResource("5_ab8ve")]
-position = Vector2(1240, -80)
-scale = Vector2(2, 1.476)
+position = Vector2(1333, -39)
+scale = Vector2(3.17904, 1.88543)
+
+[node name="Cabanas" parent="." instance=ExtResource("5_71r4l")]
+position = Vector2(1561, 72)
+
+[node name="Cabanas2" parent="." instance=ExtResource("5_71r4l")]
+position = Vector2(986, -1)
+
+[node name="Cabanas3" parent="." instance=ExtResource("5_71r4l")]
+position = Vector2(1014, -171)
+
+[node name="Cabanas4" parent="." instance=ExtResource("5_71r4l")]
+position = Vector2(1304, -219)
+
+[node name="Cabanas5" parent="." instance=ExtResource("5_71r4l")]
+position = Vector2(1157, -224)
+
+[node name="Cabanas6" parent="." instance=ExtResource("5_71r4l")]
+position = Vector2(1325, 67)
+
+[node name="Cabanas7" parent="." instance=ExtResource("5_71r4l")]
+position = Vector2(1148, 53)
+
+[node name="Tree" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(287, 264)
+
+[node name="Tree2" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(361, 293)
+
+[node name="Tree3" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(92, 269)
+
+[node name="Tree4" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(156, 261)
+
+[node name="Tree5" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(74, 318)
+
+[node name="Tree6" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(18, 382)
+
+[node name="Tree7" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(363, 338)
+
+[node name="Tree8" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(131, 390)
+
+[node name="Tree9" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(329, 382)
+
+[node name="Tree10" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(403, 397)
+
+[node name="Tree11" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(402, 466)
+
+[node name="Tree12" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(116, 459)
+
+[node name="Tree13" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(13, 452)
+
+[node name="Tree14" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(35, 511)
+
+[node name="Tree15" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(87, 557)
+
+[node name="Tree16" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(451, 493)
+
+[node name="Tree17" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(358, 503)
+
+[node name="Tree18" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(44, 594)
+
+[node name="Tree19" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(40, 684)
+
+[node name="Tree20" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(86, 718)
+
+[node name="Tree21" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(94, 779)
+
+[node name="Tree22" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(87, 846)
+
+[node name="Tree23" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(113, 885)
+
+[node name="Tree24" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(469, 535)
+
+[node name="Tree25" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(563, 558)
+
+[node name="Tree26" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(664, 563)
+
+[node name="Tree27" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(403, 573)
+
+[node name="Tree28" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(493, 605)
+
+[node name="Tree29" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(540, 636)
+
+[node name="Tree30" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(620, 619)
+
+[node name="Tree31" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(731, 612)
+
+[node name="Tree32" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(284, 313)
+
+[node name="Tree33" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(264, 617)
+
+[node name="Tree34" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(205, 784)
+
+[node name="Tree35" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(410, 713)
+
+[node name="Tree36" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(310, -227)
+
+[node name="Tree37" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(382, -225)
+
+[node name="Tree38" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(449, -221)
+
+[node name="Tree39" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(517, -225)
+
+[node name="Tree40" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(591, -225)
+
+[node name="Tree41" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(373, -515)
+
+[node name="Tree42" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(306, -459)
+
+[node name="Tree43" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(263, -398)
+
+[node name="Tree44" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(238, -324)
+
+[node name="Tree45" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(225, -236)
+
+[node name="Tree46" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(422, -552)
+
+[node name="Tree47" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(491, -559)
+
+[node name="Tree48" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(713, -517)
+
+[node name="Tree49" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(754, -489)
+
+[node name="Tree50" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(689, -474)
+
+[node name="Tree51" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(1659, -230)
+
+[node name="Tree52" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(1121, -230)
+
+[node name="Tree53" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(868, -127)
+
+[node name="Tree54" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(930, -154)
+
+[node name="Tree55" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(977, -182)
+
+[node name="Tree56" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(1042, -209)
+
+[node name="Tree57" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(1203, -233)
+
+[node name="Tree58" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(1580, -230)
+
+[node name="Tree59" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(1500, -226)
+
+[node name="Tree60" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(1281, -233)
+
+[node name="Tree61" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(1437, -229)
+
+[node name="Cabanas8" parent="." instance=ExtResource("5_71r4l")]
+position = Vector2(1472, -225)
+
+[node name="Cabanas9" parent="." instance=ExtResource("5_71r4l")]
+position = Vector2(1639, -219)
+
+[node name="Cabanas10" parent="." instance=ExtResource("5_71r4l")]
+position = Vector2(445, -534)
+
+[node name="Tree62" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(205, 931)
+
+[node name="Tree63" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(296, 942)
+
+[node name="Tree64" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(396, 947)
+
+[node name="Tree65" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(453, 976)
+
+[node name="Tree66" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(538, 976)
+
+[node name="Tree67" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(614, 971)
+
+[node name="Tree68" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(686, 969)
+
+[node name="Tree69" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(740, 978)
+
+[node name="Tree70" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(774, 950)
+
+[node name="Tree71" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(847, 942)
+
+[node name="Tree72" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(1364, -234)
+
+[node name="bush" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(1177, -296)
+
+[node name="bush2" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(340, 6)
+
+[node name="bush3" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(463, 25)
+
+[node name="bush4" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(528, -72)
+
+[node name="bush5" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(851, -12)
+
+[node name="bush6" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(918, 138)
+
+[node name="bush7" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(1125, 190)
+
+[node name="bush8" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(859, 419)
+
+[node name="bush9" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(242, 374)
+
+[node name="bush10" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(554, 734)
+
+[node name="bush11" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(335, 676)
+
+[node name="Tree73" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(1088, 812)
+
+[node name="Tree74" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(1360, 534)
+
+[node name="Tree75" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(1117, 438)
+
+[node name="Tree76" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(1493, 320)
+
+[node name="Tree77" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(1531, 921)
+
+[node name="Tree78" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(1670, 326)
+
+[node name="Tree79" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(45, 1681)
+
+[node name="Tree80" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(-100, 1314)
+
+[node name="Tree81" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(1509, 1247)
+
+[node name="Tree82" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(1466, 1541)
+
+[node name="Tree83" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(1287, 1751)
+
+[node name="Tree84" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(453, 1457)
+
+[node name="Tree85" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(475, 1458)
+
+[node name="Tree86" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(499, 1458)
+
+[node name="Tree87" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(523, 1459)
+
+[node name="Tree88" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(607, 1460)
+
+[node name="Tree89" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(630, 1460)
+
+[node name="Tree90" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(653, 1460)
+
+[node name="Tree91" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(676, 1460)
+
+[node name="Tree92" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(697, 1460)
+
+[node name="Tree93" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(717, 1459)
+
+[node name="Tree94" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(433, 1458)
+
+[node name="Tree95" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(410, 1459)
+
+[node name="Tree96" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(388, 1459)
+
+[node name="Tree97" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(366, 1466)
+
+[node name="Tree98" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(344, 1472)
+
+[node name="Tree99" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(322, 1479)
+
+[node name="Tree100" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(740, 1460)
+
+[node name="Tree101" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(759, 1466)
+
+[node name="Tree102" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(778, 1472)
+
+[node name="Tree103" parent="." instance=ExtResource("6_fl1ub")]
+position = Vector2(800, 1475)
 
 [node name="Player" parent="." instance=ExtResource("17_5y2ph")]
+position = Vector2(-2, 3)
+
+[node name="Spawn2" parent="." instance=ExtResource("5_ab8ve")]
+position = Vector2(574, 1553)
+
+[editable path="floreta norte"]
+[editable path="floreta norte/Tree23"]
+[editable path="floreta norte/Tree23/Tree23"]
+[editable path="floreta norte/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24"]
+[editable path="floreta norte/Tree24/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]
+[editable path="floreta norte/Tree24/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23/Tree23"]

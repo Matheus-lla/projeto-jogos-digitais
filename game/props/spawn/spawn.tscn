@@ -4,13 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://c3jcfmpli0rtq" path="res://props/spawn/campfire.png" id="2_a2a8u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y3usd"]
-radius = 14.0
-height = 46.0
+radius = 11.0
+height = 22.0
 
 [node name="Spawn" type="Node2D"]
 script = ExtResource("1_w6xyg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3.8147e-06, -4)
+scale = Vector2(0.617089, 0.844203)
 texture = ExtResource("2_a2a8u")
 
 [node name="ColisionArea" type="StaticBody2D" parent="."]
@@ -18,7 +20,7 @@ collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColisionArea"]
-position = Vector2(-1, 2)
+position = Vector2(0, -2)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_y3usd")
 
@@ -28,7 +30,7 @@ collision_mask = 4
 monitorable = false
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(-1, 2)
+position = Vector2(0, -3)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_y3usd")
 

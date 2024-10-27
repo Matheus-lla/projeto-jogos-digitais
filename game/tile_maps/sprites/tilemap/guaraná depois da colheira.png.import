@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2djm5pxx4rc0"
-path="res://.godot/imported/cabana.png-0747edaf24682508c2aa1b9ebcaaa20b.ctex"
+uid="uid://o7p564268g6k"
+path="res://.godot/imported/guaraná depois da colheira.png-d99f915a9d258589d3358bf4fefcab67.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tile_maps/sprites/tilemap/cabana.png"
-dest_files=["res://.godot/imported/cabana.png-0747edaf24682508c2aa1b9ebcaaa20b.ctex"]
+source_file="res://tile_maps/sprites/tilemap/guaraná depois da colheira.png"
+dest_files=["res://.godot/imported/guaraná depois da colheira.png-d99f915a9d258589d3358bf4fefcab67.ctex"]
 
 [params]
 

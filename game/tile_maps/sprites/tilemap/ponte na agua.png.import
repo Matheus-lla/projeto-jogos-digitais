@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgaagc40r76kp"
-path="res://.godot/imported/arvore.png-4479260cbba1405c3f91ed51bd5d43d6.ctex"
+uid="uid://c4shjb3gwv5vx"
+path="res://.godot/imported/ponte na agua.png-71c159667f19b92d68afcfb8d8cac1a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tile_maps/sprites/tilemap/arvore.png"
-dest_files=["res://.godot/imported/arvore.png-4479260cbba1405c3f91ed51bd5d43d6.ctex"]
+source_file="res://tile_maps/sprites/tilemap/ponte na agua.png"
+dest_files=["res://.godot/imported/ponte na agua.png-71c159667f19b92d68afcfb8d8cac1a9.ctex"]
 
 [params]
 
