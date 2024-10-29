@@ -5375,44 +5375,5 @@ texture = ExtResource("16_w8enl")
 position = Vector2(1240, -80)
 scale = Vector2(2, 1.476)
 
-[node name="Plant5" parent="." instance=ExtResource("3_srdm5")]
-position = Vector2(-10, 138)
-
-[node name="Plant4" parent="." instance=ExtResource("3_srdm5")]
-position = Vector2(142, 211)
-
-[node name="Plant3" parent="." instance=ExtResource("3_srdm5")]
-position = Vector2(522, 237)
-
-[node name="Plant2" parent="." instance=ExtResource("3_srdm5")]
-position = Vector2(609, 150)
-
-[node name="Plant" parent="." instance=ExtResource("3_srdm5")]
-position = Vector2(405, 144)
-
-[node name="Spawn2" parent="." instance=ExtResource("5_ab8ve")]
-position = Vector2(46, -46)
-
-[node name="Player" parent="." instance=ExtResource("1_djl2i")]
-show_behind_parent = true
-position = Vector2(314, 175)
-
-[node name="dash_timer" type="Timer" parent="Player"]
-wait_time = 0.2
-
-[node name="can_dash_timer" type="Timer" parent="Player"]
-
-[node name="Slime" parent="." instance=ExtResource("4_s82md")]
-position = Vector2(585, 366)
-
-[node name="Slime2" parent="." instance=ExtResource("4_s82md")]
-position = Vector2(301, -26)
-
-[node name="Slime4" parent="." instance=ExtResource("4_s82md")]
-position = Vector2(406, 234)
-
-[node name="Slime3" parent="." instance=ExtResource("4_s82md")]
-position = Vector2(-30, 237)
-
-[connection signal="timeout" from="Player/dash_timer" to="Player" method="_on_dash_timer_timeout"]
-[connection signal="timeout" from="Player/can_dash_timer" to="Player" method="_on_can_dash_timer_timeout"]
+[node name="Player" parent="." instance=ExtResource("17_wy7iu")]
+position = Vector2(1459, -8)
