@@ -16,7 +16,7 @@ func init() -> void:
 
 func enter() -> void:
 	enemy.invulnerable = true
-	direction = enemy.global_position.direction_to(enemy.player.global_position)
+	direction = enemy.global_position.direction_to(GlobalPlayerManager.player.global_position)
 	enemy.set_direction(direction)
 	enemy.velocity = direction * -knockback_speed;
 	enemy.update_animation(anim_name)

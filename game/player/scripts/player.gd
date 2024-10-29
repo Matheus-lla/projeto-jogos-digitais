@@ -106,7 +106,10 @@ func on_damaged(hurt_box: HurtBox):
 
 func spawn():
 	update_hp(max_hp)
-	self.global_position = spawn_place.global_position
+
+	if spawn_place:
+		self.global_position = spawn_place.global_position
+
 	direction = Vector2.DOWN
 	cardinal_direction	= Vector2.DOWN		
 	set_direction()
