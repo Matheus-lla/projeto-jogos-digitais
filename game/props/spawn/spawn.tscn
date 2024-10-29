@@ -4,10 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://c3jcfmpli0rtq" path="res://props/spawn/campfire.png" id="2_a2a8u"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y3usd"]
-radius = 11.0
-height = 22.0
+radius = 14.0
+height = 28.0
 
 [node name="Spawn" type="Node2D"]
+position = Vector2(0, -10)
 script = ExtResource("1_w6xyg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -16,11 +17,12 @@ scale = Vector2(0.617089, 0.844203)
 texture = ExtResource("2_a2a8u")
 
 [node name="ColisionArea" type="StaticBody2D" parent="."]
+position = Vector2(-2, 0)
 collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColisionArea"]
-position = Vector2(0, -2)
+position = Vector2(2, -2)
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_y3usd")
 
@@ -45,3 +47,4 @@ theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 10
 text = "Checkpoint Updated"
 horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true

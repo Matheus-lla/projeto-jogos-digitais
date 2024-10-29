@@ -4,7 +4,7 @@ var cardinal_direction: Vector2 = Vector2.DOWN
 var direction: Vector2 = Vector2.ZERO
 var invulnerable: bool = false
 var hp: int
-var max_hp: int = 20
+var max_hp: int = 2
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -88,7 +88,10 @@ func on_damaged(hurt_box: HurtBox):
 
 func spawn():
 	update_hp(max_hp)
-	self.global_position = spawn_place.global_position
+	
+	if spawn_place:
+		self.global_position = spawn_place.global_position
+		
 	direction = Vector2.DOWN
 	cardinal_direction	= Vector2.DOWN		
 	set_direction()
