@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://cp6p8qd6jkb7g"]
+[gd_scene load_steps=49 format=3 uid="uid://cp6p8qd6jkb7g"]
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_cdxps"]
 [ext_resource type="Texture2D" uid="uid://c0tiavk755qy0" path="res://player/india-sprite-sheet.png" id="2_6vyfa"]
@@ -529,10 +529,6 @@ _data = {
 "walking_up": SubResource("Animation_ujkxi")
 }
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_ij73r"]
-resource_name = "Triangle"
-points = PackedVector2Array(0, 0, 20, 32, -20, 32)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_omd1j"]
 radius = 13.0
 
@@ -710,9 +706,8 @@ collision_layer = 4
 collision_mask = 0
 monitoring = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Area2D"]
-shape = SubResource("ConvexPolygonShape2D_ij73r")
-debug_color = Color(0.401867, 0.467818, 1, 0.42)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactions/Area2D"]
+polygon = PackedVector2Array(0, 0, 20, 32, -20, 32)
 
 [node name="HitBox" parent="." instance=ExtResource("13_r47ef")]
 visible = false
