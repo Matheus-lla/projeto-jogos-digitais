@@ -689,6 +689,9 @@ dash_duration = 0.2
 
 [node name="DashCoolDown" type="Timer" parent="StateMachine/Dash"]
 
+[node name="GhostTimer" type="Timer" parent="StateMachine/Dash"]
+wait_time = 0.05
+
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("11_sxuhv")
 
@@ -726,3 +729,5 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5cg4k")
 debug_color = Color(0.713537, 0.483936, 0, 0.42)
+
+[connection signal="timeout" from="StateMachine/Dash/GhostTimer" to="StateMachine/Dash" method="_on_ghost_timer_timeout"]

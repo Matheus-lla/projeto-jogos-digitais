@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cve10rhw03i85"]
+
+[ext_resource type="Script" path="res://player/scripts/ghost_dash.gd" id="1_tywix"]
+
+[node name="GhostDash" type="Sprite2D"]
+script = ExtResource("1_tywix")
