@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cp6p8qd6jkb7g"]
+[gd_scene load_steps=50 format=3 uid="uid://cp6p8qd6jkb7g"]
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_cdxps"]
 [ext_resource type="Texture2D" uid="uid://c0tiavk755qy0" path="res://player/india-sprite-sheet.png" id="2_6vyfa"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://player/scripts/states/player_state_dash.gd" id="11_rq1l8"]
 [ext_resource type="Script" path="res://player/scripts/camera.gd" id="11_sxuhv"]
 [ext_resource type="Script" path="res://player/scripts/states/shoot_arrow.gd" id="12_lugk0"]
+[ext_resource type="AudioStream" uid="uid://ctdwiam17n70r" path="res://player/boomerang.wav" id="12_v80to"]
 [ext_resource type="PackedScene" uid="uid://uxvl7pfm1jf5" path="res://general_nodes/hit_box/hit_box.tscn" id="13_r47ef"]
 [ext_resource type="AudioStream" uid="uid://dd23767ba5au2" path="res://player/audio/hit_player.wav" id="14_hkv60"]
 
@@ -614,7 +615,7 @@ position = Vector2(0, -9)
 texture = ExtResource("2_6vyfa")
 hframes = 11
 vframes = 10
-frame = 36
+frame = 94
 metadata/_aseprite_wizard_config_ = {
 "i_mode": -1,
 "keep_anim_length": false,
@@ -676,6 +677,7 @@ dash_duration = 0.2
 [node name="ShootArrow" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("12_lugk0")
 next_state = NodePath("../Idle")
+attack_sound = ExtResource("12_v80to")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("11_sxuhv")

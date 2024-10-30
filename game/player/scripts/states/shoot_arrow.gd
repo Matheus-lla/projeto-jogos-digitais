@@ -1,7 +1,11 @@
 class_name ShootArrow extends PlayerState
 
 @export var next_state: PlayerState
+@export var attack_sound: AudioStream
+
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
+@onready var audio: AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
+
 
 var animation_name = "bow_attack"
 var ended: bool = false
@@ -15,9 +19,11 @@ func enter() -> void:
 	var arrow = ArrowCene.instantiate() as Arrow
 	arrow.shoot()
 	player.add_sibling(arrow)
-	player.update_animation(animation_name)
 	player.velocity = Vector2.ZERO
+	player.update_animation(animation_name)
 	animation_player.animation_finished.connect(on_animation_finished)
+	audio.stream = attack_sound
+	audio.play()
 	ended = false
 	
 func exit() -> void:
