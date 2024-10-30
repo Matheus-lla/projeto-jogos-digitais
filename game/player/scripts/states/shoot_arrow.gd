@@ -13,7 +13,7 @@ func init():
 	
 func enter() -> void:
 	var arrow = ArrowCene.instantiate() as Arrow
-	arrow.shoot(player.faced_direction())
+	arrow.shoot()
 	player.add_sibling(arrow)
 	player.update_animation(animation_name)
 	player.velocity = Vector2.ZERO

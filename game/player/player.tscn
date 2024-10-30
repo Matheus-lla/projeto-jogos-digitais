@@ -17,15 +17,12 @@
 [ext_resource type="PackedScene" uid="uid://uxvl7pfm1jf5" path="res://general_nodes/hit_box/hit_box.tscn" id="13_r47ef"]
 [ext_resource type="AudioStream" uid="uid://dd23767ba5au2" path="res://player/audio/hit_player.wav" id="14_hkv60"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wtobn"]
-radius = 16.0
-
 [sub_resource type="Animation" id="Animation_5nbts"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite/MeleeHurtBox:position")
+tracks/0/path = NodePath("MeleeHurtBox:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -37,7 +34,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite/MeleeHurtBox/CollisionShape2D:rotation")
+tracks/1/path = NodePath("MeleeHurtBox/CollisionShape2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -53,7 +50,7 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite/MeleeHurtBox:position")
+tracks/0/path = NodePath("MeleeHurtBox:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -69,7 +66,7 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite/MeleeHurtBox:position")
+tracks/0/path = NodePath("MeleeHurtBox:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -85,7 +82,7 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite/MeleeHurtBox:position")
+tracks/0/path = NodePath("MeleeHurtBox:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -226,7 +223,7 @@ length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite/MeleeHurtBox:position")
+tracks/0/path = NodePath("MeleeHurtBox:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -238,7 +235,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite/MeleeHurtBox/CollisionShape2D:rotation")
+tracks/1/path = NodePath("MeleeHurtBox/CollisionShape2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -265,7 +262,7 @@ length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite/MeleeHurtBox:position")
+tracks/0/path = NodePath("MeleeHurtBox:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -277,7 +274,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite/MeleeHurtBox/CollisionShape2D:rotation")
+tracks/1/path = NodePath("MeleeHurtBox/CollisionShape2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -304,7 +301,7 @@ length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite/MeleeHurtBox:position")
+tracks/0/path = NodePath("MeleeHurtBox:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -316,7 +313,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite/MeleeHurtBox/CollisionShape2D:rotation")
+tracks/1/path = NodePath("MeleeHurtBox/CollisionShape2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -343,7 +340,7 @@ length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite/MeleeHurtBox:position")
+tracks/0/path = NodePath("MeleeHurtBox:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -355,7 +352,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite/MeleeHurtBox/CollisionShape2D:rotation")
+tracks/1/path = NodePath("MeleeHurtBox/CollisionShape2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -532,6 +529,9 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_omd1j"]
 radius = 13.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_wtobn"]
+radius = 16.0
+
 [sub_resource type="Animation" id="Animation_jheqs"]
 length = 0.001
 tracks/0/type = "value"
@@ -614,7 +614,7 @@ position = Vector2(0, -9)
 texture = ExtResource("2_6vyfa")
 hframes = 11
 vframes = 10
-frame = 39
+frame = 36
 metadata/_aseprite_wizard_config_ = {
 "i_mode": -1,
 "keep_anim_length": false,
@@ -642,19 +642,6 @@ position = Vector2(-1, -7)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("4_kpb26")
 offset = Vector2(0, 20)
-
-[node name="MeleeHurtBox" parent="PlayerSprite" instance=ExtResource("10_aoesj")]
-unique_name_in_owner = true
-position = Vector2(-40, 34)
-collision_mask = 256
-monitoring = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerSprite/MeleeHurtBox"]
-position = Vector2(-5, -8)
-rotation = 3.14159
-scale = Vector2(0.564423, 1.47562)
-shape = SubResource("CircleShape2D_wtobn")
-debug_color = Color(0.861335, 0, 0.10443, 0.42)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -717,6 +704,19 @@ collision_layer = 2
 position = Vector2(0, -12)
 shape = SubResource("CircleShape2D_omd1j")
 debug_color = Color(0.666667, 0.509804, 0, 0.662745)
+
+[node name="MeleeHurtBox" parent="." instance=ExtResource("10_aoesj")]
+unique_name_in_owner = true
+position = Vector2(-40, 34)
+collision_mask = 256
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeHurtBox"]
+position = Vector2(-5, -8)
+rotation = 3.14159
+scale = Vector2(0.564423, 1.47562)
+shape = SubResource("CircleShape2D_wtobn")
+debug_color = Color(0.861335, 0, 0.10443, 0.42)
 
 [node name="EffectAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

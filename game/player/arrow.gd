@@ -1,24 +1,34 @@
-class_name Arrow extends Node2D
+class_name Arrow extends CharacterBody2D
 
 enum State {
 	INACTIVE,
-	THROW,
+	FLIGHT,
 }
 
 var player: Player
-var direction: Vector2
-var speed: float = 200.0
 var state: State = State.INACTIVE
+var hurt_box: HurtBox
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if state == State.INACTIVE:
 		return
-		
-	position += speed * delta * direction
-	print(position)
+
+	move_and_slide()
 	
-func shoot(dir: Vector2) -> void:
+	if is_on_wall():
+		destroy()
+
+func shoot() -> void:
+	hurt_box = $HurtBox
+	hurt_box.area_entered.connect(on_area_entered)
 	player = GlobalPlayerManager.player
 	global_position = player.global_position
-	direction = dir
-	state = State.THROW
+	self.velocity = player.faced_direction() * 200.0
+	state = State.FLIGHT
+
+func on_area_entered(area: Area2D):
+	if area is HitBox:
+		destroy()
+
+func destroy():
+	queue_free()

@@ -99,9 +99,9 @@ func spawn():
 	state_machine.change_state(idle)
 	
 func faced_direction() -> Vector2:
-	var faced_direction = direction
+	var dir = direction
 	
-	if faced_direction == Vector2.ZERO:
-		faced_direction = cardinal_direction
+	if dir == Vector2.ZERO:
+		dir = cardinal_direction
 		
-	return faced_direction
+	return dir

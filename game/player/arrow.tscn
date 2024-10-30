@@ -1,20 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://cideq8igu58bv"]
+[gd_scene load_steps=6 format=3 uid="uid://cideq8igu58bv"]
 
 [ext_resource type="Texture2D" uid="uid://b8bis5m6uxmx2" path="res://player/boomerang.png" id="1_nwi5s"]
 [ext_resource type="Script" path="res://player/arrow.gd" id="1_oinba"]
+[ext_resource type="PackedScene" uid="uid://bi537x71g5dm3" path="res://general_nodes/hurt_box/hurt_box.tscn" id="2_o11eg"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_siqq5"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_pkbca"]
 
-[node name="Arrow" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_onaxp"]
+
+[node name="Arrow" type="CharacterBody2D"]
 position = Vector2(2, -16)
+collision_layer = 0
+collision_mask = 16
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_oinba")
+
+[node name="HurtBox" parent="." instance=ExtResource("2_o11eg")]
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_pkbca")
+debug_color = Color(0.848465, 0.362584, 0.258311, 0.42)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_nwi5s")
 hframes = 8
 
-[node name="Area2D" type="Area2D" parent="."]
-monitorable = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_siqq5")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_onaxp")
