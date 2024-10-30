@@ -98,3 +98,10 @@ func spawn():
 	animation_player.play("idle_down")
 	state_machine.change_state(idle)
 	
+func faced_direction() -> Vector2:
+	var faced_direction = direction
+	
+	if faced_direction == Vector2.ZERO:
+		faced_direction = cardinal_direction
+		
+	return faced_direction

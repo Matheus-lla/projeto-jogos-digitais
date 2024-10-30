@@ -6,7 +6,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_siqq5"]
 
 [node name="Arrow" type="Node2D"]
-position = Vector2(1, -16)
+position = Vector2(2, -16)
 script = ExtResource("1_oinba")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
