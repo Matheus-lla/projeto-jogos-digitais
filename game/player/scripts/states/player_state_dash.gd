@@ -23,11 +23,7 @@ func enter() -> void:
 	enabled = false
 	dash_cool_down.start()
 	timer = dash_duration
-	
-	dash_direction = player.direction
-	if dash_direction == Vector2.ZERO:
-		dash_direction = player.cardinal_direction
-		
+	dash_direction = player.faced_direction()
 	player.make_invulnerable(2*dash_duration)
 	player.update_animation(animation_name)
 	
