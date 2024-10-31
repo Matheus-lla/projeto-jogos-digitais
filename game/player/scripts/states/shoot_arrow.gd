@@ -9,8 +9,11 @@ class_name ShootArrow extends PlayerState
 
 var animation_name = "bow_attack"
 var ended: bool = false
+var timer: float
+var audio_played: bool
 
 const ArrowCene = preload("res://player/arrow.tscn")
+const LOADING_TIME = 0.35 # time to pull the arrow and released
 
 func init():
 	pass
@@ -23,15 +26,21 @@ func enter() -> void:
 	player.update_animation(animation_name)
 	animation_player.animation_finished.connect(on_animation_finished)
 	audio.stream = attack_sound
-	audio.play()
+	timer = LOADING_TIME
 	ended = false
+	audio_played = false
 	
 func exit() -> void:
 	animation_player.animation_finished.disconnect(on_animation_finished)
 	
-func process(_delta: float) -> PlayerState:
+func process(delta: float) -> PlayerState:
 	if ended:
 		return next_state
+		
+	timer -= delta
+	if timer <= 0 && !audio_played:
+		audio.play()
+		audio_played = true
 		
 	return null
 	
