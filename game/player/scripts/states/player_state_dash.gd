@@ -41,7 +41,7 @@ func enter() -> void:
 	instance_ghost()
 	
 func instance_ghost():
-	var ghost: Sprite2D = ghost_scene.instantiate()
+	var ghost: GhostDash = ghost_scene.instantiate()
 	sprite = player.sprite
 	
 	ghost.global_position = player.global_position
@@ -53,6 +53,7 @@ func instance_ghost():
 	ghost.flip_h = sprite.flip_h
 	
 	get_tree().root.add_child(ghost)
+
 	
 func set_dash_ghost_efect(weight: float, white: bool):
 	if player.sprite.material == null:

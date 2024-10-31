@@ -687,7 +687,7 @@ decelerate_speed = 8.0
 script = ExtResource("11_rq1l8")
 move_speed = 250.0
 next_state = NodePath("../Idle")
-dash_duration = 0.2
+dash_duration = 0.4
 
 [node name="DashCoolDown" type="Timer" parent="StateMachine/Dash"]
 
