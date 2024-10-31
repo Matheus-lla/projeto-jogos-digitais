@@ -6,7 +6,7 @@ class_name Dash extends PlayerState
 @export var next_state: PlayerState
 @export var dash_duration: float
 
-var animation_name = "walking"
+var animation_name = "dash"
 var timer: float = 0
 var dash_direction: Vector2
 var enabled: bool = true
