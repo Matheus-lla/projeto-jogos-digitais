@@ -23,10 +23,13 @@ func enter() -> void:
 		skip = true
 		return
 	
+	set_dash_ghost_efect(0.4, true)
+	
 	enabled = false
 	dash_cool_down.start()
 	timer = dash_duration
 	ghost_timer.start()
+
 	
 	dash_direction = player.direction
 	if dash_direction == Vector2.ZERO:
@@ -42,18 +45,30 @@ func instance_ghost():
 	sprite = player.sprite
 	
 	ghost.global_position = player.global_position
-	ghost.position = player.position
+	ghost.position = player.position + dash_direction * 5
 	ghost.texture = sprite.texture
 	ghost.hframes = sprite.hframes
 	ghost.vframes = sprite.vframes
 	ghost.frame = sprite.frame
 	ghost.flip_h = sprite.flip_h
 	
-	
 	get_tree().root.add_child(ghost)
 	
+	ghost.call_deferred("queue_free", 0.03)  # 0.1 segundos, ajuste conforme necessário
 	
+	
+	
+func set_dash_ghost_efect(weight: float, white: bool):
+	if player.sprite.material == null:
+		player.sprite.material = load("res://player/scripts/GhostDash.tres")
+	
+	if player.sprite.material is ShaderMaterial:
+		player.sprite.material.set("parameters/mix_weight", weight)
+		player.sprite.material.set("parameters/whiten", white)
+		player.sprite.material.set("parameters/mix_alpha", 0.3)
+		
 func exit() -> void:
+	set_dash_ghost_efect(1.0, false)
 	ghost_timer.stop()
 	
 func process(delta: float) -> PlayerState:
