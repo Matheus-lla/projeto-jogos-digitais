@@ -8,6 +8,7 @@ radius = 14.0
 height = 28.0
 
 [node name="Spawn" type="Node2D"]
+z_index = 1
 position = Vector2(0, -10)
 script = ExtResource("1_w6xyg")
 
