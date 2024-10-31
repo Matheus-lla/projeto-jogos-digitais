@@ -4,6 +4,7 @@ class_name Walk extends PlayerState
 @onready var idle: PlayerState = $"../Idle"
 @onready var attack: PlayerState = $"../Attack"
 @onready var dash: Dash = $"../Dash"
+@onready var shoot_arrow: ShootArrow = $"../ShootArrow"
 
 func init():
 	pass
@@ -35,6 +36,9 @@ func handle_input(event: InputEvent) -> PlayerState:
 	
 	if event.is_action("dash"):
 		return dash
+		
+	if event.is_action("shoot_arrow"):
+		return shoot_arrow
 		
 	if event.is_action("interact"):
 		GlobalPlayerManager.interact_pressed.emit()

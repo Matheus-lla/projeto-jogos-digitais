@@ -10,6 +10,7 @@
 y_sort_enabled = true
 
 [node name="grass_01" parent="." instance=ExtResource("1_65n33")]
+script = null
 
 [node name="Plant5" parent="." instance=ExtResource("2_013br")]
 position = Vector2(-10, 138)
