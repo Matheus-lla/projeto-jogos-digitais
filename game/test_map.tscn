@@ -30,9 +30,6 @@ position = Vector2(405, 144)
 [node name="Spawn2" parent="." instance=ExtResource("3_7d168")]
 position = Vector2(46, -46)
 
-[node name="Player" parent="." instance=ExtResource("4_gw21c")]
-position = Vector2(314, 175)
-
 [node name="Slime" parent="." instance=ExtResource("5_kyqx6")]
 position = Vector2(585, 366)
 
@@ -47,3 +44,6 @@ position = Vector2(-30, 237)
 
 [node name="Spawn" parent="." instance=ExtResource("3_7d168")]
 position = Vector2(664, 285)
+
+[node name="Player" parent="." instance=ExtResource("4_gw21c")]
+position = Vector2(314, 175)

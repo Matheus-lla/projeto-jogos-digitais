@@ -2,11 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://cwu5emounuql4" path="res://props/walls/pilar.png" id="1_tqh20"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ret7c"]
-size = Vector2(49.8333, 49.1625)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6s3j"]
+size = Vector2(117.768, 48.0078)
 
 [node name="Muralha" type="Node2D"]
-z_index = 1
 
 [node name="Pilar" type="Sprite2D" parent="."]
 position = Vector2(1, -23)
@@ -18,6 +17,7 @@ collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-1, 5.99999)
+position = Vector2(0.603082, -27.1275)
 rotation = -1.56051
-shape = SubResource("RectangleShape2D_ret7c")
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_f6s3j")
