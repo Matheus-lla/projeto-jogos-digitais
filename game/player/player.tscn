@@ -692,7 +692,7 @@ dash_duration = 0.2
 [node name="DashCoolDown" type="Timer" parent="StateMachine/Dash"]
 
 [node name="GhostTimer" type="Timer" parent="StateMachine/Dash"]
-wait_time = 0.03
+wait_time = 0.05
 
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("11_sxuhv")
