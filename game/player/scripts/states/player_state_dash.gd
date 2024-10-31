@@ -54,10 +54,6 @@ func instance_ghost():
 	
 	get_tree().root.add_child(ghost)
 	
-	ghost.call_deferred("queue_free", 0.03)  # 0.1 segundos, ajuste conforme necessário
-	
-	
-	
 func set_dash_ghost_efect(weight: float, white: bool):
 	if player.sprite.material == null:
 		player.sprite.material = load("res://player/scripts/GhostDash.tres")
