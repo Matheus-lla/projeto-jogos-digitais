@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_cdxps"]
 [ext_resource type="Texture2D" uid="uid://c0tiavk755qy0" path="res://player/india-sprite-sheet.png" id="2_6vyfa"]
-[ext_resource type="Material" uid="uid://cwu8ssy8q1y7e" path="res://player/scripts/GhostDash.tres" id="2_c0h0d"]
+[ext_resource type="Material" path="res://player/scripts/GhostDash.tres" id="2_c0h0d"]
 [ext_resource type="Script" path="res://player/scripts/player_state_machine.gd" id="3_6l1xu"]
 [ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://player/sprites/Shadow.png" id="4_kpb26"]
 [ext_resource type="Script" path="res://player/scripts/states/player_state_idle.gd" id="4_nkwl0"]

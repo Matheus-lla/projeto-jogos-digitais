@@ -6,7 +6,7 @@ func _ready() -> void:
 	tween.tween_property(self, "modulate:a", 0.0, 1.0)
 	tween.set_trans(Tween.TRANS_QUART)
 	tween.set_ease(Tween.EASE_OUT)
-	tween.connect("fineshed", self, _on_tween_finished())
+	tween.finished.connect(_on_tween_finished)
 	
 func _on_tween_finished():
 	queue_free()
