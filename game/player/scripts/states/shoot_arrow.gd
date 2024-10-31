@@ -13,7 +13,7 @@ var timer: float
 var audio_played: bool
 
 const ArrowCene = preload("res://player/arrow.tscn")
-const LOADING_TIME = 0.35 # time to pull the arrow and released
+const LOADING_TIME = 0.50 # time to pull the arrow and released
 
 func init():
 	pass
