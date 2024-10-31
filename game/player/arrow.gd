@@ -38,7 +38,10 @@ func shoot() -> void:
 	player = GlobalPlayerManager.player
 	
 	# Makes the initial position of the arrow a litle bit in front of the character
-	global_position = player.global_position + player.cardinal_direction * 10
+	if player.cardinal_direction == Vector2.UP:
+		global_position = player.global_position + player.cardinal_direction * 35
+	else:
+		global_position = player.global_position + player.cardinal_direction * 10
 	
 	# Fix positioning
 	if player.cardinal_direction == Vector2.LEFT || player.cardinal_direction == Vector2.RIGHT:

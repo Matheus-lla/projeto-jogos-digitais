@@ -766,7 +766,7 @@ metadata/_aseprite_wizard_interface_config_ = {
 "output_section": true,
 "slice_section": true
 }
-metadata/_aseprite_wizard_source_file_hash_ = "d175e93f2e9fe1ad8d14d9feac4ce75e"
+metadata/_aseprite_wizard_source_file_hash_ = "0b470886ca9c382027eb3749d49eae89"
 
 [node name="Shadow" type="Sprite2D" parent="PlayerSprite"]
 modulate = Color(0, 0, 0, 0.552941)
