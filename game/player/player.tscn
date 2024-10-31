@@ -619,7 +619,7 @@ position = Vector2(0, -9)
 texture = ExtResource("2_6vyfa")
 hframes = 11
 vframes = 10
-frame = 39
+frame = 31
 metadata/_aseprite_wizard_config_ = {
 "i_mode": -1,
 "keep_anim_length": false,
@@ -650,6 +650,7 @@ offset = Vector2(0, 20)
 
 [node name="MeleeHurtBox" parent="PlayerSprite" instance=ExtResource("10_aoesj")]
 unique_name_in_owner = true
+visible = false
 position = Vector2(-40, 34)
 collision_mask = 256
 monitoring = false
@@ -703,6 +704,7 @@ script = ExtResource("11_sxuhv")
 max_polyphony = 4
 
 [node name="Interactions" type="Node2D" parent="."]
+visible = false
 script = ExtResource("10_10sp5")
 
 [node name="Area2D" type="Area2D" parent="Interactions"]
@@ -729,6 +731,7 @@ libraries = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 shape = SubResource("CircleShape2D_5cg4k")
 debug_color = Color(0.713537, 0.483936, 0, 0.42)
 
