@@ -14,7 +14,6 @@ func init():
 
 func enter() -> void:
 	player.update_animation("spear_attack")
-	#effect_animation.play("spear_attack_" + player.animation_direction())
 	attack_animation.animation_finished.connect(end_attack)
 	audio.stream = attack_sound
 	audio.pitch_scale = randf_range(0.9, 1.1)
@@ -22,13 +21,11 @@ func enter() -> void:
 	attacking = true
 	await get_tree().create_timer(0.075).timeout
 	hurt_box.monitoring = true
-	pass
 
 func exit() -> void:
 	attack_animation.animation_finished.disconnect(end_attack)
 	attacking = false
 	hurt_box.monitoring = false
-	pass
 	
 func end_attack(_new_animation_name: String):
 	attacking = false
