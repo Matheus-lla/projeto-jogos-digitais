@@ -6,3 +6,4 @@
 shader = ExtResource("1_ux6ph")
 shader_parameter/whiten = false
 shader_parameter/mix_weight = 1.0
+shader_parameter/mix_alpha = 0.5
