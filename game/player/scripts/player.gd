@@ -3,8 +3,8 @@ class_name Player extends CharacterBody2D
 var cardinal_direction: Vector2 = Vector2.DOWN
 var direction: Vector2 = Vector2.ZERO
 var invulnerable: bool = false
-var hp: int
-var max_hp: int = 2
+var hp: int 
+var max_hp: int = 4
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -24,6 +24,8 @@ func _ready() -> void:
 	state_machine.init(self)
 	hit_box.Damaged.connect(on_damaged)
 	spawn()
+	make_damage()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -31,6 +33,11 @@ func _process(_delta: float) -> void:
 		Input.get_axis("left", "right"),
 		Input.get_axis("up", "down"),
 	).normalized()
+	
+	if Input.is_action_pressed("use_potion"):
+		print("Entrou no if")
+		increase_health()
+	
 	
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
@@ -105,3 +112,11 @@ func faced_direction() -> Vector2:
 		dir = cardinal_direction
 		
 	return dir
+
+func make_damage():
+	update_hp(-2)
+func increase_health():
+	print("Entrou na funçao")
+	update_hp(max_hp)
+	PlayerHud.update_potion_after_use(-1)
+	

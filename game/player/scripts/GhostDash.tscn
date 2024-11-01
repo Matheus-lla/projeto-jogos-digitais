@@ -34,5 +34,8 @@ shader_parameter/mix_weight = 1.0
 
 [node name="GhostDash" type="Sprite2D"]
 material = SubResource("ShaderMaterial_k5s70")
+position = Vector2(0, -9)
 texture = ExtResource("1_rurpn")
+hframes = 11
+vframes = 10
 script = ExtResource("1_tywix")

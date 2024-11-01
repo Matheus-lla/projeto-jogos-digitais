@@ -42,7 +42,7 @@ func enter() -> void:
 	instance_ghost()
 	
 func instance_ghost():
-	var ghost: Sprite2D = ghost_scene.instantiate()
+	var ghost: GhostDash = ghost_scene.instantiate()
 	sprite = player.sprite
 	
 	ghost.global_position = player.global_position
@@ -54,10 +54,7 @@ func instance_ghost():
 	ghost.flip_h = sprite.flip_h
 	
 	get_tree().root.add_child(ghost)
-	
-	ghost.call_deferred("queue_free", 0.03)  # 0.1 segundos, ajuste conforme necessário
-	
-	
+
 	
 func set_dash_ghost_efect(weight: float, white: bool):
 	if player.sprite.material == null:

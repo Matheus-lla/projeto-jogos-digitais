@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2o04ujxqjl0j"]
+[gd_scene load_steps=5 format=3 uid="uid://b2o04ujxqjl0j"]
 
 [ext_resource type="Texture2D" uid="uid://nsvudi3xlyo5" path="res://gui/player_hud/gui-health.png" id="1_kdowg"]
 [ext_resource type="Script" path="res://gui/player_hud/player_hud.gd" id="1_uohgx"]
 [ext_resource type="PackedScene" uid="uid://bbrdbc01lcwkx" path="res://gui/player_hud/heart.tscn" id="2_dje31"]
+[ext_resource type="PackedScene" uid="uid://tts8cxppae4q" path="res://gui/player_hud/Potion.tscn" id="4_tcwbv"]
 
 [node name="PlayerHud" type="CanvasLayer"]
 script = ExtResource("1_uohgx")
@@ -90,4 +91,20 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Heart20" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
+layout_mode = 2
+
+[node name="HFlowContainer2" type="HFlowContainer" parent="Control"]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 55.0
+offset_right = 545.0
+offset_bottom = 72.0
+
+[node name="Potion" parent="Control/HFlowContainer2" instance=ExtResource("4_tcwbv")]
+layout_mode = 2
+
+[node name="Potion2" parent="Control/HFlowContainer2" instance=ExtResource("4_tcwbv")]
+layout_mode = 2
+
+[node name="Potion3" parent="Control/HFlowContainer2" instance=ExtResource("4_tcwbv")]
 layout_mode = 2

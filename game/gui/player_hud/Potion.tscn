@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://tts8cxppae4q"]
+
+[ext_resource type="Script" path="res://gui/player_hud/potion.gd" id="1_daoy1"]
+[ext_resource type="Texture2D" uid="uid://cfrlxxdkvlkf5" path="res://gui/player_hud/antidote.png" id="2_xk7yp"]
+
+[node name="Potion" type="Control"]
+custom_minimum_size = Vector2(9, 9)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 15.0
+offset_bottom = 15.0
+script = ExtResource("1_daoy1")
+
+[node name="Antidote" type="Sprite2D" parent="."]
+position = Vector2(7, 7)
+scale = Vector2(0.0173438, 0.0173438)
+texture = ExtResource("2_xk7yp")
