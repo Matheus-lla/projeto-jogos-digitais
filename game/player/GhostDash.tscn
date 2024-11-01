@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c1g83yb2qyc5c"]
 
-[ext_resource type="Texture2D" uid="uid://c0tiavk755qy0" path="res://player/india-sprite-sheet.png" id="1_rurpn"]
-[ext_resource type="Script" path="res://player/scripts/ghost_dash.gd" id="1_tywix"]
+[ext_resource type="Texture2D" uid="uid://c0tiavk755qy0" path="res://player/sprites/india-sprite-sheet.png" id="1_smwwv"]
+[ext_resource type="Script" path="res://player/scripts/ghost_dash.gd" id="2_6uqmx"]
 
 [sub_resource type="Shader" id="Shader_ojo6m"]
 code = "shader_type canvas_item;
@@ -35,7 +35,7 @@ shader_parameter/mix_weight = 1.0
 [node name="GhostDash" type="Sprite2D"]
 material = SubResource("ShaderMaterial_k5s70")
 position = Vector2(0, -9)
-texture = ExtResource("1_rurpn")
+texture = ExtResource("1_smwwv")
 hframes = 11
 vframes = 10
-script = ExtResource("1_tywix")
+script = ExtResource("2_6uqmx")

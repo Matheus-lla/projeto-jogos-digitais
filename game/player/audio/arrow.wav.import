@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ctdwiam17n70r"
-path="res://.godot/imported/boomerang.wav-8b3cb0ed8377d6dbacdfe9f5c8969706.sample"
+path="res://.godot/imported/arrow.wav-661aa0787d156e47be123677cbf16449.sample"
 
 [deps]
 
-source_file="res://player/boomerang.wav"
-dest_files=["res://.godot/imported/boomerang.wav-8b3cb0ed8377d6dbacdfe9f5c8969706.sample"]
+source_file="res://player/audio/arrow.wav"
+dest_files=["res://.godot/imported/arrow.wav-661aa0787d156e47be123677cbf16449.sample"]
 
 [params]
 

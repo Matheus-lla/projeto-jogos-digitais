@@ -12,7 +12,7 @@ var timer: float = 0
 var dash_direction: Vector2
 var enabled: bool = true
 var skip: bool = false
-var ghost_scene = preload("res://player/scripts/GhostDash.tscn")
+var ghost_scene = preload("res://player/GhostDash.tscn")
 var sprite
 
 func init():
