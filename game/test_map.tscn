@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cp6p8qd6jkb7g" path="res://player/player.tscn" id="4_gw21c"]
 [ext_resource type="PackedScene" uid="uid://b88rtmgccpgu0" path="res://enemys/slime/slime.tscn" id="5_kyqx6"]
 
-[node name="Map" type="Node2D"]
+[node name="TestMap" type="Node2D"]
 y_sort_enabled = true
 
 [node name="grass_01" parent="." instance=ExtResource("1_65n33")]

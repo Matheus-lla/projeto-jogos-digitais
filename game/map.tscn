@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cy6n5kjownfd7"]
+[gd_scene load_steps=10 format=3 uid="uid://cy6n5kjownfd7"]
 
 [ext_resource type="PackedScene" uid="uid://ctp446wbt3g8p" path="res://tile_maps/terrain.tscn" id="1_uo6ai"]
 [ext_resource type="PackedScene" uid="uid://0a35r0d3rnn7" path="res://props/huts/cabanas.tscn" id="5_71r4l"]
@@ -7,18 +7,22 @@
 [ext_resource type="PackedScene" uid="uid://b677pllce5nsa" path="res://props/bush/bush.tscn" id="7_i8s12"]
 [ext_resource type="Texture2D" uid="uid://dguj1ohin587l" path="res://tile_maps/sprites/ponte.png" id="7_rbeto"]
 [ext_resource type="PackedScene" uid="uid://5h833b6p2xh0" path="res://props/walls/muralha.tscn" id="8_74xx4"]
+[ext_resource type="PackedScene" uid="uid://b88rtmgccpgu0" path="res://enemys/slime/slime.tscn" id="9_qxiuk"]
 [ext_resource type="PackedScene" uid="uid://cp6p8qd6jkb7g" path="res://player/player.tscn" id="17_5y2ph"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Map" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(711, 769)
 
-[node name="Spawn" parent="." instance=ExtResource("5_ab8ve")]
-position = Vector2(1254, -4)
-scale = Vector2(2.4, 2.4)
-
 [node name="Terrain" parent="." instance=ExtResource("1_uo6ai")]
 position = Vector2(-189, -483)
+
+[node name="Spawn" parent="." instance=ExtResource("5_ab8ve")]
+position = Vector2(1217, -7)
+scale = Vector2(2.4, 2.4)
+
+[node name="Slime" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(1008, -15)
 
 [node name="Cabanas" parent="." instance=ExtResource("5_71r4l")]
 position = Vector2(1526, 160)
@@ -490,9 +494,3 @@ texture_filter = 2
 position = Vector2(888, 1905)
 
 [node name="Player" parent="." instance=ExtResource("17_5y2ph")]
-show_behind_parent = true
-light_mask = 32
-visibility_layer = 512
-z_index = 1
-z_as_relative = false
-position = Vector2(1166, -2)

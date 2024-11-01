@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cp6p8qd6jkb7g"]
+[gd_scene load_steps=58 format=3 uid="uid://cp6p8qd6jkb7g"]
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_cdxps"]
 [ext_resource type="Texture2D" uid="uid://c0tiavk755qy0" path="res://player/india-sprite-sheet.png" id="2_6vyfa"]
@@ -13,18 +13,17 @@
 [ext_resource type="Script" path="res://player/scripts/states/player_state_stun.gd" id="11_8opwu"]
 [ext_resource type="Script" path="res://player/scripts/states/player_state_dash.gd" id="11_rq1l8"]
 [ext_resource type="Script" path="res://player/scripts/camera.gd" id="11_sxuhv"]
+[ext_resource type="Script" path="res://player/scripts/states/shoot_arrow.gd" id="12_lugk0"]
+[ext_resource type="AudioStream" uid="uid://ctdwiam17n70r" path="res://player/boomerang.wav" id="12_v80to"]
 [ext_resource type="PackedScene" uid="uid://uxvl7pfm1jf5" path="res://general_nodes/hit_box/hit_box.tscn" id="13_r47ef"]
 [ext_resource type="AudioStream" uid="uid://dd23767ba5au2" path="res://player/audio/hit_player.wav" id="14_hkv60"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_wtobn"]
-radius = 16.0
 
 [sub_resource type="Animation" id="Animation_5nbts"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite/MeleeHurtBox:position")
+tracks/0/path = NodePath("MeleeHurtBox:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -36,7 +35,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite/MeleeHurtBox/CollisionShape2D:rotation")
+tracks/1/path = NodePath("MeleeHurtBox/CollisionShape2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -52,7 +51,7 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite/MeleeHurtBox:position")
+tracks/0/path = NodePath("MeleeHurtBox:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -68,7 +67,7 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite/MeleeHurtBox:position")
+tracks/0/path = NodePath("MeleeHurtBox:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -84,7 +83,7 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite/MeleeHurtBox:position")
+tracks/0/path = NodePath("MeleeHurtBox:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -152,6 +151,130 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [7, 73, 74, 75, 76, 77, 78, 79]
+}
+
+[sub_resource type="Animation" id="Animation_qehdi"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_8m6yo"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [104]
+}
+
+[sub_resource type="Animation" id="Animation_j2hkb"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [103]
+}
+
+[sub_resource type="Animation" id="Animation_e6lsr"]
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+
+[sub_resource type="Animation" id="Animation_1hc3m"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [105, 106]
+}
+
+[sub_resource type="Animation" id="Animation_068lx"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [111, 112]
+}
+
+[sub_resource type="Animation" id="Animation_qqjrh"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [109, 110]
+}
+
+[sub_resource type="Animation" id="Animation_0dsvi"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [107, 108]
 }
 
 [sub_resource type="Animation" id="Animation_1vigq"]
@@ -225,7 +348,7 @@ length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite/MeleeHurtBox:position")
+tracks/0/path = NodePath("MeleeHurtBox:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -237,7 +360,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite/MeleeHurtBox/CollisionShape2D:rotation")
+tracks/1/path = NodePath("MeleeHurtBox/CollisionShape2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -264,7 +387,7 @@ length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite/MeleeHurtBox:position")
+tracks/0/path = NodePath("MeleeHurtBox:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -276,7 +399,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite/MeleeHurtBox/CollisionShape2D:rotation")
+tracks/1/path = NodePath("MeleeHurtBox/CollisionShape2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -303,7 +426,7 @@ length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite/MeleeHurtBox:position")
+tracks/0/path = NodePath("MeleeHurtBox:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -315,7 +438,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite/MeleeHurtBox/CollisionShape2D:rotation")
+tracks/1/path = NodePath("MeleeHurtBox/CollisionShape2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -342,7 +465,7 @@ length = 0.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PlayerSprite/MeleeHurtBox:position")
+tracks/0/path = NodePath("MeleeHurtBox:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -354,7 +477,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("PlayerSprite/MeleeHurtBox/CollisionShape2D:rotation")
+tracks/1/path = NodePath("MeleeHurtBox/CollisionShape2D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -510,6 +633,14 @@ _data = {
 "bow_attack_left": SubResource("Animation_yofu3"),
 "bow_attack_right": SubResource("Animation_0htga"),
 "bow_attack_up": SubResource("Animation_3oice"),
+"dash_down": SubResource("Animation_qehdi"),
+"dash_left": SubResource("Animation_8m6yo"),
+"dash_right": SubResource("Animation_j2hkb"),
+"dash_up": SubResource("Animation_e6lsr"),
+"healing_down": SubResource("Animation_1hc3m"),
+"healing_left": SubResource("Animation_068lx"),
+"healing_right": SubResource("Animation_qqjrh"),
+"healing_up": SubResource("Animation_0dsvi"),
 "idle_down": SubResource("Animation_1vigq"),
 "idle_left": SubResource("Animation_v70uq"),
 "idle_right": SubResource("Animation_6ljjc"),
@@ -528,12 +659,11 @@ _data = {
 "walking_up": SubResource("Animation_ujkxi")
 }
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_ij73r"]
-resource_name = "Triangle"
-points = PackedVector2Array(0, 0, 20, 32, -20, 32)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_omd1j"]
 radius = 13.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wtobn"]
+radius = 16.0
 
 [sub_resource type="Animation" id="Animation_jheqs"]
 length = 0.001
@@ -616,8 +746,8 @@ texture_filter = 1
 position = Vector2(0, -9)
 texture = ExtResource("2_6vyfa")
 hframes = 11
-vframes = 10
-frame = 39
+vframes = 11
+frame = 96
 metadata/_aseprite_wizard_config_ = {
 "i_mode": -1,
 "keep_anim_length": false,
@@ -636,7 +766,7 @@ metadata/_aseprite_wizard_interface_config_ = {
 "output_section": true,
 "slice_section": true
 }
-metadata/_aseprite_wizard_source_file_hash_ = "aa3dca77edca8a9802d20de0561b8ca9"
+metadata/_aseprite_wizard_source_file_hash_ = "d175e93f2e9fe1ad8d14d9feac4ce75e"
 
 [node name="Shadow" type="Sprite2D" parent="PlayerSprite"]
 modulate = Color(0, 0, 0, 0.552941)
@@ -645,19 +775,6 @@ position = Vector2(-1, -7)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("4_kpb26")
 offset = Vector2(0, 20)
-
-[node name="MeleeHurtBox" parent="PlayerSprite" instance=ExtResource("10_aoesj")]
-unique_name_in_owner = true
-position = Vector2(-40, 34)
-collision_mask = 256
-monitoring = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerSprite/MeleeHurtBox"]
-position = Vector2(-5, -8)
-rotation = 3.14159
-scale = Vector2(0.564423, 1.47562)
-shape = SubResource("CircleShape2D_wtobn")
-debug_color = Color(0.861335, 0, 0.10443, 0.42)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -689,6 +806,11 @@ dash_duration = 0.2
 
 [node name="DashCoolDown" type="Timer" parent="StateMachine/Dash"]
 
+[node name="ShootArrow" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("12_lugk0")
+next_state = NodePath("../Idle")
+attack_sound = ExtResource("12_v80to")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 script = ExtResource("11_sxuhv")
 
@@ -705,18 +827,29 @@ collision_layer = 4
 collision_mask = 0
 monitoring = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Area2D"]
-shape = SubResource("ConvexPolygonShape2D_ij73r")
-debug_color = Color(0.401867, 0.467818, 1, 0.42)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactions/Area2D"]
+polygon = PackedVector2Array(0, 0, 20, 32, -20, 32)
 
 [node name="HitBox" parent="." instance=ExtResource("13_r47ef")]
-visible = false
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, -12)
 shape = SubResource("CircleShape2D_omd1j")
 debug_color = Color(0.666667, 0.509804, 0, 0.662745)
+
+[node name="MeleeHurtBox" parent="." instance=ExtResource("10_aoesj")]
+unique_name_in_owner = true
+position = Vector2(-40, 34)
+collision_mask = 256
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeHurtBox"]
+position = Vector2(-5, -8)
+rotation = 3.14159
+scale = Vector2(0.564423, 1.47562)
+shape = SubResource("CircleShape2D_wtobn")
+debug_color = Color(0.861335, 0, 0.10443, 0.42)
 
 [node name="EffectAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
