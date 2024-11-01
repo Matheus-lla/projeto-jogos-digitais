@@ -1,7 +1,7 @@
 class_name GhostDash extends Sprite2D
 
 var timer: float
-const GOSTH_LIFE_TIME: float = 0.2 # This value must be less than the Dash Duration
+const GOSTH_LIFE_TIME: float = 0.15 # This value must be less than the Dash Duration
 
 func _ready() -> void:
 	global_position = GlobalPlayerManager.player.global_position
