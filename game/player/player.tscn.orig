@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cp6p8qd6jkb7g"]
+[gd_scene load_steps=50 format=3 uid="uid://cp6p8qd6jkb7g"]
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_cdxps"]
 [ext_resource type="Texture2D" uid="uid://c0tiavk755qy0" path="res://player/india-sprite-sheet.png" id="2_6vyfa"]
@@ -811,7 +811,11 @@ autoplay = "off"
 [node name="Shadow" type="Sprite2D" parent="PlayerSprite"]
 modulate = Color(0, 0, 0, 0.552941)
 show_behind_parent = true
+<<<<<<< HEAD
 position = Vector2(1, -2)
+=======
+position = Vector2(0, -11)
+>>>>>>> ed8629787028a761372d19dcd903cd6739c50895
 texture = ExtResource("4_kpb26")
 offset = Vector2(0, 20)
 
