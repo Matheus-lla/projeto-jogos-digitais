@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b677pllce5nsa" path="res://props/bush/bush.tscn" id="7_i8s12"]
 [ext_resource type="Texture2D" uid="uid://dguj1ohin587l" path="res://tile_maps/sprites/ponte.png" id="7_rbeto"]
 [ext_resource type="PackedScene" uid="uid://5h833b6p2xh0" path="res://props/walls/muralha.tscn" id="8_74xx4"]
+[ext_resource type="PackedScene" uid="uid://cp6p8qd6jkb7g" path="res://player/player.tscn" id="9_57pim"]
 [ext_resource type="PackedScene" uid="uid://b88rtmgccpgu0" path="res://enemys/slime/slime.tscn" id="9_qxiuk"]
-[ext_resource type="PackedScene" uid="uid://cp6p8qd6jkb7g" path="res://player/player.tscn" id="17_5y2ph"]
 
 [node name="Map" type="Node2D"]
 y_sort_enabled = true
@@ -19,7 +19,7 @@ position = Vector2(-189, -483)
 
 [node name="Spawn" parent="." instance=ExtResource("5_ab8ve")]
 z_index = 1
-position = Vector2(1217, -7)
+position = Vector2(1298, 8)
 scale = Vector2(2.4, 2.4)
 
 [node name="Slime" parent="." instance=ExtResource("9_qxiuk")]
@@ -525,5 +525,5 @@ y_sort_enabled = true
 texture_filter = 2
 position = Vector2(888, 1905)
 
-[node name="Player" parent="." instance=ExtResource("17_5y2ph")]
+[node name="Player" parent="." instance=ExtResource("9_57pim")]
 z_index = 1

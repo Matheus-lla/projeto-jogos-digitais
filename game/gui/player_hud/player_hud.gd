@@ -1,17 +1,31 @@
 extends CanvasLayer
 
+@onready var label: Label = $Control/Label
+
 var hearts: Array[Heart] = []
+var max_potion: int = 9
+var potions: int
+
 
 func _ready() -> void:
 	for child in $Control/HFlowContainer.get_children():
 		if child is Heart:
 			child.visible = false
 			hearts.append(child)
+			
 
+		
+	
 func update_heart(index: int, hp: int):
 	var value: int = clampi(hp - index * 2, 0, 2)
 	hearts[index].value = value
 	
+
+func update_potion(_delta: int):
+	potions = clampi(potions + _delta, 0, max_potion)
+	label.text = "x" + str(potions) 
+	
+
 func update_max_hp(max_hp: int):
 	var heart_count: int = roundi(max_hp / 2)
 	
@@ -26,4 +40,7 @@ func update_hp(hp: int, max_hp: int):
 	
 	for i in max_hp:
 		update_heart(i, hp)
+		
+	
+	
 	

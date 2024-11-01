@@ -3,8 +3,8 @@ class_name Player extends CharacterBody2D
 var cardinal_direction: Vector2 = Vector2.DOWN
 var direction: Vector2 = Vector2.ZERO
 var invulnerable: bool = false
-var hp: int
-var max_hp: int = 2
+var hp: int 
+var max_hp: int = 6
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -31,6 +31,7 @@ func _process(_delta: float) -> void:
 		Input.get_axis("left", "right"),
 		Input.get_axis("up", "down"),
 	).normalized()
+	
 	
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
@@ -88,6 +89,7 @@ func on_damaged(hurt_box: HurtBox):
 
 func spawn():
 	update_hp(max_hp)
+	PlayerHud.update_potion(PlayerHud.max_potion)
 	
 	if spawn_place:
 		self.global_position = spawn_place.global_position
@@ -105,3 +107,4 @@ func faced_direction() -> Vector2:
 		dir = cardinal_direction
 		
 	return dir
+	
