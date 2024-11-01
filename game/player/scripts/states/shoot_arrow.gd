@@ -20,6 +20,7 @@ func init():
 	
 func enter() -> void:
 	var arrow = ArrowCene.instantiate() as Arrow
+	arrow.global_position = player.global_position 
 	arrow.shoot()
 	player.add_sibling(arrow)
 	player.velocity = Vector2.ZERO

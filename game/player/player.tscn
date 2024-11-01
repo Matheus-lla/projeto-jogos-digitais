@@ -747,7 +747,7 @@ position = Vector2(0, -9)
 texture = ExtResource("2_6vyfa")
 hframes = 11
 vframes = 11
-frame = 15
+frame = 96
 metadata/_aseprite_wizard_config_ = {
 "i_mode": -1,
 "keep_anim_length": false,
@@ -820,7 +820,6 @@ script = ExtResource("11_sxuhv")
 max_polyphony = 4
 
 [node name="Interactions" type="Node2D" parent="."]
-visible = false
 script = ExtResource("10_10sp5")
 
 [node name="Area2D" type="Area2D" parent="Interactions"]
@@ -832,7 +831,6 @@ monitoring = false
 polygon = PackedVector2Array(0, 0, 20, 32, -20, 32)
 
 [node name="HitBox" parent="." instance=ExtResource("13_r47ef")]
-visible = false
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
@@ -842,7 +840,6 @@ debug_color = Color(0.666667, 0.509804, 0, 0.662745)
 
 [node name="MeleeHurtBox" parent="." instance=ExtResource("10_aoesj")]
 unique_name_in_owner = true
-visible = false
 position = Vector2(-40, 34)
 collision_mask = 256
 monitoring = false

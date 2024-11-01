@@ -3,10 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://dsre7sufd7jce" path="res://tile_maps/grass_01.tscn" id="1_65n33"]
 [ext_resource type="PackedScene" uid="uid://b1txr8547jmte" path="res://props/plants/plant.tscn" id="2_013br"]
 [ext_resource type="PackedScene" uid="uid://d4g0yvj01mxhw" path="res://props/spawn/spawn.tscn" id="3_7d168"]
-[ext_resource type="PackedScene" uid="uid://cp6p8qd6jkb7g" path="res://player/player.tscn" id="5_k4c6a"]
+[ext_resource type="PackedScene" uid="uid://cp6p8qd6jkb7g" path="res://player/player.tscn" id="4_gw21c"]
 [ext_resource type="PackedScene" uid="uid://b88rtmgccpgu0" path="res://enemys/slime/slime.tscn" id="5_kyqx6"]
 
-[node name="Map" type="Node2D"]
+[node name="TestMap" type="Node2D"]
 y_sort_enabled = true
 
 [node name="grass_01" parent="." instance=ExtResource("1_65n33")]
@@ -45,4 +45,5 @@ position = Vector2(-30, 237)
 [node name="Spawn" parent="." instance=ExtResource("3_7d168")]
 position = Vector2(664, 285)
 
-[node name="Player" parent="." instance=ExtResource("5_k4c6a")]
+[node name="Player" parent="." instance=ExtResource("4_gw21c")]
+position = Vector2(314, 175)

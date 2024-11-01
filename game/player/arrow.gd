@@ -15,6 +15,14 @@ const SPEED: float = 200.0
 const LOADING_TIME: float = 0.35 # time to pull the arrow and released
 const SCALE_FACTOR: float = 1.1
 
+func _ready() -> void:
+	# Makes the initial position of the arrow a litle bit in front of the character
+	global_position = player.global_position + player.cardinal_direction * 10
+	
+	# Fix positioning
+	if player.cardinal_direction == Vector2.LEFT || player.cardinal_direction == Vector2.RIGHT:
+		global_position.y -= 10
+
 func _physics_process(delta: float) -> void:
 	if state == State.INACTIVE:
 		return
@@ -36,22 +44,11 @@ func shoot() -> void:
 	hurt_box = $HurtBox
 	hurt_box.area_entered.connect(on_area_entered)
 	player = GlobalPlayerManager.player
-	
-	# Makes the initial position of the arrow a litle bit in front of the character
-	if player.cardinal_direction == Vector2.UP:
-		global_position = player.global_position + player.cardinal_direction * 35
-	else:
-		global_position = player.global_position + player.cardinal_direction * 10
-	
-	# Fix positioning
-	if player.cardinal_direction == Vector2.LEFT || player.cardinal_direction == Vector2.RIGHT:
-		global_position.y -= 10
-	
 	velocity = player.cardinal_direction * SPEED
 	set_rotation_from_direction(player.cardinal_direction)
 	timer = LOADING_TIME
 	state = State.LOADING
-	visible = false
+	visible = true
 	scale *= SCALE_FACTOR
 
 func set_rotation_from_direction(direction: Vector2):
@@ -73,3 +70,4 @@ func on_area_entered(area: Area2D):
 
 func destroy():
 	queue_free()
+	pass

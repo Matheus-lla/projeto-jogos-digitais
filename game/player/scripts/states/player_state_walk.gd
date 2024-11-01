@@ -1,6 +1,6 @@
 class_name Walk extends PlayerState
 
-@export var move_speed: float = 100.0
+@export var move_speed: float = 300.0
 @onready var idle: PlayerState = $"../Idle"
 @onready var attack: PlayerState = $"../Attack"
 @onready var dash: Dash = $"../Dash"
