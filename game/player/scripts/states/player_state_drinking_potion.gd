@@ -2,12 +2,20 @@ class_name DrinkingPotion extends PlayerState
 
 @onready var idle: Idle = $"../Idle"
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
+@onready var audio: AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
+
+@export var sound1: AudioStream
+@export var sound2: AudioStream
 
 var potion_health: int = 2
 var ended: bool
+var audio2: AudioStreamPlayer2D
 
 func init():
-	pass
+	audio2 = AudioStreamPlayer2D.new()
+	add_child(audio2)
+	audio2.stream = sound2
+	audio2.volume_db = 16
 
 func enter() -> void:
 	animation_player.animation_finished.connect(animation_potion_end)
@@ -17,11 +25,11 @@ func enter() -> void:
 		
 	player.update_hp(potion_health)
 	player.velocity = Vector2.ZERO
-	
 	PlayerHud.update_potion(-1)
 	player.update_animation("healing")
 	ended = false
-	
+	audio.stream = sound1
+	audio.play()
 
 func exit() -> void:
 	animation_player.animation_finished.disconnect(animation_potion_end)
@@ -40,3 +48,4 @@ func handle_input(_eventL: InputEvent) -> PlayerState:
 
 func animation_potion_end(_animation_name: String):
 	ended = true
+	audio2.play()
