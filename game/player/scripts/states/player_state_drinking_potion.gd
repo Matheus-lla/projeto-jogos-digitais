@@ -2,7 +2,7 @@ class_name DrinkingPotion extends PlayerState
 
 @onready var idle: Idle = $"../Idle"
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
-@onready var audio: AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
+@onready var audio: AudioStreamPlayer2D = $"../../Audio"
 
 @export var sound1: AudioStream
 @export var sound2: AudioStream

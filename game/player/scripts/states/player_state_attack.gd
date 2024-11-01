@@ -2,10 +2,10 @@ class_name Attack extends PlayerState
 
 var attacking: bool = false
 @onready var attack_animation: AnimationPlayer = $"../../AnimationPlayer"
-@onready var audio: AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
 @onready var idle: PlayerState = $"../Idle"
 @onready var walk: PlayerState = $"../Walk"
 @onready var hurt_box: HurtBox = $"../../MeleeHurtBox"
+@onready var audio: AudioStreamPlayer2D = $"../../Audio"
 
 @export var attack_sound: AudioStream
 @export_range(1, 20, 0.5) var decelerate_speed: float = 10

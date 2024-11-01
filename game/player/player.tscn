@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://cp6p8qd6jkb7g"]
+[gd_scene load_steps=63 format=3 uid="uid://cp6p8qd6jkb7g"]
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_cdxps"]
 [ext_resource type="Texture2D" uid="uid://c0tiavk755qy0" path="res://player/sprites/india-sprite-sheet.png" id="2_6vyfa"]
@@ -17,6 +17,7 @@
 [ext_resource type="AudioStream" uid="uid://ctdwiam17n70r" path="res://player/audio/arrow.wav" id="12_v80to"]
 [ext_resource type="PackedScene" uid="uid://uxvl7pfm1jf5" path="res://general_nodes/hit_box/hit_box.tscn" id="13_r47ef"]
 [ext_resource type="AudioStream" uid="uid://dd23767ba5au2" path="res://player/audio/hit_player.wav" id="14_hkv60"]
+[ext_resource type="AudioStream" uid="uid://dtdc3bt3eubv3" path="res://player/audio/dash.ogg" id="14_n2n4j"]
 [ext_resource type="Script" path="res://player/scripts/states/player_state_drinking_potion.gd" id="15_sbt30"]
 [ext_resource type="AudioStream" uid="uid://d00f5crg3io1s" path="res://player/audio/heal.wav" id="17_5uyoa"]
 [ext_resource type="AudioStream" uid="uid://ms0herlnu5uv" path="res://player/audio/drinking.mp3" id="17_55pxg"]
@@ -697,7 +698,7 @@ tracks/0/keys = {
 tracks/1/type = "audio"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Audio/AudioStreamPlayer2D")
+tracks/1/path = NodePath("Audio")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -745,11 +746,6 @@ script = ExtResource("1_cdxps")
 libraries = {
 "": SubResource("AnimationLibrary_r4e5q")
 }
-
-[node name="Audio" type="Node2D" parent="."]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio"]
-max_polyphony = 4
 
 [node name="Interactions" type="Node2D" parent="."]
 script = ExtResource("10_10sp5")
@@ -816,6 +812,7 @@ script = ExtResource("11_rq1l8")
 move_speed = 300.0
 next_state = NodePath("../Idle")
 dash_duration = 0.3
+sound = ExtResource("14_n2n4j")
 
 [node name="DashCoolDown" type="Timer" parent="StateMachine/Dash"]
 
@@ -867,5 +864,8 @@ position = Vector2(-1, -7)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("4_kpb26")
 offset = Vector2(0, 20)
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+max_polyphony = 4
 
 [connection signal="timeout" from="StateMachine/Dash/GhostTimer" to="StateMachine/Dash" method="_on_ghost_timer_timeout"]

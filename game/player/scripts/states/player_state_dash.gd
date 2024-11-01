@@ -2,10 +2,12 @@ class_name Dash extends PlayerState
 
 @onready var dash_cool_down: Timer = $DashCoolDown
 @onready var ghost_timer: Timer = $GhostTimer
+@onready var audio: AudioStreamPlayer2D = $"../../Audio"
 
 @export var move_speed: float
 @export var next_state: PlayerState
 @export var dash_duration: float
+@export var sound: AudioStream
 
 var animation_name = "dash"
 var timer: float = 0
@@ -40,6 +42,11 @@ func enter() -> void:
 	player.make_invulnerable(2*dash_duration)
 	player.update_animation(animation_name)
 	
+	audio.stream = sound
+	audio.pitch_scale = 1.5
+
+	audio.play()
+	
 	instance_ghost()
 	
 func instance_ghost():
@@ -71,6 +78,7 @@ func exit() -> void:
 	player.z_index = 1
 	set_dash_ghost_efect(1.0, false)
 	ghost_timer.stop()
+	audio.pitch_scale = 1
 	
 func process(delta: float) -> PlayerState:
 	if skip:
