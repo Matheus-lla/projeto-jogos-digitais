@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2l6m5vdk63vm"
-path="res://.godot/imported/007.png-d85bec71a17b07a8ccec52c6d430bb32.ctex"
+uid="uid://cxcy7gakj3ldn"
+path="res://.godot/imported/guarana_empty.png-ac5b8340b3e063b9ec58594590b9b77a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://props/guarana/007.png"
-dest_files=["res://.godot/imported/007.png-d85bec71a17b07a8ccec52c6d430bb32.ctex"]
+source_file="res://props/guarana/guarana_empty.png"
+dest_files=["res://.godot/imported/guarana_empty.png-ac5b8340b3e063b9ec58594590b9b77a.ctex"]
 
 [params]
 

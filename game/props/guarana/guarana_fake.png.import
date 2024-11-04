@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://box8twviomgp4"
-path="res://.godot/imported/Spritesheet_Fruit_and_Seeds.png-5a9293d86fd0c0cd274d14a6e1743e49.ctex"
+uid="uid://cfv0nfvclvb11"
+path="res://.godot/imported/guarana_fake.png-7b206198afdd8a0f1e3fc642f929bd6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://props/guarana/Spritesheet_Fruit_and_Seeds.png"
-dest_files=["res://.godot/imported/Spritesheet_Fruit_and_Seeds.png-5a9293d86fd0c0cd274d14a6e1743e49.ctex"]
+source_file="res://props/guarana/guarana_fake.png"
+dest_files=["res://.godot/imported/guarana_fake.png-7b206198afdd8a0f1e3fc642f929bd6b.ctex"]
 
 [params]
 
