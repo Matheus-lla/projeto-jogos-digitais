@@ -26,7 +26,6 @@ shader_parameter/whiten = true
 shader_parameter/mix_weight = 1.0
 
 [node name="GhostDash" type="Sprite2D"]
-z_index = 1
 material = SubResource("ShaderMaterial_k5s70")
 position = Vector2(0, -9)
 texture = ExtResource("1_smwwv")
