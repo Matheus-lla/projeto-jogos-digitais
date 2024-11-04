@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://nsvudi3xlyo5" path="res://gui/gui-health.png" id="1_kdowg"]
 [ext_resource type="Script" path="res://gui/player_hud.gd" id="1_uohgx"]
 [ext_resource type="PackedScene" uid="uid://bbrdbc01lcwkx" path="res://gui/heart.tscn" id="2_dje31"]
-[ext_resource type="Texture2D" uid="uid://cfrlxxdkvlkf5" path="res://gui/antidote.png" id="4_dbjq6"]
+[ext_resource type="Texture2D" uid="uid://bkg8wdwkijwel" path="res://gui/poção verde.png" id="2_lcxnw"]
 
 [node name="PlayerHud" type="CanvasLayer"]
 script = ExtResource("1_uohgx")
@@ -13,20 +13,24 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 3.0
+offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Antidote" type="Sprite2D" parent="Control"]
-position = Vector2(48.4688, 32.4688)
-scale = Vector2(0.0311719, 0.0311719)
-texture = ExtResource("4_dbjq6")
+position = Vector2(24, 32)
+scale = Vector2(1.37688, 1.37688)
+texture = ExtResource("2_lcxnw")
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 2
-offset_left = 63.4688
-offset_top = 21.4688
-offset_right = 83.4688
-offset_bottom = 44.4688
+offset_left = 39.0
+offset_top = 21.0
+offset_right = 59.0
+offset_bottom = 44.0
 text = "x9"
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
