@@ -12,12 +12,7 @@ uniform float mix_weight = 1.0;
 void fragment() {
 	vec4 texture_color = texture(TEXTURE, UV);
 	if(whiten) {
-		vec3 white = vec3(0.78, 0.78, 0.78);
-		vec3 whiteed_texture_rgb = mix(texture_color.rgb, white, mix_weight);
-		COLOR = vec4(whiteed_texture_rgb, texture_color.a);
-	}
-	else {
-		COLOR = texture_color;
+    	COLOR.rgb = mix(COLOR.rgb, vec3(1.0), mix_weight);
 	}
 }
 

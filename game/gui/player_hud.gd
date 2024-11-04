@@ -3,8 +3,8 @@ extends CanvasLayer
 @onready var label: Label = $Control/Label
 @onready var antidote: Sprite2D = $Control/Antidote
 
-const PO__O_VERDE_MEIO_VAZIA = preload("res://gui/poção verde meio vazia.png")
-const PO__O_VERDE_BEM_VAZIA = preload("res://gui/poção verde bem vazia.png")
+const POTION_HALF = preload("res://gui/potion_half.png")
+const POTION_ALMOST_EMPTY = preload("res://gui/potion_almost_empty.png")
 const EMPTY = preload("res://gui/empty.png")
 
 var hearts: Array[Heart] = []
@@ -31,9 +31,9 @@ func update_potion(_delta: int):
 	label.text = "x" + str(potions) 
 	
 	if (potions <= 5):
-		antidote.texture = PO__O_VERDE_MEIO_VAZIA
+		antidote.texture = POTION_HALF
 	if (potions <= 3):
-		antidote.texture = PO__O_VERDE_BEM_VAZIA
+		antidote.texture = POTION_ALMOST_EMPTY
 	if (potions == 0):
 		antidote.texture = EMPTY
 	

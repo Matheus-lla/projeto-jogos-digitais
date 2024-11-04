@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://nsvudi3xlyo5" path="res://gui/gui-health.png" id="1_kdowg"]
 [ext_resource type="Script" path="res://gui/player_hud.gd" id="1_uohgx"]
 [ext_resource type="PackedScene" uid="uid://bbrdbc01lcwkx" path="res://gui/heart.tscn" id="2_dje31"]
-[ext_resource type="Texture2D" uid="uid://bkg8wdwkijwel" path="res://gui/poção verde.png" id="2_lcxnw"]
+[ext_resource type="Texture2D" uid="uid://bkg8wdwkijwel" path="res://gui/potion.png" id="2_lcxnw"]
 
 [node name="PlayerHud" type="CanvasLayer"]
 script = ExtResource("1_uohgx")

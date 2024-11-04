@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqog0l6oib1sm"
-path="res://.godot/imported/poção verde bem vazia.png-b89bd076be1ddc7be29132722cde91fa.ctex"
+uid="uid://bkg8wdwkijwel"
+path="res://.godot/imported/potion.png-211a4399db31e271bd6c38a06802240b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/poção verde bem vazia.png"
-dest_files=["res://.godot/imported/poção verde bem vazia.png-b89bd076be1ddc7be29132722cde91fa.ctex"]
+source_file="res://gui/potion.png"
+dest_files=["res://.godot/imported/potion.png-211a4399db31e271bd6c38a06802240b.ctex"]
 
 [params]
 

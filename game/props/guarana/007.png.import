@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkg8wdwkijwel"
-path="res://.godot/imported/poção verde.png-15729d24fdcad6688ddb07bc34bf9132.ctex"
+uid="uid://2l6m5vdk63vm"
+path="res://.godot/imported/007.png-d85bec71a17b07a8ccec52c6d430bb32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/poção verde.png"
-dest_files=["res://.godot/imported/poção verde.png-15729d24fdcad6688ddb07bc34bf9132.ctex"]
+source_file="res://props/guarana/007.png"
+dest_files=["res://.godot/imported/007.png-d85bec71a17b07a8ccec52c6d430bb32.ctex"]
 
 [params]
 
