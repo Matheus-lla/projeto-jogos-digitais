@@ -27,7 +27,6 @@ func enter() -> void:
 	
 	set_dash_ghost_efect(0.4, true)
 	
-	player.z_index = 2
 	enabled = false
 	dash_cool_down.start()
 	timer = dash_duration
@@ -60,8 +59,6 @@ func instance_ghost():
 	ghost.vframes = sprite.vframes
 	ghost.frame = sprite.frame
 	ghost.flip_h = sprite.flip_h
-	ghost.z_index = 1
-	
 	get_tree().root.add_child(ghost)
 
 	
@@ -75,7 +72,6 @@ func set_dash_ghost_efect(weight: float, white: bool):
 		player.sprite.material.set("parameters/mix_alpha", 0.3)
 		
 func exit() -> void:
-	player.z_index = 1
 	set_dash_ghost_efect(1.0, false)
 	ghost_timer.stop()
 	audio.pitch_scale = 1

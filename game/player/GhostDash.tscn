@@ -10,15 +10,8 @@ uniform bool whiten = false;
 uniform float mix_weight = 1.0;
 
 void fragment() {
-	vec4 texture_color = texture(TEXTURE, UV);
-	if(whiten) {
-		vec3 white = vec3(0.78, 0.78, 0.78);
-		vec3 whiteed_texture_rgb = mix(texture_color.rgb, white, mix_weight);
-		COLOR = vec4(whiteed_texture_rgb, texture_color.a);
-	}
-	else {
-		COLOR = texture_color;
-	}
+	if (whiten)
+    	COLOR.rgb = mix(COLOR.rgb, vec3(1.0), mix_weight);
 }
 
 //void light() {
@@ -33,6 +26,7 @@ shader_parameter/whiten = true
 shader_parameter/mix_weight = 1.0
 
 [node name="GhostDash" type="Sprite2D"]
+z_index = 1
 material = SubResource("ShaderMaterial_k5s70")
 position = Vector2(0, -9)
 texture = ExtResource("1_smwwv")
