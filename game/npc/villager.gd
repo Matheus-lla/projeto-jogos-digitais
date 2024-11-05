@@ -10,6 +10,8 @@ const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 @onready var animation: AnimationPlayer = $AnimationPlayer
 @onready var state_machine: VillagerStateMachine = $StateMachine
 @onready var interect_area: Area2D = $InteractionArea
+@onready var dialog: Node = $StateMachine/Dialog
+@onready var idle: VillagerStateIdle = $StateMachine/Idle
 
 signal DirectionChanged(new_directions: Vector2)
 
@@ -56,9 +58,9 @@ func on_area_entered(_area: Area2D):
 	GlobalPlayerManager.interact_pressed.connect(on_interection)
 	
 func on_interection():
-	print("dialogo")
 	Dialog.visible = true
+	state_machine.change_state(dialog)
 	
 func on_area_exit(_area: Area2D):
 	GlobalPlayerManager.interact_pressed.disconnect(on_interection)
-	Dialog.visible = false
+	state_machine.change_state(idle)

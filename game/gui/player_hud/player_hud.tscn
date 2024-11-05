@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2o04ujxqjl0j"]
+[gd_scene load_steps=6 format=3 uid="uid://b2o04ujxqjl0j"]
 
 [ext_resource type="Texture2D" uid="uid://nsvudi3xlyo5" path="res://gui/player_hud/gui-health.png" id="1_kdowg"]
 [ext_resource type="Script" path="res://gui/player_hud/player_hud.gd" id="1_uohgx"]
 [ext_resource type="PackedScene" uid="uid://bbrdbc01lcwkx" path="res://gui/player_hud/heart.tscn" id="2_dje31"]
+[ext_resource type="FontFile" uid="uid://btlftr7loqd5u" path="res://fonts/Abaddon Bold.ttf" id="3_grm7k"]
 [ext_resource type="Texture2D" uid="uid://cfrlxxdkvlkf5" path="res://gui/player_hud/antidote.png" id="4_dbjq6"]
 
 [node name="PlayerHud" type="CanvasLayer"]
@@ -23,10 +24,15 @@ texture = ExtResource("4_dbjq6")
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 2
-offset_left = 63.4688
-offset_top = 21.4688
-offset_right = 83.4688
-offset_bottom = 44.4688
+offset_left = 61.0
+offset_top = 27.0
+offset_right = 81.0
+offset_bottom = 50.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_grm7k")
 text = "x9"
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
