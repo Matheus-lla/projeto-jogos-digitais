@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var label: Label = $Control/Label
 @onready var antidote: Sprite2D = $Control/Antidote
+@onready var guarana_label: Label = $Control/Guarana_label
 
 const POTION_HALF = preload("res://gui/potion_half.png")
 const POTION_ALMOST_EMPTY = preload("res://gui/potion_almost_empty.png")
@@ -10,7 +11,8 @@ const EMPTY = preload("res://gui/empty.png")
 var hearts: Array[Heart] = []
 var max_potion: int = 9
 var potions: int
-
+var initial_guarana: int = 0
+var guarana: int
 
 func _ready() -> void:
 	for child in $Control/HFlowContainer.get_children():
@@ -53,6 +55,18 @@ func update_hp(hp: int, max_hp: int):
 	for i in max_hp:
 		update_heart(i, hp)
 		
+
+func update_guarana(_delta: int):
+	guarana += _delta
+	
+	if (guarana <= 0):
+		guarana_label.visible = false
+	else:
+		guarana_label.visible = true
+	
+	guarana_label.text = "x" + str(guarana) 
+	
+	
 	
 	
 	
