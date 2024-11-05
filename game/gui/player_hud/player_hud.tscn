@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2o04ujxqjl0j"]
 
-[ext_resource type="Texture2D" uid="uid://nsvudi3xlyo5" path="res://gui/gui-health.png" id="1_kdowg"]
-[ext_resource type="Script" path="res://gui/player_hud.gd" id="1_uohgx"]
-[ext_resource type="PackedScene" uid="uid://bbrdbc01lcwkx" path="res://gui/heart.tscn" id="2_dje31"]
-[ext_resource type="Texture2D" uid="uid://cfrlxxdkvlkf5" path="res://gui/antidote.png" id="4_dbjq6"]
+[ext_resource type="Texture2D" uid="uid://nsvudi3xlyo5" path="res://gui/player_hud/gui-health.png" id="1_kdowg"]
+[ext_resource type="Script" path="res://gui/player_hud/player_hud.gd" id="1_uohgx"]
+[ext_resource type="PackedScene" uid="uid://bbrdbc01lcwkx" path="res://gui/player_hud/heart.tscn" id="2_dje31"]
+[ext_resource type="Texture2D" uid="uid://cfrlxxdkvlkf5" path="res://gui/player_hud/antidote.png" id="4_dbjq6"]
 
 [node name="PlayerHud" type="CanvasLayer"]
 script = ExtResource("1_uohgx")

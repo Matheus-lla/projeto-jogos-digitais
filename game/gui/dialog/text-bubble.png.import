@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfrlxxdkvlkf5"
-path="res://.godot/imported/antidote.png-c63cc16cc7e79af8fc4133454dfc0b8c.ctex"
+uid="uid://b2e0dh74ehj5j"
+path="res://.godot/imported/text-bubble.png-78ec1ed8ac80a3fcd9b4453d05c325c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/antidote.png"
-dest_files=["res://.godot/imported/antidote.png-c63cc16cc7e79af8fc4133454dfc0b8c.ctex"]
+source_file="res://gui/dialog/text-bubble.png"
+dest_files=["res://.godot/imported/text-bubble.png-78ec1ed8ac80a3fcd9b4453d05c325c1.ctex"]
 
 [params]
 

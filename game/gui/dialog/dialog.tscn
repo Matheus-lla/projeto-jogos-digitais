@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3w33b8yf8ujd"]
+
+[ext_resource type="Script" path="res://gui/dialog/dialog.gd" id="1_xwn46"]
+[ext_resource type="Texture2D" uid="uid://b2e0dh74ehj5j" path="res://gui/dialog/text-bubble.png" id="2_7im42"]
+[ext_resource type="FontFile" uid="uid://bicklftr4une4" path="res://fonts/Abaddon Light.ttf" id="3_0hatj"]
+[ext_resource type="FontFile" uid="uid://btlftr7loqd5u" path="res://fonts/Abaddon Bold.ttf" id="4_g335n"]
+
+[sub_resource type="Gradient" id="Gradient_ne6n8"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bca1n"]
+gradient = SubResource("Gradient_ne6n8")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7bdr7"]
+content_margin_left = 14.0
+content_margin_top = 10.0
+content_margin_right = 14.0
+content_margin_bottom = 10.0
+texture = ExtResource("2_7im42")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[node name="Dialog" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_xwn46")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI"]
+modulate = Color(0.121569, 0.121569, 0.121569, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_bca1n")
+
+[node name="PanelContainer" type="PanelContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -466.0
+offset_top = -90.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_7bdr7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI/PanelContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.439216, 0.396078, 0.321569, 1)
+theme_override_fonts/normal_font = ExtResource("3_0hatj")
+theme_override_fonts/bold_font = ExtResource("4_g335n")
+bbcode_enabled = true
+text = "Example texzt"
+
+[node name="Label" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 109.0
+offset_top = 208.0
+offset_right = 149.0
+offset_bottom = 226.0
+text = "Name"
