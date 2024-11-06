@@ -24,15 +24,8 @@ texture_margin_top = 16.0
 texture_margin_right = 16.0
 texture_margin_bottom = 16.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6cha2"]
-content_margin_left = 4.0
-content_margin_top = 2.0
-content_margin_right = 4.0
-bg_color = Color(0.289085, 0.687561, 0.30702, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x20sf"]
+bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="Animation" id="Animation_pog23"]
 length = 0.001
@@ -140,12 +133,13 @@ texture = ExtResource("5_shdmg")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="UI"]
 
 [node name="DialogProgress" type="PanelContainer" parent="UI"]
+self_modulate = Color(0.1357, 0.59, 0.150843, 1)
 layout_mode = 0
 offset_left = 524.0
 offset_top = 298.0
 offset_right = 564.0
-offset_bottom = 319.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_6cha2")
+offset_bottom = 318.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x20sf")
 
 [node name="Label" type="Label" parent="UI/DialogProgress"]
 layout_mode = 2

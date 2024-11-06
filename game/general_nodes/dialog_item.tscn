@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://general_nodes/dialog_item.gd" id="1_4qcp7"]
 
-[node name="DialogItem" type="Node2D"]
+[node name="DialogItem" type="Node"]
 script = ExtResource("1_4qcp7")

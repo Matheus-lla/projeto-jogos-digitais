@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvbg34m2kdcbl"]
+[gd_scene load_steps=12 format=3 uid="uid://bvbg34m2kdcbl"]
 
 [ext_resource type="Texture2D" uid="uid://bk65lxbyacy4j" path="res://icon.svg" id="1_1ijtv"]
 [ext_resource type="Script" path="res://npc/villager.gd" id="1_dmy8e"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://npc/idle.gd" id="5_q56e0"]
 [ext_resource type="Script" path="res://npc/wander.gd" id="6_h1fd5"]
 [ext_resource type="PackedScene" uid="uid://bgeelc5dpjqu6" path="res://general_nodes/dialog_sequence.tscn" id="8_tye10"]
+[ext_resource type="PackedScene" uid="uid://dcs01fm4cg46u" path="res://general_nodes/dialog_item.tscn" id="9_5715x"]
+[ext_resource type="Script" path="res://npc/single_dialog.gd" id="10_gb7p5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xf2nq"]
 radius = 20.0998
@@ -59,7 +61,20 @@ texture = ExtResource("2_d3oai")
 offset = Vector2(0, 20)
 
 [node name="DialogSequence" parent="." instance=ExtResource("8_tye10")]
+character_name = "Primeiro NPC"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogSequence"]
 position = Vector2(0, -19)
 shape = SubResource("CircleShape2D_xf2nq")
+
+[node name="InitialDialog" parent="DialogSequence" instance=ExtResource("9_5715x")]
+script = ExtResource("10_gb7p5")
+text = "Primeiro Dialogo"
+
+[node name="SecondDialog" parent="DialogSequence" instance=ExtResource("9_5715x")]
+script = ExtResource("10_gb7p5")
+text = "Segundo Dialogo"
+
+[node name="ThirdDialog" parent="DialogSequence" instance=ExtResource("9_5715x")]
+script = ExtResource("10_gb7p5")
+text = "Terceiro Dialogo"
