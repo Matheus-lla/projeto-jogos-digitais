@@ -11,7 +11,7 @@ func enter() -> void:
 func exit() -> void:
 	Dialog.hide_dialog()
 	
-func process( delta: float) -> VillagerState:
+func process(_delta: float) -> VillagerState:
 	return null
 	
 func physics(_delta: float) -> VillagerState:

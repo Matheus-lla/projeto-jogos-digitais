@@ -9,9 +9,10 @@ const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 @onready var sprite: Sprite2D = $Sprites/Sprite2D
 @onready var animation: AnimationPlayer = $AnimationPlayer
 @onready var state_machine: VillagerStateMachine = $StateMachine
-@onready var interect_area: Area2D = $InteractionArea
+@onready var interect_area: InteractArea = $InteractionArea
 @onready var dialog: Node = $StateMachine/Dialog
 @onready var idle: VillagerStateIdle = $StateMachine/Idle
+@onready var animation_dialog: AnimationPlayer = $InteractionArea/AnimationPlayer
 
 signal DirectionChanged(new_directions: Vector2)
 
@@ -20,6 +21,7 @@ func _ready() -> void:
 	player = GlobalPlayerManager.player
 	interect_area.area_entered.connect(on_area_entered)
 	interect_area.area_exited.connect(on_area_exit)
+	interect_area.Interect.connect(on_interection)
 
 func _process(_delta: float) -> void:
 	pass
@@ -55,12 +57,12 @@ func animation_direction() -> String:
 	return "left"
 
 func on_area_entered(_area: Area2D):
-	GlobalPlayerManager.interact_pressed.connect(on_interection)
+	animation_dialog.play("show")
 	
 func on_interection():
-	Dialog.visible = true
 	state_machine.change_state(dialog)
 	
 func on_area_exit(_area: Area2D):
-	GlobalPlayerManager.interact_pressed.disconnect(on_interection)
 	state_machine.change_state(idle)
+	animation_dialog.play("hide")
+	
