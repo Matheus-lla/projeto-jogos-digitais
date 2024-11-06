@@ -3,4 +3,7 @@
 [ext_resource type="Script" path="res://general_nodes/interact_area.gd" id="1_5jvkv"]
 
 [node name="InteractArea" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
 script = ExtResource("1_5jvkv")

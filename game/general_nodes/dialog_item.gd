@@ -1,1 +1,1 @@
-class_name DialogItem extends Node2D
+class_name DialogItem extends InteractArea

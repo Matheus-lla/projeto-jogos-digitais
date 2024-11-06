@@ -4,12 +4,11 @@ func init() -> void:
 	pass
 
 func enter() -> void:
-	Dialog.show_dialog()
 	villager.velocity = Vector2.ZERO
 	villager.direction = -GlobalPlayerManager.player.direction
 
 func exit() -> void:
-	Dialog.hide_dialog()
+	pass
 	
 func process(_delta: float) -> VillagerState:
 	return null

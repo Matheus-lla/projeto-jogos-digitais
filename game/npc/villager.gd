@@ -9,19 +9,17 @@ const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 @onready var sprite: Sprite2D = $Sprites/Sprite2D
 @onready var animation: AnimationPlayer = $AnimationPlayer
 @onready var state_machine: VillagerStateMachine = $StateMachine
-@onready var interect_area: InteractArea = $InteractionArea
 @onready var dialog: Node = $StateMachine/Dialog
 @onready var idle: VillagerStateIdle = $StateMachine/Idle
-@onready var animation_dialog: AnimationPlayer = $InteractionArea/AnimationPlayer
+@onready var dialog_sequence: Area2D = $DialogSequence
 
 signal DirectionChanged(new_directions: Vector2)
 
 func _ready() -> void:
 	state_machine.init(self)
 	player = GlobalPlayerManager.player
-	interect_area.area_entered.connect(on_area_entered)
-	interect_area.area_exited.connect(on_area_exit)
-	interect_area.Interect.connect(on_interection)
+	dialog_sequence.area_entered.connect(on_dialog_enter)
+	dialog_sequence.area_exited.connect(on_dialog_exit)
 
 func _process(_delta: float) -> void:
 	pass
@@ -55,14 +53,9 @@ func animation_direction() -> String:
 	elif cardinal_direction == Vector2.UP: return "up"
 	elif cardinal_direction == Vector2.RIGHT: return "right"
 	return "left"
+	
+func on_dialog_enter(_area: Area2D):
+	state_machine.change_state(dialog)	
 
-func on_area_entered(_area: Area2D):
-	animation_dialog.play("show")
-	
-func on_interection():
-	state_machine.change_state(dialog)
-	
-func on_area_exit(_area: Area2D):
-	state_machine.change_state(idle)
-	animation_dialog.play("hide")
-	
+func on_dialog_exit(_area: Area2D):
+	state_machine.change_state(idle)	
