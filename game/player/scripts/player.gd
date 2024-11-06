@@ -5,6 +5,7 @@ var direction: Vector2 = Vector2.ZERO
 var invulnerable: bool = false
 var hp: int 
 var max_hp: int = 6
+var kills: int = 0
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
