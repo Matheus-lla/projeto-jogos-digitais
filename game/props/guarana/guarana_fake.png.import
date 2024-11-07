@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd0te0eilmapl"
-path="res://.godot/imported/ExamplePlayerSprite.png-4bba829ddabbc6d45d21ad0746f328de.ctex"
+uid="uid://cfv0nfvclvb11"
+path="res://.godot/imported/guarana_fake.png-7b206198afdd8a0f1e3fc642f929bd6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/sprites/ExamplePlayerSprite.png"
-dest_files=["res://.godot/imported/ExamplePlayerSprite.png-4bba829ddabbc6d45d21ad0746f328de.ctex"]
+source_file="res://props/guarana/guarana_fake.png"
+dest_files=["res://.godot/imported/guarana_fake.png-7b206198afdd8a0f1e3fc642f929bd6b.ctex"]
 
 [params]
 

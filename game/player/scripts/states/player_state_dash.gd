@@ -2,17 +2,19 @@ class_name Dash extends PlayerState
 
 @onready var dash_cool_down: Timer = $DashCoolDown
 @onready var ghost_timer: Timer = $GhostTimer
+@onready var audio: AudioStreamPlayer2D = $"../../Audio"
 
 @export var move_speed: float
 @export var next_state: PlayerState
 @export var dash_duration: float
+@export var sound: AudioStream
 
 var animation_name = "dash"
 var timer: float = 0
 var dash_direction: Vector2
 var enabled: bool = true
 var skip: bool = false
-var ghost_scene = preload("res://player/scripts/GhostDash.tscn")
+var ghost_scene = preload("res://player/GhostDash.tscn")
 var sprite
 
 func init():
@@ -39,6 +41,11 @@ func enter() -> void:
 	player.make_invulnerable(2*dash_duration)
 	player.update_animation(animation_name)
 	
+	audio.stream = sound
+	audio.pitch_scale = 1.5
+
+	audio.play()
+	
 	instance_ghost()
 	
 func instance_ghost():
@@ -52,7 +59,6 @@ func instance_ghost():
 	ghost.vframes = sprite.vframes
 	ghost.frame = sprite.frame
 	ghost.flip_h = sprite.flip_h
-	
 	get_tree().root.add_child(ghost)
 
 	
@@ -68,6 +74,7 @@ func set_dash_ghost_efect(weight: float, white: bool):
 func exit() -> void:
 	set_dash_ghost_efect(1.0, false)
 	ghost_timer.stop()
+	audio.pitch_scale = 1
 	
 func process(delta: float) -> PlayerState:
 	if skip:

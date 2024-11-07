@@ -3,9 +3,12 @@ class_name Player extends CharacterBody2D
 var cardinal_direction: Vector2 = Vector2.DOWN
 var direction: Vector2 = Vector2.ZERO
 var invulnerable: bool = false
-var hp: int
-var max_hp: int = 2
+var hp: int 
+var max_hp: int = 6
+var in_guarana: bool = false
+
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
+const GUARANA_FULL = preload("res://props/guarana/guarana_full.png")
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
@@ -14,6 +17,7 @@ const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 @onready var hit_box: HitBox = $HitBox
 @onready var idle: Idle = $StateMachine/Idle
 @onready var spawn_place: Spawn = $"../Spawn"
+@onready var guarana_trees = [$"../Guarana", $"../Guarana2", $"../Guarana3"]
 
 signal DirectionChanged(new_directions: Vector2)
 signal PlayerDamaged(hurt_box: HurtBox)
@@ -24,6 +28,7 @@ func _ready() -> void:
 	state_machine.init(self)
 	hit_box.Damaged.connect(on_damaged)
 	spawn()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -31,6 +36,7 @@ func _process(_delta: float) -> void:
 		Input.get_axis("left", "right"),
 		Input.get_axis("up", "down"),
 	).normalized()
+	
 	
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
@@ -88,6 +94,12 @@ func on_damaged(hurt_box: HurtBox):
 
 func spawn():
 	update_hp(max_hp)
+	PlayerHud.update_potion(PlayerHud.max_potion)
+	PlayerHud.update_guarana(-PlayerHud.guarana)
+	
+	for guarana in guarana_trees:
+		guarana.guarana_spawm()
+	
 	
 	if spawn_place:
 		self.global_position = spawn_place.global_position
@@ -105,3 +117,4 @@ func faced_direction() -> Vector2:
 		dir = cardinal_direction
 		
 	return dir
+	

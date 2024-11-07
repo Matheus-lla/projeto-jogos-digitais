@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0tiavk755qy0"
-path="res://.godot/imported/india-sprite-sheet.png-365afac486daf15da517c2430291b253.ctex"
+uid="uid://bqog0l6oib1sm"
+path="res://.godot/imported/potion_almost_empty.png-4990ce9421912a9e014bfad19f456b30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/sprites/india-sprite-sheet.png"
-dest_files=["res://.godot/imported/india-sprite-sheet.png-365afac486daf15da517c2430291b253.ctex"]
+source_file="res://gui/potion_almost_empty.png"
+dest_files=["res://.godot/imported/potion_almost_empty.png-4990ce9421912a9e014bfad19f456b30.ctex"]
 
 [params]
 
