@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://gui/player_hud.gd" id="1_uohgx"]
 [ext_resource type="PackedScene" uid="uid://bbrdbc01lcwkx" path="res://gui/heart.tscn" id="2_dje31"]
 [ext_resource type="Texture2D" uid="uid://bkg8wdwkijwel" path="res://gui/potion.png" id="2_lcxnw"]
-[ext_resource type="Texture2D" uid="uid://cfv0nfvclvb11" path="res://props/guarana/guarana_fake.png" id="5_0nu2r"]
+[ext_resource type="Texture2D" uid="uid://2tk2ncredl6n" path="res://props/guarana/guaraná.aseprite" id="5_pxsm4"]
 
 [sub_resource type="Animation" id="Animation_qv2xk"]
 resource_name = "PotionFull"
@@ -148,12 +148,13 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Guarana" type="Sprite2D" parent="Control"]
-position = Vector2(24, 63)
-scale = Vector2(1.3125, 1.3125)
-texture = ExtResource("5_0nu2r")
+position = Vector2(42, 75)
+scale = Vector2(0.86625, 0.86625)
+texture = ExtResource("5_pxsm4")
 
 [node name="Guarana_label" type="Label" parent="Control"]
 visible = false
+layout_mode = 0
 offset_left = 40.0
 offset_top = 50.0
 offset_right = 60.0
