@@ -3,8 +3,11 @@ class_name Player extends CharacterBody2D
 var cardinal_direction: Vector2 = Vector2.DOWN
 var direction: Vector2 = Vector2.ZERO
 var invulnerable: bool = false
-var hp: int
-var max_hp: int = 2
+var hp: int 
+var max_hp: int = 6
+var kills: int = 0
+var in_guarana: bool = false
+
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -18,19 +21,18 @@ const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 signal DirectionChanged(new_directions: Vector2)
 signal PlayerDamaged(hurt_box: HurtBox)
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GlobalPlayerManager.player = self
 	state_machine.init(self)
 	hit_box.Damaged.connect(on_damaged)
 	spawn()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	direction = Vector2(
 		Input.get_axis("left", "right"),
 		Input.get_axis("up", "down"),
 	).normalized()
+	
 	
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
@@ -88,6 +90,13 @@ func on_damaged(hurt_box: HurtBox):
 
 func spawn():
 	update_hp(max_hp)
+	PlayerHud.update_potion(PlayerHud.max_potion)
+	PlayerHud.update_guarana(-PlayerHud.guarana)
+	
+	for c in get_parent().get_children(false):
+		if c is Guarana:
+			c.guarana_spawm()
+	
 	
 	if spawn_place:
 		self.global_position = spawn_place.global_position
@@ -105,3 +114,4 @@ func faced_direction() -> Vector2:
 		dir = cardinal_direction
 		
 	return dir
+	

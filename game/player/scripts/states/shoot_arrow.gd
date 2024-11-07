@@ -4,7 +4,7 @@ class_name ShootArrow extends PlayerState
 @export var attack_sound: AudioStream
 
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
-@onready var audio: AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
+@onready var audio: AudioStreamPlayer2D = $"../../Audio"
 
 
 var animation_name = "bow_attack"
@@ -13,13 +13,14 @@ var timer: float
 var audio_played: bool
 
 const ArrowCene = preload("res://player/arrow.tscn")
-const LOADING_TIME = 0.50 # time to pull the arrow and released
+const LOADING_TIME = 0.35 # time to pull the arrow and released
 
 func init():
 	pass
 	
 func enter() -> void:
 	var arrow = ArrowCene.instantiate() as Arrow
+	arrow.global_position = player.global_position 
 	arrow.shoot()
 	player.add_sibling(arrow)
 	player.velocity = Vector2.ZERO
@@ -31,16 +32,21 @@ func enter() -> void:
 	audio_played = false
 	
 func exit() -> void:
+	audio.pitch_scale = 1.0
 	animation_player.animation_finished.disconnect(on_animation_finished)
 	
+func play_audio():
+	audio.pitch_scale = 1.1
+	audio.play()
+	audio_played = true
+
 func process(delta: float) -> PlayerState:
 	if ended:
 		return next_state
 		
 	timer -= delta
 	if timer <= 0 && !audio_played:
-		audio.play()
-		audio_played = true
+		play_audio()
 		
 	return null
 	

@@ -1,18 +1,18 @@
 [gd_scene load_steps=33 format=3 uid="uid://b88rtmgccpgu0"]
 
 [ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://player/sprites/Shadow.png" id="1_3y6eb"]
-[ext_resource type="Script" path="res://enemys/scripts/enemy.gd" id="1_u7gjt"]
+[ext_resource type="Script" path="res://enemys/slime/enemy.gd" id="1_fcqvr"]
 [ext_resource type="Texture2D" uid="uid://buy2jlc035aew" path="res://enemys/slime/Slime.png" id="2_iwhto"]
 [ext_resource type="PackedScene" uid="uid://uxvl7pfm1jf5" path="res://general_nodes/hit_box/hit_box.tscn" id="2_j77wu"]
-[ext_resource type="Script" path="res://enemys/scripts/enemy_state_machine.gd" id="4_wg8qg"]
-[ext_resource type="AudioStream" uid="uid://dj63deee622qo" path="res://enemys/slime/hit_01.wav" id="5_fq5oo"]
-[ext_resource type="Script" path="res://enemys/scripts/states/enemy_state_idle.gd" id="5_iksxg"]
-[ext_resource type="Script" path="res://enemys/scripts/states/enemy_state_wander.gd" id="6_avbk2"]
-[ext_resource type="AudioStream" uid="uid://b2hh13gjgjtkk" path="res://enemys/slime/hit_00.wav" id="6_vhe7i"]
+[ext_resource type="AudioStream" uid="uid://dj63deee622qo" path="res://enemys/slime/hit.wav" id="5_fq5oo"]
+[ext_resource type="Script" path="res://enemys/slime/states/enemy_state_idle.gd" id="5_iksxg"]
+[ext_resource type="Script" path="res://enemys/slime/states/enemy_state_wander.gd" id="6_avbk2"]
+[ext_resource type="AudioStream" uid="uid://b2hh13gjgjtkk" path="res://enemys/slime/destroy.wav" id="6_vhe7i"]
 [ext_resource type="PackedScene" uid="uid://bi537x71g5dm3" path="res://general_nodes/hurt_box/hurt_box.tscn" id="7_apnvt"]
+[ext_resource type="Script" path="res://enemys/enemy_state_machine.gd" id="7_skcu8"]
 [ext_resource type="Texture2D" uid="uid://bcmmwvpbdj7th" path="res://enemys/slime/DestroySmoke.png" id="9_fq4vu"]
-[ext_resource type="Script" path="res://enemys/scripts/states/enemy_state_stun.gd" id="10_skgr3"]
-[ext_resource type="Script" path="res://enemys/scripts/states/enemy_state_destroy.gd" id="12_lxhb6"]
+[ext_resource type="Script" path="res://enemys/slime/states/enemy_state_stun.gd" id="10_skgr3"]
+[ext_resource type="Script" path="res://enemys/slime/states/enemy_state_destroy.gd" id="12_lxhb6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_774fb"]
 radius = 13.0
@@ -759,8 +759,7 @@ _data = {
 [node name="Slime" type="CharacterBody2D"]
 collision_layer = 256
 collision_mask = 16
-script = ExtResource("1_u7gjt")
-hp = 4
+script = ExtResource("1_fcqvr")
 
 [node name="HitBox" parent="." instance=ExtResource("2_j77wu")]
 
@@ -806,7 +805,7 @@ libraries = {
 autoplay = "idle_down"
 
 [node name="EnemyStateMachine" type="Node" parent="."]
-script = ExtResource("4_wg8qg")
+script = ExtResource("7_skcu8")
 
 [node name="Idle" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("5_iksxg")

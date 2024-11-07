@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cideq8igu58bv"]
+[gd_scene load_steps=6 format=3 uid="uid://m4brhc1se8su"]
 
-[ext_resource type="Script" path="res://player/arrow.gd" id="1_oinba"]
+[ext_resource type="Script" path="res://player/scripts/arrow.gd" id="1_oinba"]
 [ext_resource type="PackedScene" uid="uid://bi537x71g5dm3" path="res://general_nodes/hurt_box/hurt_box.tscn" id="2_o11eg"]
 [ext_resource type="Texture2D" uid="uid://bty7liapq0nvf" path="res://player/sprites/flecha.png" id="3_vpidy"]
 
