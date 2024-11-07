@@ -1,7 +1,6 @@
 class_name DialogSequence extends InteractArea
 
 var dialog_items: Array[DialogItem]
-var dialog: DialogItem
 var next_dialog: DialogItem
 var icon_up: bool = false
 
@@ -50,7 +49,7 @@ func on_interection():
 	super.on_interection()
 	Dialog.dialog_progress.self_modulate = original_color
 	
-	dialog = get_next_dialog()
+	var dialog = get_next_dialog()
 	
 	if !dialog:
 		end_dialog()

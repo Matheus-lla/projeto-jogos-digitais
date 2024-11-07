@@ -14,21 +14,18 @@ var actual_guarana: Guarana
 
 func _ready() -> void:
 	interact_area.Interect.connect(on_interection)
+	sprite.texture = GUARANA_FULL
 
 func on_interection():
 	if catch:
 		return
 		
-	actual_guarana = GlobalPlayerManager.player.guarana_trees[index]
-	actual_guarana = self
 	PlayerHud.update_guarana(3)
 	sprite.texture = GUARANA_EMPTY
-	actual_guarana.catch = true
-	index += 1
+	catch = true
 
 func guarana_spawm():
 	catch = false
-	if sprite:  
+	
+	if sprite:
 		sprite.texture = GUARANA_FULL
-	else:
-		print("Erro: sprite_2d não foi inicializado corretamente no guaraná.")
