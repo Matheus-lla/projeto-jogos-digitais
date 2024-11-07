@@ -18,7 +18,7 @@ position = Vector2(711, 769)
 position = Vector2(-189, -483)
 
 [node name="Spawn" parent="." instance=ExtResource("5_ab8ve")]
-position = Vector2(1217, -7)
+position = Vector2(688, 2285)
 scale = Vector2(2.4, 2.4)
 
 [node name="Slime" parent="." instance=ExtResource("9_qxiuk")]
@@ -494,3 +494,4 @@ texture_filter = 2
 position = Vector2(888, 1905)
 
 [node name="Player" parent="." instance=ExtResource("17_5y2ph")]
+z_index = 1
