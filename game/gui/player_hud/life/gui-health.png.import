@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqog0l6oib1sm"
-path="res://.godot/imported/potion_almost_empty.png-4990ce9421912a9e014bfad19f456b30.ctex"
+uid="uid://nsvudi3xlyo5"
+path="res://.godot/imported/gui-health.png-2bfda972d38b42c0cf8f1fdf9fbc6688.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/potion_almost_empty.png"
-dest_files=["res://.godot/imported/potion_almost_empty.png-4990ce9421912a9e014bfad19f456b30.ctex"]
+source_file="res://gui/player_hud/life/gui-health.png"
+dest_files=["res://.godot/imported/gui-health.png-2bfda972d38b42c0cf8f1fdf9fbc6688.ctex"]
 
 [params]
 

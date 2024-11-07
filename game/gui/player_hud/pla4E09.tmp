@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2o04ujxqjl0j"]
+[gd_scene load_steps=10 format=3 uid="uid://bvxskssd2xsfb"]
 
-[ext_resource type="Texture2D" uid="uid://nsvudi3xlyo5" path="res://gui/gui-health.png" id="1_kdowg"]
-[ext_resource type="Script" path="res://gui/player_hud.gd" id="1_uohgx"]
-[ext_resource type="PackedScene" uid="uid://bbrdbc01lcwkx" path="res://gui/heart.tscn" id="2_dje31"]
-[ext_resource type="Texture2D" uid="uid://bkg8wdwkijwel" path="res://gui/potion.png" id="2_lcxnw"]
-[ext_resource type="Texture2D" uid="uid://cfv0nfvclvb11" path="res://gui/guarana_fake.png" id="5_b7fbe"]
+[ext_resource type="Texture2D" uid="uid://nsvudi3xlyo5" path="res://gui/player_hud/life/gui-health.png" id="1_kdowg"]
+[ext_resource type="Script" path="res://gui/player_hud/player_hud.gd" id="1_ld5hn"]
+[ext_resource type="PackedScene" uid="uid://bbrdbc01lcwkx" path="res://gui/player_hud/life/heart.tscn" id="2_dje31"]
+[ext_resource type="Texture2D" uid="uid://bkg8wdwkijwel" path="res://gui/player_hud/potion/potion.png" id="2_lcxnw"]
+[ext_resource type="FontFile" uid="uid://btlftr7loqd5u" path="res://fonts/Abaddon Bold.ttf" id="3_grm7k"]
+[ext_resource type="Texture2D" uid="uid://cfv0nfvclvb11" path="res://gui/player_hud/guarana/guarana_fake.png" id="5_b7fbe"]
 
 [sub_resource type="Animation" id="Animation_qv2xk"]
 resource_name = "PotionFull"
@@ -43,7 +44,7 @@ _data = {
 }
 
 [node name="PlayerHud" type="CanvasLayer"]
-script = ExtResource("1_uohgx")
+script = ExtResource("1_ld5hn")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -60,10 +61,15 @@ texture = ExtResource("2_lcxnw")
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 2
-offset_left = 39.0
-offset_top = 21.0
-offset_right = 59.0
-offset_bottom = 44.0
+offset_left = 43.0
+offset_top = 27.0
+offset_right = 63.0
+offset_bottom = 50.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_grm7k")
 text = "x0"
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
@@ -144,16 +150,21 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Guarana" type="Sprite2D" parent="Control"]
-position = Vector2(141, 34)
+position = Vector2(134, 35)
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("5_b7fbe")
 
-[node name="Guarana_label" type="Label" parent="Control"]
-layout_mode = 0
-offset_left = 156.0
-offset_top = 21.0
-offset_right = 176.0
-offset_bottom = 44.0
+[node name="GuaranaLabel" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 152.0
+offset_top = 27.0
+offset_right = 172.0
+offset_bottom = 50.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_grm7k")
 text = "x0"
 
 [node name="PotionAnimation" type="AnimationPlayer" parent="Control"]

@@ -1,7 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://b88rtmgccpgu0"]
 
 [ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://player/sprites/Shadow.png" id="1_3y6eb"]
-[ext_resource type="Script" path="res://enemys/slime/enemy.gd" id="1_fcqvr"]
 [ext_resource type="Texture2D" uid="uid://buy2jlc035aew" path="res://enemys/slime/Slime.png" id="2_iwhto"]
 [ext_resource type="PackedScene" uid="uid://uxvl7pfm1jf5" path="res://general_nodes/hit_box/hit_box.tscn" id="2_j77wu"]
 [ext_resource type="AudioStream" uid="uid://dj63deee622qo" path="res://enemys/slime/hit.wav" id="5_fq5oo"]
@@ -9,10 +8,79 @@
 [ext_resource type="Script" path="res://enemys/slime/states/enemy_state_wander.gd" id="6_avbk2"]
 [ext_resource type="AudioStream" uid="uid://b2hh13gjgjtkk" path="res://enemys/slime/destroy.wav" id="6_vhe7i"]
 [ext_resource type="PackedScene" uid="uid://bi537x71g5dm3" path="res://general_nodes/hurt_box/hurt_box.tscn" id="7_apnvt"]
-[ext_resource type="Script" path="res://enemys/enemy_state_machine.gd" id="7_skcu8"]
 [ext_resource type="Texture2D" uid="uid://bcmmwvpbdj7th" path="res://enemys/slime/DestroySmoke.png" id="9_fq4vu"]
 [ext_resource type="Script" path="res://enemys/slime/states/enemy_state_stun.gd" id="10_skgr3"]
 [ext_resource type="Script" path="res://enemys/slime/states/enemy_state_destroy.gd" id="12_lxhb6"]
+
+[sub_resource type="GDScript" id="GDScript_ciuoe"]
+script/source = "class_name Enemy extends CharacterBody2D
+
+var cardinal_direction: Vector2 = Vector2.DOWN
+var direction: Vector2 = Vector2.ZERO
+var invulnerable: bool = false
+var player: Player
+const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
+
+@export var hp: int = 3
+
+@onready var sprite: Sprite2D = $Body
+@onready var animation: AnimationPlayer = $AnimationPlayer
+@onready var state_machine: EnemyStateMachine = $EnemyStateMachine
+@onready var hit_box: HitBox = $HitBox
+
+signal DirectionChanged(new_directions: Vector2)
+signal EnemyDamaged(hurt_box: HurtBox)
+signal EnemyDestroyed(hurt_box: HurtBox)
+
+func _ready() -> void:
+	state_machine.init(self)
+	player = GlobalPlayerManager.player
+	hit_box.Damaged.connect(on_damaged)
+
+func _process(_delta: float) -> void:
+	pass
+	
+func _physics_process(_delta: float) -> void:
+	move_and_slide()
+
+func set_direction(_new_direction: Vector2) -> bool:
+	direction = _new_direction
+	
+	if direction == Vector2.ZERO:
+		return false
+		
+	var direction_index: int = int(round((direction + cardinal_direction * 0.1).angle() / TAU * DIR_4.size()))
+	var new_direction = DIR_4[direction_index]
+	
+	if new_direction == cardinal_direction:
+		return false
+		
+	cardinal_direction = new_direction
+	DirectionChanged.emit(new_direction)
+	sprite.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1
+	return true
+	
+func update_animation(state_str: String) -> void:
+	animation.play(state_str + \"_\" + animation_direction())
+	return
+	
+func animation_direction() -> String:
+	if cardinal_direction == Vector2.DOWN: return \"down\"
+	elif cardinal_direction == Vector2.UP: return \"up\"
+	return \"side\"
+
+func on_damaged(hurt_box: HurtBox):
+	if invulnerable:
+		return
+	
+	hp -= hurt_box.damage
+	
+	if hp <= 0:
+		EnemyDestroyed.emit(hurt_box)
+		return
+	
+	EnemyDamaged.emit(hurt_box)
+"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_774fb"]
 radius = 13.0
@@ -756,10 +824,56 @@ _data = {
 "walk_up": SubResource("Animation_076y4")
 }
 
+[sub_resource type="GDScript" id="GDScript_nc75h"]
+script/source = "class_name EnemyStateMachine extends Node
+
+var states: Array[EnemyState]
+var prev_state: EnemyState
+var curr_state: EnemyState
+
+func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_DISABLED
+
+func _process(delta: float) -> void:
+	change_state(curr_state.process(delta))
+
+func _physics_process(delta: float) -> void:
+	change_state(curr_state.physics(delta))
+
+func init(enemy: Enemy) -> void:
+	states = []
+	
+	for c in get_children():
+		if c is EnemyState:
+			states.append(c)
+	
+	for state in states:
+		state.enemy = enemy
+		#state.state_machine = self
+		state.init()
+
+	if states.size() > 0:
+		change_state(states[0])
+		process_mode = Node.PROCESS_MODE_INHERIT
+	
+
+func change_state(new_state: EnemyState) -> void:
+	if new_state == null || new_state == curr_state:
+		return
+		
+	if curr_state:
+		curr_state.exit()	
+		
+	prev_state = curr_state
+	curr_state = new_state
+	curr_state.enter()
+"
+
 [node name="Slime" type="CharacterBody2D"]
 collision_layer = 256
 collision_mask = 16
-script = ExtResource("1_fcqvr")
+script = SubResource("GDScript_ciuoe")
+hp = 4
 
 [node name="HitBox" parent="." instance=ExtResource("2_j77wu")]
 
@@ -805,7 +919,7 @@ libraries = {
 autoplay = "idle_down"
 
 [node name="EnemyStateMachine" type="Node" parent="."]
-script = ExtResource("7_skcu8")
+script = SubResource("GDScript_nc75h")
 
 [node name="Idle" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("5_iksxg")

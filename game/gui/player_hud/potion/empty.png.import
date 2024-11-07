@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfv0nfvclvb11"
-path="res://.godot/imported/guarana_fake.png-82085da624bd91598eab3738f528955f.ctex"
+uid="uid://byvbcoq1ukxqp"
+path="res://.godot/imported/empty.png-7ccf6a2fe4ca9698a4eef39a18a845d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/guarana_fake.png"
-dest_files=["res://.godot/imported/guarana_fake.png-82085da624bd91598eab3738f528955f.ctex"]
+source_file="res://gui/player_hud/potion/empty.png"
+dest_files=["res://.godot/imported/empty.png-7ccf6a2fe4ca9698a4eef39a18a845d0.ctex"]
 
 [params]
 

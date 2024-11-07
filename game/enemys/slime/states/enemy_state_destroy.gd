@@ -37,4 +37,5 @@ func on_enemy_destroyed(hurt_box: HurtBox):
 	state_machine.change_state(self)
 
 func on_animation_finished(_current_animation: String):
+	GlobalPlayerManager.player.kills += 1
 	enemy.queue_free()

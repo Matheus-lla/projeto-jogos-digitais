@@ -2,11 +2,11 @@ extends CanvasLayer
 
 @onready var label: Label = $Control/Label
 @onready var antidote: Sprite2D = $Control/Antidote
-@onready var guarana_label: Label = $Control/Guarana_label
+@onready var guarana_label: Label = $Control/GuaranaLabel
 
-const POTION_HALF = preload("res://gui/potion_half.png")
-const POTION_ALMOST_EMPTY = preload("res://gui/potion_almost_empty.png")
-const EMPTY = preload("res://gui/empty.png")
+const POTION_HALF = preload("res://gui/player_hud/potion/potion_half.png")
+const POTION_ALMOST_EMPTY = preload("res://gui/player_hud/potion/potion_almost_empty.png")
+const EMPTY = preload("res://gui/player_hud/potion/empty.png")
 
 var hearts: Array[Heart] = []
 var max_potion: int = 9

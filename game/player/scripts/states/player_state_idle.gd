@@ -37,7 +37,7 @@ func handle_input(event: InputEvent) -> PlayerState:
 	if event.is_action("shoot_arrow"):
 		return shoot_arrow
 		
-	if event.is_action("interact"):
+	if event.is_action_pressed("interact"):
 		GlobalPlayerManager.interact_pressed.emit()
 		
 	if event.is_action("use_potion"):

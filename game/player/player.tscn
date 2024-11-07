@@ -22,7 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://d00f5crg3io1s" path="res://player/audio/heal.wav" id="17_5uyoa"]
 [ext_resource type="AudioStream" uid="uid://ms0herlnu5uv" path="res://player/audio/drinking.mp3" id="17_55pxg"]
 [ext_resource type="Script" path="res://player/scripts/camera.gd" id="18_iqb8r"]
-[ext_resource type="Script" path="res://player/player_state_take_guarana.gd" id="20_yf1rr"]
+[ext_resource type="Script" path="res://player/scripts/states/player_state_take_guarana.gd" id="20_yf1rr"]
 
 [sub_resource type="Animation" id="Animation_5nbts"]
 length = 0.001

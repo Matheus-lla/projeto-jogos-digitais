@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nsvudi3xlyo5"
-path="res://.godot/imported/gui-health.png-326aefa7ebf26decb44a5b8c08c46685.ctex"
+uid="uid://vjejh346uaxv"
+path="res://.godot/imported/potion_half.png-811499eb34501ff19672992528a26244.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/gui-health.png"
-dest_files=["res://.godot/imported/gui-health.png-326aefa7ebf26decb44a5b8c08c46685.ctex"]
+source_file="res://gui/player_hud/potion/potion_half.png"
+dest_files=["res://.godot/imported/potion_half.png-811499eb34501ff19672992528a26244.ctex"]
 
 [params]
 

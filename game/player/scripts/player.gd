@@ -5,10 +5,10 @@ var direction: Vector2 = Vector2.ZERO
 var invulnerable: bool = false
 var hp: int 
 var max_hp: int = 6
+var kills: int = 0
 var in_guarana: bool = false
 
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
-const GUARANA_FULL = preload("res://props/guarana/guarana_full.png")
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
@@ -17,20 +17,16 @@ const GUARANA_FULL = preload("res://props/guarana/guarana_full.png")
 @onready var hit_box: HitBox = $HitBox
 @onready var idle: Idle = $StateMachine/Idle
 @onready var spawn_place: Spawn = $"../Spawn"
-@onready var guarana_trees = [$"../Guarana", $"../Guarana2", $"../Guarana3"]
 
 signal DirectionChanged(new_directions: Vector2)
 signal PlayerDamaged(hurt_box: HurtBox)
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	GlobalPlayerManager.player = self
 	state_machine.init(self)
 	hit_box.Damaged.connect(on_damaged)
 	spawn()
-	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	direction = Vector2(
 		Input.get_axis("left", "right"),
@@ -97,8 +93,9 @@ func spawn():
 	PlayerHud.update_potion(PlayerHud.max_potion)
 	PlayerHud.update_guarana(-PlayerHud.guarana)
 	
-	for guarana in guarana_trees:
-		guarana.guarana_spawm()
+	for c in get_parent().get_children(false):
+		if c is Guarana:
+			c.guarana_spawm()
 	
 	
 	if spawn_place:
