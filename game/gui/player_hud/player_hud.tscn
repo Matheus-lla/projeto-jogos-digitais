@@ -152,6 +152,7 @@ layout_mode = 2
 [node name="Guarana" type="Sprite2D" parent="Control"]
 texture_filter = 1
 position = Vector2(134, 35)
+scale = Vector2(0.95, 0.95)
 texture = ExtResource("6_epvt0")
 metadata/_aseprite_wizard_config_ = {
 "i_mode": 1,
@@ -172,9 +173,9 @@ metadata/_aseprite_wizard_source_file_hash_ = "88057d5ffbe1d0102756cd6f9254eaf1"
 
 [node name="GuaranaLabel" type="Label" parent="Control"]
 layout_mode = 2
-offset_left = 152.0
+offset_left = 153.0
 offset_top = 27.0
-offset_right = 172.0
+offset_right = 173.0
 offset_bottom = 50.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 1

@@ -11,7 +11,7 @@ const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 @onready var state_machine: VillagerStateMachine = $StateMachine
 @onready var dialog: Node = $StateMachine/Dialog
 @onready var idle: VillagerStateIdle = $StateMachine/Idle
-@onready var dialog_sequence: Area2D = $DialogSequence
+@onready var dialog_sequence: DialogSequence = $DialogSequence
 
 signal DirectionChanged(new_directions: Vector2)
 
@@ -55,7 +55,8 @@ func animation_direction() -> String:
 	return "left"
 	
 func on_dialog_enter(_area: Area2D):
-	state_machine.change_state(dialog)	
+	if dialog_sequence.get_next_dialog():
+		state_machine.change_state(dialog)	
 
 func on_dialog_exit(_area: Area2D):
 	state_machine.change_state(idle)	

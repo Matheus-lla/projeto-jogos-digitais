@@ -14,7 +14,7 @@ func init() -> void:
 func enter() -> void:
 	villager.velocity = Vector2.ZERO
 	timer = randf_range(state_duration_min, state_duration_max)
-	#villager.update_animation(anim_name)
+	villager.update_animation(anim_name)
 
 func exit() -> void:
 	pass

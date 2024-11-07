@@ -4,8 +4,11 @@ func init() -> void:
 	pass
 
 func enter() -> void:
+	print("entrou")
 	villager.velocity = Vector2.ZERO
-	villager.direction = -GlobalPlayerManager.player.direction
+	villager.cardinal_direction = -GlobalPlayerManager.player.cardinal_direction
+	villager.update_animation("idle")
+	
 
 func exit() -> void:
 	pass
