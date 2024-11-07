@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djjlojjsht57s"
-path="res://.godot/imported/antidote.png-3da42a7a1c8760b9062cee8ec1e3139c.ctex"
+uid="uid://byvbcoq1ukxqp"
+path="res://.godot/imported/empty.png-7ccf6a2fe4ca9698a4eef39a18a845d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/player_hud/antidote.png"
-dest_files=["res://.godot/imported/antidote.png-3da42a7a1c8760b9062cee8ec1e3139c.ctex"]
+source_file="res://gui/player_hud/potion/empty.png"
+dest_files=["res://.godot/imported/empty.png-7ccf6a2fe4ca9698a4eef39a18a845d0.ctex"]
 
 [params]
 
