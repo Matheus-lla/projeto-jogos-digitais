@@ -45,9 +45,4 @@ position = Vector2(-30, 237)
 [node name="Spawn" parent="." instance=ExtResource("3_7d168")]
 position = Vector2(664, 285)
 
-<<<<<<< HEAD
-[node name="Player" parent="." instance=ExtResource("5_k4c6a")]
-position = Vector2(639, 238)
-=======
 [node name="Player" parent="." instance=ExtResource("5_xdayw")]
->>>>>>> 4135a8a13b5f9710376f2c4aa33b03b2cb30505e
