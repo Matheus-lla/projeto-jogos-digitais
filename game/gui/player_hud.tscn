@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://gui/player_hud.gd" id="1_uohgx"]
 [ext_resource type="PackedScene" uid="uid://bbrdbc01lcwkx" path="res://gui/heart.tscn" id="2_dje31"]
 [ext_resource type="Texture2D" uid="uid://bkg8wdwkijwel" path="res://gui/potion.png" id="2_lcxnw"]
-[ext_resource type="Texture2D" uid="uid://2tk2ncredl6n" path="res://props/guarana/guaraná.aseprite" id="5_pxsm4"]
+[ext_resource type="Texture2D" uid="uid://cfv0nfvclvb11" path="res://gui/guarana_fake.png" id="5_b7fbe"]
 
 [sub_resource type="Animation" id="Animation_qv2xk"]
 resource_name = "PotionFull"
@@ -50,10 +50,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 3.0
-offset_top = -1.0
-offset_right = 3.0
-offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -68,7 +64,7 @@ offset_left = 39.0
 offset_top = 21.0
 offset_right = 59.0
 offset_bottom = 44.0
-text = "x9"
+text = "x0"
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
 position = Vector2(489, 17)
@@ -148,17 +144,17 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Guarana" type="Sprite2D" parent="Control"]
-position = Vector2(42, 75)
-scale = Vector2(0.86625, 0.86625)
-texture = ExtResource("5_pxsm4")
+position = Vector2(141, 34)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("5_b7fbe")
 
 [node name="Guarana_label" type="Label" parent="Control"]
-visible = false
 layout_mode = 0
-offset_left = 40.0
-offset_top = 50.0
-offset_right = 60.0
-offset_bottom = 73.0
+offset_left = 156.0
+offset_top = 21.0
+offset_right = 176.0
+offset_bottom = 44.0
+text = "x0"
 
 [node name="PotionAnimation" type="AnimationPlayer" parent="Control"]
 root_node = NodePath("../Antidote")

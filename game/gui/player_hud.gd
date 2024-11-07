@@ -19,14 +19,10 @@ func _ready() -> void:
 		if child is Heart:
 			child.visible = false
 			hearts.append(child)
-			
 
-		
-	
 func update_heart(index: int, hp: int):
 	var value: int = clampi(hp - index * 2, 0, 2)
 	hearts[index].value = value
-	
 
 func update_potion(_delta: int):
 	potions = clampi(potions + _delta, 0, max_potion)
@@ -57,13 +53,10 @@ func update_hp(hp: int, max_hp: int):
 		
 
 func update_guarana(_delta: int):
+	if guarana + _delta < 0:
+		return
+		
 	guarana += _delta
-	
-	if (guarana <= 0):
-		guarana_label.visible = false
-	else:
-		guarana_label.visible = true
-	
 	guarana_label.text = "x" + str(guarana) 
 	
 	
