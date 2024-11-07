@@ -1,9 +1,6 @@
 extends PlayerState
 class_name TakeGuarana
 
-
-
-
 func _ready():
 	pass
 
@@ -11,11 +8,7 @@ func init():
 	pass
 
 func enter() -> void:
-	print("Entrei no take_guarana")
-	print(player.in_guarana)
-	if (player.in_guarana):
-		print("dentro")
-		
+	pass	
 
 func exit() -> void:
 	pass

@@ -12,7 +12,6 @@ var trees: Array = []
 var index: int = 0
 var actual_guarana: Guarana
 
-
 func _ready() -> void:
 	interect_area.area_entered.connect(on_area_entered)
 	interect_area.area_exited.connect(on_area_exit)
@@ -25,7 +24,6 @@ func on_interection():
 		actual_guarana = GlobalPlayerManager.player.guarana_trees[index]
 		actual_guarana = self
 		PlayerHud.update_guarana(3)
-		print(sprite.name)
 		sprite.texture = GUARANA_EMPTY
 		actual_guarana.catch = true
 		index += 1
