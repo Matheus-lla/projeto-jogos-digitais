@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djjlojjsht57s"
-path="res://.godot/imported/antidote.png-3da42a7a1c8760b9062cee8ec1e3139c.ctex"
+uid="uid://cfv0nfvclvb11"
+path="res://.godot/imported/guarana_fake.png-17b583ef24488ae34ec473fde6f2f94c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/player_hud/antidote.png"
-dest_files=["res://.godot/imported/antidote.png-3da42a7a1c8760b9062cee8ec1e3139c.ctex"]
+source_file="res://gui/player_hud/guarana_fake.png"
+dest_files=["res://.godot/imported/guarana_fake.png-17b583ef24488ae34ec473fde6f2f94c.ctex"]
 
 [params]
 

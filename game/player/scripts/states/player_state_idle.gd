@@ -5,6 +5,7 @@ class_name Idle extends PlayerState
 @onready var dash: Dash = $"../Dash"
 @onready var shoot_arrow: ShootArrow = $"../ShootArrow"
 @onready var drinking_potion: DrinkingPotion = $"../DrinkingPotion"
+@onready var take_guarana: TakeGuarana = $"../TakeGuarana"
 
 func init():
 	pass
@@ -41,5 +42,8 @@ func handle_input(event: InputEvent) -> PlayerState:
 		
 	if event.is_action("use_potion"):
 		return drinking_potion
+	
+	if event.is_action("take_guarana"):
+		GlobalPlayerManager.interact_pressed.emit()
 	
 	return null

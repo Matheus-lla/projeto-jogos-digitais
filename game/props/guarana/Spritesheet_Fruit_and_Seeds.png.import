@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djjlojjsht57s"
-path="res://.godot/imported/antidote.png-3da42a7a1c8760b9062cee8ec1e3139c.ctex"
+uid="uid://box8twviomgp4"
+path="res://.godot/imported/Spritesheet_Fruit_and_Seeds.png-5a9293d86fd0c0cd274d14a6e1743e49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/player_hud/antidote.png"
-dest_files=["res://.godot/imported/antidote.png-3da42a7a1c8760b9062cee8ec1e3139c.ctex"]
+source_file="res://props/guarana/Spritesheet_Fruit_and_Seeds.png"
+dest_files=["res://.godot/imported/Spritesheet_Fruit_and_Seeds.png-5a9293d86fd0c0cd274d14a6e1743e49.ctex"]
 
 [params]
 

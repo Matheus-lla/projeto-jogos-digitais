@@ -7,8 +7,8 @@
 [ext_resource type="Script" path="res://npc/dialog_state.gd" id="5_ce5sh"]
 [ext_resource type="Script" path="res://npc/idle.gd" id="5_q56e0"]
 [ext_resource type="Script" path="res://npc/wander.gd" id="6_h1fd5"]
-[ext_resource type="PackedScene" uid="uid://bgeelc5dpjqu6" path="res://general_nodes/dialog_sequence.tscn" id="8_tye10"]
-[ext_resource type="PackedScene" uid="uid://dcs01fm4cg46u" path="res://general_nodes/dialog_item.tscn" id="9_5715x"]
+[ext_resource type="PackedScene" path="res://general_nodes/dialog_sequence.tscn" id="8_tye10"]
+[ext_resource type="PackedScene" path="res://general_nodes/dialog_item.tscn" id="9_5715x"]
 [ext_resource type="Script" path="res://npc/single_dialog.gd" id="10_gb7p5"]
 [ext_resource type="Script" path="res://npc/after_kill_dialog.gd" id="11_u68ho"]
 
