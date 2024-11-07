@@ -1,9 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2o04ujxqjl0j"]
+[gd_scene load_steps=9 format=3 uid="uid://b2o04ujxqjl0j"]
 
 [ext_resource type="Texture2D" uid="uid://nsvudi3xlyo5" path="res://gui/gui-health.png" id="1_kdowg"]
 [ext_resource type="Script" path="res://gui/player_hud.gd" id="1_uohgx"]
 [ext_resource type="PackedScene" uid="uid://bbrdbc01lcwkx" path="res://gui/heart.tscn" id="2_dje31"]
-[ext_resource type="Texture2D" uid="uid://cfrlxxdkvlkf5" path="res://gui/antidote.png" id="4_dbjq6"]
+[ext_resource type="Texture2D" uid="uid://bkg8wdwkijwel" path="res://gui/potion.png" id="2_lcxnw"]
+[ext_resource type="Texture2D" uid="uid://cfv0nfvclvb11" path="res://gui/guarana_fake.png" id="5_b7fbe"]
+
+[sub_resource type="Animation" id="Animation_qv2xk"]
+resource_name = "PotionFull"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_x1is2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_io57c"]
+_data = {
+"PotionFull": SubResource("Animation_qv2xk"),
+"RESET": SubResource("Animation_x1is2")
+}
 
 [node name="PlayerHud" type="CanvasLayer"]
 script = ExtResource("1_uohgx")
@@ -17,17 +54,17 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Antidote" type="Sprite2D" parent="Control"]
-position = Vector2(48.4688, 32.4688)
-scale = Vector2(0.0311719, 0.0311719)
-texture = ExtResource("4_dbjq6")
+position = Vector2(25, 34)
+scale = Vector2(1.37688, 1.37688)
+texture = ExtResource("2_lcxnw")
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 2
-offset_left = 63.4688
-offset_top = 21.4688
-offset_right = 83.4688
-offset_bottom = 44.4688
-text = "x9"
+offset_left = 39.0
+offset_top = 21.0
+offset_right = 59.0
+offset_bottom = 44.0
+text = "x0"
 
 [node name="Sprite2D" type="Sprite2D" parent="Control"]
 position = Vector2(489, 17)
@@ -105,3 +142,22 @@ layout_mode = 2
 
 [node name="Heart20" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
 layout_mode = 2
+
+[node name="Guarana" type="Sprite2D" parent="Control"]
+position = Vector2(141, 34)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("5_b7fbe")
+
+[node name="Guarana_label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 156.0
+offset_top = 21.0
+offset_right = 176.0
+offset_bottom = 44.0
+text = "x0"
+
+[node name="PotionAnimation" type="AnimationPlayer" parent="Control"]
+root_node = NodePath("../Antidote")
+libraries = {
+"": SubResource("AnimationLibrary_io57c")
+}
