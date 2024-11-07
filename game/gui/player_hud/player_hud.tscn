@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bbrdbc01lcwkx" path="res://gui/player_hud/life/heart.tscn" id="2_dje31"]
 [ext_resource type="Texture2D" uid="uid://bkg8wdwkijwel" path="res://gui/player_hud/potion/potion.png" id="2_lcxnw"]
 [ext_resource type="FontFile" uid="uid://btlftr7loqd5u" path="res://fonts/Abaddon Bold.ttf" id="3_grm7k"]
-[ext_resource type="Texture2D" uid="uid://cfv0nfvclvb11" path="res://gui/player_hud/guarana/guarana_fake.png" id="5_b7fbe"]
+[ext_resource type="Texture2D" uid="uid://by42y36e5bj5b" path="res://gui/player_hud/guaraná.png" id="6_epvt0"]
 
 [sub_resource type="Animation" id="Animation_qv2xk"]
 resource_name = "PotionFull"
@@ -150,9 +150,25 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Guarana" type="Sprite2D" parent="Control"]
+texture_filter = 1
 position = Vector2(134, 35)
-scale = Vector2(1.4, 1.4)
-texture = ExtResource("5_b7fbe")
+texture = ExtResource("6_epvt0")
+metadata/_aseprite_wizard_config_ = {
+"i_mode": 1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "",
+"slice": "",
+"source": "C:/Users/mathe/OneDrive/Desktop/faculdade/UFG/7º Periodo/Jogos Digitais/projeto-jogos-digitais/aseprite/guaraná.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true
+}
+metadata/_aseprite_wizard_source_file_hash_ = "88057d5ffbe1d0102756cd6f9254eaf1"
 
 [node name="GuaranaLabel" type="Label" parent="Control"]
 layout_mode = 2

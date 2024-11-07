@@ -1,6 +1,6 @@
 class_name VillagerStateWander extends VillagerState
 
-@export var anim_name: String = "walk"
+@export var anim_name: String = "walking"
 @export var walk_speed: float = 20.0
 @export_category("AI")
 @export var state_animation_duration: float = 0.5
@@ -19,7 +19,7 @@ func enter() -> void:
 	direction = villager.DIR_4[randi_range(0, 3)]
 	villager.velocity = direction * walk_speed
 	villager.set_direction(direction)
-	#villager.update_animation(anim_name)
+	villager.update_animation(anim_name)
 	pass
 
 func exit() -> void:
