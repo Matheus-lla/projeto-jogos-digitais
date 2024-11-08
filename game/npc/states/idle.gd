@@ -1,10 +1,10 @@
-class_name VillagerStateIdle extends VillagerState
+class_name VillagerStateIdle extends State
 
 @export var anim_name: String = "idle"
 @export_category("AI")
 @export var state_duration_min: float = 0.5
 @export var state_duration_max: float = 1.5
-@export var next_state: VillagerState
+@export var next_state: State
 
 var timer: float = 0.0
 
@@ -12,14 +12,14 @@ func init() -> void:
 	pass
 
 func enter() -> void:
-	villager.velocity = Vector2.ZERO
+	character.velocity = Vector2.ZERO
 	timer = randf_range(state_duration_min, state_duration_max)
-	villager.update_animation(anim_name)
+	character.update_animation(anim_name)
 
 func exit() -> void:
 	pass
 	
-func process( delta: float) -> VillagerState:
+func process( delta: float) -> State:
 	timer -= delta
 	
 	if timer <= 0:
@@ -27,5 +27,5 @@ func process( delta: float) -> VillagerState:
 		
 	return null
 	
-func physics(_delta: float) -> VillagerState:
+func physics(_delta: float) -> State:
 	return null
