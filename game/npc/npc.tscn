@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://npc/states/dialog_state.gd" id="5_ce5sh"]
 [ext_resource type="Script" path="res://npc/states/idle.gd" id="5_q56e0"]
 [ext_resource type="Script" path="res://npc/states/wander.gd" id="6_h1fd5"]
-[ext_resource type="Texture2D" uid="uid://cs54t8ututf1j" path="res://npc/NPC_indiozinho.png" id="6_pmln3"]
+[ext_resource type="Texture2D" uid="uid://cs54t8ututf1j" path="res://npc/sprites/NPC_indiozinho.png" id="6_pmln3"]
 [ext_resource type="Script" path="res://general_nodes/state_machine/state_machine.gd" id="8_6koex"]
 [ext_resource type="PackedScene" uid="uid://bgeelc5dpjqu6" path="res://general_nodes/dialog_sequence/dialog_sequence.tscn" id="8_tye10"]
 [ext_resource type="PackedScene" uid="uid://dcs01fm4cg46u" path="res://general_nodes/dialog_item/dialog_item.tscn" id="9_5715x"]

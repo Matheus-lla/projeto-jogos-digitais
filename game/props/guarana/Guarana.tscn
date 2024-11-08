@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhxoilxb2hwdb"]
+[gd_scene load_steps=8 format=3 uid="uid://dhxoilxb2hwdb"]
 
 [ext_resource type="Script" path="res://props/guarana/guarana.gd" id="1_7d0e4"]
 [ext_resource type="Texture2D" uid="uid://bd870bok7y61u" path="res://props/guarana/guarana_full.png" id="1_xe7lg"]
 [ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://effects/Shadow.png" id="2_ijquo"]
 [ext_resource type="Script" path="res://general_nodes/interact_area/interact_area.gd" id="3_ehmem"]
+[ext_resource type="Texture2D" uid="uid://cxcy7gakj3ldn" path="res://props/guarana/guarana_empty.png" id="5_adba3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y30kv"]
 radius = 6.0
@@ -48,7 +49,13 @@ position = Vector2(-0.333333, 10.9167)
 scale = Vector2(0.916667, 0.942708)
 texture = ExtResource("2_ijquo")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="FullSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -4)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("1_xe7lg")
+
+[node name="EmptySprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1.2, -6.4)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("5_adba3")

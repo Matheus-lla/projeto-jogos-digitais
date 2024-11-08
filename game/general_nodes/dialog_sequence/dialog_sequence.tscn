@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bgeelc5dpjqu6"]
 
 [ext_resource type="Script" path="res://general_nodes/dialog_sequence/dialog_sequence.gd" id="1_5k2vb"]
-[ext_resource type="Texture2D" uid="uid://dfmkndxhixtvf" path="res://npc/dialog_interactable.png" id="2_2rv7w"]
+[ext_resource type="Texture2D" uid="uid://dfmkndxhixtvf" path="res://npc/sprites/dialog_interactable.png" id="2_2rv7w"]
 
 [sub_resource type="Animation" id="Animation_1xy5e"]
 length = 0.001

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfmkndxhixtvf"
-path="res://.godot/imported/dialog_interactable.png-5148406ff3649b0617fc6299e40274a7.ctex"
+uid="uid://cs54t8ututf1j"
+path="res://.godot/imported/NPC_indiozinho.png-d6e316e8d77271b6df5f568bf9190c26.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://npc/dialog_interactable.png"
-dest_files=["res://.godot/imported/dialog_interactable.png-5148406ff3649b0617fc6299e40274a7.ctex"]
+source_file="res://npc/sprites/NPC_indiozinho.png"
+dest_files=["res://.godot/imported/NPC_indiozinho.png-d6e316e8d77271b6df5f568bf9190c26.ctex"]
 
 [params]
 

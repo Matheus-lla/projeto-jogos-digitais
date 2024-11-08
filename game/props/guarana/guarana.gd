@@ -4,8 +4,8 @@ class_name Guarana
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var interact_area: InteractArea = $InteractionArea
 
-const GUARANA_EMPTY = preload("res://props/guarana/guarana_empty.png")
-const GUARANA_FULL = preload("res://props/guarana/guarana_full.png")
+@onready var full_sprite: Sprite2D = $FullSprite
+@onready var empty_sprite: Sprite2D = $EmptySprite
 
 var catch: bool = false
 var trees: Array = []
@@ -14,18 +14,19 @@ var actual_guarana: Guarana
 
 func _ready() -> void:
 	interact_area.Interect.connect(on_interection)
-	sprite.texture = GUARANA_FULL
+	update_sprite()
+
+func update_sprite():
+	full_sprite.visible = !catch
+	empty_sprite.visible = catch
 
 func on_interection():
 	if catch:
 		return
 		
 	PlayerHud.update_guarana(3)
-	sprite.texture = GUARANA_EMPTY
 	catch = true
+	update_sprite()
 
 func guarana_spawm():
 	catch = false
-	
-	if sprite:
-		sprite.texture = GUARANA_FULL
