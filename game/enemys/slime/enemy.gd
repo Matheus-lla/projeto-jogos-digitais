@@ -1,4 +1,4 @@
-class_name Enemy extends Character
+class_name Slime extends Character
 
 var player: Player
 

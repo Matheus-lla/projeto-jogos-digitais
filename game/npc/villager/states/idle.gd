@@ -1,4 +1,4 @@
-class_name VillagerStateIdle extends State
+class_name VillagerIdle extends State
 
 @export var anim_name: String = "idle"
 @export_category("AI")

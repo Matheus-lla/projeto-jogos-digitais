@@ -4,7 +4,7 @@ var player: Player
 
 @onready var sprite: Sprite2D = $Sprites/Sprite2D
 @onready var dialog: Node = $StateMachine/Dialog
-@onready var idle: VillagerStateIdle = $StateMachine/Idle
+@onready var idle: VillagerIdle = $StateMachine/Idle
 @onready var dialog_sequence: DialogSequence = $DialogSequence
 
 func _ready() -> void:

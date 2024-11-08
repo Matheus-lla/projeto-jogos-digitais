@@ -1,4 +1,4 @@
-class_name VillagerStateWander extends State
+class_name VillagerWander extends State
 
 @export var anim_name: String = "walking"
 @export var walk_speed: float = 20.0

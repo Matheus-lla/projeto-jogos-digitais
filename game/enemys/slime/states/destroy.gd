@@ -1,4 +1,4 @@
-class_name EnemyDestroy extends State
+class_name SlimeDestroy extends State
 
 var direction: Vector2
 var damage_position: Vector2

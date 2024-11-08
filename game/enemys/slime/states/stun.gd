@@ -1,4 +1,4 @@
-class_name EnemyStateStun extends State
+class_name SlimeStun extends State
 
 var direction: Vector2
 var animation_finished: bool = false

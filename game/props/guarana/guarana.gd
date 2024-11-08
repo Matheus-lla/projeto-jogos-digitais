@@ -1,7 +1,6 @@
 extends Node2D
 class_name Guarana
 
-@onready var sprite: Sprite2D = $Sprite2D
 @onready var interact_area: InteractArea = $InteractionArea
 
 @onready var full_sprite: Sprite2D = $FullSprite
