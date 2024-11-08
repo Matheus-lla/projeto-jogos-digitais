@@ -1,11 +1,11 @@
-class_name Dash extends PlayerState
+class_name Dash extends State
 
 @onready var dash_cool_down: Timer = $DashCoolDown
 @onready var ghost_timer: Timer = $GhostTimer
 @onready var audio: AudioStreamPlayer2D = $"../../Audio"
 
 @export var move_speed: float
-@export var next_state: PlayerState
+@export var next_state: State
 @export var dash_duration: float
 @export var sound: AudioStream
 
@@ -76,7 +76,7 @@ func exit() -> void:
 	ghost_timer.stop()
 	audio.pitch_scale = 1
 	
-func process(delta: float) -> PlayerState:
+func process(delta: float) -> State:
 	if skip:
 		return next_state
 		
@@ -90,10 +90,10 @@ func process(delta: float) -> PlayerState:
 	
 	return null
 	
-func physics(_delta: float) -> PlayerState:
+func physics(_delta: float) -> State:
 	return null
 
-func handle_input(_event: InputEvent) -> PlayerState:
+func handle_input(_event: InputEvent) -> State:
 	return null
 	
 func on_dash_cool_down():

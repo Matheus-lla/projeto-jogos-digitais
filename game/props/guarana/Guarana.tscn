@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://props/guarana/guarana.gd" id="1_7d0e4"]
 [ext_resource type="Texture2D" uid="uid://bd870bok7y61u" path="res://props/guarana/guarana_full.png" id="1_xe7lg"]
 [ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://effects/Shadow.png" id="2_ijquo"]
-[ext_resource type="Script" path="res://general_nodes/interact_area.gd" id="3_ehmem"]
+[ext_resource type="Script" path="res://general_nodes/interact_area/interact_area.gd" id="3_ehmem"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y30kv"]
 radius = 6.0

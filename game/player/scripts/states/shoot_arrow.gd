@@ -1,6 +1,6 @@
-class_name ShootArrow extends PlayerState
+class_name ShootArrow extends State
 
-@export var next_state: PlayerState
+@export var next_state: State
 @export var attack_sound: AudioStream
 
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
@@ -40,7 +40,7 @@ func play_audio():
 	audio.play()
 	audio_played = true
 
-func process(delta: float) -> PlayerState:
+func process(delta: float) -> State:
 	if ended:
 		return next_state
 		
@@ -50,10 +50,10 @@ func process(delta: float) -> PlayerState:
 		
 	return null
 	
-func physics(_delta: float) -> PlayerState:
+func physics(_delta: float) -> State:
 	return null
 
-func handle_input(_event: InputEvent) -> PlayerState:
+func handle_input(_event: InputEvent) -> State:
 	return null
 	
 func on_animation_finished(_animation_name: String):

@@ -1,13 +1,13 @@
 class_name Arrow extends CharacterBody2D
 
-enum State {
+enum ArrowState {
 	INACTIVE, # No arrow at all
 	LOADING, # Pulling the arrow before release
 	FLIGHT, # Arrow released
 }
 
 var player: Player
-var state: State = State.INACTIVE
+var state: ArrowState = ArrowState.INACTIVE
 var hurt_box: HurtBox
 var timer: float
 
@@ -24,12 +24,12 @@ func _ready() -> void:
 		global_position.y -= 10
 
 func _physics_process(delta: float) -> void:
-	if state == State.INACTIVE:
+	if state == ArrowState.INACTIVE:
 		return
 		
-	if state == State.LOADING:
+	if state == ArrowState.LOADING:
 		if timer <= 0:
-			state = State.FLIGHT
+			state = ArrowState.FLIGHT
 			visible = true
 			
 		timer -= delta
@@ -47,7 +47,7 @@ func shoot() -> void:
 	velocity = player.cardinal_direction * SPEED
 	set_rotation_from_direction(player.cardinal_direction)
 	timer = LOADING_TIME
-	state = State.LOADING
+	state = ArrowState.LOADING
 	visible = true
 	scale *= SCALE_FACTOR
 

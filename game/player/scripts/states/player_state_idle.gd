@@ -1,7 +1,7 @@
-class_name Idle extends PlayerState
+class_name Idle extends State
 
-@onready var walk: PlayerState = $"../Walk"
-@onready var attack: PlayerState = $"../Attack"
+@onready var walk: State = $"../Walk"
+@onready var attack: State = $"../Attack"
 @onready var dash: Dash = $"../Dash"
 @onready var shoot_arrow: ShootArrow = $"../ShootArrow"
 @onready var drinking_potion: DrinkingPotion = $"../DrinkingPotion"
@@ -16,17 +16,17 @@ func enter() -> void:
 func exit() -> void:
 	pass
 	
-func process( _delta: float) -> PlayerState:
+func process( _delta: float) -> State:
 	if player.direction != Vector2.ZERO:
 		return walk
 	
 	player.velocity = Vector2.ZERO
 	return null
 	
-func physics(_delta: float) -> PlayerState:
+func physics(_delta: float) -> State:
 	return null
 
-func handle_input(event: InputEvent) -> PlayerState:
+func handle_input(event: InputEvent) -> State:
 	if event.is_action("attack"):
 		return attack
 		

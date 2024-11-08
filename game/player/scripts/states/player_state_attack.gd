@@ -1,9 +1,9 @@
-class_name Attack extends PlayerState
+class_name Attack extends State
 
 var attacking: bool = false
 @onready var attack_animation: AnimationPlayer = $"../../AnimationPlayer"
-@onready var idle: PlayerState = $"../Idle"
-@onready var walk: PlayerState = $"../Walk"
+@onready var idle: State = $"../Idle"
+@onready var walk: State = $"../Walk"
 @onready var hurt_box: HurtBox = $"../../MeleeHurtBox"
 @onready var audio: AudioStreamPlayer2D = $"../../Audio"
 
@@ -31,7 +31,7 @@ func exit() -> void:
 func end_attack(_new_animation_name: String):
 	attacking = false
 	
-func process( delta: float) -> PlayerState:	
+func process( delta: float) -> State:	
 	player.velocity -= player.velocity * decelerate_speed * delta
 	
 	if attacking == false:
@@ -42,8 +42,8 @@ func process( delta: float) -> PlayerState:
 	
 	return null
 	
-func physics(_delta: float) -> PlayerState:
+func physics(_delta: float) -> State:
 	return null
 
-func handle_input(_eventL: InputEvent) -> PlayerState:
+func handle_input(_eventL: InputEvent) -> State:
 	return null

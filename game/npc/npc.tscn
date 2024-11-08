@@ -1,14 +1,14 @@
 [gd_scene load_steps=23 format=3 uid="uid://bvbg34m2kdcbl"]
 
-[ext_resource type="Script" path="res://npc/villager.gd" id="1_dmy8e"]
+[ext_resource type="Script" path="res://npc/npc.gd" id="1_dmy8e"]
 [ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://effects/Shadow.png" id="2_d3oai"]
-[ext_resource type="Script" path="res://npc/villager_state_machine.gd" id="4_8cng8"]
+[ext_resource type="Script" path="res://npc/npc_state_machine.gd" id="4_8cng8"]
 [ext_resource type="Script" path="res://npc/states/dialog_state.gd" id="5_ce5sh"]
 [ext_resource type="Script" path="res://npc/states/idle.gd" id="5_q56e0"]
 [ext_resource type="Script" path="res://npc/states/wander.gd" id="6_h1fd5"]
 [ext_resource type="Texture2D" uid="uid://cs54t8ututf1j" path="res://npc/NPC_indiozinho.png" id="6_pmln3"]
-[ext_resource type="PackedScene" path="res://general_nodes/dialog_sequence.tscn" id="8_tye10"]
-[ext_resource type="PackedScene" path="res://general_nodes/dialog_item.tscn" id="9_5715x"]
+[ext_resource type="PackedScene" uid="uid://bgeelc5dpjqu6" path="res://general_nodes/dialog_sequence/dialog_sequence.tscn" id="8_tye10"]
+[ext_resource type="PackedScene" uid="uid://dcs01fm4cg46u" path="res://general_nodes/dialog_item/dialog_item.tscn" id="9_5715x"]
 [ext_resource type="Script" path="res://npc/dialog_scripts/single_dialog.gd" id="10_gb7p5"]
 [ext_resource type="Script" path="res://npc/dialog_scripts/after_kill_dialog.gd" id="11_u68ho"]
 
@@ -159,7 +159,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f88n2"]
 size = Vector2(18, 29)
 
-[node name="Villager" type="CharacterBody2D"]
+[node name="Npc" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 48
 collision_mask = 16
@@ -231,7 +231,6 @@ texture = ExtResource("2_d3oai")
 offset = Vector2(0, 20)
 
 [node name="DialogSequence" parent="." instance=ExtResource("8_tye10")]
-character_name = "Primeiro NPC"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogSequence"]
 position = Vector2(1, -13.5)

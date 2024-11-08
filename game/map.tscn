@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cp6p8qd6jkb7g" path="res://player/player.tscn" id="9_57pim"]
 [ext_resource type="PackedScene" uid="uid://b88rtmgccpgu0" path="res://enemys/slime/slime.tscn" id="9_qxiuk"]
 [ext_resource type="PackedScene" uid="uid://dhxoilxb2hwdb" path="res://props/guarana/Guarana.tscn" id="10_ggnas"]
-[ext_resource type="PackedScene" uid="uid://bvbg34m2kdcbl" path="res://npc/villager.tscn" id="11_x22vo"]
+[ext_resource type="PackedScene" uid="uid://bvbg34m2kdcbl" path="res://npc/npc.tscn" id="11_x22vo"]
 
 [node name="Map" type="Node2D"]
 y_sort_enabled = true

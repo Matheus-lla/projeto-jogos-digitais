@@ -1,4 +1,4 @@
-class_name DrinkingPotion extends PlayerState
+class_name DrinkingPotion extends State
 
 @onready var idle: Idle = $"../Idle"
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
@@ -34,16 +34,16 @@ func enter() -> void:
 func exit() -> void:
 	animation_player.animation_finished.disconnect(animation_potion_end)
 	
-func process( _delta: float) -> PlayerState:
+func process( _delta: float) -> State:
 	if ended : 
 		return idle
 	
 	return null
 	
-func physics(_delta: float) -> PlayerState:
+func physics(_delta: float) -> State:
 	return null
 
-func handle_input(_eventL: InputEvent) -> PlayerState:
+func handle_input(_eventL: InputEvent) -> State:
 	return null
 
 func animation_potion_end(_animation_name: String):

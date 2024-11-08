@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d4g0yvj01mxhw" path="res://props/spawn/spawn.tscn" id="3_7d168"]
 [ext_resource type="PackedScene" uid="uid://b88rtmgccpgu0" path="res://enemys/slime/slime.tscn" id="5_kyqx6"]
 [ext_resource type="PackedScene" uid="uid://cp6p8qd6jkb7g" path="res://player/player.tscn" id="5_xdayw"]
-[ext_resource type="PackedScene" uid="uid://bvbg34m2kdcbl" path="res://npc/villager.tscn" id="6_csuax"]
+[ext_resource type="PackedScene" uid="uid://bvbg34m2kdcbl" path="res://npc/npc.tscn" id="6_csuax"]
 
 [node name="TestMap" type="Node2D"]
 y_sort_enabled = true
