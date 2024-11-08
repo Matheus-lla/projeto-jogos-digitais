@@ -6,6 +6,7 @@
 size = Vector2(117.768, 48.0078)
 
 [node name="Muralha" type="Node2D"]
+z_index = 1
 
 [node name="Pilar" type="Sprite2D" parent="."]
 position = Vector2(1, -23)

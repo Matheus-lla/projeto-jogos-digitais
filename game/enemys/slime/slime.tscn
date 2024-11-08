@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://b88rtmgccpgu0"]
 
-[ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://player/sprites/Shadow.png" id="1_3y6eb"]
+[ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://effects/Shadow.png" id="1_3y6eb"]
 [ext_resource type="Script" path="res://enemys/slime/enemy.gd" id="1_fcqvr"]
 [ext_resource type="Texture2D" uid="uid://buy2jlc035aew" path="res://enemys/slime/Slime.png" id="2_iwhto"]
 [ext_resource type="PackedScene" uid="uid://uxvl7pfm1jf5" path="res://general_nodes/hit_box/hit_box.tscn" id="2_j77wu"]
@@ -10,7 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://b2hh13gjgjtkk" path="res://enemys/slime/destroy.wav" id="6_vhe7i"]
 [ext_resource type="PackedScene" uid="uid://bi537x71g5dm3" path="res://general_nodes/hurt_box/hurt_box.tscn" id="7_apnvt"]
 [ext_resource type="Script" path="res://enemys/enemy_state_machine.gd" id="7_skcu8"]
-[ext_resource type="Texture2D" uid="uid://bcmmwvpbdj7th" path="res://enemys/slime/DestroySmoke.png" id="9_fq4vu"]
+[ext_resource type="Texture2D" uid="uid://bcmmwvpbdj7th" path="res://effects/DestroySmoke.png" id="9_fq4vu"]
 [ext_resource type="Script" path="res://enemys/slime/states/enemy_state_stun.gd" id="10_skgr3"]
 [ext_resource type="Script" path="res://enemys/slime/states/enemy_state_destroy.gd" id="12_lxhb6"]
 
@@ -757,6 +757,7 @@ _data = {
 }
 
 [node name="Slime" type="CharacterBody2D"]
+z_index = 1
 collision_layer = 256
 collision_mask = 16
 script = ExtResource("1_fcqvr")

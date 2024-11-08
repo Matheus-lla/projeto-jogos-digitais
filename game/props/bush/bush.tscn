@@ -7,6 +7,7 @@ radius = 10.9891
 height = 43.9565
 
 [node name="bush" type="Node2D"]
+z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_wf0di")

@@ -20,13 +20,35 @@ position = Vector2(711, 769)
 position = Vector2(-189, -483)
 
 [node name="Spawn" parent="." instance=ExtResource("5_ab8ve")]
-z_index = 1
 position = Vector2(1298, 8)
 scale = Vector2(2.4, 2.4)
 
 [node name="Slime" parent="." instance=ExtResource("9_qxiuk")]
-z_index = 1
 position = Vector2(1008, -15)
+
+[node name="Slime2" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(834, -114)
+
+[node name="Slime3" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(780, 53)
+
+[node name="Slime4" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(699, -142)
+
+[node name="Slime5" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(569, 149)
+
+[node name="Slime6" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(1039, 1334)
+
+[node name="Slime7" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(1246, 1309)
+
+[node name="Slime8" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(1028, 1234)
+
+[node name="Slime9" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(1201, 1361)
 
 [node name="Cabanas" parent="." instance=ExtResource("5_71r4l")]
 position = Vector2(1526, 160)
@@ -170,8 +192,6 @@ position = Vector2(517, -225)
 position = Vector2(591, -225)
 
 [node name="Tree41" parent="." instance=ExtResource("6_fl1ub")]
-light_mask = 32
-visibility_layer = 32
 position = Vector2(676, -471)
 
 [node name="Tree42" parent="." instance=ExtResource("6_fl1ub")]
@@ -277,43 +297,33 @@ position = Vector2(847, 942)
 position = Vector2(1314, -303)
 
 [node name="bush" parent="." instance=ExtResource("7_i8s12")]
-z_index = 1
 position = Vector2(1177, -296)
 
 [node name="bush2" parent="." instance=ExtResource("7_i8s12")]
-z_index = 1
 position = Vector2(427, -89)
 
 [node name="bush3" parent="." instance=ExtResource("7_i8s12")]
-z_index = 1
 position = Vector2(460, 35)
 
 [node name="bush4" parent="." instance=ExtResource("7_i8s12")]
-z_index = 1
 position = Vector2(536, -99)
 
 [node name="bush5" parent="." instance=ExtResource("7_i8s12")]
-z_index = 1
 position = Vector2(780, -66)
 
 [node name="bush6" parent="." instance=ExtResource("7_i8s12")]
-z_index = 1
 position = Vector2(611, -73)
 
 [node name="bush7" parent="." instance=ExtResource("7_i8s12")]
-z_index = 1
 position = Vector2(757, 126)
 
 [node name="bush9" parent="." instance=ExtResource("7_i8s12")]
-z_index = 1
 position = Vector2(242, 374)
 
 [node name="bush10" parent="." instance=ExtResource("7_i8s12")]
-z_index = 1
 position = Vector2(554, 734)
 
 [node name="bush11" parent="." instance=ExtResource("7_i8s12")]
-z_index = 1
 position = Vector2(335, 676)
 
 [node name="Tree73" parent="." instance=ExtResource("6_fl1ub")]
@@ -341,7 +351,7 @@ position = Vector2(45, 1681)
 position = Vector2(-100, 1314)
 
 [node name="Tree81" parent="." instance=ExtResource("6_fl1ub")]
-position = Vector2(1509, 1247)
+position = Vector2(1520, 1249)
 
 [node name="Tree82" parent="." instance=ExtResource("6_fl1ub")]
 position = Vector2(1466, 1541)
@@ -374,7 +384,6 @@ position = Vector2(603, 1531)
 position = Vector2(652, 1538)
 
 [node name="Tree92" parent="." instance=ExtResource("6_fl1ub")]
-visible = false
 position = Vector2(697, 1460)
 
 [node name="Tree93" parent="." instance=ExtResource("6_fl1ub")]
@@ -411,128 +420,106 @@ position = Vector2(1070, 1532)
 position = Vector2(774, 1534)
 
 [node name="Spawn2" parent="." instance=ExtResource("5_ab8ve")]
-z_index = 1
 position = Vector2(699, 1688)
 
 [node name="Ponte" type="Sprite2D" parent="."]
-z_index = 1
 position = Vector2(922.5, 1008.75)
 scale = Vector2(1, 1.19231)
 texture = ExtResource("7_rbeto")
 
 [node name="Ponte3" type="Sprite2D" parent="."]
-z_index = 1
 position = Vector2(923, 1106)
 texture = ExtResource("7_rbeto")
 
 [node name="Muralha5" parent="." instance=ExtResource("8_74xx4")]
-z_index = 1
 y_sort_enabled = true
 texture_filter = 2
 position = Vector2(888, 1667)
 
 [node name="Muralha16" parent="." instance=ExtResource("8_74xx4")]
-z_index = 1
 y_sort_enabled = true
 texture_filter = 2
 position = Vector2(888, 1705)
 
 [node name="Muralha14" parent="." instance=ExtResource("8_74xx4")]
-z_index = 1
 y_sort_enabled = true
 texture_filter = 2
 position = Vector2(888, 1757)
 
 [node name="Muralha15" parent="." instance=ExtResource("8_74xx4")]
-z_index = 1
 y_sort_enabled = true
 texture_filter = 2
 position = Vector2(521, 1661)
 
 [node name="Muralha17" parent="." instance=ExtResource("8_74xx4")]
-z_index = 1
 y_sort_enabled = true
 texture_filter = 2
 position = Vector2(521, 1710)
 
 [node name="Muralha13" parent="." instance=ExtResource("8_74xx4")]
-z_index = 1
 y_sort_enabled = true
 texture_filter = 2
 position = Vector2(521, 1759)
 
 [node name="Muralha12" parent="." instance=ExtResource("8_74xx4")]
-z_index = 1
 y_sort_enabled = true
 texture_filter = 2
 position = Vector2(521, 1809)
 
 [node name="Muralha11" parent="." instance=ExtResource("8_74xx4")]
-z_index = 1
 y_sort_enabled = true
 texture_filter = 2
 position = Vector2(521, 1859)
 
 [node name="Muralha6" parent="." instance=ExtResource("8_74xx4")]
-z_index = 1
 y_sort_enabled = true
 texture_filter = 2
 position = Vector2(888, 1807)
 
 [node name="Muralha10" parent="." instance=ExtResource("8_74xx4")]
-z_index = 1
 y_sort_enabled = true
 texture_filter = 2
 position = Vector2(888, 1855)
 
 [node name="Muralha" parent="." instance=ExtResource("8_74xx4")]
-z_index = 1
 y_sort_enabled = true
 texture_filter = 2
 position = Vector2(519, 1904)
 
 [node name="Muralha2" parent="." instance=ExtResource("8_74xx4")]
-z_index = 1
 y_sort_enabled = true
 texture_filter = 2
 position = Vector2(565, 1904)
 
 [node name="Muralha3" parent="." instance=ExtResource("8_74xx4")]
-z_index = 1
 y_sort_enabled = true
 texture_filter = 2
 position = Vector2(608, 1904)
 
 [node name="Muralha4" parent="." instance=ExtResource("8_74xx4")]
-z_index = 1
 y_sort_enabled = true
 texture_filter = 2
 position = Vector2(649, 1904)
 
 [node name="Muralha7" parent="." instance=ExtResource("8_74xx4")]
-z_index = 1
 y_sort_enabled = true
 texture_filter = 2
 position = Vector2(800, 1904)
 
 [node name="Muralha8" parent="." instance=ExtResource("8_74xx4")]
-z_index = 1
 y_sort_enabled = true
 texture_filter = 2
 position = Vector2(842, 1904)
 
 [node name="Muralha9" parent="." instance=ExtResource("8_74xx4")]
-z_index = 1
 y_sort_enabled = true
 texture_filter = 2
 position = Vector2(888, 1905)
 
 [node name="Guarana" parent="." instance=ExtResource("10_ggnas")]
-z_index = 1
 position = Vector2(1128, -86)
 
 [node name="Player" parent="." instance=ExtResource("9_57pim")]
-z_index = 1
 
 [node name="Guarana2" parent="." instance=ExtResource("10_ggnas")]
 position = Vector2(1164, 244)
@@ -542,3 +529,9 @@ position = Vector2(1119, 49)
 
 [node name="Villager" parent="." instance=ExtResource("11_x22vo")]
 position = Vector2(1480, 14)
+
+[node name="Villager2" parent="." instance=ExtResource("11_x22vo")]
+position = Vector2(1357, 77)
+
+[node name="Villager3" parent="." instance=ExtResource("11_x22vo")]
+position = Vector2(1209, -27)

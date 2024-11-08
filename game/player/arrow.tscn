@@ -11,6 +11,7 @@ size = Vector2(20, 4)
 size = Vector2(20, 4)
 
 [node name="Arrow" type="CharacterBody2D"]
+z_index = 1
 position = Vector2(2, -16)
 collision_layer = 0
 collision_mask = 16
