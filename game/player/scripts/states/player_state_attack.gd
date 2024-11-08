@@ -4,14 +4,11 @@ var attacking: bool = false
 @onready var attack_animation: AnimationPlayer = $"../../AnimationPlayer"
 @onready var idle: State = $"../Idle"
 @onready var walk: State = $"../Walk"
-@onready var hurt_box: HurtBox = $"../../MeleeHurtBox"
 @onready var audio: AudioStreamPlayer2D = $"../../Audio"
+@onready var hurt_box: HurtBox = $"../../MeleeHurtBox"
 
 @export var attack_sound: AudioStream
 @export_range(1, 20, 0.5) var decelerate_speed: float = 10
-
-func init():
-	pass
 
 func enter() -> void:
 	player.update_animation("spear_attack")
@@ -31,7 +28,7 @@ func exit() -> void:
 func end_attack(_new_animation_name: String):
 	attacking = false
 	
-func process( delta: float) -> State:	
+func process( delta: float) -> State:
 	player.velocity -= player.velocity * decelerate_speed * delta
 	
 	if attacking == false:
@@ -40,10 +37,4 @@ func process( delta: float) -> State:
 		else:
 			return walk
 	
-	return null
-	
-func physics(_delta: float) -> State:
-	return null
-
-func handle_input(_eventL: InputEvent) -> State:
 	return null

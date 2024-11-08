@@ -12,7 +12,7 @@ const animation_name: String = "stun"
 @onready var idle: State = $"../Idle"
 
 func init():
-	player.PlayerDamaged.connect(on_player_damaged)
+	player.CharacterDamaged.connect(on_player_damaged)
 
 func enter() -> void:
 	player.animation_player.animation_finished.connect(on_animation_fineshed)

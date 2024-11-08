@@ -1,47 +1,46 @@
-class_name EnemyStateStun extends EnemyState
+class_name EnemyStateStun extends State
 
 var direction: Vector2
 var animation_finished: bool = false
 var damage_position: Vector2
 
-@onready var state_machine: EnemyStateMachine = $".."
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 
 @export var anim_name: String = "stun"
 @export var knockback_speed: float = 200.0
 @export var decelerate_speed: float = 10.0
 @export_category("AI")
-@export var next_state: EnemyState
+@export var next_state: State
 
 func init() -> void:
-	enemy.EnemyDamaged.connect(on_enemy_damaged)
+	character.CharacterDamaged.connect(on_damaged)
 
 func enter() -> void:
-	enemy.invulnerable = true
+	character.invulnerable = true
 	animation_finished = false
 	
-	direction = enemy.global_position.direction_to(damage_position)
-	enemy.set_direction(direction)
-	enemy.velocity = direction * -knockback_speed;
-	enemy.update_animation(anim_name)
+	direction = character.global_position.direction_to(damage_position)
+	character.set_direction(direction)
+	character.velocity = direction * -knockback_speed;
+	character.update_animation(anim_name)
 	animation_player.animation_finished.connect(on_animation_finished)
 	
 func exit() -> void:
-	enemy.invulnerable = false
+	character.invulnerable = false
 	animation_player.animation_finished.disconnect(on_animation_finished)
 	pass
 	
-func process( delta: float) -> EnemyState:
+func process( delta: float) -> State:
 	if animation_finished:
 		return next_state
 		
-	enemy.velocity -= enemy.velocity * decelerate_speed * delta
+	character.velocity -= character.velocity * decelerate_speed * delta
 	return null
 	
-func physics(_delta: float) -> EnemyState:
+func physics(_delta: float) -> State:
 	return null
 
-func on_enemy_damaged(hurt_box: HurtBox):
+func on_damaged(hurt_box: HurtBox):
 	damage_position = hurt_box.global_position
 	state_machine.change_state(self)
 

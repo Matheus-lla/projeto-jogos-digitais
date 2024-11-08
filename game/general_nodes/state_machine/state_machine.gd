@@ -16,19 +16,19 @@ func _physics__process(delta: float) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	change_state(curr_state.handle_input(event))
 	
-func init(character: CharacterBody2D) -> void:
+func init(character: Character) -> void:
 	states = []
 	
-	for c in get_children():
-		if c is State:
-			states.append(c)
+	for state in get_children():
+		if state is State:
+			state.character = character
+			state.state_machine = self
+			states.append(state)
 	
 	if states.size() <= 0:
 		return
 		
 	states[0].player = GlobalPlayerManager.player
-	states[0].character = character
-	states[0].state_machine = self
 	
 	for state in states:
 		state.init()

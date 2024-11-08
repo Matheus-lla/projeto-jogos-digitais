@@ -1,8 +1,8 @@
 class_name State extends Node
 
 static var player: Player
-static var character: CharacterBody2D
-static var state_machine: StateMachine
+var character: Character
+var state_machine: StateMachine
 
 func init():
 	pass

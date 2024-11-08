@@ -1,25 +1,15 @@
-class_name Player extends CharacterBody2D
+class_name Player extends Character
 
-var cardinal_direction: Vector2 = Vector2.DOWN
-var direction: Vector2 = Vector2.ZERO
-var invulnerable: bool = false
-var hp: int 
 var max_hp: int = 6
 var kills: int = 0
 var in_guarana: bool = false
 
-const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
-
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
 @onready var sprite: Sprite2D = $PlayerSprite
-@onready var state_machine: StateMachine = $StateMachine
 @onready var hit_box: HitBox = $HitBox
 @onready var idle: Idle = $StateMachine/Idle
 @onready var spawn_place: Spawn = $"../Spawn"
-
-signal DirectionChanged(new_directions: Vector2)
-signal PlayerDamaged(hurt_box: HurtBox)
 
 func _ready() -> void:
 	GlobalPlayerManager.player = self
@@ -33,34 +23,15 @@ func _process(_delta: float) -> void:
 		Input.get_axis("up", "down"),
 	).normalized()
 	
-	
-func _physics_process(_delta: float) -> void:
-	move_and_slide()
-	
-func set_direction() -> bool:
+func set_direction(_new_direction: Vector2 = Vector2.ZERO) -> bool:
 	if direction == Vector2.ZERO:
 		return false
 		
-	var direction_index: int = int(round((direction + cardinal_direction * 0.1).angle() / TAU * DIR_4.size()))
-	var new_direction = DIR_4[direction_index]
-	
-	if new_direction == cardinal_direction:
-		return false
-		
-	cardinal_direction = new_direction
-	DirectionChanged.emit(new_direction)
-	#sprite.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1
-	return true
+	return super.set_direction(direction)
 	
 func update_animation(state_str: String) -> void:
 	animation_player.play(state_str + "_" + animation_direction())
 	return
-	
-func animation_direction() -> String:
-	if cardinal_direction == Vector2.DOWN: return "down"
-	elif cardinal_direction == Vector2.UP: return "up"
-	elif cardinal_direction == Vector2.RIGHT: return "right"
-	return "left"
 	
 func update_hp(delta: int):
 	hp = clampi(hp + delta, 0, max_hp)
@@ -86,7 +57,7 @@ func on_damaged(hurt_box: HurtBox):
 		self.spawn()
 		return	
 	
-	PlayerDamaged.emit(hurt_box)
+	CharacterDamaged.emit(hurt_box)
 
 func spawn():
 	update_hp(max_hp)

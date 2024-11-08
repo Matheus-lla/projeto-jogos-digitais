@@ -799,7 +799,6 @@ script = ExtResource("4_nkwl0")
 
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("5_7x5vp")
-move_speed = null
 
 [node name="Attack" type="Node" parent="StateMachine"]
 script = ExtResource("6_uq3q5")

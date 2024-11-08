@@ -809,7 +809,6 @@ z_index = 1
 collision_layer = 256
 collision_mask = 16
 script = ExtResource("1_fcqvr")
-hp = 3
 
 [node name="HitBox" parent="." instance=ExtResource("2_j77wu")]
 
@@ -878,3 +877,6 @@ next_state = NodePath("../Idle")
 
 [node name="Destroy" type="Node" parent="StateMachine"]
 script = ExtResource("12_lxhb6")
+anim_name = null
+knockback_speed = null
+decelerate_speed = null
