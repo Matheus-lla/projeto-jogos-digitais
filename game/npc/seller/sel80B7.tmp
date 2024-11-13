@@ -1,18 +1,16 @@
-[gd_scene load_steps=23 format=3 uid="uid://bvbg34m2kdcbl"]
+[gd_scene load_steps=21 format=3 uid="uid://boe42hfwok07e"]
 
-[ext_resource type="Script" path="res://npc/villager/villager.gd" id="1_dmy8e"]
-[ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://effects/Shadow.png" id="2_d3oai"]
-[ext_resource type="Script" path="res://npc/states/dialog_state.gd" id="5_ce5sh"]
-[ext_resource type="Script" path="res://npc/states/idle.gd" id="5_q56e0"]
-[ext_resource type="Script" path="res://npc/states/wander.gd" id="6_h1fd5"]
-[ext_resource type="Texture2D" uid="uid://cs54t8ututf1j" path="res://npc/villager/NPC_indiozinho.png" id="6_pmln3"]
-[ext_resource type="Script" path="res://general_nodes/state_machine/state_machine.gd" id="8_6koex"]
-[ext_resource type="PackedScene" uid="uid://bgeelc5dpjqu6" path="res://general_nodes/dialog_sequence/dialog_sequence.tscn" id="8_tye10"]
-[ext_resource type="PackedScene" uid="uid://dcs01fm4cg46u" path="res://general_nodes/dialog_item/dialog_item.tscn" id="9_5715x"]
-[ext_resource type="Script" path="res://npc/dialog_scripts/single_dialog.gd" id="10_gb7p5"]
-[ext_resource type="Script" path="res://npc/dialog_scripts/after_kill_dialog.gd" id="11_u68ho"]
+[ext_resource type="Script" path="res://npc/seller/seller.gd" id="1_fq5cw"]
+[ext_resource type="Texture2D" uid="uid://cs54t8ututf1j" path="res://npc/villager/NPC_indiozinho.png" id="2_kloeu"]
+[ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://effects/Shadow.png" id="3_7nu6u"]
+[ext_resource type="PackedScene" uid="uid://bgeelc5dpjqu6" path="res://general_nodes/dialog_sequence/dialog_sequence.tscn" id="4_4xp3o"]
+[ext_resource type="Script" path="res://general_nodes/state_machine/state_machine.gd" id="5_c5s47"]
+[ext_resource type="Script" path="res://general_nodes/dialog_item/dialog_item.gd" id="5_k66gx"]
+[ext_resource type="Script" path="res://npc/states/idle.gd" id="6_0b3r1"]
+[ext_resource type="Script" path="res://npc/states/wander.gd" id="7_456jy"]
+[ext_resource type="Script" path="res://npc/states/dialog_state.gd" id="8_mrp8s"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xf2nq"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_e8vyx"]
 radius = 8.06226
 
 [sub_resource type="Animation" id="Animation_nnhhg"]
@@ -156,18 +154,15 @@ _data = {
 "walking_up": SubResource("Animation_f3g8v")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f88n2"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrtya"]
 size = Vector2(18, 29)
 
-[node name="Npc" type="CharacterBody2D"]
-z_index = 1
-collision_layer = 48
-collision_mask = 16
-script = ExtResource("1_dmy8e")
+[node name="Seller" type="CharacterBody2D"]
+script = ExtResource("1_fq5cw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
-shape = SubResource("CircleShape2D_xf2nq")
+shape = SubResource("CircleShape2D_e8vyx")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 max_polyphony = 4
@@ -178,11 +173,12 @@ libraries = {
 }
 
 [node name="Sprites" type="Node2D" parent="."]
+modulate = Color(1, 0.24, 0.24, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprites"]
 texture_filter = 1
 position = Vector2(1, -14)
-texture = ExtResource("6_pmln3")
+texture = ExtResource("2_kloeu")
 hframes = 7
 vframes = 6
 frame = 23
@@ -210,44 +206,32 @@ modulate = Color(0, 0, 0, 0.552941)
 show_behind_parent = true
 position = Vector2(0, -16)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("2_d3oai")
+texture = ExtResource("3_7nu6u")
 offset = Vector2(0, 20)
 
-[node name="DialogSequence" parent="." instance=ExtResource("8_tye10")]
+[node name="DialogSequence" parent="." instance=ExtResource("4_4xp3o")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogSequence"]
 position = Vector2(1, -13.5)
-shape = SubResource("RectangleShape2D_f88n2")
+shape = SubResource("RectangleShape2D_vrtya")
 
-[node name="InitialDialog" parent="DialogSequence" instance=ExtResource("9_5715x")]
-script = ExtResource("10_gb7p5")
-text = "Primeiro Dialogo"
-
-[node name="SecondDialog" parent="DialogSequence" instance=ExtResource("9_5715x")]
-script = ExtResource("10_gb7p5")
-text = "Texto muuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuito longo"
-
-[node name="ThirdDialog" parent="DialogSequence" instance=ExtResource("9_5715x")]
-script = ExtResource("10_gb7p5")
-text = "Terceiro Dialogo"
-
-[node name="ConditionalDialog" parent="DialogSequence" instance=ExtResource("9_5715x")]
-script = ExtResource("11_u68ho")
-text = "Matei meu primeiro inimigo"
+[node name="DialogItem" type="Node" parent="DialogSequence"]
+script = ExtResource("5_k66gx")
+text = "Oiiiiiii"
 
 [node name="StateMachine" type="Node" parent="."]
-script = ExtResource("8_6koex")
+script = ExtResource("5_c5s47")
 
 [node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
-script = ExtResource("5_q56e0")
+script = ExtResource("6_0b3r1")
 state_duration_max = 1.0
 next_state = NodePath("../Wander")
 
 [node name="Wander" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
-script = ExtResource("6_h1fd5")
+script = ExtResource("7_456jy")
 walk_speed = 30.0
 state_animation_duration = 1.0
 next_state = NodePath("../Idle")
 
 [node name="Dialog" type="Node" parent="StateMachine"]
-script = ExtResource("5_ce5sh")
+script = ExtResource("8_mrp8s")

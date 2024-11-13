@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cs54t8ututf1j"
-path="res://.godot/imported/NPC_indiozinho.png-d6e316e8d77271b6df5f568bf9190c26.ctex"
+path="res://.godot/imported/NPC_indiozinho.png-7f06160d4e57be03197f4cffd97589a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://npc/sprites/NPC_indiozinho.png"
-dest_files=["res://.godot/imported/NPC_indiozinho.png-d6e316e8d77271b6df5f568bf9190c26.ctex"]
+source_file="res://npc/villager/NPC_indiozinho.png"
+dest_files=["res://.godot/imported/NPC_indiozinho.png-7f06160d4e57be03197f4cffd97589a9.ctex"]
 
 [params]
 

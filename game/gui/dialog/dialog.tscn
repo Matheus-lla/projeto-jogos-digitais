@@ -6,11 +6,11 @@
 [ext_resource type="FontFile" uid="uid://btlftr7loqd5u" path="res://fonts/Abaddon Bold.ttf" id="4_g335n"]
 [ext_resource type="Texture2D" uid="uid://bk65lxbyacy4j" path="res://icon.svg" id="5_shdmg"]
 
-[sub_resource type="Gradient" id="Gradient_ne6n8"]
+[sub_resource type="Gradient" id="Gradient_5jnrn"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_bca1n"]
-gradient = SubResource("Gradient_ne6n8")
+gradient = SubResource("Gradient_5jnrn")
 fill_to = Vector2(0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7bdr7"]
@@ -127,10 +127,6 @@ text = "Name"
 position = Vector2(55, 241)
 scale = Vector2(0.75, 1.15625)
 texture = ExtResource("5_shdmg")
-
-[node name="Timer" type="Timer" parent="UI"]
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="UI"]
 
 [node name="DialogProgress" type="PanelContainer" parent="UI"]
 self_modulate = Color(0.1357, 0.59, 0.150843, 1)

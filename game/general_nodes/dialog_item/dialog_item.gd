@@ -5,4 +5,4 @@ class_name DialogItem extends Node
 var read: int = 0
 
 func is_enabled() -> bool:
-	return false
+	return true

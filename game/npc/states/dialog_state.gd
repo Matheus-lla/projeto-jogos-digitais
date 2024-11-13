@@ -1,4 +1,4 @@
-class_name VillagerDialog extends State
+class_name NPCDialog extends State
 
 func enter() -> void:
 	character.velocity = Vector2.ZERO

@@ -25,6 +25,7 @@ LevelManager="*res://globals/level_manager.gd"
 GlobalPlayerManager="*res://globals/global_player_manager.gd"
 PlayerHud="*res://gui/player_hud/player_hud.tscn"
 Dialog="*res://gui/dialog/dialog.tscn"
+Shop="*res://gui/dialog/shop.tscn"
 
 [display]
 
