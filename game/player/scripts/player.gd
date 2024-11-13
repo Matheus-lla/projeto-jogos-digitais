@@ -13,13 +13,13 @@ var bow_damage = 1
 
 var current_max_hp_level = 0
 var max_hp_level_cost = [3, 9, 27]
-var max_hp_by_level = [2, 4, 8]
+var max_hp_by_level = [4, 6, 8]
 
 var current_heal_level = 0
 var heal_level_cost = [3, 9, 27]
 var heal_by_level = [2, 4, 8]
 
-var max_hp: int = 6
+var max_hp: int = 2
 var kills: int = 0
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
