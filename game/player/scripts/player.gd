@@ -1,8 +1,26 @@
 class_name Player extends Character
 
+var max_level = 3
+
+var current_wepon_level = 0
+var wepon_level_cost = [3, 9, 27]
+var wepon_damage_by_level = [2, 4, 8]
+
+var current_bow_level = 0
+var bow_level_cost = [3, 9, 27]
+var bow_damage_by_level = [2, 4, 8]
+var bow_damage = 1
+
+var current_max_hp_level = 0
+var max_hp_level_cost = [3, 9, 27]
+var max_hp_by_level = [2, 4, 8]
+
+var current_heal_level = 0
+var heal_level_cost = [3, 9, 27]
+var heal_by_level = [2, 4, 8]
+
 var max_hp: int = 6
 var kills: int = 0
-var in_guarana: bool = false
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
@@ -10,6 +28,7 @@ var in_guarana: bool = false
 @onready var hit_box: HitBox = $HitBox
 @onready var idle: Idle = $StateMachine/Idle
 @onready var spawn_place: Spawn = $"../Spawn"
+@onready var melee_hurt_box: HurtBox = $MeleeHurtBox
 
 func _ready() -> void:
 	GlobalPlayerManager.player = self
@@ -62,7 +81,8 @@ func on_damaged(hurt_box: HurtBox):
 func spawn():
 	update_hp(max_hp)
 	PlayerHud.update_potion(PlayerHud.max_potion)
-	PlayerHud.update_guarana(-PlayerHud.guarana)
+	#PlayerHud.update_guarana(-PlayerHud.guarana)
+	PlayerHud.update_guarana(200)
 	
 	for c in get_parent().get_children(false):
 		if c is Guarana:
@@ -85,4 +105,37 @@ func faced_direction() -> Vector2:
 		dir = cardinal_direction
 		
 	return dir
+
+func wepon_upgrade_cost():
+	return wepon_level_cost[current_wepon_level]
+
+func wepon_upgrade():
+	PlayerHud.update_guarana(-wepon_upgrade_cost())
+	melee_hurt_box.damage = wepon_damage_by_level[current_wepon_level]
+	current_wepon_level += 1
 	
+func bow_upgrade_cost():
+	return bow_level_cost[current_bow_level]
+
+func bow_upgrade():
+	PlayerHud.update_guarana(-bow_upgrade_cost())
+	bow_damage = bow_damage_by_level[current_bow_level]
+	current_bow_level += 1
+	
+func max_hp_upgrade_cost():
+	return max_hp_level_cost[current_max_hp_level]
+
+func max_hp_upgrade():
+	PlayerHud.update_guarana(-max_hp_upgrade_cost())
+	max_hp = max_hp_by_level[current_max_hp_level]
+	update_hp(max_hp)
+	current_max_hp_level += 1
+	
+func heal_upgrade_cost():
+	return heal_level_cost[current_heal_level]
+
+func heal_upgrade():
+	PlayerHud.update_guarana(-heal_upgrade_cost())
+	PlayerHud.max_potion = heal_by_level[current_heal_level]
+	PlayerHud.update_potion(PlayerHud.max_potion)
+	current_heal_level += 1

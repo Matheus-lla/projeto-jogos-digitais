@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bbrdbc01lcwkx" path="res://gui/player_hud/life/heart.tscn" id="2_dje31"]
 [ext_resource type="Texture2D" uid="uid://bkg8wdwkijwel" path="res://gui/player_hud/potion/potion.png" id="2_lcxnw"]
 [ext_resource type="FontFile" uid="uid://btlftr7loqd5u" path="res://fonts/Abaddon Bold.ttf" id="3_grm7k"]
-[ext_resource type="Texture2D" uid="uid://by42y36e5bj5b" path="res://gui/player_hud/guaraná.png" id="6_epvt0"]
+[ext_resource type="Texture2D" uid="uid://by42y36e5bj5b" path="res://gui/player_hud/guarana/guaraná.png" id="6_epvt0"]
 
 [sub_resource type="Animation" id="Animation_qv2xk"]
 resource_name = "PotionFull"

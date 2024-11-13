@@ -13,7 +13,6 @@ func _ready() -> void:
 	area_2d.area_exited.connect(on_dialog_exit)
 
 func on_dialog_enter(_area: Area2D):
-	print("sim")
 	state_machine.change_state(dialog)	
 
 func on_dialog_exit(_area: Area2D):

@@ -40,8 +40,9 @@ func _physics_process(delta: float) -> void:
 	if is_on_wall():
 		destroy()
 
-func shoot() -> void:
+func shoot(damage: int) -> void:
 	hurt_box = $HurtBox
+	hurt_box.damage = damage
 	hurt_box.area_entered.connect(on_area_entered)
 	player = GlobalPlayerManager.player
 	velocity = player.cardinal_direction * SPEED

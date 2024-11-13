@@ -9,9 +9,8 @@ const POTION_ALMOST_EMPTY = preload("res://gui/player_hud/potion/potion_almost_e
 const EMPTY = preload("res://gui/player_hud/potion/empty.png")
 
 var hearts: Array[Heart] = []
-var max_potion: int = 9
+var max_potion: int = 2
 var potions: int
-var initial_guarana: int = 0
 var guarana: int
 
 func _ready() -> void:
