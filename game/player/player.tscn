@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://player/scripts/states/player_state_idle.gd" id="4_nkwl0"]
 [ext_resource type="Script" path="res://player/scripts/states/player_state_walk.gd" id="5_7x5vp"]
 [ext_resource type="Script" path="res://player/scripts/states/player_state_attack.gd" id="6_uq3q5"]
-[ext_resource type="Script" path="res://general_nodes/state_machine/state_machine.gd" id="7_i27r4"]
+[ext_resource type="Script" path="res://general_scripts/state_machine.gd" id="7_i27r4"]
 [ext_resource type="AudioStream" uid="uid://bt47elq3aco7w" path="res://player/audio/SwordSwoosh.wav" id="8_i7ip4"]
 [ext_resource type="Script" path="res://player/scripts/player_interactions.gd" id="10_10sp5"]
 [ext_resource type="PackedScene" uid="uid://bi537x71g5dm3" path="res://general_nodes/hurt_box/hurt_box.tscn" id="10_aoesj"]

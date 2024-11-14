@@ -78,6 +78,7 @@ scale = Vector2(0.75, 1.15625)
 texture = ExtResource("5_0xxqo")
 
 [node name="Wepon" type="Button" parent="UI"]
+layout_mode = 0
 offset_left = 124.0
 offset_top = 219.0
 offset_right = 210.0
@@ -98,6 +99,7 @@ theme_override_fonts/font = ExtResource("4_grb4r")
 text = "R$ 0"
 
 [node name="Bow" type="Button" parent="UI"]
+layout_mode = 0
 offset_left = 236.0
 offset_top = 219.0
 offset_right = 324.0

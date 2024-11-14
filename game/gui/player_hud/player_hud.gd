@@ -28,9 +28,7 @@ func update_potion(_delta: int):
 	potions = clampi(potions + _delta, 0, max_potion)
 	label.text = "x" + str(potions) 
 	var relative_potions = float(potions) / float(max_potion)
-	
-	print(relative_potions)
-	
+		
 	if relative_potions == 0.0:
 		antidote.texture = EMPTY
 	elif relative_potions < 0.5:

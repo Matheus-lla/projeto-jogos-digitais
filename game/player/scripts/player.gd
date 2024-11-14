@@ -3,21 +3,21 @@ class_name Player extends Character
 var max_level = 3
 
 var current_wepon_level = 0
-var wepon_level_cost = [3, 9, 27]
-var wepon_damage_by_level = [2, 4, 8]
+var wepon_level_cost = [20, 40, 80]
+var wepon_damage_by_level = [3, 5, 7]
 
 var current_bow_level = 0
-var bow_level_cost = [3, 9, 27]
-var bow_damage_by_level = [2, 4, 8]
+var bow_level_cost = [15, 30, 60]
+var bow_damage_by_level = [2, 3, 4]
 var bow_damage = 1
 
 var current_max_hp_level = 0
-var max_hp_level_cost = [3, 9, 27]
+var max_hp_level_cost = [10, 30, 100]
 var max_hp_by_level = [4, 6, 8]
 
 var current_heal_level = 0
-var heal_level_cost = [3, 9, 27]
-var heal_by_level = [2, 4, 8]
+var heal_level_cost = [10, 25, 50]
+var heal_by_level = [3, 4, 5]
 
 var max_hp: int = 2
 var kills: int = 0
@@ -82,7 +82,7 @@ func spawn():
 	update_hp(max_hp)
 	PlayerHud.update_potion(PlayerHud.max_potion)
 	#PlayerHud.update_guarana(-PlayerHud.guarana)
-	PlayerHud.update_guarana(200)
+	PlayerHud.update_guarana(500)
 	
 	for c in get_parent().get_children(false):
 		if c is Guarana:

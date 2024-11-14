@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cb4ta8l8k60on"]
 
-[ext_resource type="Script" path="res://npc/seller/sell.gd" id="1_6jo7n"]
+[ext_resource type="Script" path="res://general_nodes/sell/sell.gd" id="1_6jo7n"]
 [ext_resource type="Texture2D" uid="uid://dfmkndxhixtvf" path="res://npc/dialog_interactable.png" id="2_e26hb"]
 
 [sub_resource type="Animation" id="Animation_1xy5e"]

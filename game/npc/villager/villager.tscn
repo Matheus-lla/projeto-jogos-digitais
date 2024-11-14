@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bvbg34m2kdcbl"]
+[gd_scene load_steps=20 format=3 uid="uid://bvbg34m2kdcbl"]
 
 [ext_resource type="Script" path="res://npc/villager/villager.gd" id="1_dmy8e"]
 [ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://effects/Shadow.png" id="2_d3oai"]
@@ -6,11 +6,8 @@
 [ext_resource type="Script" path="res://npc/states/idle.gd" id="5_q56e0"]
 [ext_resource type="Script" path="res://npc/states/wander.gd" id="6_h1fd5"]
 [ext_resource type="Texture2D" uid="uid://cs54t8ututf1j" path="res://npc/villager/NPC_indiozinho.png" id="6_pmln3"]
-[ext_resource type="Script" path="res://general_nodes/state_machine/state_machine.gd" id="8_6koex"]
+[ext_resource type="Script" path="res://general_scripts/state_machine.gd" id="8_6koex"]
 [ext_resource type="PackedScene" uid="uid://bgeelc5dpjqu6" path="res://general_nodes/dialog_sequence/dialog_sequence.tscn" id="8_tye10"]
-[ext_resource type="PackedScene" uid="uid://dcs01fm4cg46u" path="res://general_nodes/dialog_item/dialog_item.tscn" id="9_5715x"]
-[ext_resource type="Script" path="res://npc/dialog_scripts/single_dialog.gd" id="10_gb7p5"]
-[ext_resource type="Script" path="res://npc/dialog_scripts/after_kill_dialog.gd" id="11_u68ho"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xf2nq"]
 radius = 8.06226
@@ -218,22 +215,6 @@ offset = Vector2(0, 20)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogSequence"]
 position = Vector2(1, -13.5)
 shape = SubResource("RectangleShape2D_f88n2")
-
-[node name="InitialDialog" parent="DialogSequence" instance=ExtResource("9_5715x")]
-script = ExtResource("10_gb7p5")
-text = "Primeiro Dialogo"
-
-[node name="SecondDialog" parent="DialogSequence" instance=ExtResource("9_5715x")]
-script = ExtResource("10_gb7p5")
-text = "Texto muuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuito longo"
-
-[node name="ThirdDialog" parent="DialogSequence" instance=ExtResource("9_5715x")]
-script = ExtResource("10_gb7p5")
-text = "Terceiro Dialogo"
-
-[node name="ConditionalDialog" parent="DialogSequence" instance=ExtResource("9_5715x")]
-script = ExtResource("11_u68ho")
-text = "Matei meu primeiro inimigo"
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("8_6koex")
