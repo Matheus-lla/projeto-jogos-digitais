@@ -6,9 +6,9 @@
 [ext_resource type="Script" path="res://general_nodes/interact_area/interact_area.gd" id="3_ehmem"]
 [ext_resource type="Texture2D" uid="uid://cxcy7gakj3ldn" path="res://props/guarana/guarana_empty.png" id="5_adba3"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y30kv"]
-radius = 6.0
-height = 24.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f72jo"]
+radius = 5.20833
+height = 10.4167
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_430tk"]
 radius = 5.0
@@ -21,15 +21,15 @@ scale = Vector2(1.2, 1.2)
 script = ExtResource("1_7d0e4")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-2, 0)
+position = Vector2(-45.3333, 0)
 scale = Vector2(1.2, 1.2)
 collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2, -1)
+position = Vector2(37.7778, 3.47222)
 scale = Vector2(1.2, 1.2)
-shape = SubResource("CapsuleShape2D_y30kv")
+shape = SubResource("CapsuleShape2D_f72jo")
 
 [node name="InteractionArea" type="Area2D" parent="."]
 scale = Vector2(1.2, 1.2)

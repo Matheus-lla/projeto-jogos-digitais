@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://e3iitwvkrig5"]
+
+[ext_resource type="Texture2D" uid="uid://qovfm7qkfo5y" path="res://props/burnig_trees/tree1burning.png" id="1_qw2h5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_di51o"]
+radius = 3.99982
+height = 23.9987
+
+[node name="Burningtree1" type="Node2D"]
+z_index = 1
+
+[node name="Tree1Burning" type="Sprite2D" parent="."]
+position = Vector2(-1, -40)
+texture = ExtResource("1_qw2h5")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-13.3503, 54.1652)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(13, -60)
+rotation = -1.56051
+shape = SubResource("CapsuleShape2D_di51o")
