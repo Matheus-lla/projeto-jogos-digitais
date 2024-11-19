@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://by42y36e5bj5b"
-path="res://.godot/imported/guaraná.png-6fcdab6298c7a03e26abbeb3d38be514.ctex"
+path="res://.godot/imported/guaraná.png-45b23d88793a9894e094e249dd5c284a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gui/player_hud/guaraná.png"
-dest_files=["res://.godot/imported/guaraná.png-6fcdab6298c7a03e26abbeb3d38be514.ctex"]
+source_file="res://gui/player_hud/guarana/guaraná.png"
+dest_files=["res://.godot/imported/guaraná.png-45b23d88793a9894e094e249dd5c284a.ctex"]
 
 [params]
 

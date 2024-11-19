@@ -4,14 +4,14 @@ extends CanvasLayer
 @onready var antidote: Sprite2D = $Control/Antidote
 @onready var guarana_label: Label = $Control/GuaranaLabel
 
+const POTION_FULL = preload("res://gui/player_hud/potion/potion.png")
 const POTION_HALF = preload("res://gui/player_hud/potion/potion_half.png")
 const POTION_ALMOST_EMPTY = preload("res://gui/player_hud/potion/potion_almost_empty.png")
 const EMPTY = preload("res://gui/player_hud/potion/empty.png")
 
 var hearts: Array[Heart] = []
-var max_potion: int = 9
+var max_potion: int = 2
 var potions: int
-var initial_guarana: int = 0
 var guarana: int
 
 func _ready() -> void:
@@ -27,14 +27,16 @@ func update_heart(index: int, hp: int):
 func update_potion(_delta: int):
 	potions = clampi(potions + _delta, 0, max_potion)
 	label.text = "x" + str(potions) 
-	
-	if (potions <= 5):
-		antidote.texture = POTION_HALF
-	if (potions <= 3):
-		antidote.texture = POTION_ALMOST_EMPTY
-	if (potions == 0):
+	var relative_potions = float(potions) / float(max_potion)
+		
+	if relative_potions == 0.0:
 		antidote.texture = EMPTY
-	
+	elif relative_potions < 0.5:
+		antidote.texture = POTION_ALMOST_EMPTY
+	elif relative_potions < 1.0:
+		antidote.texture = POTION_HALF
+	else:
+		antidote.texture = POTION_FULL
 
 func update_max_hp(max_hp: int):
 	var heart_count: int = roundi(max_hp / 2)

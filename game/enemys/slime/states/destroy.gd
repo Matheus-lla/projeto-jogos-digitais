@@ -26,8 +26,8 @@ func process( delta: float) -> State:
 	character.velocity -= character.velocity * decelerate_speed * delta
 	return null
 	
-func on_destroyed(hurt_box: HurtBox):
-	damage_position = hurt_box.global_position
+func on_destroyed(_hurt_box: HurtBox):
+	damage_position = _hurt_box.global_position
 	state_machine.change_state(self)
 
 func on_animation_finished(_current_animation: String):

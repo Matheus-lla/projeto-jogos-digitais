@@ -6,13 +6,10 @@ extends CanvasLayer
 @onready var animation_player: AnimationPlayer = $UI/DialogProgress/AnimationPlayer
 @onready var dialog_progress: PanelContainer = $UI/DialogProgress
 
-var is_active: bool
-
 func _ready() -> void:
 	hide_dialog()
 
 func show_dialog(character_name: String, text: String, button_text: String):
-	is_active = true
 	ui.visible = true
 	ui.process_mode = Node.PROCESS_MODE_ALWAYS
 	name_label.text = character_name
@@ -22,7 +19,6 @@ func show_dialog(character_name: String, text: String, button_text: String):
 	
 
 func hide_dialog():
-	is_active = false
 	ui.visible = false
 	ui.process_mode = Node.PROCESS_MODE_DISABLED
 	#get_tree().paused = false

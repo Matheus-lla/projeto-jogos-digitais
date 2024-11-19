@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bgeelc5dpjqu6"]
+[gd_scene load_steps=8 format=3 uid="uid://cb4ta8l8k60on"]
 
-[ext_resource type="Script" path="res://general_nodes/dialog_sequence/dialog_sequence.gd" id="1_5k2vb"]
-[ext_resource type="Texture2D" uid="uid://dfmkndxhixtvf" path="res://npc/dialog_interactable.png" id="2_2rv7w"]
+[ext_resource type="Script" path="res://general_nodes/sell/sell.gd" id="1_6jo7n"]
+[ext_resource type="Texture2D" uid="uid://dfmkndxhixtvf" path="res://npc/dialog_interactable.png" id="2_e26hb"]
 
 [sub_resource type="Animation" id="Animation_1xy5e"]
 length = 0.001
@@ -155,16 +155,16 @@ _data = {
 "show": SubResource("Animation_j71xn")
 }
 
-[node name="DialogSequence" type="Area2D"]
+[node name="Sell" type="Area2D"]
 collision_layer = 0
 collision_mask = 4
 monitorable = false
-script = ExtResource("1_5k2vb")
+script = ExtResource("1_6jo7n")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(1, -48)
-texture = ExtResource("2_2rv7w")
+texture = ExtResource("2_e26hb")
 hframes = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
