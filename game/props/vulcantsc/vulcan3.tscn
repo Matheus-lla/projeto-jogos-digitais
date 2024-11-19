@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dw0lcce7a81ky" path="res://tile_maps/sprites/tilemap/vulcan3.png" id="1_f6fvl"]
 
 [node name="Vulcan3" type="Node2D"]
+z_index = 1
 
 [node name="Vulcan3" type="Sprite2D" parent="."]
 position = Vector2(0.500004, 12.5)

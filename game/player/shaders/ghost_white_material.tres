@@ -1,0 +1,30 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dyq3e6bfk58e3"]
+
+[sub_resource type="Shader" id="Shader_boph3"]
+resource_local_to_scene = true
+code = "// NOTE: Shader automatically converted from Godot Engine 4.3.stable's CanvasItemMaterial.
+
+shader_type canvas_item;
+render_mode blend_mix;
+
+uniform bool whiten = false;
+uniform float mix_weight = 1.0;
+
+void fragment() {
+	vec4 texture_color = texture(TEXTURE, UV);
+	if(whiten) {
+		vec3 white = vec3(0.78, 0.78, 0.78);
+		vec3 whiteed_texture_rgb = mix(texture_color.rgb, white, mix_weight);
+		COLOR = vec4(whiteed_texture_rgb, texture_color.a);
+	}
+	else {
+		COLOR = texture_color;
+	}
+	
+}
+"
+
+[resource]
+shader = SubResource("Shader_boph3")
+shader_parameter/whiten = true
+shader_parameter/mix_weight = 1.0

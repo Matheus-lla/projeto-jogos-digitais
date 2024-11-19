@@ -7,6 +7,7 @@ radius = 3.99982
 height = 23.9987
 
 [node name="Burningtree2" type="Node2D"]
+z_index = 1
 
 [node name="Tree2Burning" type="Sprite2D" parent="."]
 position = Vector2(7, -47)

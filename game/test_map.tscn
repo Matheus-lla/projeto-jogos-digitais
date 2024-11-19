@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bus1ixdb1t6ro"]
+[gd_scene load_steps=7 format=3 uid="uid://bus1ixdb1t6ro"]
 
 [ext_resource type="PackedScene" uid="uid://dsre7sufd7jce" path="res://tile_maps/grass_01.tscn" id="1_65n33"]
 [ext_resource type="PackedScene" uid="uid://b1txr8547jmte" path="res://props/plants/plant.tscn" id="2_013br"]
 [ext_resource type="PackedScene" uid="uid://d4g0yvj01mxhw" path="res://props/spawn/spawn.tscn" id="3_7d168"]
-[ext_resource type="PackedScene" uid="uid://cp6p8qd6jkb7g" path="res://player/player.tscn" id="4_gw21c"]
 [ext_resource type="PackedScene" uid="uid://b88rtmgccpgu0" path="res://enemys/slime/slime.tscn" id="5_kyqx6"]
+[ext_resource type="PackedScene" uid="uid://cp6p8qd6jkb7g" path="res://player/player.tscn" id="5_xdayw"]
+[ext_resource type="PackedScene" uid="uid://bvbg34m2kdcbl" path="res://npc/villager/villager.tscn" id="6_csuax"]
 
 [node name="TestMap" type="Node2D"]
 y_sort_enabled = true
@@ -45,5 +46,7 @@ position = Vector2(-30, 237)
 [node name="Spawn" parent="." instance=ExtResource("3_7d168")]
 position = Vector2(664, 285)
 
-[node name="Player" parent="." instance=ExtResource("4_gw21c")]
-position = Vector2(314, 175)
+[node name="Player" parent="." instance=ExtResource("5_xdayw")]
+
+[node name="Villager" parent="." instance=ExtResource("6_csuax")]
+position = Vector2(693, 207)

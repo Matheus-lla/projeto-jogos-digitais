@@ -12,5 +12,4 @@ func get_tile_map_bounds() -> Array[Vector2]:
 		Vector2(get_used_rect().end * rendering_quadrant_size)
 	)
 	
-	print(bounds)
 	return bounds

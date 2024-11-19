@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cp6p8qd6jkb7g"]
+[gd_scene load_steps=50 format=3 uid="uid://cp6p8qd6jkb7g"]
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_cdxps"]
 [ext_resource type="Texture2D" uid="uid://c0tiavk755qy0" path="res://player/india-sprite-sheet.png" id="2_6vyfa"]

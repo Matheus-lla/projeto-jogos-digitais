@@ -1,10 +1,11 @@
-class_name Walk extends PlayerState
+class_name Walk extends State
 
-@export var move_speed: float = 300.0
-@onready var idle: PlayerState = $"../Idle"
-@onready var attack: PlayerState = $"../Attack"
+@export var move_speed: float = 200.0
+@onready var idle: State = $"../Idle"
+@onready var attack: State = $"../Attack"
 @onready var dash: Dash = $"../Dash"
 @onready var shoot_arrow: ShootArrow = $"../ShootArrow"
+@onready var drinking_potion: DrinkingPotion = $"../DrinkingPotion"
 
 func init():
 	pass
@@ -16,7 +17,7 @@ func enter() -> void:
 func exit() -> void:
 	pass
 	
-func process( _delta: float) -> PlayerState:
+func process( _delta: float) -> State:
 	if player.direction == Vector2.ZERO:
 		return idle
 		
@@ -27,10 +28,10 @@ func process( _delta: float) -> PlayerState:
 		
 	return null
 	
-func physics(_delta: float) -> PlayerState:
+func physics(_delta: float) -> State:
 	return null
 
-func handle_input(event: InputEvent) -> PlayerState:
+func handle_input(event: InputEvent) -> State:
 	if event.is_action("attack"):
 		return attack
 	
@@ -40,7 +41,10 @@ func handle_input(event: InputEvent) -> PlayerState:
 	if event.is_action("shoot_arrow"):
 		return shoot_arrow
 		
-	if event.is_action("interact"):
+	if event.is_action_pressed("interact"):
 		GlobalPlayerManager.interact_pressed.emit()
-		
+	
+	if event.is_action("use_potion"):
+		return drinking_potion
+	
 	return null

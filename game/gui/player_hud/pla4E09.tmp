@@ -1,0 +1,174 @@
+[gd_scene load_steps=10 format=3 uid="uid://bvxskssd2xsfb"]
+
+[ext_resource type="Texture2D" uid="uid://nsvudi3xlyo5" path="res://gui/player_hud/life/gui-health.png" id="1_kdowg"]
+[ext_resource type="Script" path="res://gui/player_hud/player_hud.gd" id="1_ld5hn"]
+[ext_resource type="PackedScene" uid="uid://bbrdbc01lcwkx" path="res://gui/player_hud/life/heart.tscn" id="2_dje31"]
+[ext_resource type="Texture2D" uid="uid://bkg8wdwkijwel" path="res://gui/player_hud/potion/potion.png" id="2_lcxnw"]
+[ext_resource type="FontFile" uid="uid://btlftr7loqd5u" path="res://fonts/Abaddon Bold.ttf" id="3_grm7k"]
+[ext_resource type="Texture2D" uid="uid://cfv0nfvclvb11" path="res://gui/player_hud/guarana/guarana_fake.png" id="5_b7fbe"]
+
+[sub_resource type="Animation" id="Animation_qv2xk"]
+resource_name = "PotionFull"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_x1is2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_io57c"]
+_data = {
+"PotionFull": SubResource("Animation_qv2xk"),
+"RESET": SubResource("Animation_x1is2")
+}
+
+[node name="PlayerHud" type="CanvasLayer"]
+script = ExtResource("1_ld5hn")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Antidote" type="Sprite2D" parent="Control"]
+position = Vector2(25, 34)
+scale = Vector2(1.37688, 1.37688)
+texture = ExtResource("2_lcxnw")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 43.0
+offset_top = 27.0
+offset_right = 63.0
+offset_bottom = 50.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_grm7k")
+text = "x0"
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+position = Vector2(489, 17)
+texture = ExtResource("1_kdowg")
+region_enabled = true
+region_rect = Rect2(29, 0, 34, 8)
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Control"]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 24.0
+offset_right = 554.0
+offset_bottom = 44.0
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 2
+alignment = 1
+last_wrap_alignment = 2
+
+[node name="Heart" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
+layout_mode = 2
+
+[node name="Heart2" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
+layout_mode = 2
+
+[node name="Heart3" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
+layout_mode = 2
+
+[node name="Heart4" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
+layout_mode = 2
+
+[node name="Heart5" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
+layout_mode = 2
+
+[node name="Heart6" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
+layout_mode = 2
+
+[node name="Heart7" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
+layout_mode = 2
+
+[node name="Heart8" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
+layout_mode = 2
+
+[node name="Heart9" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
+layout_mode = 2
+
+[node name="Heart10" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
+layout_mode = 2
+
+[node name="Heart11" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
+layout_mode = 2
+
+[node name="Heart12" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
+layout_mode = 2
+
+[node name="Heart13" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
+layout_mode = 2
+
+[node name="Heart14" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
+layout_mode = 2
+
+[node name="Heart15" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
+layout_mode = 2
+
+[node name="Heart16" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
+layout_mode = 2
+
+[node name="Heart17" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
+layout_mode = 2
+
+[node name="Heart18" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
+layout_mode = 2
+
+[node name="Heart19" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
+layout_mode = 2
+
+[node name="Heart20" parent="Control/HFlowContainer" instance=ExtResource("2_dje31")]
+layout_mode = 2
+
+[node name="Guarana" type="Sprite2D" parent="Control"]
+position = Vector2(134, 35)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("5_b7fbe")
+
+[node name="GuaranaLabel" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 152.0
+offset_top = 27.0
+offset_right = 172.0
+offset_bottom = 50.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_grm7k")
+text = "x0"
+
+[node name="PotionAnimation" type="AnimationPlayer" parent="Control"]
+root_node = NodePath("../Antidote")
+libraries = {
+"": SubResource("AnimationLibrary_io57c")
+}

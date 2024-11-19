@@ -7,6 +7,7 @@ radius = 8.99953
 height = 63.9761
 
 [node name="Vulcan" type="Node2D"]
+z_index = 1
 
 [node name="Vulcan2" type="Sprite2D" parent="."]
 position = Vector2(0, -1)
