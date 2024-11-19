@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://crwa42liy5tfw"]
+
+[ext_resource type="Texture2D" uid="uid://cgyglspbd28k" path="res://tile_maps/sprites/tilemap/vulcan4.png" id="1_7lo56"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5rla7"]
+radius = 8.99953
+height = 63.9761
+
+[node name="Vulcan2" type="Node2D"]
+
+[node name="Vulcan4" type="Sprite2D" parent="."]
+position = Vector2(-1, -2)
+texture = ExtResource("1_7lo56")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-13.3503, 54.1652)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(12.3503, -48.1652)
+rotation = -1.56051
+shape = SubResource("CapsuleShape2D_5rla7")

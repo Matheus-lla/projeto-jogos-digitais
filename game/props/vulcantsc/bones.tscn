@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://chuojaodpl3jo"]
+
+[ext_resource type="Texture2D" uid="uid://ckqx4bgsm6s2i" path="res://tile_maps/sprites/tilemap/bones.png" id="1_3xksr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pcoig"]
+radius = 7.98929
+height = 23.937
+
+[node name="Bones" type="Node2D"]
+
+[node name="Bones" type="Sprite2D" parent="."]
+position = Vector2(1, 3)
+texture = ExtResource("1_3xksr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-13.3503, 54.1652)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(12.3503, -51.1652)
+rotation = -1.56051
+shape = SubResource("CapsuleShape2D_pcoig")
