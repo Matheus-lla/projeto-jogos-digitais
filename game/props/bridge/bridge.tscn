@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bbcflnq12i654"]
 
-[ext_resource type="Texture2D" uid="uid://dguj1ohin587l" path="res://tile_maps/sprites/ponte.png" id="1_24y3j"]
+[ext_resource type="Texture2D" uid="uid://dguj1ohin587l" path="res://props/bridge/bridge.png" id="1_24y3j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lob10"]
 size = Vector2(13, 89)
