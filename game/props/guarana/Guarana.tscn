@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://cxcy7gakj3ldn" path="res://props/guarana/guarana_empty.png" id="5_adba3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f72jo"]
-radius = 5.20834
-height = 17.3611
+radius = 5.20833
+height = 10.4167
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_430tk"]
 radius = 5.0
@@ -27,7 +27,7 @@ collision_layer = 16
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(37.7778, 0.694444)
+position = Vector2(37.7778, 3.47222)
 scale = Vector2(1.2, 1.2)
 shape = SubResource("CapsuleShape2D_f72jo")
 

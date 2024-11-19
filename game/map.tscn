@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://d4g0yvj01mxhw" path="res://props/spawn/spawn.tscn" id="5_ab8ve"]
 [ext_resource type="PackedScene" uid="uid://cbrqu0ljsvhhi" path="res://props/tree1/tree1.tscn" id="6_fl1ub"]
 [ext_resource type="PackedScene" uid="uid://b677pllce5nsa" path="res://props/bush/bush.tscn" id="7_i8s12"]
-[ext_resource type="Texture2D" uid="uid://dguj1ohin587l" path="res://tile_maps/sprites/ponte.png" id="7_rbeto"]
 [ext_resource type="PackedScene" uid="uid://5h833b6p2xh0" path="res://props/walls/muralha.tscn" id="8_74xx4"]
 [ext_resource type="PackedScene" uid="uid://cp6p8qd6jkb7g" path="res://player/player.tscn" id="9_57pim"]
 [ext_resource type="PackedScene" uid="uid://b88rtmgccpgu0" path="res://enemys/slime/slime.tscn" id="9_qxiuk"]
@@ -22,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://dw5ayaxjwklmy" path="res://props/vulcantsc/skull.tscn" id="16_26cuq"]
 [ext_resource type="PackedScene" uid="uid://e3iitwvkrig5" path="res://props/burnigtree/burningtree1.tscn" id="17_24lf3"]
 [ext_resource type="PackedScene" uid="uid://chuojaodpl3jo" path="res://props/vulcantsc/bones.tscn" id="19_gplrp"]
+[ext_resource type="PackedScene" uid="uid://bbcflnq12i654" path="res://props/bridge/bridge.tscn" id="22_lfujk"]
 
 [node name="Map" type="Node2D"]
 y_sort_enabled = true
@@ -433,15 +433,6 @@ position = Vector2(774, 1534)
 
 [node name="Spawn2" parent="." instance=ExtResource("5_ab8ve")]
 position = Vector2(699, 1688)
-
-[node name="Ponte" type="Sprite2D" parent="."]
-position = Vector2(922.5, 1008.75)
-scale = Vector2(1, 1.19231)
-texture = ExtResource("7_rbeto")
-
-[node name="Ponte3" type="Sprite2D" parent="."]
-position = Vector2(923, 1106)
-texture = ExtResource("7_rbeto")
 
 [node name="Muralha5" parent="." instance=ExtResource("8_74xx4")]
 y_sort_enabled = true
@@ -1480,5 +1471,14 @@ text = "Oi, tudo bem? Prazer te conhecer"
 
 [node name="Villager3" parent="." instance=ExtResource("11_x22vo")]
 position = Vector2(1296, 193)
+
+[node name="Bridge" parent="." instance=ExtResource("22_lfujk")]
+position = Vector2(924, 1014)
+
+[node name="Bridge2" parent="." instance=ExtResource("22_lfujk")]
+position = Vector2(924, 1054)
+
+[node name="Bridge3" parent="." instance=ExtResource("22_lfujk")]
+position = Vector2(924, 1127)
 
 [editable path="Villager"]
