@@ -1,0 +1,84 @@
+[gd_scene load_steps=16 format=3 uid="uid://dl5dkj6nkf43v"]
+
+[ext_resource type="Script" path="res://enemys/snake/snake.gd" id="1_vxb5n"]
+[ext_resource type="Texture2D" uid="uid://bk65lxbyacy4j" path="res://icon.svg" id="2_qfpky"]
+[ext_resource type="PackedScene" uid="uid://uxvl7pfm1jf5" path="res://general_nodes/hit_box/hit_box.tscn" id="3_l6x12"]
+[ext_resource type="PackedScene" uid="uid://bi537x71g5dm3" path="res://general_nodes/hurt_box/hurt_box.tscn" id="4_10eml"]
+[ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://effects/Shadow.png" id="5_42wmo"]
+[ext_resource type="Script" path="res://general_scripts/state_machine.gd" id="6_dwvwk"]
+[ext_resource type="Script" path="res://enemys/states/idle.gd" id="7_xtgb3"]
+[ext_resource type="Script" path="res://enemys/states/destroy.gd" id="8_nio30"]
+[ext_resource type="Script" path="res://enemys/states/chase.gd" id="9_2stmd"]
+[ext_resource type="Script" path="res://enemys/states/wander.gd" id="10_3tk56"]
+[ext_resource type="Script" path="res://enemys/states/stun.gd" id="11_wyovq"]
+[ext_resource type="PackedScene" uid="uid://d4gtfxg7yyiyc" path="res://general_nodes/vision_area/vision_area.tscn" id="12_dfwqu"]
+[ext_resource type="Script" path="res://general_scripts/update_rotation.gd" id="12_fsws3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bq8qo"]
+radius = 46.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4w8dd"]
+radius = 122.004
+
+[node name="Snake" type="CharacterBody2D"]
+z_index = 1
+script = ExtResource("1_vxb5n")
+hp = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bq8qo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3.8147e-06)
+scale = Vector2(0.3125, 0.320312)
+texture = ExtResource("2_qfpky")
+
+[node name="HitBox" parent="." instance=ExtResource("3_l6x12")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CircleShape2D_bq8qo")
+
+[node name="HurtBox" parent="." instance=ExtResource("4_10eml")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_bq8qo")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Shadow" type="Sprite2D" parent="."]
+texture = ExtResource("5_42wmo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("12_fsws3")
+
+[node name="VisionArea" parent="Node2D" instance=ExtResource("12_dfwqu")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/VisionArea"]
+shape = SubResource("CircleShape2D_4w8dd")
+debug_color = Color(0.733436, 0.447634, 0.404893, 0.42)
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("6_dwvwk")
+
+[node name="EnemyStateIdle" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("7_xtgb3")
+next_state = NodePath("../EnemyStateWander")
+
+[node name="EnemyStateDestroy" type="Node" parent="StateMachine"]
+script = ExtResource("8_nio30")
+
+[node name="EnemyStateChase" type="Node" parent="StateMachine" node_paths=PackedStringArray("vision_area", "next_state")]
+script = ExtResource("9_2stmd")
+chase_speed = 125.0
+vision_area = NodePath("../../Node2D/VisionArea")
+next_state = NodePath("../EnemyStateIdle")
+
+[node name="EnemyStateWander" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("10_3tk56")
+next_state = NodePath("../EnemyStateIdle")
+
+[node name="EnemyStateStun" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("11_wyovq")
+next_state = NodePath("../EnemyStateIdle")
