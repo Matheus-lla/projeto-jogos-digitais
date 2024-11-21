@@ -4,6 +4,7 @@ var player: Player
 
 @onready var sprite: Sprite2D = $Body
 @onready var hit_box: HitBox = $HitBox
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	state_machine.init(self)

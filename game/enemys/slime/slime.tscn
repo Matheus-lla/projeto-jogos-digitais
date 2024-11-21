@@ -5,14 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://buy2jlc035aew" path="res://enemys/slime/Slime.png" id="2_iwhto"]
 [ext_resource type="PackedScene" uid="uid://uxvl7pfm1jf5" path="res://general_nodes/hit_box/hit_box.tscn" id="2_j77wu"]
 [ext_resource type="AudioStream" uid="uid://dj63deee622qo" path="res://enemys/slime/hit.wav" id="5_fq5oo"]
-[ext_resource type="Script" path="res://enemys/slime/states/idle.gd" id="5_iksxg"]
-[ext_resource type="Script" path="res://enemys/slime/states/wander.gd" id="6_avbk2"]
+[ext_resource type="Script" path="res://enemys/states/idle.gd" id="5_iksxg"]
+[ext_resource type="Script" path="res://enemys/states/wander.gd" id="6_avbk2"]
 [ext_resource type="AudioStream" uid="uid://b2hh13gjgjtkk" path="res://enemys/slime/destroy.wav" id="6_vhe7i"]
 [ext_resource type="PackedScene" uid="uid://bi537x71g5dm3" path="res://general_nodes/hurt_box/hurt_box.tscn" id="7_apnvt"]
 [ext_resource type="Texture2D" uid="uid://bcmmwvpbdj7th" path="res://effects/DestroySmoke.png" id="9_fq4vu"]
 [ext_resource type="Script" path="res://general_scripts/state_machine.gd" id="9_h4sm4"]
-[ext_resource type="Script" path="res://enemys/slime/states/stun.gd" id="10_skgr3"]
-[ext_resource type="Script" path="res://enemys/slime/states/destroy.gd" id="12_lxhb6"]
+[ext_resource type="Script" path="res://enemys/states/stun.gd" id="10_skgr3"]
+[ext_resource type="Script" path="res://enemys/states/destroy.gd" id="12_lxhb6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_774fb"]
 radius = 13.0
@@ -866,7 +866,6 @@ script = ExtResource("9_h4sm4")
 
 [node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("5_iksxg")
-state_duration_min = 0.7
 next_state = NodePath("../Wander")
 
 [node name="Wander" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]

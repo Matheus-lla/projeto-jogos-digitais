@@ -1,8 +1,5 @@
 class_name Goblin extends Character
 
-signal enemy_damaged( hurt_box : HurtBox )
-signal enemy_destroyed( hurt_box : HurtBox )
-
 var player : Player
 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
@@ -32,6 +29,6 @@ func _take_damage( hurt_box : HurtBox ) -> void:
 		return
 	hp -= hurt_box.damage
 	if hp > 0:
-		enemy_damaged.emit( hurt_box )
+		CharacterDamaged.emit( hurt_box )
 	else:
-		enemy_destroyed.emit( hurt_box )
+		CharacterDestroyed.emit( hurt_box )
