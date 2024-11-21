@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://dl5dkj6nkf43v"]
+[gd_scene load_steps=18 format=3 uid="uid://dl5dkj6nkf43v"]
 
 [ext_resource type="Script" path="res://enemys/snake/snake.gd" id="1_vxb5n"]
-[ext_resource type="Texture2D" uid="uid://bk65lxbyacy4j" path="res://icon.svg" id="2_qfpky"]
+[ext_resource type="Texture2D" uid="uid://d2kmgfbfbqke7" path="res://enemys/snake/cobrinha.png" id="2_a3gdv"]
 [ext_resource type="PackedScene" uid="uid://uxvl7pfm1jf5" path="res://general_nodes/hit_box/hit_box.tscn" id="3_l6x12"]
 [ext_resource type="PackedScene" uid="uid://bi537x71g5dm3" path="res://general_nodes/hurt_box/hurt_box.tscn" id="4_10eml"]
 [ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://effects/Shadow.png" id="5_42wmo"]
@@ -17,6 +17,27 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_bq8qo"]
 radius = 46.0
 
+[sub_resource type="Animation" id="Animation_vpl7h"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ca8pp"]
+_data = {
+"rastejando": SubResource("Animation_vpl7h")
+}
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_4w8dd"]
 radius = 122.004
 
@@ -29,9 +50,32 @@ hp = 1
 shape = SubResource("CircleShape2D_bq8qo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 position = Vector2(0, -3.8147e-06)
-scale = Vector2(0.3125, 0.320312)
-texture = ExtResource("2_qfpky")
+scale = Vector2(1, 1.022)
+texture = ExtResource("2_a3gdv")
+hframes = 3
+vframes = 2
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": false,
+"layer_section": true,
+"output_section": false,
+"pending_changes": {},
+"slice_section": false
+}
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "AnimationPlayer",
+"slice": "",
+"source": "/home/yamile/projeto-jogos-digitais/aseprite/cobrinha.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "a2f38a4a8c6a4a7fedd55334e8c8f493"
 
 [node name="HitBox" parent="." instance=ExtResource("3_l6x12")]
 
@@ -49,6 +93,9 @@ shape = SubResource("CircleShape2D_bq8qo")
 texture = ExtResource("5_42wmo")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ca8pp")
+}
 
 [node name="Node2D" type="Node2D" parent="."]
 script = ExtResource("12_fsws3")
