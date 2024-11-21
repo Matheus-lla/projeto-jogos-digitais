@@ -1483,11 +1483,12 @@ position = Vector2(924, 1054)
 position = Vector2(924, 1127)
 
 [node name="Goblin" parent="." instance=ExtResource("23_rhsfu")]
-z_index = 1
-position = Vector2(347, 51)
+position = Vector2(310, -100)
 
 [node name="Goblin2" parent="." instance=ExtResource("23_rhsfu")]
-z_index = 1
-position = Vector2(239, -79)
+position = Vector2(132, -34)
+
+[node name="Goblin3" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(378, 154)
 
 [editable path="Villager"]

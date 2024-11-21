@@ -14,7 +14,7 @@
 [ext_resource type="Script" path="res://general_scripts/update_rotation.gd" id="14_1c0ra"]
 [ext_resource type="Texture2D" uid="uid://bcmmwvpbdj7th" path="res://effects/DestroySmoke.png" id="16_qmi8b"]
 [ext_resource type="Script" path="res://enemys/states/chase.gd" id="16_v3mb8"]
-[ext_resource type="PackedScene" uid="uid://d4gtfxg7yyiyc" path="res://enemys/vision_area.tscn" id="17_ti8pv"]
+[ext_resource type="PackedScene" path="res://enemys/vision_area.tscn" id="17_ti8pv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mc85u"]
 radius = 13.0
@@ -717,6 +717,7 @@ _data = {
 }
 
 [node name="Goblin" type="CharacterBody2D"]
+z_index = 1
 collision_layer = 256
 collision_mask = 16
 script = ExtResource("1_3l85o")
