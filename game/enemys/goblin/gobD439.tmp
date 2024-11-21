@@ -7,13 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://dgndjngab2rj1" path="res://enemys/goblin/goblin.png" id="5_ehmqu"]
 [ext_resource type="AudioStream" uid="uid://dj63deee622qo" path="res://enemys/slime/hit.wav" id="6_d7rmf"]
 [ext_resource type="Script" path="res://general_scripts/state_machine.gd" id="7_ciwjx"]
-[ext_resource type="Script" path="res://enemys/goblin/states/enemy_state_idle.gd" id="9_ldfnm"]
-[ext_resource type="Script" path="res://enemys/goblin/states/enemy_state_wander.gd" id="10_tqetg"]
-[ext_resource type="Script" path="res://enemys/goblin/states/enemy_state_stun.gd" id="11_i8xm0"]
-[ext_resource type="Script" path="res://enemys/goblin/states/enemy_state_destroy.gd" id="12_ke2eo"]
+[ext_resource type="Script" path="res://enemys/states/enemy_state_idle.gd" id="9_ldfnm"]
+[ext_resource type="Script" path="res://enemys/states/enemy_state_wander.gd" id="10_tqetg"]
+[ext_resource type="Script" path="res://enemys/states/enemy_state_stun.gd" id="11_i8xm0"]
+[ext_resource type="Script" path="res://enemys/states/enemy_state_destroy.gd" id="12_ke2eo"]
 [ext_resource type="Script" path="res://general_scripts/update_rotation.gd" id="14_1c0ra"]
 [ext_resource type="Texture2D" uid="uid://bcmmwvpbdj7th" path="res://effects/DestroySmoke.png" id="16_qmi8b"]
-[ext_resource type="Script" path="res://enemys/goblin/states/enemy_state_chase.gd" id="16_v3mb8"]
+[ext_resource type="Script" path="res://enemys/states/enemy_state_chase.gd" id="16_v3mb8"]
 [ext_resource type="PackedScene" uid="uid://d4gtfxg7yyiyc" path="res://enemys/vision_area.tscn" id="17_ti8pv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mc85u"]
@@ -731,7 +731,7 @@ debug_color = Color(0.94902, 0.768627, 0, 0.419608)
 
 [node name="HitBox" parent="." instance=ExtResource("3_uacx4")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, -7)
 shape = SubResource("CircleShape2D_mc85u")
 debug_color = Color(0.94902, 0.0392157, 0, 0.419608)
@@ -748,6 +748,7 @@ hframes = 8
 vframes = 3
 
 [node name="AttackHurtBox" parent="Sprite2D" instance=ExtResource("2_vb6ko")]
+visible = false
 position = Vector2(0, 11)
 monitoring = false
 damage = 2

@@ -1,7 +1,7 @@
 [gd_scene load_steps=33 format=3 uid="uid://b88rtmgccpgu0"]
 
 [ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://effects/Shadow.png" id="1_3y6eb"]
-[ext_resource type="Script" path="res://enemys/slime/enemy.gd" id="1_fcqvr"]
+[ext_resource type="Script" path="res://enemys/slime/slime.gd" id="1_fcqvr"]
 [ext_resource type="Texture2D" uid="uid://buy2jlc035aew" path="res://enemys/slime/Slime.png" id="2_iwhto"]
 [ext_resource type="PackedScene" uid="uid://uxvl7pfm1jf5" path="res://general_nodes/hit_box/hit_box.tscn" id="2_j77wu"]
 [ext_resource type="AudioStream" uid="uid://dj63deee622qo" path="res://enemys/slime/hit.wav" id="5_fq5oo"]
