@@ -29,3 +29,4 @@ func on_interection():
 
 func guarana_spawm():
 	catch = false
+	PlayerHud.update_guarana(-PlayerHud.guarana)

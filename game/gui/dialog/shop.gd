@@ -42,11 +42,16 @@ func hide_shop():
 	ui.visible = false
 	ui.process_mode = Node.PROCESS_MODE_DISABLED
 	#get_tree().paused = false
-
+	
 func wepon_ui():
-	if player.current_wepon_level >= player.max_level or player.wepon_upgrade_cost() > PlayerHud.guarana:
-		wepon.disabled = true
+	if player.current_wepon_level >= player.max_level:
 		wepon_price.text = ""
+		wepon.disabled = true
+		return
+		
+	if player.wepon_upgrade_cost() > PlayerHud.guarana:
+		wepon_price.text = "R$ " + str(player.wepon_upgrade_cost())
+		wepon.disabled = true
 		return
 		
 	wepon.disabled = false
@@ -54,27 +59,42 @@ func wepon_ui():
 	
 	
 func bow_enabled():
-	if player.current_bow_level >= player.max_level or player.bow_upgrade_cost() > PlayerHud.guarana:
-		bow.disabled = true
+	if player.current_bow_level >= player.max_level:
 		bow_price.text = ""
+		bow.disabled = true
+		return
+		
+	if player.bow_upgrade_cost() > PlayerHud.guarana:
+		bow_price.text = "R$ " + str(player.bow_upgrade_cost())
+		bow.disabled = true
 		return
 		
 	bow.disabled = false
 	bow_price.text = "R$ " + str(player.bow_upgrade_cost())
 	
 func heal_enabled():
-	if player.current_heal_level >= player.max_level or player.heal_upgrade_cost() > PlayerHud.guarana:
-		heal.disabled = true
+	if player.current_heal_level >= player.max_level:
 		heal_price.text = ""
+		heal.disabled = true
+		return
+		
+	if player.heal_upgrade_cost() > PlayerHud.guarana:
+		heal_price.text = "R$ " + str(player.heal_upgrade_cost())
+		heal.disabled = true
 		return
 		
 	heal.disabled = false
 	heal_price.text = "R$ " + str(player.heal_upgrade_cost())
 	
 func max_hp_enabled():
-	if player.current_max_hp_level >= player.max_level or player.max_hp_upgrade_cost() >= PlayerHud.guarana:
-		max_hp.disabled = true
+	if player.current_max_hp_level >= player.max_level:
 		max_hp_price.text = ""
+		max_hp.disabled = true
+		return
+		
+	if player.max_hp_upgrade_cost() > PlayerHud.guarana:
+		max_hp_price.text = "R$ " + str(player.max_hp_upgrade_cost())
+		max_hp.disabled = true
 		return
 		
 	max_hp.disabled = false

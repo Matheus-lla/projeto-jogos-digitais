@@ -1,10 +1,8 @@
-class_name SlimeStun extends State
+class_name EnemyStateStun extends State
 
 var direction: Vector2
 var animation_finished: bool = false
 var damage_position: Vector2
-
-@onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 
 @export var anim_name: String = "stun"
 @export var knockback_speed: float = 200.0
@@ -23,11 +21,11 @@ func enter() -> void:
 	character.set_direction(direction)
 	character.velocity = direction * -knockback_speed;
 	character.update_animation(anim_name)
-	animation_player.animation_finished.connect(on_animation_finished)
+	character.animation_player.animation_finished.connect(on_animation_finished)
 	
 func exit() -> void:
 	character.invulnerable = false
-	animation_player.animation_finished.disconnect(on_animation_finished)
+	character.animation_player.animation_finished.disconnect(on_animation_finished)
 	pass
 	
 func process( delta: float) -> State:
@@ -37,9 +35,6 @@ func process( delta: float) -> State:
 	character.velocity -= character.velocity * decelerate_speed * delta
 	return null
 	
-func physics(_delta: float) -> State:
-	return null
-
 func on_damaged(hurt_box: HurtBox):
 	damage_position = hurt_box.global_position
 	state_machine.change_state(self)

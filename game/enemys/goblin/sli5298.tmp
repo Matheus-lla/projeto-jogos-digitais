@@ -1,18 +1,18 @@
 [gd_scene load_steps=33 format=3 uid="uid://b88rtmgccpgu0"]
 
 [ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://effects/Shadow.png" id="1_3y6eb"]
-[ext_resource type="Script" path="res://enemys/slime/slime.gd" id="1_fcqvr"]
+[ext_resource type="Script" path="res://enemys/slime/enemy.gd" id="1_fcqvr"]
 [ext_resource type="Texture2D" uid="uid://buy2jlc035aew" path="res://enemys/slime/Slime.png" id="2_iwhto"]
 [ext_resource type="PackedScene" uid="uid://uxvl7pfm1jf5" path="res://general_nodes/hit_box/hit_box.tscn" id="2_j77wu"]
 [ext_resource type="AudioStream" uid="uid://dj63deee622qo" path="res://enemys/slime/hit.wav" id="5_fq5oo"]
-[ext_resource type="Script" path="res://enemys/states/idle.gd" id="5_iksxg"]
-[ext_resource type="Script" path="res://enemys/states/wander.gd" id="6_avbk2"]
+[ext_resource type="Script" path="res://enemys/slime/states/enemy_state_idle.gd" id="5_iksxg"]
+[ext_resource type="Script" path="res://enemys/slime/states/enemy_state_wander.gd" id="6_avbk2"]
 [ext_resource type="AudioStream" uid="uid://b2hh13gjgjtkk" path="res://enemys/slime/destroy.wav" id="6_vhe7i"]
 [ext_resource type="PackedScene" uid="uid://bi537x71g5dm3" path="res://general_nodes/hurt_box/hurt_box.tscn" id="7_apnvt"]
 [ext_resource type="Texture2D" uid="uid://bcmmwvpbdj7th" path="res://effects/DestroySmoke.png" id="9_fq4vu"]
-[ext_resource type="Script" path="res://general_scripts/state_machine.gd" id="9_h4sm4"]
-[ext_resource type="Script" path="res://enemys/states/stun.gd" id="10_skgr3"]
-[ext_resource type="Script" path="res://enemys/states/destroy.gd" id="12_lxhb6"]
+[ext_resource type="PackedScene" uid="uid://bgjf4ssw52cgi" path="res://general_nodes/state_machine/state_machine.tscn" id="9_qb3k8"]
+[ext_resource type="Script" path="res://enemys/slime/states/enemy_state_stun.gd" id="10_skgr3"]
+[ext_resource type="Script" path="res://enemys/slime/states/enemy_state_destroy.gd" id="12_lxhb6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_774fb"]
 radius = 13.0
@@ -809,7 +809,6 @@ z_index = 1
 collision_layer = 256
 collision_mask = 16
 script = ExtResource("1_fcqvr")
-hp = 3
 
 [node name="HitBox" parent="." instance=ExtResource("2_j77wu")]
 
@@ -861,11 +860,11 @@ position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_774fb")
 debug_color = Color(0.74, 0.518, 0, 0.529412)
 
-[node name="StateMachine" type="Node" parent="."]
-script = ExtResource("9_h4sm4")
+[node name="StateMachine" parent="." instance=ExtResource("9_qb3k8")]
 
 [node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("5_iksxg")
+state_duration_min = 0.7
 next_state = NodePath("../Wander")
 
 [node name="Wander" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
@@ -878,3 +877,6 @@ next_state = NodePath("../Idle")
 
 [node name="Destroy" type="Node" parent="StateMachine"]
 script = ExtResource("12_lxhb6")
+anim_name = null
+knockback_speed = null
+decelerate_speed = null

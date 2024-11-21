@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cy6n5kjownfd7"]
+[gd_scene load_steps=24 format=3 uid="uid://cy6n5kjownfd7"]
 
 [ext_resource type="PackedScene" uid="uid://ctp446wbt3g8p" path="res://tile_maps/terrain.tscn" id="1_uo6ai"]
 [ext_resource type="PackedScene" uid="uid://0a35r0d3rnn7" path="res://props/hut/hut.tscn" id="5_71r4l"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://e3iitwvkrig5" path="res://props/burnig_trees/burningtree1.tscn" id="17_24lf3"]
 [ext_resource type="PackedScene" uid="uid://chuojaodpl3jo" path="res://props/stones/bones.tscn" id="19_gplrp"]
 [ext_resource type="PackedScene" uid="uid://bbcflnq12i654" path="res://props/bridge/bridge.tscn" id="22_lfujk"]
+[ext_resource type="PackedScene" uid="uid://bxnynmne8hsl2" path="res://enemys/goblin/goblin.tscn" id="23_rhsfu"]
 
 [node name="Map" type="Node2D"]
 y_sort_enabled = true
@@ -1480,5 +1481,13 @@ position = Vector2(924, 1054)
 
 [node name="Bridge3" parent="." instance=ExtResource("22_lfujk")]
 position = Vector2(924, 1127)
+
+[node name="Goblin" parent="." instance=ExtResource("23_rhsfu")]
+z_index = 1
+position = Vector2(347, 51)
+
+[node name="Goblin2" parent="." instance=ExtResource("23_rhsfu")]
+z_index = 1
+position = Vector2(239, -79)
 
 [editable path="Villager"]

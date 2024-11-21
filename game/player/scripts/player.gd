@@ -35,6 +35,8 @@ func _ready() -> void:
 	state_machine.init(self)
 	hit_box.Damaged.connect(on_damaged)
 	spawn()
+	PlayerHud.update_guarana(500)
+
 
 func _process(_delta: float) -> void:
 	direction = Vector2(
@@ -81,8 +83,7 @@ func on_damaged(hurt_box: HurtBox):
 func spawn():
 	update_hp(max_hp)
 	PlayerHud.update_potion(PlayerHud.max_potion)
-	#PlayerHud.update_guarana(-PlayerHud.guarana)
-	PlayerHud.update_guarana(500)
+	PlayerHud.update_guarana(-PlayerHud.guarana)
 	
 	for c in get_parent().get_children(false):
 		if c is Guarana:

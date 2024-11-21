@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://player/scripts/states/player_state_attack.gd" id="6_uq3q5"]
 [ext_resource type="Script" path="res://general_scripts/state_machine.gd" id="7_i27r4"]
 [ext_resource type="AudioStream" uid="uid://bt47elq3aco7w" path="res://player/audio/SwordSwoosh.wav" id="8_i7ip4"]
-[ext_resource type="Script" path="res://player/scripts/player_interactions.gd" id="10_10sp5"]
+[ext_resource type="Script" path="res://general_scripts/update_rotation.gd" id="10_10sp5"]
 [ext_resource type="PackedScene" uid="uid://bi537x71g5dm3" path="res://general_nodes/hurt_box/hurt_box.tscn" id="10_aoesj"]
 [ext_resource type="Script" path="res://player/scripts/states/player_state_stun.gd" id="11_8opwu"]
 [ext_resource type="Script" path="res://player/scripts/states/player_state_dash.gd" id="11_rq1l8"]
@@ -748,15 +748,15 @@ libraries = {
 "": SubResource("AnimationLibrary_r4e5q")
 }
 
-[node name="Interactions" type="Node2D" parent="."]
+[node name="Rotation" type="Node2D" parent="."]
 script = ExtResource("10_10sp5")
 
-[node name="Area2D" type="Area2D" parent="Interactions"]
+[node name="Area2D" type="Area2D" parent="Rotation"]
 collision_layer = 4
 collision_mask = 0
 monitoring = false
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Interactions/Area2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rotation/Area2D"]
 polygon = PackedVector2Array(0, 0, 20, 32, -20, 32)
 
 [node name="HitBox" parent="." instance=ExtResource("13_r47ef")]
@@ -837,7 +837,7 @@ position = Vector2(0, -9)
 texture = ExtResource("2_6vyfa")
 hframes = 11
 vframes = 11
-frame = 31
+frame = 15
 metadata/_aseprite_wizard_config_ = {
 "i_mode": -1,
 "keep_anim_length": false,
