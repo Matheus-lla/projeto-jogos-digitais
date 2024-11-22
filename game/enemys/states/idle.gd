@@ -8,16 +8,10 @@ class_name EnemyStateIdle extends State
 
 var timer: float = 0.0
 
-func init() -> void:
-	pass
-
 func enter() -> void:
 	character.velocity = Vector2.ZERO
 	timer = randf_range(state_duration_min, state_duration_max)
 	character.update_animation(anim_name)
-
-func exit() -> void:
-	pass
 	
 func process( delta: float) -> State:
 	timer -= delta
