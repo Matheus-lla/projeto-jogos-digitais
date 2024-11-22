@@ -10,6 +10,7 @@ func _ready():
 	state_machine.init( self )
 	player = GlobalPlayerManager.player
 	hit_box.Damaged.connect(_take_damage)
+	animation_player.play("basic_attack")
 
 func set_direction(_new_direction: Vector2) -> bool:
 	var updated = super.set_direction(_new_direction)
