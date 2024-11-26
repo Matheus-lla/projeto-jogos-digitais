@@ -32,7 +32,7 @@ func change_state(new_state: State) -> void:
 		return update_state(default_state)
 	
 	var random_state = null
-	while random_state == null or random_state is BoitataStateDestroy:
+	while random_state == null or random_state is BoitataStateDestroy or random_state is BoitataStateStun:
 		random_state = states[randi_range(0, states.size() -1)]
 
 	update_state(random_state)
