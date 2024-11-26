@@ -29,6 +29,7 @@ var kills: int = 0
 @onready var idle: Idle = $StateMachine/Idle
 @onready var spawn_place: Spawn = $"../Spawn"
 @onready var melee_hurt_box: HurtBox = $MeleeHurtBox
+@onready var camera: Camera = $Camera
 
 func _ready() -> void:
 	GlobalPlayerManager.player = self

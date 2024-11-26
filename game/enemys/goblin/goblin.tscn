@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://uxvl7pfm1jf5" path="res://general_nodes/hit_box/hit_box.tscn" id="3_uacx4"]
 [ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://effects/Shadow.png" id="4_fb3j6"]
 [ext_resource type="Texture2D" uid="uid://dgndjngab2rj1" path="res://enemys/goblin/goblin.png" id="5_ehmqu"]
-[ext_resource type="AudioStream" uid="uid://dj63deee622qo" path="res://enemys/slime/hit.wav" id="6_d7rmf"]
+[ext_resource type="AudioStream" uid="uid://dj63deee622qo" path="res://enemys/audio/hit.wav" id="6_d7rmf"]
 [ext_resource type="Script" path="res://general_scripts/state_machine.gd" id="7_ciwjx"]
 [ext_resource type="Script" path="res://enemys/states/idle.gd" id="8_b75rd"]
 [ext_resource type="Script" path="res://enemys/states/wander.gd" id="9_8hcxq"]

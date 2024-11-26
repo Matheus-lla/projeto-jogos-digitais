@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cy6n5kjownfd7"]
+[gd_scene load_steps=25 format=3 uid="uid://cy6n5kjownfd7"]
 
 [ext_resource type="PackedScene" uid="uid://ctp446wbt3g8p" path="res://tile_maps/terrain.tscn" id="1_uo6ai"]
 [ext_resource type="PackedScene" uid="uid://0a35r0d3rnn7" path="res://props/hut/hut.tscn" id="5_71r4l"]
@@ -23,7 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://chuojaodpl3jo" path="res://props/stones/bones.tscn" id="19_gplrp"]
 [ext_resource type="PackedScene" uid="uid://bbcflnq12i654" path="res://props/bridge/bridge.tscn" id="22_lfujk"]
 [ext_resource type="PackedScene" uid="uid://bxnynmne8hsl2" path="res://enemys/goblin/goblin.tscn" id="23_rhsfu"]
-[ext_resource type="PackedScene" uid="uid://dl5dkj6nkf43v" path="res://enemys/snake/snake.tscn" id="24_8b1s4"]
 [ext_resource type="PackedScene" uid="uid://cobps4btqiqs5" path="res://enemys/boitata/boitata.tscn" id="25_faf6i"]
 
 [node name="Map" type="Node2D"]
@@ -36,7 +35,7 @@ position = Vector2(-189, -483)
 [node name="Player" parent="." instance=ExtResource("9_57pim")]
 
 [node name="Spawn" parent="." instance=ExtResource("5_ab8ve")]
-position = Vector2(1298, 8)
+position = Vector2(-810, 3808)
 
 [node name="Slime" parent="." instance=ExtResource("9_qxiuk")]
 position = Vector2(1008, -15)
@@ -1493,10 +1492,11 @@ position = Vector2(132, -34)
 [node name="Goblin3" parent="." instance=ExtResource("23_rhsfu")]
 position = Vector2(378, 154)
 
-[node name="Snake" parent="." instance=ExtResource("24_8b1s4")]
-position = Vector2(911, 260)
-
 [node name="Boitata" parent="." instance=ExtResource("25_faf6i")]
-position = Vector2(-850, 3046)
+position = Vector2(-857, 3086)
+
+[node name="CollisionShape2D" parent="Boitata/VisionArea" index="0"]
+position = Vector2(7.22222, 63.8887)
 
 [editable path="Villager"]
+[editable path="Boitata"]
