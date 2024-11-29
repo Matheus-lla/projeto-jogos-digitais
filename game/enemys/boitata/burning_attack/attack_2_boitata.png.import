@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://mltmhx7cec4q"
-path="res://.godot/imported/attack_2_boitata.png-e0cb880e8e83d8353e3ae4c7c6946011.ctex"
+path="res://.godot/imported/attack_2_boitata.png-452218e8a5a2a8789b844d384ab9ced3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemys/boitata/attack_2_boitata.png"
-dest_files=["res://.godot/imported/attack_2_boitata.png-e0cb880e8e83d8353e3ae4c7c6946011.ctex"]
+source_file="res://enemys/boitata/burning_attack/attack_2_boitata.png"
+dest_files=["res://.godot/imported/attack_2_boitata.png-452218e8a5a2a8789b844d384ab9ced3.ctex"]
 
 [params]
 
