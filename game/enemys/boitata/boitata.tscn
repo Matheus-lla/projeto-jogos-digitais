@@ -10,10 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://bqq732lfh4415" path="res://enemys/boitata/boitata-sheet.png" id="7_tn8hg"]
 [ext_resource type="PackedScene" uid="uid://d4gtfxg7yyiyc" path="res://general_nodes/vision_area/vision_area.tscn" id="7_uc7yh"]
 [ext_resource type="Script" path="res://enemys/states/idle.gd" id="9_52v8l"]
-[ext_resource type="Script" path="res://enemys/boitata/basic_attack.gd" id="9_lomxf"]
-[ext_resource type="Script" path="res://enemys/boitata/destroy.gd" id="10_4cy8m"]
-[ext_resource type="Script" path="res://enemys/boitata/burning_attack.gd" id="10_w7b6i"]
-[ext_resource type="Script" path="res://enemys/boitata/stun.gd" id="11_mhlnh"]
+[ext_resource type="Script" path="res://enemys/boitata/states/basic_attack.gd" id="9_lomxf"]
+[ext_resource type="Script" path="res://enemys/boitata/states/destroy.gd" id="10_4cy8m"]
+[ext_resource type="Script" path="res://enemys/boitata/states/burning_attack.gd" id="10_w7b6i"]
+[ext_resource type="Script" path="res://enemys/boitata/states/stun.gd" id="11_mhlnh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_emjqh"]
 radius = 30.8006
@@ -320,18 +320,6 @@ metadata/_aseprite_wizard_source_file_hash_ = "adcecb7a1f675091781d92f908e9c0cd"
 script = ExtResource("7_77wen")
 
 [node name="EnemyStateIdle" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
-script = ExtResource("9_52v8l")
-next_state = NodePath(".")
-
-[node name="EnemyStateIdle2" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
-script = ExtResource("9_52v8l")
-next_state = NodePath(".")
-
-[node name="EnemyStateIdle3" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
-script = ExtResource("9_52v8l")
-next_state = NodePath(".")
-
-[node name="EnemyStateIdle4" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("9_52v8l")
 next_state = NodePath(".")
 

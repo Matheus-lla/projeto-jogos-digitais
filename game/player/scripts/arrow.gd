@@ -49,7 +49,7 @@ func shoot(damage: int) -> void:
 	set_rotation_from_direction(player.cardinal_direction)
 	timer = LOADING_TIME
 	state = ArrowState.LOADING
-	visible = true
+	visible = false
 	scale *= SCALE_FACTOR
 
 func set_rotation_from_direction(direction: Vector2):

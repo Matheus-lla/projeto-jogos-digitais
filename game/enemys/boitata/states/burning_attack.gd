@@ -2,7 +2,7 @@ extends State
 
 var finished
 
-@export var animation_name: String = "basic_attack"
+@export var animation_name: String = "burning_attack"
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 
 func enter():
@@ -12,8 +12,8 @@ func enter():
 
 func exit():
 	animation_player.animation_finished.disconnect(on_animation_finished)
-	
-func process( delta: float) -> State:
+
+func process(_delta: float) -> State:
 	if finished:
 		return self
 		

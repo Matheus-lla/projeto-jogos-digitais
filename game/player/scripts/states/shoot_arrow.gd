@@ -15,9 +15,6 @@ var audio_played: bool
 const ArrowCene = preload("res://player/arrow.tscn")
 const LOADING_TIME = 0.35 # time to pull the arrow and released
 
-func init():
-	pass
-	
 func enter() -> void:
 	var arrow = ArrowCene.instantiate() as Arrow
 	arrow.global_position = player.global_position 
@@ -49,12 +46,6 @@ func process(delta: float) -> State:
 		play_audio()
 		
 	return null
-	
-func physics(_delta: float) -> State:
-	return null
 
-func handle_input(_event: InputEvent) -> State:
-	return null
-	
 func on_animation_finished(_animation_name: String):
 	ended = true

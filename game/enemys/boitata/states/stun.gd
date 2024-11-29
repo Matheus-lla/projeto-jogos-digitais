@@ -16,13 +16,13 @@ func exit() -> void:
 	character.invulnerable = false
 	character.animation_player.animation_finished.disconnect(on_animation_finished)
 	
-func process( delta: float) -> State:
+func process(_delta: float) -> State:
 	if animation_finished:
 		return self
 		
 	return null
 	
-func on_damaged(hurt_box: HurtBox):
+func on_damaged(_hurt_box: HurtBox):
 	state_machine.update_state(self)
 
 func on_animation_finished(_current_animation: String):

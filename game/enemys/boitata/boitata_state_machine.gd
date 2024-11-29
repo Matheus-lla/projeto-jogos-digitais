@@ -29,7 +29,8 @@ func change_state(new_state: State) -> void:
 		return
 
 	if not new_state.character.is_in_combat:
-		return update_state(default_state)
+		update_state(default_state)
+		return
 	
 	var random_state = null
 	while random_state == null or random_state is BoitataStateDestroy or random_state is BoitataStateStun:
