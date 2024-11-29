@@ -12,6 +12,7 @@ func enter() -> void:
 	character.defeated = true
 	character.is_in_combat = false
 	character.invulnerable = true
+	character.door.set_collision_layer_value(5, false)
 	character.update_animation(anim_name)
 	animation_player.animation_finished.connect(on_animation_finished)
 	

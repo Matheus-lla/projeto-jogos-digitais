@@ -38,12 +38,15 @@ func _take_damage( hurt_box : HurtBox ) -> void:
 	CharacterDamaged.emit( hurt_box )
 		
 func on_player_enter():
-	is_in_combat = true
-	door.set_collision_layer_value(5, true)
-	camera_2d.make_current()
+	if not defeated:
+		is_in_combat = true
+		await get_tree().create_timer(0.3).timeout
+		door.set_collision_layer_value(5, true)
+		camera_2d.make_current()
 
 func on_player_exit():
 	is_in_combat = false
+	await get_tree().create_timer(0.3).timeout
 	door.set_collision_layer_value(5, false)
 	player.camera.make_current()
 	

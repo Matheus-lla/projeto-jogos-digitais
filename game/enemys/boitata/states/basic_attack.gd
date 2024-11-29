@@ -20,7 +20,7 @@ func enter():
 func exit():
 	animation_player.animation_finished.disconnect(on_animation_finished)
 	
-func process( delta: float) -> State:
+func process(_delta: float) -> State:
 	if finished:
 		return self
 		

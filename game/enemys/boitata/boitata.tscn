@@ -9,12 +9,10 @@
 [ext_resource type="Script" path="res://enemys/boitata/boitata_state_machine.gd" id="7_77wen"]
 [ext_resource type="Texture2D" uid="uid://bqq732lfh4415" path="res://enemys/boitata/boitata-sheet.png" id="7_tn8hg"]
 [ext_resource type="PackedScene" uid="uid://d4gtfxg7yyiyc" path="res://general_nodes/vision_area/vision_area.tscn" id="7_uc7yh"]
+[ext_resource type="Script" path="res://enemys/states/idle.gd" id="9_52v8l"]
+[ext_resource type="Script" path="res://enemys/boitata/states/basic_attack.gd" id="9_lomxf"]
 [ext_resource type="Script" path="res://enemys/boitata/states/destroy.gd" id="10_4cy8m"]
-[ext_resource type="Script" path="res://enemys/boitata/states/burning_attack.gd" id="10_w7b6i"]
 [ext_resource type="Script" path="res://enemys/boitata/states/stun.gd" id="11_mhlnh"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_emjqh"]
-radius = 30.8006
 
 [sub_resource type="Animation" id="Animation_dbqpj"]
 length = 0.001
@@ -185,7 +183,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mn38a"]
-size = Vector2(263.333, 220.944)
+size = Vector2(472, 375)
 
 [sub_resource type="Animation" id="Animation_8jrg0"]
 length = 0.001
@@ -248,10 +246,11 @@ _data = {
 "destroy": SubResource("Animation_vntco")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_b2cqa"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wecxa"]
 size = Vector2(123, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_emjqh"]
+radius = 28.825
 
 [node name="Boitata" type="CharacterBody2D"]
 z_index = 1
@@ -259,10 +258,6 @@ collision_layer = 16
 collision_mask = 0
 script = ExtResource("1_u8ci2")
 hp = 15
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.2, -4.2)
-shape = SubResource("CircleShape2D_emjqh")
 
 [node name="HitBox" parent="." instance=ExtResource("3_qjoyx")]
 
@@ -319,8 +314,21 @@ metadata/_aseprite_wizard_source_file_hash_ = "adcecb7a1f675091781d92f908e9c0cd"
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("7_77wen")
 
-[node name="BurningAttack" type="Node" parent="StateMachine"]
-script = ExtResource("10_w7b6i")
+[node name="EnemyStateIdle" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("9_52v8l")
+next_state = NodePath(".")
+
+[node name="BasicAttack" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("9_lomxf")
+next_state = NodePath("../EnemyStateIdle")
+
+[node name="BasicAttack2" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("9_lomxf")
+next_state = NodePath("../EnemyStateIdle")
+
+[node name="BasicAttack3" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("9_lomxf")
+next_state = NodePath("../EnemyStateIdle")
 
 [node name="Destroy" type="Node" parent="StateMachine"]
 script = ExtResource("10_4cy8m")
@@ -343,10 +351,6 @@ libraries = {
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.85, 0.85)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(32, -170)
-shape = SubResource("CircleShape2D_b2cqa")
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 0
 collision_mask = 0
@@ -354,3 +358,7 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(0.5, 184)
 shape = SubResource("RectangleShape2D_wecxa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3, -5)
+shape = SubResource("CircleShape2D_emjqh")

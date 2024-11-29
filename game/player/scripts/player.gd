@@ -36,7 +36,7 @@ func _ready() -> void:
 	state_machine.init(self)
 	hit_box.Damaged.connect(on_damaged)
 	spawn()
-	PlayerHud.update_guarana(500)
+	PlayerHud.update_guarana(100)
 
 
 func _process(_delta: float) -> void:
