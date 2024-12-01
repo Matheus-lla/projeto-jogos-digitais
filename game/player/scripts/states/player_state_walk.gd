@@ -1,21 +1,14 @@
 class_name Walk extends State
 
-@export var move_speed: float = 200.0
+@export var move_speed: float = 150.0
 @onready var idle: State = $"../Idle"
 @onready var attack: State = $"../Attack"
 @onready var dash: Dash = $"../Dash"
 @onready var shoot_arrow: ShootArrow = $"../ShootArrow"
 @onready var drinking_potion: DrinkingPotion = $"../DrinkingPotion"
 
-func init():
-	pass
-
 func enter() -> void:
 	player.update_animation("walking")
-	pass
-
-func exit() -> void:
-	pass
 	
 func process( _delta: float) -> State:
 	if player.direction == Vector2.ZERO:
@@ -28,9 +21,6 @@ func process( _delta: float) -> State:
 		
 	return null
 	
-func physics(_delta: float) -> State:
-	return null
-
 func handle_input(event: InputEvent) -> State:
 	if event.is_action("attack"):
 		return attack

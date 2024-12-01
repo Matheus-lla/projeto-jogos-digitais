@@ -4,7 +4,7 @@ var max_level = 3
 
 var current_wepon_level = 0
 var wepon_level_cost = [20, 40, 80]
-var wepon_damage_by_level = [3, 5, 7]
+var wepon_damage_by_level = [4, 6, 8]
 
 var current_bow_level = 0
 var bow_level_cost = [15, 30, 60]

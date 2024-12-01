@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cobps4btqiqs5"]
+[gd_scene load_steps=28 format=3 uid="uid://cobps4btqiqs5"]
 
 [ext_resource type="Script" path="res://enemys/boitata/boitata.gd" id="1_u8ci2"]
 [ext_resource type="AudioStream" uid="uid://b2hh13gjgjtkk" path="res://enemys/audio/destroy.wav" id="3_6ay2x"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://enemys/boitata/states/destroy.gd" id="10_4cy8m"]
 [ext_resource type="Script" path="res://enemys/boitata/states/stun.gd" id="11_mhlnh"]
 [ext_resource type="Script" path="res://enemys/boitata/states/burning_attack.gd" id="12_a88k8"]
+[ext_resource type="Script" path="res://enemys/boitata/states/basic_attack.gd" id="13_4p6cc"]
 
 [sub_resource type="Animation" id="Animation_dbqpj"]
 length = 0.001
@@ -318,14 +319,20 @@ script = ExtResource("7_77wen")
 script = ExtResource("9_52v8l")
 next_state = NodePath(".")
 
+[node name="BurningAttack" type="Node" parent="StateMachine"]
+script = ExtResource("12_a88k8")
+
+[node name="BasicAttack" type="Node" parent="StateMachine"]
+script = ExtResource("13_4p6cc")
+
+[node name="BasicAttack2" type="Node" parent="StateMachine"]
+script = ExtResource("13_4p6cc")
+
 [node name="Destroy" type="Node" parent="StateMachine"]
 script = ExtResource("10_4cy8m")
 
 [node name="Stun" type="Node" parent="StateMachine"]
 script = ExtResource("11_mhlnh")
-
-[node name="BurningAttack" type="Node" parent="StateMachine"]
-script = ExtResource("12_a88k8")
 
 [node name="DestroyEfffect" type="Sprite2D" parent="."]
 visible = false
