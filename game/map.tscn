@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cy6n5kjownfd7"]
+[gd_scene load_steps=26 format=3 uid="uid://cy6n5kjownfd7"]
 
 [ext_resource type="PackedScene" uid="uid://ctp446wbt3g8p" path="res://tile_maps/terrain.tscn" id="1_uo6ai"]
 [ext_resource type="PackedScene" uid="uid://0a35r0d3rnn7" path="res://props/hut/hut.tscn" id="5_71r4l"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://e3iitwvkrig5" path="res://props/burnig_trees/burningtree1.tscn" id="17_24lf3"]
 [ext_resource type="PackedScene" uid="uid://chuojaodpl3jo" path="res://props/stones/bones.tscn" id="19_gplrp"]
 [ext_resource type="PackedScene" uid="uid://bbcflnq12i654" path="res://props/bridge/bridge.tscn" id="22_lfujk"]
+[ext_resource type="PackedScene" uid="uid://bgjbl4yqfjwgx" path="res://enemys/boitata/fire/fire.tscn" id="23_qtuhw"]
 [ext_resource type="PackedScene" uid="uid://bxnynmne8hsl2" path="res://enemys/goblin/goblin.tscn" id="23_rhsfu"]
 [ext_resource type="PackedScene" uid="uid://cobps4btqiqs5" path="res://enemys/boitata/boitata.tscn" id="25_faf6i"]
 
@@ -1542,6 +1543,9 @@ position = Vector2(132, -34)
 
 [node name="Goblin3" parent="." instance=ExtResource("23_rhsfu")]
 position = Vector2(378, 154)
+
+[node name="Fire" parent="." instance=ExtResource("23_qtuhw")]
+position = Vector2(-864, 3519)
 
 [node name="Boitata" parent="." instance=ExtResource("25_faf6i")]
 position = Vector2(-856, 3092)
