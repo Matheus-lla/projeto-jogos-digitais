@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://x11qugelju7o"]
+[gd_scene load_steps=11 format=3 uid="uid://x11qugelju7o"]
 
 [ext_resource type="PackedScene" uid="uid://bi537x71g5dm3" path="res://general_nodes/hurt_box/hurt_box.tscn" id="1_lrppk"]
 [ext_resource type="Script" path="res://enemys/boitata/burning_attack/burning_attack.gd" id="1_yp2yd"]
@@ -10,6 +10,94 @@ radius = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hc47m"]
 radius = 20.0
+
+[sub_resource type="Animation" id="Animation_cmglw"]
+resource_name = "growing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(3, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -200)]
+}
+
+[sub_resource type="Animation" id="Animation_l1i8n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pp3l3"]
+resource_name = "shrinking"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3, 3), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -200), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4quqb"]
+_data = {
+"RESET": SubResource("Animation_l1i8n"),
+"growing": SubResource("Animation_cmglw"),
+"shrinking": SubResource("Animation_pp3l3")
+}
 
 [node name="BurningAttack" type="CharacterBody2D"]
 z_index = 2
@@ -29,9 +117,14 @@ shape = SubResource("CircleShape2D_hc47m")
 
 [node name="Shadow" type="Sprite2D" parent="."]
 modulate = Color(0.366, 0.205, 0.113, 0.454)
-position = Vector2(5.96046e-08, 19)
-scale = Vector2(1.25, 1.03125)
+position = Vector2(0, 20)
+scale = Vector2(1.34375, 1.03125)
 texture = ExtResource("3_rvb5t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_mx4y4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4quqb")
+}

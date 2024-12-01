@@ -37,7 +37,7 @@ position = Vector2(-189, -483)
 [node name="Player" parent="." instance=ExtResource("9_57pim")]
 
 [node name="Spawn" parent="." instance=ExtResource("5_ab8ve")]
-position = Vector2(1260, -19)
+position = Vector2(-861, 3562)
 
 [node name="Spawn3" parent="." instance=ExtResource("5_ab8ve")]
 position = Vector2(-810, 3763)
@@ -1544,20 +1544,20 @@ position = Vector2(132, -34)
 position = Vector2(378, 154)
 
 [node name="Boitata" parent="." instance=ExtResource("25_faf6i")]
-position = Vector2(-857, 3024)
+position = Vector2(-856, 3092)
 
 [node name="CollisionShape2D" parent="Boitata/VisionArea" index="0"]
-position = Vector2(12, 141)
+position = Vector2(9, 101.75)
 
 [node name="Camera2D" parent="Boitata" index="8"]
 position = Vector2(10, 76)
-zoom = Vector2(0.7, 0.7)
+offset = Vector2(0, -40)
 
 [node name="StaticBody2D" parent="Boitata" index="9"]
 position = Vector2(8, 330)
 
 [node name="CollisionShape2D" parent="Boitata/StaticBody2D" index="0"]
-position = Vector2(0, 0)
+position = Vector2(2, -64)
 
 [editable path="Villager"]
 [editable path="Boitata"]

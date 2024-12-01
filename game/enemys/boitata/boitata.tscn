@@ -10,9 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://bqq732lfh4415" path="res://enemys/boitata/boitata-sheet.png" id="7_tn8hg"]
 [ext_resource type="PackedScene" uid="uid://d4gtfxg7yyiyc" path="res://general_nodes/vision_area/vision_area.tscn" id="7_uc7yh"]
 [ext_resource type="Script" path="res://enemys/states/idle.gd" id="9_52v8l"]
-[ext_resource type="Script" path="res://enemys/boitata/states/basic_attack.gd" id="9_lomxf"]
 [ext_resource type="Script" path="res://enemys/boitata/states/destroy.gd" id="10_4cy8m"]
 [ext_resource type="Script" path="res://enemys/boitata/states/stun.gd" id="11_mhlnh"]
+[ext_resource type="Script" path="res://enemys/boitata/states/burning_attack.gd" id="12_a88k8"]
 
 [sub_resource type="Animation" id="Animation_dbqpj"]
 length = 0.001
@@ -183,7 +183,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mn38a"]
-size = Vector2(472, 375)
+size = Vector2(472, 312.5)
 
 [sub_resource type="Animation" id="Animation_8jrg0"]
 length = 0.001
@@ -318,23 +318,14 @@ script = ExtResource("7_77wen")
 script = ExtResource("9_52v8l")
 next_state = NodePath(".")
 
-[node name="BasicAttack" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
-script = ExtResource("9_lomxf")
-next_state = NodePath("../EnemyStateIdle")
-
-[node name="BasicAttack2" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
-script = ExtResource("9_lomxf")
-next_state = NodePath("../EnemyStateIdle")
-
-[node name="BasicAttack3" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
-script = ExtResource("9_lomxf")
-next_state = NodePath("../EnemyStateIdle")
-
 [node name="Destroy" type="Node" parent="StateMachine"]
 script = ExtResource("10_4cy8m")
 
 [node name="Stun" type="Node" parent="StateMachine"]
 script = ExtResource("11_mhlnh")
+
+[node name="BurningAttack" type="Node" parent="StateMachine"]
+script = ExtResource("12_a88k8")
 
 [node name="DestroyEfffect" type="Sprite2D" parent="."]
 visible = false
@@ -349,7 +340,7 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.85, 0.85)
+zoom = Vector2(0.7, 0.7)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 0
