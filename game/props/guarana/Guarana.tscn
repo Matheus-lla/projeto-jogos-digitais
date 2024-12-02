@@ -21,13 +21,13 @@ scale = Vector2(1.2, 1.2)
 script = ExtResource("1_7d0e4")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-45.3333, 0)
+position = Vector2(2.86102e-06, 5.83333)
 scale = Vector2(1.2, 1.2)
 collision_layer = 16
 collision_mask = 0
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(37.7778, 3.47222)
 scale = Vector2(1.2, 1.2)
 shape = SubResource("CapsuleShape2D_f72jo")
 

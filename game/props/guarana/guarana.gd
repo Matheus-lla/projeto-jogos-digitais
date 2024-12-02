@@ -12,14 +12,14 @@ var index: int = 0
 var actual_guarana: Guarana
 
 func _ready() -> void:
-	interact_area.Interect.connect(on_interection)
+	interact_area.Interact.connect(on_interaction)
 	update_sprite()
 
 func update_sprite():
 	full_sprite.visible = !catch
 	empty_sprite.visible = catch
 
-func on_interection():
+func on_interaction():
 	if catch:
 		return
 		
@@ -29,4 +29,3 @@ func on_interection():
 
 func guarana_spawm():
 	catch = false
-	PlayerHud.update_guarana(-PlayerHud.guarana)

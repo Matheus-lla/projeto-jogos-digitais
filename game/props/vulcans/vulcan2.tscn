@@ -1,10 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://crwa42liy5tfw"]
+[gd_scene load_steps=2 format=3 uid="uid://crwa42liy5tfw"]
 
 [ext_resource type="Texture2D" uid="uid://cgyglspbd28k" path="res://props/vulcans/vulcan4.png" id="1_7lo56"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5rla7"]
-radius = 8.99953
-height = 63.9761
 
 [node name="Vulcan2" type="Node2D"]
 z_index = 1
@@ -18,7 +14,5 @@ position = Vector2(-13.3503, 54.1652)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(12.3503, -48.1652)
-rotation = -1.56051
-shape = SubResource("CapsuleShape2D_5rla7")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-15.6497, -49.1652, -8.6497, -46.1652, 1.3503, -45.1652, 9.3503, -43.1652, 14.3503, -44.1652, 19.3503, -46.1652, 26.3503, -45.1652, 31.3503, -46.1652, 35.3503, -49.1652, 34.3503, -54.1652, 28.3503, -61.1652, 22.3503, -63.1652, 18.3503, -66.1652, 3.3503, -65.1652, 2.3503, -63.1652, -2.6497, -63.1652, -5.6497, -60.1652, -6.6497, -57.1652)

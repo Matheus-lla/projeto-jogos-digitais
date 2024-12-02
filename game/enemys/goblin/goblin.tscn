@@ -787,6 +787,7 @@ script = ExtResource("11_ogoqp")
 
 [node name="Chase" type="Node" parent="StateMachine" node_paths=PackedStringArray("vision_area", "attack_area", "next_state")]
 script = ExtResource("16_v3mb8")
+chase_speed = 80.0
 vision_area = NodePath("../../Rotation/VisionArea")
 attack_area = NodePath("../../Sprite2D/AttackHurtBox")
 next_state = NodePath("../Idle")

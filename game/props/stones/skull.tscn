@@ -1,10 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dw5ayaxjwklmy"]
+[gd_scene load_steps=2 format=3 uid="uid://dw5ayaxjwklmy"]
 
 [ext_resource type="Texture2D" uid="uid://bfj6ofl11smkd" path="res://props/stones/skull.png" id="1_qjgm0"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_epiey"]
-radius = 8.98924
-height = 17.9785
 
 [node name="skull" type="Node2D"]
 z_index = 1
@@ -18,7 +14,6 @@ position = Vector2(-13.3503, 54.1652)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(12.3503, -51.1652)
-rotation = -1.56051
-shape = SubResource("CapsuleShape2D_epiey")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-19.6497, -0.165199)
+polygon = PackedVector2Array(24, -43, 34, -43, 36, -46, 41, -50, 41, -56, 35, -61, 30, -61, 23, -55, 23, -50, 24, -47)

@@ -1,10 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://chuojaodpl3jo"]
+[gd_scene load_steps=2 format=3 uid="uid://chuojaodpl3jo"]
 
 [ext_resource type="Texture2D" uid="uid://ckqx4bgsm6s2i" path="res://props/stones/bones.png" id="1_3xksr"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pcoig"]
-radius = 7.98929
-height = 23.937
 
 [node name="Bones" type="Node2D"]
 z_index = 1
@@ -18,7 +14,5 @@ position = Vector2(-13.3503, 54.1652)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(12.3503, -51.1652)
-rotation = -1.56051
-shape = SubResource("CapsuleShape2D_pcoig")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(3.3503, -44.1652, 14.3503, -44.1652, 22.3503, -48.1652, 25.3503, -50.1652, 25.3503, -58.1652, 21.3503, -62.1652, 19.3503, -60.1652, 16.3503, -60.1652, 13.3503, -61.1652, 10.3503, -61.1652, 2.3503, -57.1652, -0.6497, -54.1652, -0.6497, -47.1652)

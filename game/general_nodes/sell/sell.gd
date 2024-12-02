@@ -16,6 +16,6 @@ func on_area_entered(area: Area2D):
 	super.on_area_entered(area)
 	animation_player.play("show")
 	
-func on_interection():
-	super.on_interection()
+func on_interaction():
+	super.on_interaction()
 	Shop.show_shop(character_name)

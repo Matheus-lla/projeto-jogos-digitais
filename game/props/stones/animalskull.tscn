@@ -1,10 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ckj0rrdtusdmd"]
+[gd_scene load_steps=2 format=3 uid="uid://ckj0rrdtusdmd"]
 
 [ext_resource type="Texture2D" uid="uid://cje35ixe4j4ty" path="res://props/bones/head.png" id="1_7efjc"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rsv6g"]
-radius = 8.98924
-height = 17.9785
 
 [node name="Animalskull" type="Node2D"]
 z_index = 1
@@ -18,7 +14,6 @@ position = Vector2(-13.3503, 54.1652)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(12.3503, -51.1652)
-rotation = -1.56051
-shape = SubResource("CapsuleShape2D_rsv6g")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-67.6497, -68.1652)
+polygon = PackedVector2Array(68, 21, 73, 15, 71, 13, 72, 9, 76, 6, 80, 6, 83, 9, 86, 6, 92, 6, 95, 10, 95, 15, 92, 19, 88, 19, 85, 22, 77, 24, 71, 24)

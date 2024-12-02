@@ -1,10 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://0a35r0d3rnn7"]
+[gd_scene load_steps=2 format=3 uid="uid://0a35r0d3rnn7"]
 
 [ext_resource type="Texture2D" uid="uid://d2djm5pxx4rc0" path="res://props/hut/hut.png" id="1_6l3k3"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1x0v6"]
-radius = 19.9989
-height = 112.015
 
 [node name="Cabanas" type="Node2D"]
 z_index = 1
@@ -19,7 +15,6 @@ position = Vector2(-0.999756, -24.7499)
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(2, 24)
-rotation = -1.56051
-shape = SubResource("CapsuleShape2D_1x0v6")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-157, -40.2501)
+polygon = PackedVector2Array(104, 59, 175, 83, 211, 56, 129, 28)

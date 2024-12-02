@@ -45,8 +45,8 @@ func on_area_entered(area: Area2D):
 func use_dialog(dialog: DialogItem):
 	dialog.read += 1
 	
-func on_interection():
-	super.on_interection()
+func on_interaction():
+	super.on_interaction()
 	Dialog.dialog_progress.self_modulate = original_color
 	
 	var dialog = get_next_dialog()

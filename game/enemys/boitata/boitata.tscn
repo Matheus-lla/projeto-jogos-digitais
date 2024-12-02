@@ -184,7 +184,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mn38a"]
-size = Vector2(472, 312.5)
+size = Vector2(472, 314.25)
 
 [sub_resource type="Animation" id="Animation_8jrg0"]
 length = 0.001

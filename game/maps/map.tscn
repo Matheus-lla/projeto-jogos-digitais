@@ -1,5 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://cy6n5kjownfd7"]
+[gd_scene load_steps=25 format=3 uid="uid://cy6n5kjownfd7"]
 
+[ext_resource type="Script" path="res://maps/map.gd" id="1_gr1uc"]
 [ext_resource type="PackedScene" uid="uid://ctp446wbt3g8p" path="res://tile_maps/terrain.tscn" id="1_uo6ai"]
 [ext_resource type="PackedScene" uid="uid://0a35r0d3rnn7" path="res://props/hut/hut.tscn" id="5_71r4l"]
 [ext_resource type="PackedScene" uid="uid://d4g0yvj01mxhw" path="res://props/spawn/spawn.tscn" id="5_ab8ve"]
@@ -21,25 +22,21 @@
 [ext_resource type="PackedScene" uid="uid://e3iitwvkrig5" path="res://props/burnig_trees/burningtree1.tscn" id="17_24lf3"]
 [ext_resource type="PackedScene" uid="uid://chuojaodpl3jo" path="res://props/stones/bones.tscn" id="19_gplrp"]
 [ext_resource type="PackedScene" uid="uid://bbcflnq12i654" path="res://props/bridge/bridge.tscn" id="22_lfujk"]
-[ext_resource type="PackedScene" uid="uid://bgjbl4yqfjwgx" path="res://enemys/boitata/fire/fire.tscn" id="23_qtuhw"]
 [ext_resource type="PackedScene" uid="uid://bxnynmne8hsl2" path="res://enemys/goblin/goblin.tscn" id="23_rhsfu"]
 [ext_resource type="PackedScene" uid="uid://cobps4btqiqs5" path="res://enemys/boitata/boitata.tscn" id="25_faf6i"]
-
-[sub_resource type="GDScript" id="GDScript_31m7b"]
 
 [node name="Map" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(711, 769)
-script = SubResource("GDScript_31m7b")
+script = ExtResource("1_gr1uc")
 
 [node name="Terrain" parent="." instance=ExtResource("1_uo6ai")]
 position = Vector2(-189, -483)
-metadata/_edit_group_ = true
 
 [node name="Player" parent="." instance=ExtResource("9_57pim")]
 
 [node name="Spawn" parent="." instance=ExtResource("5_ab8ve")]
-position = Vector2(-861, 3562)
+position = Vector2(1279, -1)
 
 [node name="Spawn3" parent="." instance=ExtResource("5_ab8ve")]
 position = Vector2(-810, 3763)
@@ -1062,6 +1059,11 @@ scale = Vector2(-1, 1)
 position = Vector2(-742, 3041)
 scale = Vector2(-1, 1)
 
+[node name="skull174" parent="." instance=ExtResource("16_26cuq")]
+position = Vector2(-906, 3073)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
 [node name="skull68" parent="." instance=ExtResource("16_26cuq")]
 position = Vector2(-756, 3041)
 scale = Vector2(-1, 1)
@@ -1604,10 +1606,6 @@ scale = Vector2(-1, 1)
 
 [node name="skull171" parent="." instance=ExtResource("16_26cuq")]
 position = Vector2(-798, 3073)
-scale = Vector2(-1, 1)
-
-[node name="skull174" parent="." instance=ExtResource("16_26cuq")]
-position = Vector2(-907, 3073)
 scale = Vector2(-1, 1)
 
 [node name="skull72" parent="." instance=ExtResource("16_26cuq")]
@@ -2237,14 +2235,11 @@ position = Vector2(132, -34)
 [node name="Goblin3" parent="." instance=ExtResource("23_rhsfu")]
 position = Vector2(378, 154)
 
-[node name="Fire" parent="." instance=ExtResource("23_qtuhw")]
-position = Vector2(-864, 3519)
-
 [node name="Boitata" parent="." instance=ExtResource("25_faf6i")]
 position = Vector2(-856, 3092)
 
 [node name="CollisionShape2D" parent="Boitata/VisionArea" index="0"]
-position = Vector2(551, -7)
+position = Vector2(11, 100.875)
 
 [node name="Camera2D" parent="Boitata" index="8"]
 position = Vector2(10, 76)
