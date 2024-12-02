@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://x11qugelju7o"]
+[gd_scene load_steps=12 format=3 uid="uid://x11qugelju7o"]
 
 [ext_resource type="PackedScene" uid="uid://bi537x71g5dm3" path="res://general_nodes/hurt_box/hurt_box.tscn" id="1_lrppk"]
 [ext_resource type="Script" path="res://enemys/boitata/burning_attack/burning_attack.gd" id="1_yp2yd"]
 [ext_resource type="Texture2D" uid="uid://mltmhx7cec4q" path="res://enemys/boitata/burning_attack/attack_2_boitata.png" id="2_mx4y4"]
 [ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://effects/Shadow.png" id="3_rvb5t"]
+[ext_resource type="AudioStream" uid="uid://celqnk16vj0hj" path="res://enemys/boitata/burning_attack/fireball-whoosh-2-179126.mp3" id="5_dxkhw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_upc02"]
 radius = 20.0
@@ -76,6 +77,21 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(0, -200)]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_dxkhw")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_pp3l3"]
 resource_name = "shrinking"
@@ -115,6 +131,21 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(0, 2.00001), Vector2(0, 20)]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_dxkhw")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4quqb"]
 _data = {
@@ -153,3 +184,6 @@ texture = ExtResource("3_rvb5t")
 libraries = {
 "": SubResource("AnimationLibrary_4quqb")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+volume_db = 10.0

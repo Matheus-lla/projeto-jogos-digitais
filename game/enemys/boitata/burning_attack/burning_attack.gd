@@ -24,8 +24,8 @@ const GROWING_TIME: float = 1
 const STABLE_TIME: float = LIFE_TIME - GROWING_TIME - LOADING_TIME - 1
 const FIRE_CENE =  preload("res://enemys/boitata/fire/fire.tscn")
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready() -> void:
 	# Makes the fire ball start from the enemy mouth

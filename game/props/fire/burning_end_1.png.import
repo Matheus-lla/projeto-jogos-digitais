@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bl1b37phss1au"
-path="res://.godot/imported/burning_end_1.png-54d97dec80298e71ed20da0cb6571bcb.ctex"
+path="res://.godot/imported/burning_end_1.png-ce778139d9342a2c7edb3f8c82fe22a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemys/boitata/fire/burning_end_1.png"
-dest_files=["res://.godot/imported/burning_end_1.png-54d97dec80298e71ed20da0cb6571bcb.ctex"]
+source_file="res://props/fire/burning_end_1.png"
+dest_files=["res://.godot/imported/burning_end_1.png-ce778139d9342a2c7edb3f8c82fe22a5.ctex"]
 
 [params]
 

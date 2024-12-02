@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=3 uid="uid://cobps4btqiqs5"]
 
 [ext_resource type="Script" path="res://enemys/boitata/boitata.gd" id="1_u8ci2"]
-[ext_resource type="AudioStream" uid="uid://b2hh13gjgjtkk" path="res://enemys/audio/destroy.wav" id="3_6ay2x"]
+[ext_resource type="AudioStream" uid="uid://byga7412bn8aa" path="res://enemys/boitata/monster-growl-6311.mp3" id="3_8sfhp"]
 [ext_resource type="AudioStream" uid="uid://dj63deee622qo" path="res://enemys/audio/hit.wav" id="3_47v6u"]
 [ext_resource type="PackedScene" uid="uid://uxvl7pfm1jf5" path="res://general_nodes/hit_box/hit_box.tscn" id="3_qjoyx"]
 [ext_resource type="Texture2D" uid="uid://bcmmwvpbdj7th" path="res://effects/DestroySmoke.png" id="4_2imjc"]
@@ -40,6 +40,18 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
 }
 
 [sub_resource type="Animation" id="Animation_cgx5i"]
@@ -95,23 +107,47 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "clips": PackedStringArray("destroy"),
-"times": PackedFloat32Array(1.1)
+"times": PackedFloat32Array(1.5)
 }
-tracks/2/type = "audio"
+tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/path = NodePath("Sprite2D:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("3_6ay2x")
-}],
-"times": PackedFloat32Array(1.16667)
+"times": PackedFloat32Array(0, 0.933333, 1.8, 2.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.829305, 0.0493691, 0.0278918, 1), Color(1, 1, 1, 1), Color(0.782, 0.042, 0.023, 1), Color(1, 1, 1, 1)]
 }
-tracks/2/use_blend = false
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 4.49,
+"start_offset": 0.13732,
+"stream": ExtResource("3_8sfhp")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/use_blend = true
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer2D:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.03333, 2.86667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 16.0, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_04fny"]
 resource_name = "idle"
@@ -267,6 +303,7 @@ position = Vector2(-156.8, 18.4)
 polygon = PackedVector2Array(117.6, -60.8, 135.2, -42.4, 114.4, -24, 123.2, -4.8, 144, 8.8, 180.8, 8.8, 197.6, -4, 197.6, -28, 185.6, -42.4, 188.8, -52.8, 201.6, -61.6, 224.744, -83.9207, 254.4, -99.2, 244.8, -120, 228.8, -139.2, 197.6, -136, 154.4, -139.2, 113.6, -148, 84.8, -130.4, 68, -96, 100, -90.4)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+max_polyphony = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

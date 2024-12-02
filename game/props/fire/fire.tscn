@@ -1,10 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://bgjbl4yqfjwgx"]
+[gd_scene load_steps=15 format=3 uid="uid://bgjbl4yqfjwgx"]
 
-[ext_resource type="Texture2D" uid="uid://cqstk40juvj1v" path="res://enemys/boitata/fire/burning_start_1.png" id="1_av1ae"]
-[ext_resource type="Script" path="res://enemys/boitata/fire/fire.gd" id="1_g8rnq"]
+[ext_resource type="Texture2D" uid="uid://cqstk40juvj1v" path="res://props/fire/burning_start_1.png" id="1_av1ae"]
+[ext_resource type="Script" path="res://props/fire/fire.gd" id="1_g8rnq"]
 [ext_resource type="Script" path="res://general_nodes/hurt_box/hurt_box.gd" id="2_hc6rh"]
-[ext_resource type="Texture2D" uid="uid://cdvbsmcukum1d" path="res://enemys/boitata/fire/burning_loop_1.png" id="2_hjib4"]
-[ext_resource type="Texture2D" uid="uid://bl1b37phss1au" path="res://enemys/boitata/fire/burning_end_1.png" id="3_whbqm"]
+[ext_resource type="Texture2D" uid="uid://cdvbsmcukum1d" path="res://props/fire/burning_loop_1.png" id="2_hjib4"]
+[ext_resource type="Texture2D" uid="uid://bl1b37phss1au" path="res://props/fire/burning_end_1.png" id="3_whbqm"]
+[ext_resource type="AudioStream" uid="uid://biyjoo2jjrmdb" path="res://props/fire/fire-end.mp3" id="5_r7log"]
+[ext_resource type="AudioStream" uid="uid://cxcbijrw658tr" path="res://props/fire/fire-sound-efftect-21991.mp3" id="5_tjlvq"]
+[ext_resource type="AudioStream" uid="uid://duhwveuemi7ve" path="res://props/fire/fire-start.mp3" id="7_0hmrn"]
 
 [sub_resource type="Animation" id="Animation_grffc"]
 length = 0.001
@@ -80,6 +83,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioStreamPlayer2D:volume_db")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_0u8my"]
 resource_name = "end"
@@ -102,10 +117,37 @@ tracks/1/path = NodePath("End:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.466667, 0.833333, 0.966667),
+"times": PackedFloat32Array(0, 0.2, 0.433333, 0.7, 0.933333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.721314,
+"start_offset": 0.171159,
+"stream": ExtResource("5_r7log")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.0]
 }
 
 [sub_resource type="Animation" id="Animation_jmesq"]
@@ -130,10 +172,37 @@ tracks/1/path = NodePath("Loop:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.433333, 0.566667, 0.7, 0.866667, 0.966667),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.99),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0, 1, 2, 3, 4, 5, 6, 7]
+"values": [0, 7]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 14.1488,
+"start_offset": 0.0565,
+"stream": ExtResource("5_tjlvq")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-15.0]
 }
 
 [sub_resource type="Animation" id="Animation_n0ca8"]
@@ -161,6 +230,33 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer2D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.364732,
+"start_offset": 0.552193,
+"stream": ExtResource("7_0hmrn")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/2/use_blend = true
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer2D:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [6.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iaf3y"]
@@ -212,3 +308,5 @@ script = ExtResource("2_hc6rh")
 visible = false
 position = Vector2(0, 3.33333)
 shape = SubResource("CircleShape2D_6l3hv")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

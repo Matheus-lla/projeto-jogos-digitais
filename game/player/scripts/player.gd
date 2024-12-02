@@ -22,12 +22,13 @@ var heal_by_level = [3, 4, 5]
 var max_hp: int = 2
 var kills: int = 0
 
+@export var spawn_place: Spawn
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
 @onready var sprite: Sprite2D = $PlayerSprite
 @onready var hit_box: HitBox = $HitBox
 @onready var idle: Idle = $StateMachine/Idle
-@onready var spawn_place: Spawn = $"../Spawn"
 @onready var melee_hurt_box: HurtBox = $MeleeHurtBox
 @onready var camera: Camera = $Camera
 

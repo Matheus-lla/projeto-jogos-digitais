@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cdvbsmcukum1d"
-path="res://.godot/imported/burning_loop_1.png-664124dd376e77acac699bbcb3fe2b2b.ctex"
+path="res://.godot/imported/burning_loop_1.png-51cacb4c1e441831ab9d5c6faaed45d2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemys/boitata/fire/burning_loop_1.png"
-dest_files=["res://.godot/imported/burning_loop_1.png-664124dd376e77acac699bbcb3fe2b2b.ctex"]
+source_file="res://props/fire/burning_loop_1.png"
+dest_files=["res://.godot/imported/burning_loop_1.png-51cacb4c1e441831ab9d5c6faaed45d2.ctex"]
 
 [params]
 

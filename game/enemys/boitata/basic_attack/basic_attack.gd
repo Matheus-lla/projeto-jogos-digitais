@@ -18,6 +18,8 @@ const ACELERATION: float = 75.0
 const LOADING_TIME: float = 0.725 # time to load the attack
 const LIFE_TIME: float = 5 # Time that the attack will live
 
+@onready var audio_stream_player_2d: AudioStreamPlayer2D
+
 func _ready() -> void:
 	# Makes the fire ball start from the enemy mouth
 	global_position = character.global_position + Vector2(40, -60)
@@ -29,6 +31,7 @@ func _ready() -> void:
 func start_fligth():
 	state = States.FLIGHT
 	visible = true
+	audio_stream_player_2d.play()
 
 func _physics_process(delta: float) -> void:
 	if state == States.INACTIVE:
@@ -52,6 +55,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func shoot(_character: Character) -> void:
+	audio_stream_player_2d = $AudioStreamPlayer2D
 	hurt_box = $HurtBox
 	hurt_box.area_entered.connect(on_area_entered)
 	character = _character
