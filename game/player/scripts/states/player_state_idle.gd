@@ -6,16 +6,9 @@ class_name Idle extends State
 @onready var shoot_arrow: ShootArrow = $"../ShootArrow"
 @onready var drinking_potion: DrinkingPotion = $"../DrinkingPotion"
 
-func init():
-	pass
-
 func enter() -> void:
 	player.update_animation("idle")
-	pass
 
-func exit() -> void:
-	pass
-	
 func process( _delta: float) -> State:
 	if player.direction != Vector2.ZERO:
 		return walk
@@ -23,9 +16,6 @@ func process( _delta: float) -> State:
 	player.velocity = Vector2.ZERO
 	return null
 	
-func physics(_delta: float) -> State:
-	return null
-
 func handle_input(event: InputEvent) -> State:
 	if event.is_action("attack"):
 		return attack
