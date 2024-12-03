@@ -18,4 +18,8 @@ func on_area_entered(area: Area2D):
 	
 func on_interaction():
 	super.on_interaction()
+	
+	if Dialog.ui.visible:
+		return
+	
 	Shop.show_shop(character_name)

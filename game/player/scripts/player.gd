@@ -1,25 +1,10 @@
 class_name Player extends Character
 
-var max_level = 3
+var wepon = Upgradable.new("Arma", [20, 40, 80], [2, 4, 6, 8])
+var bow = Upgradable.new("Arco", [15, 30, 60], [1, 2, 3, 4])
+var max_hp = Upgradable.new("Vida", [10, 30, 100], [2, 4, 6, 8])
+var heal = Upgradable.new("Cura", [10, 25, 50], [2, 3, 4, 5])
 
-var current_wepon_level = 0
-var wepon_level_cost = [20, 40, 80]
-var wepon_damage_by_level = [4, 6, 8]
-
-var current_bow_level = 0
-var bow_level_cost = [15, 30, 60]
-var bow_damage_by_level = [2, 3, 4]
-var bow_damage = 1
-
-var current_max_hp_level = 0
-var max_hp_level_cost = [10, 30, 100]
-var max_hp_by_level = [4, 6, 8]
-
-var current_heal_level = 0
-var heal_level_cost = [10, 25, 50]
-var heal_by_level = [3, 4, 5]
-
-var max_hp: int = 2
 var kills: int = 0
 
 @export var spawn_place: Spawn
@@ -38,8 +23,10 @@ func _ready() -> void:
 	hit_box.Damaged.connect(on_damaged)
 	spawn()
 	PlayerHud.update_guarana(100)
-
-
+	wepon.Upgraded.connect(on_wepon_upgrade)
+	max_hp.Upgraded.connect(on_max_hp_upgrade)
+	heal.Upgraded.connect(on_heal_upgrade)
+	
 func _process(_delta: float) -> void:
 	direction = Vector2(
 		Input.get_axis("left", "right"),
@@ -57,8 +44,8 @@ func update_animation(state_str: String) -> void:
 	return
 	
 func update_hp(delta: int):
-	hp = clampi(hp + delta, 0, max_hp)
-	PlayerHud.update_hp(hp, max_hp)
+	hp = clampi(hp + delta, 0, max_hp.get_value())
+	PlayerHud.update_hp(hp, max_hp.get_value())
 	
 func make_invulnerable(duration: float):
 	if duration <= 0:
@@ -83,7 +70,7 @@ func on_damaged(hurt_box: HurtBox):
 	CharacterDamaged.emit(hurt_box)
 
 func spawn():
-	update_hp(max_hp)
+	update_hp(max_hp.get_value())
 	PlayerHud.update_potion(PlayerHud.max_potion)
 	PlayerHud.update_guarana(-PlayerHud.guarana)
 	
@@ -109,36 +96,12 @@ func faced_direction() -> Vector2:
 		
 	return dir
 
-func wepon_upgrade_cost():
-	return wepon_level_cost[current_wepon_level]
-
-func wepon_upgrade():
-	PlayerHud.update_guarana(-wepon_upgrade_cost())
-	melee_hurt_box.damage = wepon_damage_by_level[current_wepon_level]
-	current_wepon_level += 1
+func on_wepon_upgrade():
+	melee_hurt_box.damage = wepon.get_value()
 	
-func bow_upgrade_cost():
-	return bow_level_cost[current_bow_level]
-
-func bow_upgrade():
-	PlayerHud.update_guarana(-bow_upgrade_cost())
-	bow_damage = bow_damage_by_level[current_bow_level]
-	current_bow_level += 1
+func on_max_hp_upgrade():
+	update_hp(max_hp.get_value())
 	
-func max_hp_upgrade_cost():
-	return max_hp_level_cost[current_max_hp_level]
-
-func max_hp_upgrade():
-	PlayerHud.update_guarana(-max_hp_upgrade_cost())
-	max_hp = max_hp_by_level[current_max_hp_level]
-	update_hp(max_hp)
-	current_max_hp_level += 1
-	
-func heal_upgrade_cost():
-	return heal_level_cost[current_heal_level]
-
-func heal_upgrade():
-	PlayerHud.update_guarana(-heal_upgrade_cost())
-	PlayerHud.max_potion = heal_by_level[current_heal_level]
+func on_heal_upgrade():
+	PlayerHud.max_potion = heal.get_value()
 	PlayerHud.update_potion(PlayerHud.max_potion)
-	current_heal_level += 1

@@ -34,7 +34,7 @@ script = ExtResource("1_gr1uc")
 position = Vector2(-189, -483)
 
 [node name="Player" parent="." node_paths=PackedStringArray("spawn_place") instance=ExtResource("9_57pim")]
-spawn_place = NodePath("../Spawn3")
+spawn_place = NodePath("../Spawn")
 
 [node name="Spawn" parent="." instance=ExtResource("5_ab8ve")]
 position = Vector2(1279, -1)
@@ -2185,7 +2185,11 @@ position = Vector2(612, 1760)
 position = Vector2(1119, 49)
 
 [node name="Villager2" parent="." instance=ExtResource("11_x22vo")]
-position = Vector2(1336, 130)
+position = Vector2(1436, 130)
+
+[node name="DialogItem" type="Node" parent="Villager2/DialogSequence" index="3"]
+script = ExtResource("13_rpw2t")
+text = "Todos da vila estão contando com você, sem pressão."
 
 [node name="Seller" parent="." instance=ExtResource("12_rbau8")]
 position = Vector2(1480, 14)
@@ -2195,10 +2199,21 @@ position = Vector2(1377, -78)
 
 [node name="DialogItem" type="Node" parent="Villager/DialogSequence" index="3"]
 script = ExtResource("13_rpw2t")
-text = "Oi, tudo bem? Prazer te conhecer"
+text = " Você é a nossa salvadora? Não parece."
+
+[node name="Villager4" parent="." instance=ExtResource("11_x22vo")]
+position = Vector2(1077, -107)
+
+[node name="DialogItem" type="Node" parent="Villager4/DialogSequence" index="3"]
+script = ExtResource("13_rpw2t")
+text = "Salvar o mundo??? Não dá pra fazer isso sem antes comer um açaí."
 
 [node name="Villager3" parent="." instance=ExtResource("11_x22vo")]
 position = Vector2(1296, 193)
+
+[node name="DialogItem" type="Node" parent="Villager3/DialogSequence" index="3"]
+script = ExtResource("13_rpw2t")
+text = "O Cacique pode ser um pouco estranho as vezes, mas acredite, ele só quer ajudar."
 
 [node name="Bridge" parent="." instance=ExtResource("22_lfujk")]
 position = Vector2(924, 1014)
@@ -2252,5 +2267,8 @@ position = Vector2(8, 330)
 [node name="CollisionShape2D" parent="Boitata/StaticBody2D" index="0"]
 position = Vector2(2, -64)
 
+[editable path="Villager2"]
 [editable path="Villager"]
+[editable path="Villager4"]
+[editable path="Villager3"]
 [editable path="Boitata"]

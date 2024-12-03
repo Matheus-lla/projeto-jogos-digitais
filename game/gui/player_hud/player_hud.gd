@@ -59,7 +59,8 @@ func update_guarana(_delta: int):
 		return
 		
 	guarana += _delta
-	guarana_label.text = "x" + str(guarana) 
+	guarana_label.text = "x" + str(guarana)
+	Shop.update_ui()
 	
 	
 	

@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cfoqrrqdtryd6"]
+[gd_scene load_steps=9 format=3 uid="uid://cfoqrrqdtryd6"]
 
-[ext_resource type="Script" path="res://gui/dialog/shop.gd" id="1_jtdkp"]
+[ext_resource type="Script" path="res://gui/dialog/shop/shop.gd" id="1_jtdkp"]
 [ext_resource type="Texture2D" uid="uid://b2e0dh74ehj5j" path="res://gui/dialog/text-bubble.png" id="2_kiabx"]
 [ext_resource type="FontFile" uid="uid://btlftr7loqd5u" path="res://fonts/Abaddon Bold.ttf" id="4_grb4r"]
 [ext_resource type="Texture2D" uid="uid://bk65lxbyacy4j" path="res://icon.svg" id="5_0xxqo"]
+[ext_resource type="Texture2D" uid="uid://by42y36e5bj5b" path="res://gui/player_hud/guarana/guaraná.png" id="5_cymvw"]
 
 [sub_resource type="Gradient" id="Gradient_ne6n8"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
@@ -52,9 +53,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -466.0
-offset_top = -153.0
+offset_top = -154.0
 offset_right = -16.0
-offset_bottom = -13.0
+offset_bottom = -14.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxTexture_lqya5")
@@ -80,83 +81,115 @@ texture = ExtResource("5_0xxqo")
 [node name="Wepon" type="Button" parent="UI"]
 layout_mode = 0
 offset_left = 124.0
-offset_top = 219.0
+offset_top = 205.0
 offset_right = 210.0
-offset_bottom = 259.0
+offset_bottom = 245.0
 text = "Arma"
+metadata/_edit_group_ = true
 
 [node name="WeponPrice" type="Label" parent="UI"]
 layout_mode = 0
-offset_left = 148.0
-offset_top = 268.0
-offset_right = 188.0
-offset_bottom = 286.0
+offset_left = 138.0
+offset_top = 256.0
+offset_right = 178.0
+offset_bottom = 274.0
 theme_override_colors/font_color = Color(0.894118, 0.862745, 0.796078, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("4_grb4r")
-text = "R$ 0"
+text = "  0 x"
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="UI"]
+position = Vector2(190, 264)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("5_cymvw")
+metadata/_edit_group_ = true
 
 [node name="Bow" type="Button" parent="UI"]
 layout_mode = 0
 offset_left = 236.0
-offset_top = 219.0
+offset_top = 205.0
 offset_right = 324.0
-offset_bottom = 259.0
+offset_bottom = 245.0
 text = "Arco"
+metadata/_edit_group_ = true
 
 [node name="BowPrice" type="Label" parent="UI"]
 layout_mode = 0
-offset_left = 263.0
-offset_top = 269.0
-offset_right = 303.0
-offset_bottom = 287.0
+offset_left = 249.0
+offset_top = 256.0
+offset_right = 292.0
+offset_bottom = 274.0
 theme_override_colors/font_color = Color(0.894118, 0.862745, 0.796078, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("4_grb4r")
-text = "R$ 0"
+text = "  0 x "
+metadata/_edit_group_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="UI"]
+position = Vector2(303, 263)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("5_cymvw")
+metadata/_edit_group_ = true
 
 [node name="MaxHp" type="Button" parent="UI"]
 layout_mode = 0
 offset_left = 346.0
-offset_top = 217.0
+offset_top = 203.0
 offset_right = 435.0
-offset_bottom = 257.0
+offset_bottom = 243.0
 text = "Vida "
+metadata/_edit_group_ = true
 
 [node name="MaxHpPrice" type="Label" parent="UI"]
 layout_mode = 0
-offset_left = 372.0
-offset_top = 272.0
-offset_right = 412.0
-offset_bottom = 290.0
+offset_left = 360.0
+offset_top = 256.0
+offset_right = 403.0
+offset_bottom = 274.0
 theme_override_colors/font_color = Color(0.894118, 0.862745, 0.796078, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("4_grb4r")
-text = "R$ 0"
+text = "  0 x "
+metadata/_edit_group_ = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="UI"]
+position = Vector2(412, 264)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("5_cymvw")
+metadata/_edit_group_ = true
 
 [node name="Heal" type="Button" parent="UI"]
 layout_mode = 0
 offset_left = 453.0
-offset_top = 217.0
+offset_top = 203.0
 offset_right = 544.0
-offset_bottom = 257.0
+offset_bottom = 243.0
 text = "Cura"
+metadata/_edit_group_ = true
 
 [node name="HealPrice" type="Label" parent="UI"]
 layout_mode = 0
-offset_left = 484.0
-offset_top = 274.0
-offset_right = 524.0
-offset_bottom = 292.0
+offset_left = 467.0
+offset_top = 255.0
+offset_right = 510.0
+offset_bottom = 273.0
 theme_override_colors/font_color = Color(0.894118, 0.862745, 0.796078, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("4_grb4r")
-text = "R$ 0"
+text = "  0 x "
+metadata/_edit_group_ = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="UI"]
+position = Vector2(520, 262)
+scale = Vector2(0.65, 0.65)
+texture = ExtResource("5_cymvw")
+metadata/_edit_group_ = true

@@ -22,7 +22,7 @@ const LOADING_TIME: float = 1.325 # time to load the attack
 const LIFE_TIME: float = 6.5 # Time that the attack will live
 const GROWING_TIME: float = 1
 const STABLE_TIME: float = LIFE_TIME - GROWING_TIME - LOADING_TIME - 1
-const FIRE_CENE =  preload("res://enemys/boitata/fire/fire.tscn")
+const FIRE_CENE =  preload("res://props/fire/fire.tscn")
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D

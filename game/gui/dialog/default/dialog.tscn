@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://c3w33b8yf8ujd"]
 
-[ext_resource type="Script" path="res://gui/dialog/dialog.gd" id="1_xwn46"]
+[ext_resource type="Script" path="res://gui/dialog/default/dialog.gd" id="1_xwn46"]
 [ext_resource type="Texture2D" uid="uid://b2e0dh74ehj5j" path="res://gui/dialog/text-bubble.png" id="2_7im42"]
 [ext_resource type="FontFile" uid="uid://bicklftr4une4" path="res://fonts/Abaddon Light.ttf" id="3_0hatj"]
 [ext_resource type="FontFile" uid="uid://btlftr7loqd5u" path="res://fonts/Abaddon Bold.ttf" id="4_g335n"]

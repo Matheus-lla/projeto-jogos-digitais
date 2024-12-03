@@ -175,7 +175,6 @@ libraries = {
 }
 
 [node name="Sprites" type="Node2D" parent="."]
-modulate = Color(1, 0.24, 0.24, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Sprites"]
 texture_filter = 1

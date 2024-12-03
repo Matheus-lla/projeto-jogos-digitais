@@ -18,7 +18,7 @@ const LOADING_TIME = 0.35 # time to pull the arrow and released
 func enter() -> void:
 	var arrow = ArrowCene.instantiate() as Arrow
 	arrow.global_position = player.global_position 
-	arrow.shoot(player.bow_damage)
+	arrow.shoot(player.bow.get_value())
 	player.add_sibling(arrow)
 	player.velocity = Vector2.ZERO
 	player.update_animation(animation_name)

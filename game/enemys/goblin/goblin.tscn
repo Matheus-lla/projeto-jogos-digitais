@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://bxnynmne8hsl2"]
+[gd_scene load_steps=39 format=3 uid="uid://bxnynmne8hsl2"]
 
 [ext_resource type="Script" path="res://enemys/goblin/goblin.gd" id="1_3l85o"]
 [ext_resource type="PackedScene" uid="uid://bi537x71g5dm3" path="res://general_nodes/hurt_box/hurt_box.tscn" id="2_vb6ko"]
@@ -17,7 +17,10 @@
 [ext_resource type="PackedScene" uid="uid://d4gtfxg7yyiyc" path="res://general_nodes/vision_area/vision_area.tscn" id="17_ti8pv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mc85u"]
-radius = 13.0
+radius = 9.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_egl1f"]
+radius = 16.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vs0d0"]
 radius = 5.0
@@ -728,14 +731,13 @@ position = Vector2(0, -7)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("CircleShape2D_mc85u")
-debug_color = Color(0.94902, 0.768627, 0, 0.419608)
+debug_color = Color(0.349108, 0.864389, 0.999217, 0.419608)
 
 [node name="HitBox" parent="." instance=ExtResource("3_uacx4")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(0, -7)
-shape = SubResource("CircleShape2D_mc85u")
-debug_color = Color(0.94902, 0.0392157, 0, 0.419608)
+position = Vector2(0, -12)
+shape = SubResource("CircleShape2D_egl1f")
 
 [node name="ShadowSprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 0.588235)
@@ -753,9 +755,8 @@ position = Vector2(0, 11)
 monitoring = false
 damage = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/AttackHurtBox"]
-shape = SubResource("CircleShape2D_mc85u")
-debug_color = Color(0.94902, 0.768627, 0, 0.419608)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D/AttackHurtBox"]
+polygon = PackedVector2Array(-7, 8, -8, -6, -13, -6, -14, 8, -11, 13)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708

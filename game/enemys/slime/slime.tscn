@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://b88rtmgccpgu0"]
+[gd_scene load_steps=34 format=3 uid="uid://b88rtmgccpgu0"]
 
 [ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://effects/Shadow.png" id="1_3y6eb"]
 [ext_resource type="Script" path="res://enemys/slime/slime.gd" id="1_fcqvr"]
@@ -14,7 +14,7 @@
 [ext_resource type="Script" path="res://enemys/states/stun.gd" id="10_skgr3"]
 [ext_resource type="Script" path="res://enemys/states/destroy.gd" id="12_lxhb6"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_774fb"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_qckk6"]
 radius = 13.0
 
 [sub_resource type="Animation" id="Animation_8jrg0"]
@@ -804,6 +804,9 @@ _data = {
 "walk_up": SubResource("Animation_076y4")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_774fb"]
+radius = 12.0
+
 [node name="Slime" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 256
@@ -815,8 +818,7 @@ hp = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, -10)
-shape = SubResource("CircleShape2D_774fb")
-debug_color = Color(0.7, 0, 0, 0.419608)
+shape = SubResource("CircleShape2D_qckk6")
 
 [node name="Shadow" type="Sprite2D" parent="."]
 modulate = Color(1, 0.52, 0.2, 0.454902)
