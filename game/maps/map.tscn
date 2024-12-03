@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cy6n5kjownfd7"]
+[gd_scene load_steps=26 format=3 uid="uid://cy6n5kjownfd7"]
 
 [ext_resource type="Script" path="res://maps/map.gd" id="1_gr1uc"]
 [ext_resource type="PackedScene" uid="uid://ctp446wbt3g8p" path="res://tile_maps/terrain.tscn" id="1_uo6ai"]
@@ -16,11 +16,12 @@
 [ext_resource type="PackedScene" uid="uid://crwa42liy5tfw" path="res://props/vulcans/vulcan2.tscn" id="12_h33vu"]
 [ext_resource type="PackedScene" uid="uid://boe42hfwok07e" path="res://npc/seller/seller.tscn" id="12_rbau8"]
 [ext_resource type="PackedScene" uid="uid://cvi4pv3wrgf1l" path="res://props/vulcans/vulcan3.tscn" id="13_82v6d"]
-[ext_resource type="Script" path="res://general_scripts/dialog_item.gd" id="13_rpw2t"]
+[ext_resource type="Script" path="res://general_scripts/dialog_scripts/dialog_item.gd" id="13_rpw2t"]
 [ext_resource type="PackedScene" uid="uid://ckj0rrdtusdmd" path="res://props/stones/animalskull.tscn" id="15_5gggo"]
 [ext_resource type="PackedScene" uid="uid://dw5ayaxjwklmy" path="res://props/stones/skull.tscn" id="16_26cuq"]
 [ext_resource type="PackedScene" uid="uid://e3iitwvkrig5" path="res://props/burnig_trees/burningtree1.tscn" id="17_24lf3"]
 [ext_resource type="PackedScene" uid="uid://chuojaodpl3jo" path="res://props/stones/bones.tscn" id="19_gplrp"]
+[ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_kill_dialog.gd" id="22_aptqm"]
 [ext_resource type="PackedScene" uid="uid://bbcflnq12i654" path="res://props/bridge/bridge.tscn" id="22_lfujk"]
 [ext_resource type="PackedScene" uid="uid://bxnynmne8hsl2" path="res://enemys/goblin/goblin.tscn" id="23_rhsfu"]
 [ext_resource type="PackedScene" uid="uid://cobps4btqiqs5" path="res://enemys/boitata/boitata.tscn" id="25_faf6i"]
@@ -2201,6 +2202,17 @@ position = Vector2(1377, -78)
 script = ExtResource("13_rpw2t")
 text = " Você é a nossa salvadora? Não parece."
 
+[node name="Cacique" parent="." instance=ExtResource("11_x22vo")]
+position = Vector2(1219, 73)
+
+[node name="Sprite2D" parent="Cacique/Sprites" index="0"]
+modulate = Color(1, 0.19, 0.19, 1)
+
+[node name="DialogItem" type="Node" parent="Cacique/DialogSequence" index="3"]
+script = ExtResource("22_aptqm")
+victim_name = "Slime"
+text = "Parabéns, não foi muito difícil certo? Não se acostume, desafios maiores ainda estão por vir. Mas para chegar lá você precisa aprender a explorar a floresta, procure por outras fogueiras como está da nossa vila, elas servem para você reabastecer suas energias e suprimentos. Tem uma ao sul daqui, mas ela está cercada por gosmas, não tenha medo."
+
 [node name="Villager4" parent="." instance=ExtResource("11_x22vo")]
 position = Vector2(1077, -107)
 
@@ -2269,6 +2281,7 @@ position = Vector2(2, -64)
 
 [editable path="Villager2"]
 [editable path="Villager"]
+[editable path="Cacique"]
 [editable path="Villager4"]
 [editable path="Villager3"]
 [editable path="Boitata"]

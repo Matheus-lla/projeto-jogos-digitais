@@ -30,6 +30,7 @@ GlobalPlayerManager="*res://globals/global_player_manager.gd"
 PlayerHud="*res://gui/player_hud/player_hud.tscn"
 Dialog="*res://gui/dialog/default/dialog.tscn"
 Shop="*res://gui/dialog/shop/shop.tscn"
+KillsRecord="*res://globals/KillsRecord.gd"
 
 [display]
 

@@ -38,6 +38,7 @@ func show_shop(character_name: String):
 	ui.process_mode = Node.PROCESS_MODE_ALWAYS
 	name_label.text = character_name
 	load_items()
+	update_ui()
 	#get_tree().paused = true
 	
 func hide_shop():

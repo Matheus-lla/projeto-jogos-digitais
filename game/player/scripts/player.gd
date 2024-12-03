@@ -5,8 +5,6 @@ var bow = Upgradable.new("Arco", [15, 30, 60], [1, 2, 3, 4])
 var max_hp = Upgradable.new("Vida", [10, 30, 100], [2, 4, 6, 8])
 var heal = Upgradable.new("Cura", [10, 25, 50], [2, 3, 4, 5])
 
-var kills: int = 0
-
 @export var spawn_place: Spawn
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer

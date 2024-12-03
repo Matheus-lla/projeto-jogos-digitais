@@ -26,8 +26,9 @@ func upgrade_cost():
 	return level_costs[current_level]
 
 func upgrade():
-	PlayerHud.update_guarana(-upgrade_cost())
+	var cost = upgrade_cost()
 	current_level += 1
+	PlayerHud.update_guarana(-cost)
 	Upgraded.emit()
 	
 func max() -> bool:

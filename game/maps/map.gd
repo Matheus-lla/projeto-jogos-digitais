@@ -9,7 +9,6 @@ func _ready() -> void:
 		await child.ready
 		chilren.append(child)
 		
-	print(chilren.size())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -31,5 +31,5 @@ func on_destroyed(_hurt_box: HurtBox):
 	state_machine.change_state(self)
 
 func on_animation_finished(_current_animation: String):
-	GlobalPlayerManager.player.kills += 1
+	KillsRecord.killed(character.name)
 	character.queue_free()

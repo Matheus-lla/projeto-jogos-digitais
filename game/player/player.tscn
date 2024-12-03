@@ -776,7 +776,7 @@ damage = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeHurtBox"]
 position = Vector2(-5, -8)
 rotation = 3.14159
-scale = Vector2(0.564423, 1.47562)
+scale = Vector2(0.764, 1.999)
 shape = SubResource("CircleShape2D_wtobn")
 debug_color = Color(0.861335, 0, 0.10443, 0.42)
 
@@ -838,7 +838,7 @@ position = Vector2(0, -9)
 texture = ExtResource("2_6vyfa")
 hframes = 11
 vframes = 11
-frame = 36
+frame = 43
 metadata/_aseprite_wizard_config_ = {
 "i_mode": -1,
 "keep_anim_length": false,

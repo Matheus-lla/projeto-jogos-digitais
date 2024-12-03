@@ -11,7 +11,6 @@ func _init(_item: Upgradable, _label: Label, _button: Button, _guarana_sprite: S
 	button = _button
 	guarana_sprite = _guarana_sprite
 	button.pressed.connect(on_pressed)
-	update_ui()
 	
 func cost_str():
 	var cost = str(item.upgrade_cost())
