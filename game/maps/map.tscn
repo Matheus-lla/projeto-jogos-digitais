@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cy6n5kjownfd7"]
+[gd_scene load_steps=29 format=3 uid="uid://cy6n5kjownfd7"]
 
 [ext_resource type="Script" path="res://maps/map.gd" id="1_gr1uc"]
 [ext_resource type="PackedScene" uid="uid://ctp446wbt3g8p" path="res://tile_maps/terrain.tscn" id="1_uo6ai"]
@@ -23,7 +23,10 @@
 [ext_resource type="PackedScene" uid="uid://chuojaodpl3jo" path="res://props/stones/bones.tscn" id="19_gplrp"]
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_kill_dialog.gd" id="22_aptqm"]
 [ext_resource type="PackedScene" uid="uid://bbcflnq12i654" path="res://props/bridge/bridge.tscn" id="22_lfujk"]
+[ext_resource type="Script" path="res://general_scripts/dialog_scripts/single_dialog.gd" id="22_un8qy"]
+[ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_guarana.gd" id="23_crb8e"]
 [ext_resource type="PackedScene" uid="uid://bxnynmne8hsl2" path="res://enemys/goblin/goblin.tscn" id="23_rhsfu"]
+[ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_spawn.gd" id="25_2cuk0"]
 [ext_resource type="PackedScene" uid="uid://cobps4btqiqs5" path="res://enemys/boitata/boitata.tscn" id="25_faf6i"]
 
 [node name="Map" type="Node2D"]
@@ -35,7 +38,7 @@ script = ExtResource("1_gr1uc")
 position = Vector2(-189, -483)
 
 [node name="Player" parent="." node_paths=PackedStringArray("spawn_place") instance=ExtResource("9_57pim")]
-spawn_place = NodePath("../Spawn3")
+spawn_place = NodePath("../Spawn")
 
 [node name="Spawn" parent="." instance=ExtResource("5_ab8ve")]
 position = Vector2(1279, -1)
@@ -2188,6 +2191,9 @@ position = Vector2(1119, 49)
 [node name="Villager2" parent="." instance=ExtResource("11_x22vo")]
 position = Vector2(1436, 130)
 
+[node name="DialogSequence" parent="Villager2" index="4"]
+character_name = "Aristeudes"
+
 [node name="DialogItem" type="Node" parent="Villager2/DialogSequence" index="3"]
 script = ExtResource("13_rpw2t")
 text = "Você é a nossa salvadora? Não parece."
@@ -2197,6 +2203,9 @@ position = Vector2(1480, 14)
 
 [node name="Villager" parent="." instance=ExtResource("11_x22vo")]
 position = Vector2(1377, -78)
+
+[node name="DialogSequence" parent="Villager" index="4"]
+character_name = "João Marcos"
 
 [node name="DialogItem" type="Node" parent="Villager/DialogSequence" index="3"]
 script = ExtResource("13_rpw2t")
@@ -2208,12 +2217,38 @@ position = Vector2(1219, 73)
 [node name="Sprite2D" parent="Cacique/Sprites" index="0"]
 modulate = Color(1, 0.19, 0.19, 1)
 
-[node name="DialogItem" type="Node" parent="Cacique/DialogSequence" index="3"]
+[node name="DialogSequence" parent="Cacique" index="4"]
+character_name = "Cacique"
+
+[node name="SingleDialog" type="Node" parent="Cacique/DialogSequence" index="3"]
+script = ExtResource("22_un8qy")
+text = "Seja bem vinda a vila, você tem uma árdua missão, mas antes de continuar, porque não tira um tempo para aperfeiçoar as suas habilidades? Comece coletando seu primeiro guaraná. Encontre um pé de guaraná e interaja com ele para coletar as frutas."
+
+[node name="AfterGuarana" type="Node" parent="Cacique/DialogSequence" index="4"]
+script = ExtResource("23_crb8e")
+required_quantity = 103
+text = "Muito bem, o guaraná pode ser usado para melhorar sua lança, seu arco, sua vida e suas poções, agora você parece pronta para o combate. Derrote uma gosma amarela."
+
+[node name="AfterKillSime" type="Node" parent="Cacique/DialogSequence" index="5"]
 script = ExtResource("22_aptqm")
 victim_name = "Slime"
+text = "Parabéns, não foi muito difícil certo? Não se acostume, desafios maiores ainda estão por vir. Mas para chegar lá você precisa aprender a explorar a floresta, procure por outras fogueiras como está da nossa vila, elas servem para você reabastecer suas energias e suprimentos. Tem uma ao sul daqui, mas ela está cercada por gosmas, não tenha medo."
+
+[node name="AfterNewSpawn" type="Node" parent="Cacique/DialogSequence" index="6" node_paths=PackedStringArray("required_spawn")]
+script = ExtResource("25_2cuk0")
+required_spawn = NodePath("../../../Spawn2")
+text = "Você é realmente a melhor pessoa para este trabalho, você está finalmente pronta para começar a sua grande jornada. Lembre-se, sempre que estiver em dificuldades, fale com o Klebinho, ele vai te ajudar desde que você tenha guaraná o suficiente hahahaha."
+
+[node name="AfterNewSpawn2" type="Node" parent="Cacique/DialogSequence" index="7" node_paths=PackedStringArray("required_spawn")]
+script = ExtResource("25_2cuk0")
+required_spawn = NodePath("../../../Spawn2")
+text = "Agora vamos falar sério, seu verdadeiro objetivo é derrotar o Deus sombrio Anhangá, você sabe onde ele está? Não? Nem eu, mas eu sei quem pode ajudar, viaje até o extremo Sul, lá você pode encontrar um antigo espirito protetor da floresta e dos animais, o Boitatá. Ele deve saber de algo que posso te ajudar em sua jornada."
 
 [node name="Villager4" parent="." instance=ExtResource("11_x22vo")]
 position = Vector2(1077, -107)
+
+[node name="DialogSequence" parent="Villager4" index="4"]
+character_name = "Wesley macarrão"
 
 [node name="DialogItem" type="Node" parent="Villager4/DialogSequence" index="3"]
 script = ExtResource("13_rpw2t")
@@ -2221,6 +2256,9 @@ text = "O Cacique pode ser um pouco estranho as vezes, mas acredite, ele só que
 
 [node name="Villager3" parent="." instance=ExtResource("11_x22vo")]
 position = Vector2(1296, 193)
+
+[node name="DialogSequence" parent="Villager3" index="4"]
+character_name = "Jacinto"
 
 [node name="DialogItem" type="Node" parent="Villager3/DialogSequence" index="3"]
 script = ExtResource("13_rpw2t")

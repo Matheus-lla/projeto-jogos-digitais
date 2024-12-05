@@ -228,7 +228,7 @@ next_state = NodePath("../Idle")
 script = ExtResource("8_mrp8s")
 
 [node name="Sell" parent="." instance=ExtResource("8_qg6mw")]
-character_name = "Vendedor"
+character_name = "Klebinho"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sell"]
 position = Vector2(1, -13.5)

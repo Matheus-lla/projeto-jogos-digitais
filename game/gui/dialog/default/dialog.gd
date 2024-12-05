@@ -13,7 +13,6 @@ func show_dialog(character_name: String, text: String, button_text: String):
 	ui.visible = true
 	ui.process_mode = Node.PROCESS_MODE_ALWAYS
 	name_label.text = character_name
-	print(rich_text_label.text)
 	rich_text_label.text = text
 	button_label.text = button_text
 	#get_tree().paused = true
