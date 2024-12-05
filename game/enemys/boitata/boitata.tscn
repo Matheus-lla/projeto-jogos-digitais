@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cobps4btqiqs5"]
+[gd_scene load_steps=31 format=3 uid="uid://cobps4btqiqs5"]
 
 [ext_resource type="Script" path="res://enemys/boitata/boitata.gd" id="1_u8ci2"]
 [ext_resource type="AudioStream" uid="uid://byga7412bn8aa" path="res://enemys/boitata/monster-growl-6311.mp3" id="3_8sfhp"]
@@ -14,6 +14,9 @@
 [ext_resource type="Script" path="res://enemys/boitata/states/stun.gd" id="11_mhlnh"]
 [ext_resource type="Script" path="res://enemys/boitata/states/burning_attack.gd" id="12_a88k8"]
 [ext_resource type="Script" path="res://enemys/boitata/states/basic_attack.gd" id="13_4p6cc"]
+[ext_resource type="PackedScene" uid="uid://bgeelc5dpjqu6" path="res://general_nodes/dialog_sequence/dialog_sequence.tscn" id="15_hbydt"]
+[ext_resource type="Script" path="res://general_scripts/dialog_scripts/single_dialog.gd" id="16_5as5d"]
+[ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_kill_dialog.gd" id="17_4nimo"]
 
 [sub_resource type="Animation" id="Animation_dbqpj"]
 length = 0.001
@@ -397,3 +400,18 @@ shape = SubResource("RectangleShape2D_wecxa")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, -5)
 shape = SubResource("CircleShape2D_emjqh")
+
+[node name="DialogSequence" parent="." instance=ExtResource("15_hbydt")]
+character_name = "Boitatá"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DialogSequence"]
+polygon = PackedVector2Array(35, 29, 111, -120, -96, -124, -37, 27)
+
+[node name="SingleDialog" type="Node" parent="DialogSequence"]
+script = ExtResource("16_5as5d")
+text = "QUEM É VOCÊ? QUEM OUSA INVADIR MEU TERRITÓRIO? VOCÊ DESEJA DESTRUIR TUDO, EU NÃO VOU PERMITR.   SUMAAAAAAAA!!!"
+
+[node name="Afterdestroy" type="Node" parent="DialogSequence"]
+script = ExtResource("17_4nimo")
+victim_name = "Boitata"
+text = "Oi, quem é você? O que aconteceu? Eu devo ter enlouquecido de vez com tamanho sofrimento, e você me ajudou, por isso sou eternamente grato. Você é a heroína que a floresta estava esperando, rápido, não temos muito tempo, Anhangá vai destruir tudo. Você precisa encontrar a passagem que estava fechada, fica a oeste daqui, eu abrirei para você, tenha boa sorte."

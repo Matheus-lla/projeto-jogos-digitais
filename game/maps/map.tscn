@@ -35,7 +35,7 @@ script = ExtResource("1_gr1uc")
 position = Vector2(-189, -483)
 
 [node name="Player" parent="." node_paths=PackedStringArray("spawn_place") instance=ExtResource("9_57pim")]
-spawn_place = NodePath("../Spawn")
+spawn_place = NodePath("../Spawn3")
 
 [node name="Spawn" parent="." instance=ExtResource("5_ab8ve")]
 position = Vector2(1279, -1)
@@ -2190,7 +2190,7 @@ position = Vector2(1436, 130)
 
 [node name="DialogItem" type="Node" parent="Villager2/DialogSequence" index="3"]
 script = ExtResource("13_rpw2t")
-text = "Todos da vila estão contando com você, sem pressão."
+text = "Você é a nossa salvadora? Não parece."
 
 [node name="Seller" parent="." instance=ExtResource("12_rbau8")]
 position = Vector2(1480, 14)
@@ -2200,7 +2200,7 @@ position = Vector2(1377, -78)
 
 [node name="DialogItem" type="Node" parent="Villager/DialogSequence" index="3"]
 script = ExtResource("13_rpw2t")
-text = " Você é a nossa salvadora? Não parece."
+text = "Todos da vila estão contando com você, sem pressão."
 
 [node name="Cacique" parent="." instance=ExtResource("11_x22vo")]
 position = Vector2(1219, 73)
@@ -2211,21 +2211,20 @@ modulate = Color(1, 0.19, 0.19, 1)
 [node name="DialogItem" type="Node" parent="Cacique/DialogSequence" index="3"]
 script = ExtResource("22_aptqm")
 victim_name = "Slime"
-text = "Parabéns, não foi muito difícil certo? Não se acostume, desafios maiores ainda estão por vir. Mas para chegar lá você precisa aprender a explorar a floresta, procure por outras fogueiras como está da nossa vila, elas servem para você reabastecer suas energias e suprimentos. Tem uma ao sul daqui, mas ela está cercada por gosmas, não tenha medo."
 
 [node name="Villager4" parent="." instance=ExtResource("11_x22vo")]
 position = Vector2(1077, -107)
 
 [node name="DialogItem" type="Node" parent="Villager4/DialogSequence" index="3"]
 script = ExtResource("13_rpw2t")
-text = "Salvar o mundo??? Não dá pra fazer isso sem antes comer um açaí."
+text = "O Cacique pode ser um pouco estranho as vezes, mas acredite, ele só quer ajudar."
 
 [node name="Villager3" parent="." instance=ExtResource("11_x22vo")]
 position = Vector2(1296, 193)
 
 [node name="DialogItem" type="Node" parent="Villager3/DialogSequence" index="3"]
 script = ExtResource("13_rpw2t")
-text = "O Cacique pode ser um pouco estranho as vezes, mas acredite, ele só quer ajudar."
+text = "Salvar o mundo??? Não dá pra fazer isso sem antes comer um açaí."
 
 [node name="Bridge" parent="." instance=ExtResource("22_lfujk")]
 position = Vector2(924, 1014)

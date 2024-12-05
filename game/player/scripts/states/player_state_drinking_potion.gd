@@ -19,7 +19,7 @@ func init():
 
 func enter() -> void:
 	animation_player.animation_finished.connect(animation_potion_end)
-	if (PlayerHud.potions <= 0 || player.hp == player.max_hp):
+	if (PlayerHud.potions <= 0 || player.hp == player.max_hp.get_value()):
 		ended = true
 		return
 		
