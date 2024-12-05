@@ -297,7 +297,7 @@ z_index = 1
 collision_layer = 16
 collision_mask = 0
 script = ExtResource("1_u8ci2")
-hp = 15
+hp = 30
 
 [node name="HitBox" parent="." instance=ExtResource("3_qjoyx")]
 
@@ -306,7 +306,7 @@ position = Vector2(-156.8, 18.4)
 polygon = PackedVector2Array(117.6, -60.8, 135.2, -42.4, 114.4, -24, 123.2, -4.8, 144, 8.8, 180.8, 8.8, 197.6, -4, 197.6, -28, 185.6, -42.4, 188.8, -52.8, 201.6, -61.6, 224.744, -83.9207, 254.4, -99.2, 244.8, -120, 228.8, -139.2, 197.6, -136, 154.4, -139.2, 113.6, -148, 84.8, -130.4, 68, -96, 100, -90.4)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-max_polyphony = 4
+max_polyphony = 10
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -357,12 +357,20 @@ script = ExtResource("7_77wen")
 
 [node name="EnemyStateIdle" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("9_52v8l")
+state_duration_min = 1.2
+state_duration_max = 1.2
 next_state = NodePath(".")
 
 [node name="BurningAttack" type="Node" parent="StateMachine"]
 script = ExtResource("12_a88k8")
 
+[node name="BurningAttack2" type="Node" parent="StateMachine"]
+script = ExtResource("12_a88k8")
+
 [node name="BasicAttack" type="Node" parent="StateMachine"]
+script = ExtResource("13_4p6cc")
+
+[node name="BasicAttack3" type="Node" parent="StateMachine"]
 script = ExtResource("13_4p6cc")
 
 [node name="BasicAttack2" type="Node" parent="StateMachine"]

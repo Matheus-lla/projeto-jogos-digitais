@@ -3,6 +3,7 @@ class_name Boitata extends Character
 var player : Player
 var is_in_combat: bool
 var defeated: bool = false
+var dialog_ended = false
 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
 @onready var sprite : Sprite2D = $Sprite2D
@@ -10,6 +11,7 @@ var defeated: bool = false
 @onready var vision_area: VisionArea = $VisionArea
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var door: StaticBody2D = $StaticBody2D
+@onready var dialog_sequence: DialogSequence = $DialogSequence
 
 func _ready():
 	state_machine.init( self )
@@ -17,6 +19,13 @@ func _ready():
 	hit_box.Damaged.connect(_take_damage)
 	vision_area.player_entered.connect(on_player_enter)
 	vision_area.player_exited.connect(on_player_exit)
+	dialog_sequence.DialogEnded.connect(on_dialog_ended)
+
+func on_dialog_ended():
+	dialog_ended = true
+	start_combat()
+	dialog_sequence.DialogEnded.disconnect(on_dialog_ended)
+	
 
 # Overrides default definition of _physics_process
 func _physics_process(_delta: float) -> void:
@@ -37,12 +46,17 @@ func _take_damage( hurt_box : HurtBox ) -> void:
 		
 	CharacterDamaged.emit( hurt_box )
 		
+func start_combat():		
+	is_in_combat = true
+	await get_tree().create_timer(0.3).timeout
+	door.set_collision_layer_value(5, true)
+	camera_2d.make_current()
+	
 func on_player_enter():
-	if not defeated:
-		is_in_combat = true
-		await get_tree().create_timer(0.3).timeout
-		door.set_collision_layer_value(5, true)
-		camera_2d.make_current()
+	if defeated or not dialog_ended:
+		return
+		
+	start_combat()
 
 func on_player_exit():
 	is_in_combat = false

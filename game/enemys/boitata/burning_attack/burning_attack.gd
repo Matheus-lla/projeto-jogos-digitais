@@ -72,10 +72,10 @@ func _physics_process(delta: float) -> void:
 			await get_tree().create_timer(0.9).timeout
 			hurt_box.monitoring = true
 			
-			for i in randi_range(1, 6):
+			for i in randi_range(3, 10):
 				var fire = FIRE_CENE.instantiate() as Fire
 				fire.start(
-					global_position + Vector2(randf_range(-50.0, 50.0), randf_range(-50.0, 50.0)),
+					global_position + Vector2(randf_range(-60.0, 60.0), randf_range(-60.0, 60.0)),
 					randf_range(2.0, 10.0)
 				)
 				add_sibling(fire)

@@ -38,7 +38,7 @@ script = ExtResource("1_gr1uc")
 position = Vector2(-189, -483)
 
 [node name="Player" parent="." node_paths=PackedStringArray("spawn_place") instance=ExtResource("9_57pim")]
-spawn_place = NodePath("../Spawn")
+spawn_place = NodePath("../Spawn3")
 
 [node name="Spawn" parent="." instance=ExtResource("5_ab8ve")]
 position = Vector2(1279, -1)

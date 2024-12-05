@@ -1,5 +1,7 @@
 class_name DialogSequence extends InteractArea
 
+signal DialogEnded()
+
 var dialog_items: Array[DialogItem]
 var next_dialog: DialogItem
 var icon_up: bool = false
@@ -26,6 +28,7 @@ func get_next_dialog() -> DialogItem:
 	return null
 	
 func end_dialog():
+	DialogEnded.emit()
 	Dialog.hide_dialog()
 	if icon_up:
 		animation_dialog.play("hide")

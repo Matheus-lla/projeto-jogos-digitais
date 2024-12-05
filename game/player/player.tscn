@@ -870,4 +870,7 @@ offset = Vector2(0, 20)
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]
 max_polyphony = 4
 
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
+
 [connection signal="timeout" from="StateMachine/Dash/GhostTimer" to="StateMachine/Dash" method="_on_ghost_timer_timeout"]

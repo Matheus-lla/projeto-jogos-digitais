@@ -144,10 +144,10 @@ tracks/3/path = NodePath("AudioStreamPlayer2D:volume_db")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [3.0]
+"values": [0.0, 0.0]
 }
 
 [sub_resource type="Animation" id="Animation_jmesq"]
@@ -199,10 +199,10 @@ tracks/3/path = NodePath("AudioStreamPlayer2D:volume_db")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [-15.0]
+"values": [-22.0, -22.0]
 }
 
 [sub_resource type="Animation" id="Animation_n0ca8"]
@@ -253,10 +253,10 @@ tracks/3/path = NodePath("AudioStreamPlayer2D:volume_db")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [6.0]
+"values": [0.0, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iaf3y"]

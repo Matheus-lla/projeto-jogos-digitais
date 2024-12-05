@@ -187,3 +187,4 @@ libraries = {
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 volume_db = 10.0
+max_polyphony = 8
