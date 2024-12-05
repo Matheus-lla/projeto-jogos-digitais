@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://gui/dialog/default/dialog.gd" id="1_xwn46"]
 [ext_resource type="Texture2D" uid="uid://b2e0dh74ehj5j" path="res://gui/dialog/text-bubble.png" id="2_7im42"]
-[ext_resource type="FontFile" uid="uid://bicklftr4une4" path="res://fonts/Abaddon Light.ttf" id="3_0hatj"]
-[ext_resource type="FontFile" uid="uid://btlftr7loqd5u" path="res://fonts/Abaddon Bold.ttf" id="4_g335n"]
+[ext_resource type="FontFile" uid="uid://cep6b485s004s" path="res://fonts/rainyhearts.ttf" id="3_uu1q5"]
+[ext_resource type="FontFile" uid="uid://dgwh0epw65jju" path="res://fonts/Minecraftia-Regular.ttf" id="4_6hh4f"]
 [ext_resource type="Texture2D" uid="uid://bk65lxbyacy4j" path="res://icon.svg" id="5_shdmg"]
 
 [sub_resource type="Gradient" id="Gradient_5jnrn"]
@@ -104,23 +104,26 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_7bdr7")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="UI/PanelContainer"]
 layout_mode = 2
-theme_override_colors/default_color = Color(0.439216, 0.396078, 0.321569, 1)
-theme_override_fonts/normal_font = ExtResource("3_0hatj")
-theme_override_fonts/bold_font = ExtResource("4_g335n")
+theme_override_colors/default_color = Color(0.372591, 0.298667, 0.23252, 1)
+theme_override_fonts/normal_font = ExtResource("3_uu1q5")
 bbcode_enabled = true
-text = "Example texzt"
+text = "Texto de exemplo!!!
+áéíóú
+âêîôû
+ãõ
+ç"
 
 [node name="Label" type="Label" parent="UI"]
 layout_mode = 0
 offset_left = 110.0
-offset_top = 169.0
-offset_right = 150.0
-offset_bottom = 187.0
+offset_top = 165.0
+offset_right = 158.0
+offset_bottom = 193.0
 theme_override_colors/font_color = Color(0.894118, 0.862745, 0.796078, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_outline_size = 5
-theme_override_fonts/font = ExtResource("4_g335n")
+theme_override_fonts/font = ExtResource("4_6hh4f")
 text = "Name"
 
 [node name="PortraitSprite" type="Sprite2D" parent="UI"]
