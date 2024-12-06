@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://cp6p8qd6jkb7g"]
+[gd_scene load_steps=64 format=3 uid="uid://cp6p8qd6jkb7g"]
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_cdxps"]
 [ext_resource type="Texture2D" uid="uid://c0tiavk755qy0" path="res://player/sprites/india-sprite-sheet.png" id="2_6vyfa"]
@@ -736,6 +736,9 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_5cg4k"]
 radius = 11.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qc1mn"]
+radius = 600.0
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 collision_mask = 16
@@ -872,5 +875,11 @@ max_polyphony = 4
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qc1mn")
+debug_color = Color(0, 0.649767, 0.129053, 0.42)
 
 [connection signal="timeout" from="StateMachine/Dash/GhostTimer" to="StateMachine/Dash" method="_on_ghost_timer_timeout"]

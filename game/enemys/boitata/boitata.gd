@@ -60,6 +60,7 @@ func on_player_enter():
 	start_combat()
 
 func on_player_exit():
+	invulnerable = true
 	is_in_combat = false
 	await get_tree().create_timer(0.3).timeout
 	door.set_collision_layer_value(5, false)
