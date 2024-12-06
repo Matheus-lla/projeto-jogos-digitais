@@ -737,7 +737,7 @@ _data = {
 radius = 11.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qc1mn"]
-radius = 600.0
+radius = 350.0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
@@ -876,9 +876,9 @@ max_polyphony = 4
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="LoadArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="LoadArea"]
 shape = SubResource("CircleShape2D_qc1mn")
 debug_color = Color(0, 0.649767, 0.129053, 0.42)
 
