@@ -880,3 +880,4 @@ next_state = NodePath("../Idle")
 
 [node name="Destroy" type="Node" parent="StateMachine"]
 script = ExtResource("12_lxhb6")
+reward = 3

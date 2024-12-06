@@ -67,17 +67,12 @@ func on_damaged(hurt_box: HurtBox):
 	
 	CharacterDamaged.emit(hurt_box)
 
-func spawn():
+func spawn(teleport: bool = true):
 	update_hp(max_hp.get_value())
 	PlayerHud.update_potion(PlayerHud.max_potion)
-	PlayerHud.update_guarana(-PlayerHud.guarana)
+	#PlayerHud.update_guarana(-PlayerHud.guarana)
 	
-	for c in get_parent().get_children(false):
-		if c is Guarana:
-			c.guarana_spawm()
-	
-	
-	if spawn_place:
+	if spawn_place and teleport:
 		self.global_position = spawn_place.global_position
 		
 	direction = Vector2.DOWN

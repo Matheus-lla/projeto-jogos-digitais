@@ -113,6 +113,7 @@ next_state = NodePath("../EnemyStateWander")
 
 [node name="EnemyStateDestroy" type="Node" parent="StateMachine"]
 script = ExtResource("8_nio30")
+reward = 7
 
 [node name="EnemyStateChase" type="Node" parent="StateMachine" node_paths=PackedStringArray("vision_area", "next_state")]
 script = ExtResource("9_2stmd")

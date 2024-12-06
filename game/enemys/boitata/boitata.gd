@@ -20,12 +20,12 @@ func _ready():
 	vision_area.player_entered.connect(on_player_enter)
 	vision_area.player_exited.connect(on_player_exit)
 	dialog_sequence.DialogEnded.connect(on_dialog_ended)
+	invulnerable = true
 
 func on_dialog_ended():
 	dialog_ended = true
 	start_combat()
 	dialog_sequence.DialogEnded.disconnect(on_dialog_ended)
-	
 
 # Overrides default definition of _physics_process
 func _physics_process(_delta: float) -> void:
@@ -51,6 +51,7 @@ func start_combat():
 	await get_tree().create_timer(0.3).timeout
 	door.set_collision_layer_value(5, true)
 	camera_2d.make_current()
+	invulnerable = false
 	
 func on_player_enter():
 	if defeated or not dialog_ended:

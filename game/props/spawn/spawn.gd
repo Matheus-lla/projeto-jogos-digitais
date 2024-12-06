@@ -8,6 +8,7 @@ func _ready() -> void:
 	
 func on_interaction():
 	GlobalPlayerManager.player.spawn_place = self
+	GlobalPlayerManager.player.spawn(false)
 	label.visible = true
 	await get_tree().create_timer(2.0).timeout
 	label.visible = false

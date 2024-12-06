@@ -9,6 +9,7 @@ var damage_position: Vector2
 @export var anim_name: String = "destroy"
 @export var knockback_speed: float = 200.0
 @export var decelerate_speed: float = 10.0
+@export var reward: int = 1
 
 func init() -> void:
 	character.CharacterDestroyed.connect(on_destroyed)
@@ -27,6 +28,7 @@ func process( delta: float) -> State:
 	return null
 	
 func on_destroyed(_hurt_box: HurtBox):
+	PlayerHud.update_guarana(reward)
 	damage_position = _hurt_box.global_position
 	state_machine.change_state(self)
 

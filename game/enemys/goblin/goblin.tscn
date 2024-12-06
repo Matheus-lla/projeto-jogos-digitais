@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bxnynmne8hsl2"]
+[gd_scene load_steps=40 format=3 uid="uid://bxnynmne8hsl2"]
 
 [ext_resource type="Script" path="res://enemys/goblin/goblin.gd" id="1_3l85o"]
 [ext_resource type="PackedScene" uid="uid://bi537x71g5dm3" path="res://general_nodes/hurt_box/hurt_box.tscn" id="2_vb6ko"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://enemys/states/wander.gd" id="9_8hcxq"]
 [ext_resource type="Script" path="res://enemys/states/stun.gd" id="10_qk036"]
 [ext_resource type="Script" path="res://enemys/states/destroy.gd" id="11_ogoqp"]
+[ext_resource type="Script" path="res://enemys/states/chase_infinity.gd" id="13_iofnn"]
 [ext_resource type="Script" path="res://general_scripts/update_rotation.gd" id="14_1c0ra"]
 [ext_resource type="Texture2D" uid="uid://bcmmwvpbdj7th" path="res://effects/DestroySmoke.png" id="16_qmi8b"]
 [ext_resource type="Script" path="res://enemys/states/chase.gd" id="16_v3mb8"]
@@ -781,10 +782,11 @@ next_state = NodePath("../Idle")
 
 [node name="Stun" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("10_qk036")
-next_state = NodePath("../Idle")
+next_state = NodePath("../ChaseInfinity")
 
 [node name="Destroy" type="Node" parent="StateMachine"]
 script = ExtResource("11_ogoqp")
+reward = 5
 
 [node name="Chase" type="Node" parent="StateMachine" node_paths=PackedStringArray("vision_area", "attack_area", "next_state")]
 script = ExtResource("16_v3mb8")
@@ -792,6 +794,11 @@ chase_speed = 80.0
 vision_area = NodePath("../../Rotation/VisionArea")
 attack_area = NodePath("../../Sprite2D/AttackHurtBox")
 next_state = NodePath("../Idle")
+
+[node name="ChaseInfinity" type="Node" parent="StateMachine" node_paths=PackedStringArray("attack_area")]
+script = ExtResource("13_iofnn")
+chase_speed = 80.0
+attack_area = NodePath("../../Sprite2D/AttackHurtBox")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 max_polyphony = 4

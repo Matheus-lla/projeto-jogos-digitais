@@ -3,6 +3,7 @@ class_name BoitataStateDestroy extends State
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 
 @export var anim_name: String = "destroy"
+@export var reward: int = 1
 @onready var enemy_state_idle: EnemyStateIdle = $"../EnemyStateIdle"
 
 func init() -> void:
@@ -17,6 +18,7 @@ func enter() -> void:
 	animation_player.animation_finished.connect(on_animation_finished)
 	
 func on_destroyed(_hurt_box: HurtBox):
+	PlayerHud.update_guarana(reward)
 	state_machine.update_state(self)
 
 func on_animation_finished(_current_animation: String):

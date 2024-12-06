@@ -9,17 +9,20 @@ extends CanvasLayer
 func _ready() -> void:
 	hide_dialog()
 
-func show_dialog(character_name: String, text: String, button_text: String, pause: bool = false):
+func show_dialog(character_name: String, text: String, button_text: String):
 	ui.visible = true
 	ui.process_mode = Node.PROCESS_MODE_ALWAYS
 	name_label.text = character_name
 	rich_text_label.text = text
 	button_label.text = button_text
-	get_tree().paused = pause
+	get_tree().paused = true
+	await get_tree().create_timer(1.5).timeout
+	get_tree().paused = false
+	
 	
 
 func hide_dialog():
 	ui.visible = false
 	ui.process_mode = Node.PROCESS_MODE_DISABLED
-	get_tree().paused = false
+	#get_tree().paused = false
 	
