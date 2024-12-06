@@ -19,7 +19,7 @@ func _ready() -> void:
 func pause():
 	for child in chilren:
 		
-		if child.process_mode == PROCESS_MODE_WHEN_PAUSED:
+		if child.process_mode == PROCESS_MODE_DISABLED:
 			continue
 		
 		if child is Node2D:
@@ -27,7 +27,7 @@ func pause():
 			if distance > threshold:
 				paused_chilren.push_back(child)
 				prev_modes.push_back(child.process_mode)
-				child.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
+				child.process_mode = Node.PROCESS_MODE_DISABLED
 				
 func unpause():
 	var index_to_pop = Array()
