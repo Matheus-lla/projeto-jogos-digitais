@@ -1,0 +1,123 @@
+[gd_scene load_steps=15 format=3 uid="uid://cobps4btqiqs5"]
+
+[ext_resource type="Script" path="res://enemys/boitata/boitata.gd" id="1_u8ci2"]
+[ext_resource type="PackedScene" uid="uid://uxvl7pfm1jf5" path="res://general_nodes/hit_box/hit_box.tscn" id="3_qjoyx"]
+[ext_resource type="PackedScene" uid="uid://bi537x71g5dm3" path="res://general_nodes/hurt_box/hurt_box.tscn" id="4_o131c"]
+[ext_resource type="Script" path="res://general_scripts/update_rotation.gd" id="6_1tk7b"]
+[ext_resource type="Texture2D" uid="uid://bqq732lfh4415" path="res://enemys/boitata/boitata-sheet.png" id="7_tn8hg"]
+[ext_resource type="PackedScene" uid="uid://d4gtfxg7yyiyc" path="res://general_nodes/vision_area/vision_area.tscn" id="7_uc7yh"]
+[ext_resource type="Script" path="res://general_scripts/state_machine.gd" id="8_n81an"]
+[ext_resource type="Script" path="res://enemys/states/idle.gd" id="9_52v8l"]
+[ext_resource type="Script" path="res://enemys/states/stun.gd" id="13_r0yxy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_emjqh"]
+radius = 46.0
+
+[sub_resource type="Animation" id="Animation_cgx5i"]
+length = 1.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_4838n"]
+length = 1.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 6, 7, 8, 9, 10, 11, 9, 8]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rc7cs"]
+_data = {
+"basic_attack": SubResource("Animation_cgx5i"),
+"burning_attack": SubResource("Animation_4838n")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_khxwu"]
+radius = 122.004
+
+[node name="Boitata" type="CharacterBody2D"]
+script = ExtResource("1_u8ci2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_emjqh")
+
+[node name="HitBox" parent="." instance=ExtResource("3_qjoyx")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("CircleShape2D_emjqh")
+
+[node name="HurtBox" parent="." instance=ExtResource("4_o131c")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_emjqh")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rc7cs")
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("6_1tk7b")
+
+[node name="VisionArea" parent="Node2D" instance=ExtResource("7_uc7yh")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/VisionArea"]
+shape = SubResource("CircleShape2D_khxwu")
+debug_color = Color(0.733436, 0.447634, 0.404893, 0.42)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -3.8147e-06)
+texture = ExtResource("7_tn8hg")
+hframes = 4
+vframes = 3
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "AnimationPlayer",
+"slice": "",
+"source": "C:/Users/mathe/OneDrive/Desktop/faculdade/UFG/7º Periodo/Jogos Digitais/projeto-jogos-digitais/aseprite/boitata-sheet.aseprite"
+}
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": false,
+"layer_section": false,
+"output_section": false,
+"slice_section": false
+}
+metadata/_aseprite_wizard_source_file_hash_ = "adcecb7a1f675091781d92f908e9c0cd"
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("8_n81an")
+
+[node name="EnemyStateIdle" type="Node" parent="StateMachine"]
+script = ExtResource("9_52v8l")
+
+[node name="EnemyStateStun" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("13_r0yxy")
+next_state = NodePath("../EnemyStateIdle")

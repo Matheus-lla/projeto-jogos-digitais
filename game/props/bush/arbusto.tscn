@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0b1wt1d45a8b"]
+
+[ext_resource type="Texture2D" uid="uid://8iauey8hxtyc" path="res://props/bush/bush.png" id="1_ngwxa"]
+
+[node name="bush" type="Node2D"]
+z_index = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ngwxa")

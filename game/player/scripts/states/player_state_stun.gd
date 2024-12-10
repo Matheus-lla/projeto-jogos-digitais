@@ -1,4 +1,4 @@
-class_name PlayerStun extends PlayerState
+class_name PlayerStun extends State
 
 @export var knockback_speed: float = 200.0
 @export var decelerate_speed: float = 10.0
@@ -6,13 +6,13 @@ class_name PlayerStun extends PlayerState
 
 var hurt_box: HurtBox
 var direction: Vector2
-var next_state: PlayerState = null
+var next_state: State = null
 const animation_name: String = "stun"
 
-@onready var idle: PlayerState = $"../Idle"
+@onready var idle: State = $"../Idle"
 
 func init():
-	player.PlayerDamaged.connect(on_player_damaged)
+	player.CharacterDamaged.connect(on_player_damaged)
 
 func enter() -> void:
 	player.animation_player.animation_finished.connect(on_animation_fineshed)
@@ -29,11 +29,11 @@ func exit() -> void:
 	player.animation_player.animation_finished.disconnect(on_animation_fineshed)
 	pass
 	
-func process(delta: float) -> PlayerState:
+func process(delta: float) -> State:
 	player.velocity -= player.velocity * decelerate_speed * delta
 	return next_state
 	
-func physics(_delta: float) -> PlayerState:
+func physics(_delta: float) -> State:
 	return null
 
 func on_player_damaged(_hurt_box: HurtBox):

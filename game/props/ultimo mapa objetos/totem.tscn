@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf0hvda753q6l"]
+
+[ext_resource type="Texture2D" uid="uid://dhr2v8tdhb1ch" path="res://props/ultimo mapa objetos/Objects_animated3.png" id="1_r5yeg"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iqrsy"]
+texture = ExtResource("1_r5yeg")
+1:19/size_in_atlas = Vector2i(6, 7)
+1:19/animation_columns = 6
+1:19/animation_separation = Vector2i(1, 0)
+1:19/animation_frame_0/duration = 0.1
+1:19/animation_frame_1/duration = 0.1
+1:19/animation_frame_2/duration = 0.1
+1:19/animation_frame_3/duration = 0.1
+1:19/animation_frame_4/duration = 0.1
+1:19/animation_frame_5/duration = 0.1
+1:19/0 = 0
+43:32/0 = 0
+1:33/size_in_atlas = Vector2i(3, 5)
+1:33/animation_separation = Vector2i(4, 0)
+1:33/animation_frame_0/duration = 0.2
+1:33/animation_frame_1/duration = 0.2
+1:33/animation_frame_2/duration = 0.2
+1:33/animation_frame_3/duration = 0.2
+1:33/animation_frame_4/duration = 0.2
+1:33/animation_frame_5/duration = 0.2
+1:33/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_oyeos"]
+sources/0 = SubResource("TileSetAtlasSource_iqrsy")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2lsa8"]
+size = Vector2(23.0339, 25.1118)
+
+[node name="Totem" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-72, 6)
+tile_map_data = PackedByteArray(0, 0, 4, 0, 253, 255, 0, 0, 1, 0, 33, 0, 0, 0)
+tile_set = SubResource("TileSet_oyeos")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-5, 55)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+visible = false
+position = Vector2(4.56322, -72.6455)
+rotation = -1.56051
+shape = SubResource("RectangleShape2D_2lsa8")

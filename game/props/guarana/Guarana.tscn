@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhxoilxb2hwdb"]
+
+[ext_resource type="Script" path="res://props/guarana/guarana.gd" id="1_7d0e4"]
+[ext_resource type="Texture2D" uid="uid://bd870bok7y61u" path="res://props/guarana/guarana_full.png" id="1_xe7lg"]
+[ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://effects/Shadow.png" id="2_ijquo"]
+[ext_resource type="Script" path="res://general_nodes/interact_area/interact_area.gd" id="3_ehmem"]
+[ext_resource type="Texture2D" uid="uid://cxcy7gakj3ldn" path="res://props/guarana/guarana_empty.png" id="5_adba3"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f72jo"]
+radius = 5.20833
+height = 10.4167
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_430tk"]
+radius = 5.0
+height = 28.0
+
+[node name="Guarana" type="Node2D"]
+z_index = 1
+position = Vector2(0, -10)
+scale = Vector2(1.2, 1.2)
+script = ExtResource("1_7d0e4")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-45.3333, 0)
+scale = Vector2(1.2, 1.2)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(37.7778, 3.47222)
+scale = Vector2(1.2, 1.2)
+shape = SubResource("CapsuleShape2D_f72jo")
+
+[node name="InteractionArea" type="Area2D" parent="."]
+scale = Vector2(1.2, 1.2)
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+script = ExtResource("3_ehmem")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, -3)
+scale = Vector2(1.2, 1.2)
+shape = SubResource("CapsuleShape2D_430tk")
+
+[node name="Shadow" type="Sprite2D" parent="."]
+modulate = Color(0.18022, 0.164495, 0.127902, 0.356863)
+position = Vector2(-0.333333, 10.9167)
+scale = Vector2(0.916667, 0.942708)
+texture = ExtResource("2_ijquo")
+
+[node name="FullSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("1_xe7lg")
+
+[node name="EmptySprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1.2, -6.4)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("5_adba3")
