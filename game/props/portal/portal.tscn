@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=3 uid="uid://boil42dotsryp"]
+
+[ext_resource type="Texture2D" uid="uid://da8jjhk2b2fy7" path="res://props/portal/Dimensional_Portal.png" id="1_7i7lf"]
+[ext_resource type="PackedScene" uid="uid://bf0hvda753q6l" path="res://props/ultimo mapa objetos/totem.tscn" id="1_afwb3"]
+[ext_resource type="Script" path="res://props/portal/portal.gd" id="1_j675j"]
+[ext_resource type="PackedScene" uid="uid://d2bp44lwjp0mv" path="res://general_nodes/interact_area/interact_area.tscn" id="4_mrm8e"]
+
+[sub_resource type="Animation" id="Animation_i3eeb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_o5r2t"]
+resource_name = "default"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y20cv"]
+_data = {
+"RESET": SubResource("Animation_i3eeb"),
+"default": SubResource("Animation_o5r2t")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2368u"]
+
+[node name="Portal" type="Node2D"]
+z_index = 1
+script = ExtResource("1_j675j")
+
+[node name="Totem" parent="." instance=ExtResource("1_afwb3")]
+position = Vector2(-24, 21)
+
+[node name="Totem2" parent="." instance=ExtResource("1_afwb3")]
+position = Vector2(31, 22)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -7)
+scale = Vector2(2.08875, 1.53975)
+texture = ExtResource("1_7i7lf")
+hframes = 3
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_y20cv")
+}
+autoplay = "default"
+
+[node name="InteractArea" parent="." instance=ExtResource("4_mrm8e")]
+collision_layer = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+position = Vector2(4, -3)
+shape = SubResource("CapsuleShape2D_2368u")

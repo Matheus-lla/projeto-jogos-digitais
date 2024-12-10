@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cobps4btqiqs5"]
+[gd_scene load_steps=32 format=3 uid="uid://cobps4btqiqs5"]
 
 [ext_resource type="Script" path="res://enemys/boitata/boitata.gd" id="1_u8ci2"]
 [ext_resource type="AudioStream" uid="uid://byga7412bn8aa" path="res://enemys/boitata/monster-growl-6311.mp3" id="3_8sfhp"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bgeelc5dpjqu6" path="res://general_nodes/dialog_sequence/dialog_sequence.tscn" id="15_hbydt"]
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/single_dialog.gd" id="16_5as5d"]
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_kill_dialog.gd" id="17_4nimo"]
+[ext_resource type="PackedScene" uid="uid://boil42dotsryp" path="res://props/portal/portal.tscn" id="18_0ihmk"]
 
 [sub_resource type="Animation" id="Animation_dbqpj"]
 length = 0.001
@@ -422,4 +423,9 @@ text = "QUEM É VOCÊ? QUEM OUSA INVADIR MEU TERRITÓRIO? VOCÊ DESEJA DESTRUIR 
 [node name="Afterdestroy" type="Node" parent="DialogSequence"]
 script = ExtResource("17_4nimo")
 victim_name = "Boitata"
-text = "Oi, quem é você? O que aconteceu? Eu devo ter enlouquecido de vez com tamanho sofrimento, e você me ajudou, por isso sou eternamente grato. Você é a heroína que a floresta estava esperando, rápido, não temos muito tempo, Anhangá vai destruir tudo. Você precisa encontrar a passagem que estava fechada, fica a oeste daqui, eu abrirei para você, tenha boa sorte."
+text = "Oi, quem é você? O que aconteceu? Eu devo ter enlouquecido de vez com tamanho sofrimento, e você me ajudou, por isso sou eternamente grato. Você é a heroína que a floresta estava esperando, rápido, não temos muito tempo, Anhangá vai destruir tudo. Você precisa usar o portal que leva para o mundo sombrio, tenha boa sorte."
+
+[node name="Portal" parent="." instance=ExtResource("18_0ihmk")]
+process_mode = 4
+visible = false
+position = Vector2(170, 60)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cy6n5kjownfd7"]
+[gd_scene load_steps=35 format=3 uid="uid://cy6n5kjownfd7"]
 
 [ext_resource type="Script" path="res://maps/map.gd" id="1_gr1uc"]
 [ext_resource type="PackedScene" uid="uid://ctp446wbt3g8p" path="res://tile_maps/terrain.tscn" id="1_uo6ai"]
@@ -21,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://ckj0rrdtusdmd" path="res://props/stones/animalskull.tscn" id="15_5gggo"]
 [ext_resource type="PackedScene" uid="uid://dw5ayaxjwklmy" path="res://props/stones/skull.tscn" id="16_26cuq"]
 [ext_resource type="PackedScene" uid="uid://e3iitwvkrig5" path="res://props/burnig_trees/burningtree1.tscn" id="17_24lf3"]
+[ext_resource type="PackedScene" uid="uid://c4qvk4shsrvj5" path="res://maps/final_map.tscn" id="18_6qe4n"]
 [ext_resource type="PackedScene" uid="uid://chuojaodpl3jo" path="res://props/stones/bones.tscn" id="19_gplrp"]
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_kill_dialog.gd" id="22_aptqm"]
 [ext_resource type="PackedScene" uid="uid://bbcflnq12i654" path="res://props/bridge/bridge.tscn" id="22_lfujk"]
@@ -29,6 +30,10 @@
 [ext_resource type="PackedScene" uid="uid://bxnynmne8hsl2" path="res://enemys/goblin/goblin.tscn" id="23_rhsfu"]
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_spawn.gd" id="25_2cuk0"]
 [ext_resource type="PackedScene" uid="uid://cobps4btqiqs5" path="res://enemys/boitata/boitata.tscn" id="25_faf6i"]
+[ext_resource type="PackedScene" uid="uid://cwxk7x12kuq4y" path="res://props/ultimo mapa objetos/corrupted_tree.tscn" id="31_a0s1a"]
+[ext_resource type="PackedScene" uid="uid://bsrn3e7383s62" path="res://props/ultimo mapa objetos/temple.tscn" id="32_i6k0i"]
+[ext_resource type="PackedScene" uid="uid://dglm2ngfsfou3" path="res://props/ultimo mapa objetos/big_corrupted_tree.tscn" id="33_oba6c"]
+[ext_resource type="PackedScene" uid="uid://boil42dotsryp" path="res://props/portal/portal.tscn" id="34_m6bbv"]
 
 [node name="Map" type="Node2D"]
 y_sort_enabled = true
@@ -50,9 +55,12 @@ position = Vector2(99, 3038)
 [node name="Snake4" parent="." instance=ExtResource("3_fhrwj")]
 position = Vector2(1324, 3161)
 
+[node name="Spawn4" parent="." instance=ExtResource("5_ab8ve")]
+position = Vector2(8014, 2710)
+
 [node name="Player" parent="." node_paths=PackedStringArray("spawn_place") instance=ExtResource("9_57pim")]
 position = Vector2(-847, 3331)
-spawn_place = NodePath("../Spawn")
+spawn_place = NodePath("../Spawn4")
 
 [node name="Spawn" parent="." instance=ExtResource("5_ab8ve")]
 position = Vector2(1279, -1)
@@ -1761,6 +1769,9 @@ position = Vector2(1010, 3685)
 [node name="Animalskull23" parent="." instance=ExtResource("15_5gggo")]
 position = Vector2(947, 3764)
 
+[node name="FinalMap" parent="." instance=ExtResource("18_6qe4n")]
+position = Vector2(8005, 2127)
+
 [node name="Vulcan13" parent="." instance=ExtResource("13_82v6d")]
 position = Vector2(2134, 3839)
 
@@ -2316,6 +2327,7 @@ position = Vector2(378, 154)
 
 [node name="Boitata" parent="." instance=ExtResource("25_faf6i")]
 position = Vector2(-856, 3092)
+hp = 5
 
 [node name="CollisionShape2D" parent="Boitata/VisionArea" index="0"]
 position = Vector2(11, 100.875)
@@ -2323,6 +2335,7 @@ position = Vector2(11, 100.875)
 [node name="Camera2D" parent="Boitata" index="8"]
 position = Vector2(10, 76)
 offset = Vector2(0, -40)
+zoom = Vector2(0.7, 0.7)
 
 [node name="StaticBody2D" parent="Boitata" index="9"]
 position = Vector2(8, 330)
@@ -2330,6 +2343,71 @@ position = Vector2(8, 330)
 [node name="CollisionShape2D" parent="Boitata/StaticBody2D" index="0"]
 position = Vector2(2, -64)
 
+[node name="Portal" parent="Boitata" index="12" node_paths=PackedStringArray("target_portal")]
+position = Vector2(-133, 175)
+scale = Vector2(1.5, 1.5)
+target_portal = NodePath("../../Portal")
+
+[node name="Corrupted tree" parent="." instance=ExtResource("31_a0s1a")]
+position = Vector2(7567, 2596)
+
+[node name="Temple" parent="." instance=ExtResource("32_i6k0i")]
+z_index = 1
+position = Vector2(8031, 2259)
+scale = Vector2(2, 2)
+
+[node name="Corrupted tree2" parent="." instance=ExtResource("31_a0s1a")]
+visible = false
+position = Vector2(530, 498)
+
+[node name="Corrupted tree big" parent="." instance=ExtResource("33_oba6c")]
+position = Vector2(8096, 2457)
+scale = Vector2(2, 2)
+
+[node name="Corrupted tree big2" parent="." instance=ExtResource("33_oba6c")]
+position = Vector2(7433, 2812)
+scale = Vector2(2, 2)
+
+[node name="Corrupted tree big3" parent="." instance=ExtResource("33_oba6c")]
+position = Vector2(8242, 2812)
+
+[node name="Corrupted tree big4" parent="." instance=ExtResource("33_oba6c")]
+position = Vector2(8166, 2703)
+
+[node name="Corrupted tree big5" parent="." instance=ExtResource("33_oba6c")]
+position = Vector2(7389, 2366)
+
+[node name="Corrupted tree big6" parent="." instance=ExtResource("33_oba6c")]
+position = Vector2(7485, 2254)
+
+[node name="Corrupted tree big7" parent="." instance=ExtResource("33_oba6c")]
+position = Vector2(7587, 2263)
+
+[node name="Corrupted tree big8" parent="." instance=ExtResource("33_oba6c")]
+position = Vector2(8479, 2418)
+
+[node name="Corrupted tree3" parent="." instance=ExtResource("31_a0s1a")]
+position = Vector2(7867, 2809)
+scale = Vector2(2, 2)
+
+[node name="Corrupted tree5" parent="." instance=ExtResource("31_a0s1a")]
+z_index = 1
+position = Vector2(8109, 2770)
+scale = Vector2(1, 1)
+
+[node name="Corrupted tree4" parent="." instance=ExtResource("31_a0s1a")]
+position = Vector2(7883, 2441)
+scale = Vector2(2, 2)
+
+[node name="Portal" parent="." node_paths=PackedStringArray("target_portal") instance=ExtResource("34_m6bbv")]
+position = Vector2(8004, 2868)
+scale = Vector2(2, 2)
+target_portal = NodePath("../Boitata/Portal")
+
+[node name="bush8" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(8100, 2722)
+
+[editable path="FinalMap"]
 [editable path="Villager2"]
 [editable path="Villager"]
 [editable path="Cacique"]

@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://dglm2ngfsfou3"]
+
+[ext_resource type="Texture2D" uid="uid://dhr2v8tdhb1ch" path="res://props/ultimo mapa objetos/Objects_animated3.png" id="1_tsov1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pevii"]
+texture = ExtResource("1_tsov1")
+1:19/size_in_atlas = Vector2i(6, 7)
+1:19/animation_columns = 6
+1:19/animation_separation = Vector2i(1, 0)
+1:19/animation_frame_0/duration = 0.1
+1:19/animation_frame_1/duration = 0.1
+1:19/animation_frame_2/duration = 0.1
+1:19/animation_frame_3/duration = 0.1
+1:19/animation_frame_4/duration = 0.1
+1:19/animation_frame_5/duration = 0.1
+1:19/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b46oh"]
+texture = ExtResource("1_tsov1")
+1:1/size_in_atlas = Vector2i(7, 8)
+1:1/animation_columns = 6
+1:1/animation_frame_0/duration = 0.2
+1:1/animation_frame_1/duration = 0.2
+1:1/animation_frame_2/duration = 0.2
+1:1/animation_frame_3/duration = 0.2
+1:1/animation_frame_4/duration = 0.2
+1:1/animation_frame_5/duration = 0.2
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_jcrbm"]
+sources/0 = SubResource("TileSetAtlasSource_pevii")
+sources/2 = SubResource("TileSetAtlasSource_b46oh")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1ihp6"]
+radius = 12.3665
+height = 38.3625
+
+[node name="Corrupted tree big" type="Node2D"]
+z_index = 1
+position = Vector2(-68, 7)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 5, 0, 252, 255, 2, 0, 1, 0, 1, 0, 0, 0)
+tile_set = SubResource("TileSet_jcrbm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(62, 61)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4.79331, -70.6246)
+rotation = -1.56051
+shape = SubResource("CapsuleShape2D_1ihp6")

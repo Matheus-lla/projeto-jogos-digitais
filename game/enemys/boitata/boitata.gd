@@ -12,6 +12,7 @@ var dialog_ended = false
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var door: StaticBody2D = $StaticBody2D
 @onready var dialog_sequence: DialogSequence = $DialogSequence
+@onready var portal: Portal = $Portal
 
 func _ready():
 	state_machine.init( self )
