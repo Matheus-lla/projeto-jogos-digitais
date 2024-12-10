@@ -16,20 +16,20 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_bq8qo"]
 radius = 46.0
 
-[sub_resource type="Animation" id="Animation_j13m4"]
-length = 0.6
+[sub_resource type="Animation" id="Animation_boanu"]
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Node2D/Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5]
+"values": [12, 13, 14, 15]
 }
 
 [sub_resource type="Animation" id="Animation_vmifi"]
@@ -38,7 +38,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Node2D/Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/keys = {
@@ -48,20 +48,20 @@ tracks/0/keys = {
 "values": [6, 7, 8, 9, 10, 11]
 }
 
-[sub_resource type="Animation" id="Animation_boanu"]
-length = 0.4
+[sub_resource type="Animation" id="Animation_j13m4"]
+length = 0.6
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("Node2D/Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [12, 13, 14, 15]
+"values": [0, 1, 2, 3, 4, 5]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ca8pp"]
@@ -99,23 +99,24 @@ libraries = {
 "": SubResource("AnimationLibrary_ca8pp")
 }
 
-[node name="Node2D" type="Node2D" parent="."]
-script = ExtResource("12_fsws3")
+[node name="VisionArea" parent="." instance=ExtResource("12_dfwqu")]
 
-[node name="VisionArea" parent="Node2D" instance=ExtResource("12_dfwqu")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/VisionArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea"]
 shape = SubResource("CircleShape2D_4w8dd")
 debug_color = Color(0.733436, 0.447634, 0.404893, 0.42)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("12_fsws3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 texture_filter = 1
 position = Vector2(0, -3.8147e-06)
+rotation = 4.71239
 scale = Vector2(1, 1.022)
 texture = ExtResource("2_a3gdv")
 hframes = 4
 vframes = 4
-frame = 2
+frame = 6
 metadata/_aseprite_wizard_interface_config_ = {
 "animation_section": false,
 "layer_section": true,
@@ -150,7 +151,7 @@ script = ExtResource("8_nio30")
 [node name="EnemyStateChase" type="Node" parent="StateMachine" node_paths=PackedStringArray("vision_area", "next_state")]
 script = ExtResource("9_2stmd")
 chase_speed = 125.0
-vision_area = NodePath("../../Node2D/VisionArea")
+vision_area = NodePath("../../VisionArea")
 next_state = NodePath("../EnemyStateIdle")
 
 [node name="EnemyStateWander" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
