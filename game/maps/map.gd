@@ -19,6 +19,11 @@ func _ready() -> void:
 func pause():
 	for child in chilren:
 		
+		if not is_instance_valid(child):
+			print(child)
+			chilren.erase(child)
+			continue
+		
 		if child.process_mode == PROCESS_MODE_DISABLED:
 			continue
 		
@@ -30,8 +35,6 @@ func pause():
 				child.process_mode = Node.PROCESS_MODE_DISABLED
 				
 func unpause():
-	var index_to_pop = Array()
-	
 	var link_child = paused_chilren.first
 	var link_prev_modes = prev_modes.first
 	while true:

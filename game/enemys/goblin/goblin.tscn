@@ -784,8 +784,9 @@ next_state = NodePath("../Idle")
 script = ExtResource("10_qk036")
 next_state = NodePath("../ChaseInfinity")
 
-[node name="Destroy" type="Node" parent="StateMachine"]
+[node name="Destroy" type="Node" parent="StateMachine" node_paths=PackedStringArray("hurt_box")]
 script = ExtResource("11_ogoqp")
+hurt_box = NodePath("../../HurtBox")
 reward = 5
 
 [node name="Chase" type="Node" parent="StateMachine" node_paths=PackedStringArray("vision_area", "attack_area", "next_state")]

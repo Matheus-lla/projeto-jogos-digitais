@@ -4,8 +4,8 @@ var direction: Vector2
 var damage_position: Vector2
 
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
-@onready var hurt_box: HurtBox = $"../../HurtBox"
 
+@export var hurt_box: HurtBox
 @export var anim_name: String = "destroy"
 @export var knockback_speed: float = 200.0
 @export var decelerate_speed: float = 10.0

@@ -871,7 +871,7 @@ texture = ExtResource("4_kpb26")
 offset = Vector2(0, 20)
 
 [node name="Audio" type="AudioStreamPlayer2D" parent="."]
-max_polyphony = 4
+max_polyphony = 12
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true

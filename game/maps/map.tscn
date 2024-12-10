@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://cy6n5kjownfd7"]
+[gd_scene load_steps=30 format=3 uid="uid://cy6n5kjownfd7"]
 
 [ext_resource type="Script" path="res://maps/map.gd" id="1_gr1uc"]
 [ext_resource type="PackedScene" uid="uid://ctp446wbt3g8p" path="res://tile_maps/terrain.tscn" id="1_uo6ai"]
+[ext_resource type="PackedScene" uid="uid://dl5dkj6nkf43v" path="res://enemys/snake/snake.tscn" id="3_fhrwj"]
 [ext_resource type="PackedScene" uid="uid://0a35r0d3rnn7" path="res://props/hut/hut.tscn" id="5_71r4l"]
 [ext_resource type="PackedScene" uid="uid://d4g0yvj01mxhw" path="res://props/spawn/spawn.tscn" id="5_ab8ve"]
 [ext_resource type="PackedScene" uid="uid://cbrqu0ljsvhhi" path="res://props/trees/tree1.tscn" id="6_fl1ub"]
@@ -36,6 +37,18 @@ script = ExtResource("1_gr1uc")
 
 [node name="Terrain" parent="." instance=ExtResource("1_uo6ai")]
 position = Vector2(-189, -483)
+
+[node name="Snake" parent="." instance=ExtResource("3_fhrwj")]
+position = Vector2(777, 2478)
+
+[node name="Snake2" parent="." instance=ExtResource("3_fhrwj")]
+position = Vector2(-348, 2493)
+
+[node name="Snake3" parent="." instance=ExtResource("3_fhrwj")]
+position = Vector2(99, 3038)
+
+[node name="Snake4" parent="." instance=ExtResource("3_fhrwj")]
+position = Vector2(1324, 3161)
 
 [node name="Player" parent="." node_paths=PackedStringArray("spawn_place") instance=ExtResource("9_57pim")]
 position = Vector2(-847, 3331)
