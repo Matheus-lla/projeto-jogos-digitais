@@ -115,7 +115,7 @@ scale = Vector2(1, 1.022)
 texture = ExtResource("2_a3gdv")
 hframes = 4
 vframes = 4
-frame = 12
+frame = 2
 metadata/_aseprite_wizard_interface_config_ = {
 "animation_section": false,
 "layer_section": true,
