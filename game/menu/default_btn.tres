@@ -1,0 +1,67 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://cuqcc8ol8sptm"]
+
+[ext_resource type="FontFile" uid="uid://cvudbe5emf71l" path="res://fonts/Retro Gaming.ttf" id="1_7s2ub"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cme4p"]
+bg_color = Color(0.375599, 0.719989, 0.688532, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.234844, 0.508285, 0.484273, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5t8q"]
+bg_color = Color(0.375599, 0.719989, 0.688532, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.222793, 0.487066, 0.463906, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45o2g"]
+bg_color = Color(0.498039, 0.654902, 0.403922, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.406259, 0.545941, 0.321497, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0rgj7"]
+bg_color = Color(0.375599, 0.719989, 0.688532, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.222793, 0.487066, 0.463906, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_top = 5.0
+expand_margin_bottom = 2.0
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/fonts/font = ExtResource("1_7s2ub")
+Button/styles/focus = SubResource("StyleBoxFlat_cme4p")
+Button/styles/hover = SubResource("StyleBoxFlat_o5t8q")
+Button/styles/normal = SubResource("StyleBoxFlat_45o2g")
+Button/styles/pressed = SubResource("StyleBoxFlat_0rgj7")

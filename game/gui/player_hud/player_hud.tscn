@@ -189,3 +189,5 @@ root_node = NodePath("../Antidote")
 libraries = {
 "": SubResource("AnimationLibrary_io57c")
 }
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

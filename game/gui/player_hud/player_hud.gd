@@ -62,7 +62,12 @@ func update_guarana(_delta: int):
 	guarana_label.text = "x" + str(guarana)
 	Shop.update_ui()
 	
+
 	
 	
 	
+
+
+func _on_visibility_changed() -> void:
 	
+	pass # Replace with function body.

@@ -31,7 +31,7 @@
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_spawn.gd" id="25_2cuk0"]
 [ext_resource type="PackedScene" uid="uid://cobps4btqiqs5" path="res://enemys/boitata/boitata.tscn" id="25_faf6i"]
 [ext_resource type="PackedScene" uid="uid://cwxk7x12kuq4y" path="res://props/ultimo mapa objetos/corrupted_tree.tscn" id="31_a0s1a"]
-[ext_resource type="PackedScene" uid="uid://bsrn3e7383s62" path="res://props/ultimo mapa objetos/temple.tscn" id="32_i6k0i"]
+[ext_resource type="PackedScene" uid="uid://bsrn3e7383s62" path="res://props/ultimo mapa objetos/Temple.tscn" id="32_i6k0i"]
 [ext_resource type="PackedScene" uid="uid://dglm2ngfsfou3" path="res://props/ultimo mapa objetos/big_corrupted_tree.tscn" id="33_oba6c"]
 [ext_resource type="PackedScene" uid="uid://boil42dotsryp" path="res://props/portal/portal.tscn" id="34_m6bbv"]
 [ext_resource type="PackedScene" uid="uid://blp5sco6ipc5c" path="res://enemys/anhanga/anhanga.tscn" id="35_n2yrq"]

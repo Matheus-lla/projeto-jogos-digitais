@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d4g0yvj01mxhw"]
 
 [ext_resource type="Script" path="res://props/spawn/spawn.gd" id="1_w6xyg"]
-[ext_resource type="Texture2D" uid="uid://c3jcfmpli0rtq" path="res://props/spawn/campfire.png" id="2_a2a8u"]
+[ext_resource type="Texture2D" uid="uid://c3jcfmpli0rtq" path="res://tile_maps/sprites/tilemap/fogueira.png" id="2_a2a8u"]
 [ext_resource type="Script" path="res://general_nodes/interact_area/interact_area.gd" id="3_qvo1l"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y3usd"]
