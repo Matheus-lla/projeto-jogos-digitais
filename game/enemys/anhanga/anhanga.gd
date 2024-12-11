@@ -6,10 +6,8 @@ var defeated: bool = false
 var dialog_ended = false
 
 @onready var animation_player : AnimationPlayer = $AnimationPlayer
-@onready var sprite : Sprite2D = $Sprite2D
 @onready var hit_box : HitBox = $HitBox
 @onready var vision_area: VisionArea = $VisionArea
-@onready var camera_2d: Camera2D = $Camera2D
 @onready var dialog_sequence: DialogSequence = $DialogSequence
 
 func _ready():
@@ -41,7 +39,6 @@ func _take_damage( hurt_box : HurtBox ) -> void:
 func start_combat():		
 	is_in_combat = true
 	await get_tree().create_timer(0.3).timeout
-	camera_2d.make_current()
 	invulnerable = false
 	
 func on_player_enter():

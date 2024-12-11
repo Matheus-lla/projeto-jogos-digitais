@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cy6n5kjownfd7"]
+[gd_scene load_steps=37 format=3 uid="uid://cy6n5kjownfd7"]
 
 [ext_resource type="Script" path="res://maps/map.gd" id="1_gr1uc"]
 [ext_resource type="PackedScene" uid="uid://ctp446wbt3g8p" path="res://tile_maps/terrain.tscn" id="1_uo6ai"]
@@ -35,6 +35,9 @@
 [ext_resource type="PackedScene" uid="uid://dglm2ngfsfou3" path="res://props/ultimo mapa objetos/big_corrupted_tree.tscn" id="33_oba6c"]
 [ext_resource type="PackedScene" uid="uid://boil42dotsryp" path="res://props/portal/portal.tscn" id="34_m6bbv"]
 [ext_resource type="PackedScene" uid="uid://blp5sco6ipc5c" path="res://enemys/anhanga/anhanga.tscn" id="35_n2yrq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8d14h"]
+size = Vector2(882.666, 495.333)
 
 [node name="Map" type="Node2D"]
 y_sort_enabled = true
@@ -2410,6 +2413,10 @@ position = Vector2(8005, 2367)
 scale = Vector2(1.5, 1.5)
 hp = 0
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anhanga/VisionArea" index="0"]
+position = Vector2(22, 119.667)
+shape = SubResource("RectangleShape2D_8d14h")
+
 [editable path="FinalMap"]
 [editable path="Villager2"]
 [editable path="Villager"]
@@ -2417,3 +2424,5 @@ hp = 0
 [editable path="Villager4"]
 [editable path="Villager3"]
 [editable path="Boitata"]
+[editable path="Anhanga"]
+[editable path="Anhanga/VisionArea"]

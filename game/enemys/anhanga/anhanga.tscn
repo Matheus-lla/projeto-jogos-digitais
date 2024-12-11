@@ -1,17 +1,20 @@
-[gd_scene load_steps=13 format=3 uid="uid://blp5sco6ipc5c"]
+[gd_scene load_steps=18 format=3 uid="uid://blp5sco6ipc5c"]
 
 [ext_resource type="Script" path="res://enemys/anhanga/anhanga.gd" id="1_5b681"]
 [ext_resource type="Texture2D" uid="uid://bk65lxbyacy4j" path="res://icon.svg" id="2_akuw7"]
+[ext_resource type="Script" path="res://enemys/anhanga/state_machine.gd" id="3_5pg1m"]
 [ext_resource type="PackedScene" uid="uid://d4gtfxg7yyiyc" path="res://general_nodes/vision_area/vision_area.tscn" id="3_j12na"]
-[ext_resource type="Script" path="res://general_scripts/state_machine.gd" id="3_o8iqd"]
+[ext_resource type="Script" path="res://enemys/states/idle.gd" id="4_mgqry"]
 [ext_resource type="PackedScene" uid="uid://uxvl7pfm1jf5" path="res://general_nodes/hit_box/hit_box.tscn" id="4_xk3gj"]
+[ext_resource type="Script" path="res://enemys/anhanga/states/destroy.gd" id="5_6701d"]
 [ext_resource type="PackedScene" uid="uid://bi537x71g5dm3" path="res://general_nodes/hurt_box/hurt_box.tscn" id="5_dkfur"]
+[ext_resource type="Script" path="res://enemys/states/stun.gd" id="5_sxm3i"]
+[ext_resource type="Script" path="res://enemys/anhanga/states/basic_attack.gd" id="7_nwysc"]
 [ext_resource type="PackedScene" uid="uid://bgeelc5dpjqu6" path="res://general_nodes/dialog_sequence/dialog_sequence.tscn" id="7_u2yms"]
+[ext_resource type="Script" path="res://enemys/anhanga/states/strong_attack.gd" id="8_ai0ky"]
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/single_dialog.gd" id="8_hi0sm"]
+[ext_resource type="Script" path="res://enemys/anhanga/states/chase.gd" id="9_7ycea"]
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_kill_dialog.gd" id="9_df6j1"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t82qi"]
-size = Vector2(453, 230)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i7nbk"]
 radius = 38.0
@@ -39,13 +42,29 @@ texture = ExtResource("2_akuw7")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="StateMachine" type="Node" parent="."]
-script = ExtResource("3_o8iqd")
+script = ExtResource("3_5pg1m")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("4_mgqry")
+next_state = NodePath(".")
+
+[node name="Destroy" type="Node" parent="StateMachine"]
+script = ExtResource("5_6701d")
+
+[node name="Stun" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("5_sxm3i")
+next_state = NodePath("../Idle")
+
+[node name="BasicAttack" type="Node" parent="StateMachine"]
+script = ExtResource("7_nwysc")
+
+[node name="StrongAttack" type="Node" parent="StateMachine"]
+script = ExtResource("8_ai0ky")
+
+[node name="Chase" type="Node" parent="StateMachine"]
+script = ExtResource("9_7ycea")
 
 [node name="VisionArea" parent="." instance=ExtResource("3_j12na")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea"]
-shape = SubResource("RectangleShape2D_t82qi")
-debug_color = Color(3.70607e-06, 0.650349, 0.0981006, 0.42)
 
 [node name="HitBox" parent="." instance=ExtResource("4_xk3gj")]
 
@@ -57,8 +76,6 @@ polygon = PackedVector2Array(32, 97, 58, -58, 8, -70, 4, -103, -23, -103, -21, -
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("CapsuleShape2D_i7nbk")
 debug_color = Color(0.723801, 0.0614751, 0, 0.42)
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="DialogSequence" parent="." instance=ExtResource("7_u2yms")]
 
