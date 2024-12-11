@@ -10,6 +10,7 @@ var icon_up: bool = false
 @onready var original_color = Dialog.dialog_progress.self_modulate 
 
 @export var character_name: String
+@export var character_picture: Texture2D
 
 func _ready() -> void:
 	super._ready()
@@ -68,4 +69,4 @@ func on_interaction():
 	if !next_dialog:
 		Dialog.dialog_progress.self_modulate = Color.ORANGE_RED
 		
-	Dialog.show_dialog(character_name, dialog.text, button_text)
+	Dialog.show_dialog(character_name, dialog.text, button_text, character_picture)

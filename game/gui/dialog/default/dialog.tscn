@@ -127,8 +127,7 @@ theme_override_fonts/font = ExtResource("4_6hh4f")
 text = "Name"
 
 [node name="PortraitSprite" type="Sprite2D" parent="UI"]
-position = Vector2(55, 241)
-scale = Vector2(0.75, 1.15625)
+position = Vector2(59, 254)
 texture = ExtResource("5_shdmg")
 
 [node name="DialogProgress" type="PanelContainer" parent="UI"]
