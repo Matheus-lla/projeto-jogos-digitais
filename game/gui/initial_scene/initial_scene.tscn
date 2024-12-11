@@ -1,0 +1,140 @@
+[gd_scene load_steps=13 format=3 uid="uid://2s0gkv8gccec"]
+
+[ext_resource type="Script" path="res://gui/initial_scene/initial_scene.gd" id="1_3r7gb"]
+[ext_resource type="Texture2D" uid="uid://b2e0dh74ehj5j" path="res://gui/dialog/text-bubble.png" id="1_j33et"]
+[ext_resource type="FontFile" uid="uid://cep6b485s004s" path="res://fonts/rainyhearts.ttf" id="2_djtvm"]
+[ext_resource type="FontFile" uid="uid://dgwh0epw65jju" path="res://fonts/Minecraftia-Regular.ttf" id="3_qjkuu"]
+
+[sub_resource type="Gradient" id="Gradient_5jnrn"]
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xhx4w"]
+gradient = SubResource("Gradient_5jnrn")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ybw14"]
+content_margin_left = 14.0
+content_margin_top = 10.0
+content_margin_right = 14.0
+content_margin_bottom = 10.0
+texture = ExtResource("1_j33et")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_yifmm"]
+
+[sub_resource type="Animation" id="Animation_ulb20"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.12, 0.12, 0.12, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_x4ox6"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.933333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.12, 0.12, 0.12, 0), Color(0.12, 0.12, 0.12, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dl4me"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect2:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0666667, 0.933333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.12, 0.12, 0.12, 1), Color(0.12, 0.12, 0.12, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rlioo"]
+_data = {
+"RESET": SubResource("Animation_ulb20"),
+"fade_in": SubResource("Animation_x4ox6"),
+"fade_out": SubResource("Animation_dl4me")
+}
+
+[node name="InitialScene" type="CanvasLayer"]
+script = ExtResource("1_3r7gb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.121569, 0.121569, 0.121569, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_xhx4w")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -511.0
+offset_top = -237.0
+offset_right = -61.0
+offset_bottom = -27.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxTexture_ybw14")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.372591, 0.298667, 0.23252, 1)
+theme_override_fonts/normal_font = ExtResource("2_djtvm")
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true
+text = "Oi minha pequena Aianá, minha guerreira. Eu tenho um chamado para você, cada dia que passa as florestas e os animais estão sendo mais acuados, um mal terrível reina sobre essas terras, e você é a única que pode salvar esse mundo. Anhangá, o Deus sombrio pretende controlar a todos com sua escuridão, essa pequena vila é o último refugio de luz em toda floresta, você precisa encontra-lo e derrota-lo, antes que seja tarde demais. Não se preocupe, você vai conseguir, você é a única que consegue. E quando se sentir perdida, seu Cacique deve te orientar."
+
+[node name="Label" type="Label" parent="."]
+offset_left = 71.0
+offset_top = 63.0
+offset_right = 119.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0.894118, 0.862745, 0.796078, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("3_qjkuu")
+text = "Deus"
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+modulate = Color(0.12, 0.12, 0.12, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_yifmm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rlioo")
+}
