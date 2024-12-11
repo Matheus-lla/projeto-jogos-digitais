@@ -4,12 +4,13 @@ class_name AnhangaStateDestroy extends State
 
 @export var anim_name: String = "destroy"
 @export var reward: int = 50
-@onready var enemy_state_idle: EnemyStateIdle = $"../EnemyStateIdle"
+@onready var idle: EnemyStateIdle = $"../Idle"
 
 func init() -> void:
 	character.CharacterDestroyed.connect(on_destroyed)
 
 func enter() -> void:
+	character.static_hurt_box.monitoring = false
 	character.defeated = true
 	character.is_in_combat = false
 	character.invulnerable = true
@@ -22,4 +23,4 @@ func on_destroyed(_hurt_box: HurtBox):
 
 func on_animation_finished(_current_animation: String):
 	KillsRecord.killed(character.name)
-	state_machine.update_state(enemy_state_idle)
+	state_machine.update_state(idle)

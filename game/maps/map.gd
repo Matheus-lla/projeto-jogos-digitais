@@ -20,7 +20,6 @@ func pause():
 	for child in chilren:
 		
 		if not is_instance_valid(child):
-			print(child)
 			chilren.erase(child)
 			continue
 		

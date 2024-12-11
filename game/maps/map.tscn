@@ -36,8 +36,8 @@
 [ext_resource type="PackedScene" uid="uid://boil42dotsryp" path="res://props/portal/portal.tscn" id="34_m6bbv"]
 [ext_resource type="PackedScene" uid="uid://blp5sco6ipc5c" path="res://enemys/anhanga/anhanga.tscn" id="35_n2yrq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8d14h"]
-size = Vector2(882.666, 495.333)
+[sub_resource type="CircleShape2D" id="CircleShape2D_83ml1"]
+radius = 800.0
 
 [node name="Map" type="Node2D"]
 y_sort_enabled = true
@@ -1773,9 +1773,6 @@ position = Vector2(1010, 3685)
 [node name="Animalskull23" parent="." instance=ExtResource("15_5gggo")]
 position = Vector2(947, 3764)
 
-[node name="FinalMap" parent="." instance=ExtResource("18_6qe4n")]
-position = Vector2(8005, 2127)
-
 [node name="Vulcan13" parent="." instance=ExtResource("13_82v6d")]
 position = Vector2(2134, 3839)
 
@@ -2352,6 +2349,16 @@ position = Vector2(-133, 175)
 scale = Vector2(1.5, 1.5)
 target_portal = NodePath("../../Portal")
 
+[node name="Anhanga" parent="." instance=ExtResource("35_n2yrq")]
+position = Vector2(8005, 2367)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anhanga/VisionArea" index="0"]
+shape = SubResource("CircleShape2D_83ml1")
+
+[node name="FinalMap" parent="." instance=ExtResource("18_6qe4n")]
+position = Vector2(8005, 2127)
+
 [node name="Corrupted tree" parent="." instance=ExtResource("31_a0s1a")]
 position = Vector2(7567, 2596)
 
@@ -2408,16 +2415,6 @@ position = Vector2(8004, 2868)
 scale = Vector2(2, 2)
 target_portal = NodePath("../Boitata/Portal")
 
-[node name="Anhanga" parent="." instance=ExtResource("35_n2yrq")]
-position = Vector2(8005, 2367)
-scale = Vector2(1.5, 1.5)
-hp = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Anhanga/VisionArea" index="0"]
-position = Vector2(22, 119.667)
-shape = SubResource("RectangleShape2D_8d14h")
-
-[editable path="FinalMap"]
 [editable path="Villager2"]
 [editable path="Villager"]
 [editable path="Cacique"]
@@ -2426,3 +2423,4 @@ shape = SubResource("RectangleShape2D_8d14h")
 [editable path="Boitata"]
 [editable path="Anhanga"]
 [editable path="Anhanga/VisionArea"]
+[editable path="FinalMap"]
