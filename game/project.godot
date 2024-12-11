@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Aianá"
-run/main_scene="res://maps/map.tscn"
+run/main_scene="res://menu/TitleScreen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -42,7 +42,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/godot-vim/plugin.cfg")
+enabled=PackedStringArray()
 
 [gui]
 
