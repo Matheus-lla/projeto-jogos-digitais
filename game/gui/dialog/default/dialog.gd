@@ -17,9 +17,7 @@ func show_dialog(character_name: String, text: String, button_text: String):
 	button_label.text = button_text
 	get_tree().paused = true
 	await get_tree().create_timer(1.5).timeout
-	get_tree().paused = false
-	
-	
+	get_tree().paused = false	
 
 func hide_dialog():
 	ui.visible = false

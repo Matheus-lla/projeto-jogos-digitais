@@ -877,6 +877,7 @@ max_polyphony = 12
 current = true
 
 [node name="LoadArea" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="LoadArea"]
 shape = SubResource("CircleShape2D_qc1mn")

@@ -1,0 +1,76 @@
+[gd_scene load_steps=13 format=3 uid="uid://blp5sco6ipc5c"]
+
+[ext_resource type="Script" path="res://enemys/anhanga/anhanga.gd" id="1_5b681"]
+[ext_resource type="Texture2D" uid="uid://bk65lxbyacy4j" path="res://icon.svg" id="2_akuw7"]
+[ext_resource type="PackedScene" uid="uid://d4gtfxg7yyiyc" path="res://general_nodes/vision_area/vision_area.tscn" id="3_j12na"]
+[ext_resource type="Script" path="res://general_scripts/state_machine.gd" id="3_o8iqd"]
+[ext_resource type="PackedScene" uid="uid://uxvl7pfm1jf5" path="res://general_nodes/hit_box/hit_box.tscn" id="4_xk3gj"]
+[ext_resource type="PackedScene" uid="uid://bi537x71g5dm3" path="res://general_nodes/hurt_box/hurt_box.tscn" id="5_dkfur"]
+[ext_resource type="PackedScene" uid="uid://bgeelc5dpjqu6" path="res://general_nodes/dialog_sequence/dialog_sequence.tscn" id="7_u2yms"]
+[ext_resource type="Script" path="res://general_scripts/dialog_scripts/single_dialog.gd" id="8_hi0sm"]
+[ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_kill_dialog.gd" id="9_df6j1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t82qi"]
+size = Vector2(453, 230)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i7nbk"]
+radius = 38.0
+height = 110.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4dqd"]
+size = Vector2(144, 197)
+
+[node name="Anhanga" type="CharacterBody2D"]
+collision_layer = 272
+collision_mask = 16
+script = ExtResource("1_5b681")
+hp = 1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(8, -10)
+polygon = PackedVector2Array(-62, 71, -32, 33, 17, 38, 40, 73)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.531758, 0.455133)
+texture = ExtResource("2_akuw7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_o8iqd")
+
+[node name="VisionArea" parent="." instance=ExtResource("3_j12na")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea"]
+shape = SubResource("RectangleShape2D_t82qi")
+debug_color = Color(3.70607e-06, 0.650349, 0.0981006, 0.42)
+
+[node name="HitBox" parent="." instance=ExtResource("4_xk3gj")]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HitBox"]
+polygon = PackedVector2Array(32, 97, 58, -58, 8, -70, 4, -103, -23, -103, -21, -69, -59, -70, -75, 22, -41, 90, -7, 45)
+
+[node name="HurtBox" parent="." instance=ExtResource("5_dkfur")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CapsuleShape2D_i7nbk")
+debug_color = Color(0.723801, 0.0614751, 0, 0.42)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="DialogSequence" parent="." instance=ExtResource("7_u2yms")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogSequence"]
+position = Vector2(-5, -4.5)
+shape = SubResource("RectangleShape2D_q4dqd")
+
+[node name="SingleDialog" type="Node" parent="DialogSequence"]
+script = ExtResource("8_hi0sm")
+text = "HAHAHAHAHA! Então finalmente você me alcançou, pequena heroína, você fez muito até agora. Mas você não vai me impedir, eu não vou fracassar. O meu tormento chegará ao fim em breve. E esse mundo conhecerá a minha dor."
+
+[node name="AfterKillDialog" type="Node" parent="DialogSequence"]
+script = ExtResource("9_df6j1")
+victim_name = "Anhanga"
+text = "NÃÃÃÃÃÃÃÃO, esse não será o fim! Eu não vou voltar para a escuridão."

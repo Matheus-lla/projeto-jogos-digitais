@@ -28,10 +28,13 @@ func get_next_dialog() -> DialogItem:
 	return null
 	
 func end_dialog():
-	DialogEnded.emit()
-	Dialog.hide_dialog()
+	if Dialog.ui.visible:
+		DialogEnded.emit()
+		Dialog.hide_dialog()
+		
 	if icon_up:
 		animation_dialog.play("hide")
+		
 	icon_up = false
 
 func on_area_exit(area: Area2D):

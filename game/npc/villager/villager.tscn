@@ -182,7 +182,7 @@ position = Vector2(1, -14)
 texture = ExtResource("6_pmln3")
 hframes = 7
 vframes = 6
-frame = 23
+frame = 31
 metadata/_aseprite_wizard_config_ = {
 "i_mode": -1,
 "keep_anim_length": false,
