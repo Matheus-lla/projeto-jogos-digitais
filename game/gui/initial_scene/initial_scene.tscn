@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b2e0dh74ehj5j" path="res://gui/dialog/text-bubble.png" id="1_j33et"]
 [ext_resource type="FontFile" uid="uid://cep6b485s004s" path="res://fonts/rainyhearts.ttf" id="2_djtvm"]
 [ext_resource type="FontFile" uid="uid://dgwh0epw65jju" path="res://fonts/Minecraftia-Regular.ttf" id="3_qjkuu"]
+[ext_resource type="Theme" uid="uid://cuqcc8ol8sptm" path="res://menu/default_btn.tres" id="5_mjbtb"]
 
 [sub_resource type="Gradient" id="Gradient_5jnrn"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
@@ -25,7 +26,7 @@ texture_margin_bottom = 16.0
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_yifmm"]
 
-[sub_resource type="Animation" id="Animation_ulb20"]
+[sub_resource type="Animation" id="Animation_amxmy"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -40,8 +41,9 @@ tracks/0/keys = {
 "values": [Color(0.12, 0.12, 0.12, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_x4ox6"]
+[sub_resource type="Animation" id="Animation_8fbpc"]
 resource_name = "fade_in"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -49,32 +51,16 @@ tracks/0/path = NodePath("TextureRect2:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.933333),
+"times": PackedFloat32Array(0.0666667, 1.9),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0.12, 0.12, 0.12, 0), Color(0.12, 0.12, 0.12, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_dl4me"]
-resource_name = "fade_out"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect2:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0666667, 0.933333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0.12, 0.12, 0.12, 1), Color(0.12, 0.12, 0.12, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rlioo"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xcexy"]
 _data = {
-"RESET": SubResource("Animation_ulb20"),
-"fade_in": SubResource("Animation_x4ox6"),
-"fade_out": SubResource("Animation_dl4me")
+"RESET": SubResource("Animation_amxmy"),
+"fade_in": SubResource("Animation_8fbpc")
 }
 
 [node name="InitialScene" type="CanvasLayer"]
@@ -127,6 +113,7 @@ text = "Deus"
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 modulate = Color(0.12, 0.12, 0.12, 0)
+z_index = 5
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -134,7 +121,31 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_yifmm")
 
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
+
+[node name="start_game_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_mjbtb")
+text = "START"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_rlioo")
+"": SubResource("AnimationLibrary_xcexy")
 }

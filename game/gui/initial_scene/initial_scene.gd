@@ -6,32 +6,25 @@ const NEXT_SCENE_PATH = "res://maps/map.tscn"
 
 @onready var rich_text_label: RichTextLabel = $PanelContainer/RichTextLabel
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var start_game_btn: Button = $MarginContainer/HBoxContainer/VBoxContainer/start_game_btn
 
 var index = 0
 var timer: float
-var animation_started = false
 
 func _ready() -> void:
 	PlayerHud.visible = false
 	rich_text_label.text = ""
 	timer = TIME
+	start_game_btn.pressed.connect(_on_start_game_btn_pressed)
 	ResourceLoader.load_threaded_request(NEXT_SCENE_PATH)
 	
 func on_animation_finished(_animation_name: String):
 	var next_scene = ResourceLoader.load_threaded_get(NEXT_SCENE_PATH)
 	get_tree().change_scene_to_packed(next_scene)
 	PlayerHud.visible = true
-	animation_player.play("fade_out")
-	
 	
 func _process(delta: float) -> void:
-	if animation_started:
-		return
-	
 	if index >= text.length():
-		animation_started = true
-		animation_player.play("fade_in")
-		animation_player.animation_finished.connect(on_animation_finished)
 		return
 
 	timer -= delta
@@ -40,3 +33,7 @@ func _process(delta: float) -> void:
 		rich_text_label.text += text[index]
 		index += 1
 		timer = TIME
+
+func _on_start_game_btn_pressed():
+	animation_player.play("fade_in")
+	animation_player.animation_finished.connect(on_animation_finished)

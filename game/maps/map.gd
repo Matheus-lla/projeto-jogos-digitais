@@ -7,7 +7,8 @@ var player: Player
 var last_player_pos: Vector2 = Vector2(0,0)
 
 const threshold = 350
-@onready var terrain: Node2D = $Terrain
+
+@onready var terrain: Node2D = $ActualMap/Terrain
 
 func _ready() -> void:
 	player = GlobalPlayerManager.player
@@ -16,6 +17,7 @@ func _ready() -> void:
 		if child is Node2D and child != terrain:
 			chilren.append(child)
 			
+
 func pause():
 	for child in chilren:
 		
