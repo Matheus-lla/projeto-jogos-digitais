@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_start_btn_pressed() -> void:
-	get_tree().change_scene_to_file("res://keys_tutorial/KeysTutorial.tscn")
+	get_tree().change_scene_to_file("res://gui/keys_tutorial/KeysTutorial.tscn")
 	
 	
 

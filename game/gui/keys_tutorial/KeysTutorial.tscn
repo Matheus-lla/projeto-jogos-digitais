@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://c4hn6fgr6kffb"]
 
-[ext_resource type="Script" path="res://keys_tutorial/keys_tutorial.gd" id="1_a8ujx"]
-[ext_resource type="Texture2D" uid="uid://bxgheaby32jey" path="res://keys_tutorial/Menu - Jogo (1).png" id="2_vod7c"]
-[ext_resource type="Theme" uid="uid://cuqcc8ol8sptm" path="res://menu/default_btn.tres" id="3_lpugs"]
+[ext_resource type="Script" path="res://gui/keys_tutorial/keys_tutorial.gd" id="1_a8ujx"]
+[ext_resource type="Texture2D" uid="uid://bxgheaby32jey" path="res://gui/keys_tutorial/Menu - Jogo (1).png" id="2_vod7c"]
+[ext_resource type="Theme" uid="uid://cuqcc8ol8sptm" path="res://gui/default_btn.tres" id="3_lpugs"]
 
 [sub_resource type="Animation" id="Animation_skl56"]
 length = 0.001

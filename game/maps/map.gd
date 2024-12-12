@@ -8,7 +8,7 @@ var last_player_pos: Vector2 = Vector2(0,0)
 
 const threshold = 350
 
-@onready var terrain: Node2D = $ActualMap/Terrain
+@onready var terrain: Node2D = $Terrain
 
 func _ready() -> void:
 	player = GlobalPlayerManager.player

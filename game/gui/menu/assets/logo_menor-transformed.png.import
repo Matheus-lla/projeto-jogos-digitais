@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1ovmpbe8uxe1"
-path="res://.godot/imported/logo_menor.png-14b68dbec65f53ebfb8c2b42c3389c0e.ctex"
+uid="uid://kny6b66iue3a"
+path="res://.godot/imported/logo_menor-transformed.png-75e53687f8732f7d9b19e70387eaf420.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://menu/logo_menor.png"
-dest_files=["res://.godot/imported/logo_menor.png-14b68dbec65f53ebfb8c2b42c3389c0e.ctex"]
+source_file="res://gui/menu/assets/logo_menor-transformed.png"
+dest_files=["res://.godot/imported/logo_menor-transformed.png-75e53687f8732f7d9b19e70387eaf420.ctex"]
 
 [params]
 

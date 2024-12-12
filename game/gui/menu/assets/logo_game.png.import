@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxgheaby32jey"
-path="res://.godot/imported/Menu - Jogo (1).png-67b5366d065fe2e4189a5d9b2e6bbe34.ctex"
+uid="uid://bltdc41efsgou"
+path="res://.godot/imported/logo_game.png-3bc598a4e25eea74f211b6d644640c9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://keys_tutorial/Menu - Jogo (1).png"
-dest_files=["res://.godot/imported/Menu - Jogo (1).png-67b5366d065fe2e4189a5d9b2e6bbe34.ctex"]
+source_file="res://gui/menu/assets/logo_game.png"
+dest_files=["res://.godot/imported/logo_game.png-3bc598a4e25eea74f211b6d644640c9e.ctex"]
 
 [params]
 

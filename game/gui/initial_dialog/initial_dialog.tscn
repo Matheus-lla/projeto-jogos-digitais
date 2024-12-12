@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://2s0gkv8gccec"]
 
-[ext_resource type="Script" path="res://gui/initial_scene/initial_scene.gd" id="1_3r7gb"]
-[ext_resource type="Texture2D" uid="uid://b2e0dh74ehj5j" path="res://gui/dialog/text-bubble.png" id="1_j33et"]
-[ext_resource type="FontFile" uid="uid://cep6b485s004s" path="res://fonts/rainyhearts.ttf" id="2_djtvm"]
-[ext_resource type="FontFile" uid="uid://dgwh0epw65jju" path="res://fonts/Minecraftia-Regular.ttf" id="3_qjkuu"]
-[ext_resource type="Theme" uid="uid://cuqcc8ol8sptm" path="res://menu/default_btn.tres" id="5_mjbtb"]
+[ext_resource type="Script" path="res://gui/initial_dialog/initial_dialog.gd" id="1_p5a1u"]
+[ext_resource type="Texture2D" uid="uid://b2e0dh74ehj5j" path="res://gui/dialog/text-bubble.png" id="2_jplbu"]
+[ext_resource type="FontFile" uid="uid://cep6b485s004s" path="res://fonts/rainyhearts.ttf" id="3_prnss"]
+[ext_resource type="FontFile" uid="uid://dgwh0epw65jju" path="res://fonts/Minecraftia-Regular.ttf" id="4_f2ylm"]
+[ext_resource type="Theme" uid="uid://cuqcc8ol8sptm" path="res://gui/default_btn.tres" id="5_wyxqr"]
 
 [sub_resource type="Gradient" id="Gradient_5jnrn"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
@@ -18,7 +18,7 @@ content_margin_left = 14.0
 content_margin_top = 10.0
 content_margin_right = 14.0
 content_margin_bottom = 10.0
-texture = ExtResource("1_j33et")
+texture = ExtResource("2_jplbu")
 texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
@@ -64,7 +64,7 @@ _data = {
 }
 
 [node name="InitialScene" type="CanvasLayer"]
-script = ExtResource("1_3r7gb")
+script = ExtResource("1_p5a1u")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color(0.121569, 0.121569, 0.121569, 1)
@@ -94,7 +94,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_ybw14")
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer"]
 layout_mode = 2
 theme_override_colors/default_color = Color(0.372591, 0.298667, 0.23252, 1)
-theme_override_fonts/normal_font = ExtResource("2_djtvm")
+theme_override_fonts/normal_font = ExtResource("3_prnss")
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 text = "Oi minha pequena Aianá, minha guerreira. Eu tenho um chamado para você, cada dia que passa as florestas e os animais estão sendo mais acuados, um mal terrível reina sobre essas terras, e você é a única que pode salvar esse mundo. Anhangá, o Deus sombrio pretende controlar a todos com sua escuridão, essa pequena vila é o último refugio de luz em toda floresta, você precisa encontra-lo e derrota-lo, antes que seja tarde demais. Não se preocupe, você vai conseguir, você é a única que consegue. E quando se sentir perdida, seu Cacique deve te orientar."
@@ -108,7 +108,7 @@ theme_override_colors/font_color = Color(0.894118, 0.862745, 0.796078, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_outline_size = 5
-theme_override_fonts/font = ExtResource("3_qjkuu")
+theme_override_fonts/font = ExtResource("4_f2ylm")
 text = "Deus"
 
 [node name="TextureRect2" type="TextureRect" parent="."]
@@ -142,7 +142,7 @@ size_flags_vertical = 8
 
 [node name="start_game_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("5_mjbtb")
+theme = ExtResource("5_wyxqr")
 text = "START"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
