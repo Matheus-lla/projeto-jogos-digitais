@@ -97,7 +97,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="MarginContainer/HBoxContainer"]
-position = Vector2(54, 90)
+position = Vector2(53, 90)
 scale = Vector2(0.29, 0.29)
 texture = ExtResource("5_j8tb4")
 

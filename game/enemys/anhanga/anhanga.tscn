@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://blp5sco6ipc5c"]
+[gd_scene load_steps=57 format=3 uid="uid://blp5sco6ipc5c"]
 
 [ext_resource type="Script" path="res://enemys/anhanga/anhanga.gd" id="1_5b681"]
 [ext_resource type="Texture2D" uid="uid://68bp5a2wtksi" path="res://enemys/anhanga/anhanga.png" id="2_ntfqo"]
@@ -19,6 +19,10 @@
 [ext_resource type="AudioStream" uid="uid://b2hh13gjgjtkk" path="res://enemys/audio/destroy.wav" id="9_m8dr3"]
 [ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://effects/Shadow.png" id="16_x6seb"]
 [ext_resource type="Texture2D" uid="uid://bcmmwvpbdj7th" path="res://effects/DestroySmoke.png" id="18_qi0yo"]
+[ext_resource type="PackedScene" uid="uid://6ngepxxgcose" path="res://enemys/enemy_spawn/enemy_spawn.tscn" id="20_fv3c0"]
+[ext_resource type="PackedScene" uid="uid://dl5dkj6nkf43v" path="res://enemys/snake/snake.tscn" id="21_vrpf2"]
+[ext_resource type="PackedScene" uid="uid://bxnynmne8hsl2" path="res://enemys/goblin/goblin.tscn" id="22_4ig2i"]
+[ext_resource type="PackedScene" uid="uid://b88rtmgccpgu0" path="res://enemys/slime/slime.tscn" id="23_6bh0o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0eowh"]
 radius = 13.0
@@ -1000,6 +1004,9 @@ _data = {
 "destroy": SubResource("Animation_vntco")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_atugb"]
+radius = 300.0
+
 [node name="Anhanga" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 272
@@ -1147,3 +1154,12 @@ hframes = 6
 libraries = {
 "": SubResource("AnimationLibrary_82x7q")
 }
+
+[node name="EnemySpawn" parent="." instance=ExtResource("20_fv3c0")]
+enemys = Array[PackedScene]([ExtResource("21_vrpf2"), ExtResource("22_4ig2i"), ExtResource("23_6bh0o")])
+probabilites = Array[float]([0.45, 0.35, 0.2])
+spawn_cooldown = 4.0
+spawn_radius = 300.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemySpawn"]
+shape = SubResource("CircleShape2D_atugb")

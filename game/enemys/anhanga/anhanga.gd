@@ -12,6 +12,7 @@ var dialog_count = 0
 @onready var vision_area: VisionArea = $VisionArea
 @onready var dialog_sequence: DialogSequence = $DialogSequence
 @onready var static_hurt_box: HurtBox = $StaticHurtBox
+@onready var enemy_spawn: EnemySpawn = $EnemySpawn
 
 func _ready():
 	state_machine.init( self )
@@ -20,6 +21,7 @@ func _ready():
 	vision_area.player_entered.connect(on_player_enter)
 	vision_area.player_exited.connect(on_player_exit)
 	dialog_sequence.DialogEnded.connect(on_dialog_ended)
+	enemy_spawn.parent = get_parent()
 	invulnerable = true
 	
 func _process(_delta: float) -> void:
@@ -51,6 +53,7 @@ func _take_damage( hurt_box : HurtBox ) -> void:
 	hp -= hurt_box.damage
 	
 	if hp <= 0:
+		enemy_spawn.stop()
 		CharacterDestroyed.emit( hurt_box )
 		return
 		
@@ -61,6 +64,7 @@ func start_combat():
 	is_in_combat = true
 	await get_tree().create_timer(0.3).timeout
 	invulnerable = false
+	enemy_spawn.start()
 	
 func on_player_enter():
 	if defeated or not dialog_ended:
@@ -74,4 +78,5 @@ func on_player_exit():
 	is_in_combat = false
 	await get_tree().create_timer(0.3).timeout
 	player.camera.make_current()
+	enemy_spawn.stop()
 	
