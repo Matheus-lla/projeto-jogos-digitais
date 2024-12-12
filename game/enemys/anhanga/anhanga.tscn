@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://blp5sco6ipc5c"]
+[gd_scene load_steps=52 format=3 uid="uid://blp5sco6ipc5c"]
 
 [ext_resource type="Script" path="res://enemys/anhanga/anhanga.gd" id="1_5b681"]
 [ext_resource type="Texture2D" uid="uid://68bp5a2wtksi" path="res://enemys/anhanga/anhanga.png" id="2_ntfqo"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://enemys/anhanga/states/destroy.gd" id="5_6701d"]
 [ext_resource type="PackedScene" uid="uid://bi537x71g5dm3" path="res://general_nodes/hurt_box/hurt_box.tscn" id="5_dkfur"]
 [ext_resource type="Script" path="res://enemys/states/stun.gd" id="5_sxm3i"]
+[ext_resource type="Texture2D" uid="uid://dsqay6e7dymew" path="res://enemys/anhanga/anhanga.webp" id="6_cyfe1"]
 [ext_resource type="Script" path="res://enemys/anhanga/states/attack.gd" id="7_nwysc"]
 [ext_resource type="PackedScene" uid="uid://bgeelc5dpjqu6" path="res://general_nodes/dialog_sequence/dialog_sequence.tscn" id="7_u2yms"]
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/single_dialog.gd" id="8_hi0sm"]
@@ -1034,7 +1035,7 @@ debug_color = Color(0.723801, 0.0614751, 0, 0.42)
 [node name="DialogSequence" parent="." instance=ExtResource("7_u2yms")]
 position = Vector2(0.875, -52)
 character_name = "Anhnagá"
-character_picture = ExtResource("16_x6seb")
+character_picture = ExtResource("6_cyfe1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogSequence"]
 position = Vector2(-3, 18.5)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cy6n5kjownfd7"]
+[gd_scene load_steps=38 format=3 uid="uid://cy6n5kjownfd7"]
 
 [ext_resource type="Script" path="res://maps/map.gd" id="1_gr1uc"]
 [ext_resource type="PackedScene" uid="uid://ctp446wbt3g8p" path="res://tile_maps/terrain.tscn" id="1_uo6ai"]
@@ -26,6 +26,7 @@
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_kill_dialog.gd" id="22_aptqm"]
 [ext_resource type="PackedScene" uid="uid://bbcflnq12i654" path="res://props/bridge/bridge.tscn" id="22_lfujk"]
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/single_dialog.gd" id="22_un8qy"]
+[ext_resource type="Texture2D" uid="uid://bngd6pn58eq7u" path="res://npc/cacique.webp" id="23_4io7p"]
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_guarana.gd" id="23_crb8e"]
 [ext_resource type="PackedScene" uid="uid://bxnynmne8hsl2" path="res://enemys/goblin/goblin.tscn" id="23_rhsfu"]
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_spawn.gd" id="25_2cuk0"]
@@ -619,7 +620,6 @@ position = Vector2(362, 2502)
 [node name="Vulcan2" parent="." instance=ExtResource("11_s6fov")]
 position = Vector2(1067, 2447)
 rotation = -0.00599697
-scale = Vector2(1, 1)
 
 [node name="Vulcan3" parent="." instance=ExtResource("11_s6fov")]
 position = Vector2(284, 2189)
@@ -2416,6 +2416,7 @@ script = ExtResource("13_rpw2t")
 text = "Todos da vila estão contando com você, sem pressão."
 
 [node name="Cacique" parent="." instance=ExtResource("11_x22vo")]
+unique_name_in_owner = true
 position = Vector2(1219, 73)
 
 [node name="Sprite2D" parent="Cacique/Sprites" index="0"]
@@ -2423,6 +2424,7 @@ modulate = Color(1, 0.19, 0.19, 1)
 
 [node name="DialogSequence" parent="Cacique" index="4"]
 character_name = "Cacique"
+character_picture = ExtResource("23_4io7p")
 
 [node name="SingleDialog" type="Node" parent="Cacique/DialogSequence" index="3"]
 script = ExtResource("22_un8qy")

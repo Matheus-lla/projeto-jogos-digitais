@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://bvbg34m2kdcbl"]
+[gd_scene load_steps=21 format=3 uid="uid://bvbg34m2kdcbl"]
 
 [ext_resource type="Script" path="res://npc/villager/villager.gd" id="1_dmy8e"]
 [ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://effects/Shadow.png" id="2_d3oai"]
+[ext_resource type="Texture2D" uid="uid://bne0lyj6plf4a" path="res://npc/villager/indio.webp" id="5_232nh"]
 [ext_resource type="Script" path="res://npc/states/dialog_state.gd" id="5_ce5sh"]
 [ext_resource type="Script" path="res://npc/states/idle.gd" id="5_q56e0"]
 [ext_resource type="Script" path="res://npc/states/wander.gd" id="6_h1fd5"]
@@ -211,6 +212,7 @@ texture = ExtResource("2_d3oai")
 offset = Vector2(0, 20)
 
 [node name="DialogSequence" parent="." instance=ExtResource("8_tye10")]
+character_picture = ExtResource("5_232nh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DialogSequence"]
 position = Vector2(1, -13.5)

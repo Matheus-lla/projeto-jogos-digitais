@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cobps4btqiqs5"]
+[gd_scene load_steps=33 format=3 uid="uid://cobps4btqiqs5"]
 
 [ext_resource type="Script" path="res://enemys/boitata/boitata.gd" id="1_u8ci2"]
 [ext_resource type="AudioStream" uid="uid://byga7412bn8aa" path="res://enemys/boitata/monster-growl-6311.mp3" id="3_8sfhp"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" path="res://enemys/boitata/states/basic_attack.gd" id="13_4p6cc"]
 [ext_resource type="PackedScene" uid="uid://bgeelc5dpjqu6" path="res://general_nodes/dialog_sequence/dialog_sequence.tscn" id="15_hbydt"]
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/single_dialog.gd" id="16_5as5d"]
+[ext_resource type="Texture2D" uid="uid://bkae8nw0ldavs" path="res://enemys/boitata/boitata.webp" id="16_g3yqe"]
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_kill_dialog.gd" id="17_4nimo"]
 [ext_resource type="PackedScene" uid="uid://boil42dotsryp" path="res://props/portal/portal.tscn" id="18_0ihmk"]
 
@@ -413,6 +414,7 @@ shape = SubResource("CircleShape2D_emjqh")
 
 [node name="DialogSequence" parent="." instance=ExtResource("15_hbydt")]
 character_name = "Boitatá"
+character_picture = ExtResource("16_g3yqe")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DialogSequence"]
 polygon = PackedVector2Array(35, 29, 111, -120, -96, -124, -37, 27)

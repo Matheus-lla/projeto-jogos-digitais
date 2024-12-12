@@ -1,10 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://c3w33b8yf8ujd"]
+[gd_scene load_steps=15 format=3 uid="uid://c3w33b8yf8ujd"]
 
 [ext_resource type="Script" path="res://gui/dialog/default/dialog.gd" id="1_xwn46"]
 [ext_resource type="Texture2D" uid="uid://b2e0dh74ehj5j" path="res://gui/dialog/text-bubble.png" id="2_7im42"]
 [ext_resource type="FontFile" uid="uid://cep6b485s004s" path="res://fonts/rainyhearts.ttf" id="3_uu1q5"]
 [ext_resource type="FontFile" uid="uid://dgwh0epw65jju" path="res://fonts/Minecraftia-Regular.ttf" id="4_6hh4f"]
-[ext_resource type="Texture2D" uid="uid://bk65lxbyacy4j" path="res://icon.svg" id="5_shdmg"]
+[ext_resource type="Texture2D" uid="uid://bngd6pn58eq7u" path="res://npc/cacique.webp" id="5_q7due"]
 
 [sub_resource type="Gradient" id="Gradient_0df0j"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
@@ -23,6 +23,9 @@ texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
 texture_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6rq7a"]
+resource_local_to_scene = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x20sf"]
 bg_color = Color(1, 1, 1, 1)
@@ -65,6 +68,8 @@ _data = {
 "default": SubResource("Animation_jia03")
 }
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_ket78"]
+
 [node name="Dialog" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_xwn46")
@@ -83,6 +88,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = -6.0
+offset_right = 7.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_bca1n")
@@ -127,8 +136,14 @@ theme_override_fonts/font = ExtResource("4_6hh4f")
 text = "Name"
 
 [node name="PortraitSprite" type="Sprite2D" parent="UI"]
-position = Vector2(59, 254)
-texture = ExtResource("5_shdmg")
+position = Vector2(58, 240)
+texture = ExtResource("5_q7due")
+
+[node name="PanelContainer2" type="PanelContainer" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6rq7a")
 
 [node name="DialogProgress" type="PanelContainer" parent="UI"]
 self_modulate = Color(0.1357, 0.59, 0.150843, 1)
@@ -151,3 +166,17 @@ libraries = {
 "": SubResource("AnimationLibrary_0aauk")
 }
 autoplay = "default"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI"]
+modulate = Color(0.28, 0.15078, 0.0812, 1)
+layout_mode = 0
+offset_left = 9.0
+offset_top = 165.0
+offset_right = 106.0
+offset_bottom = 315.0
+texture = SubResource("CanvasTexture_ket78")
+draw_center = false
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
