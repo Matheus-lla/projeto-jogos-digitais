@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bs8tanhfmemj4"]
+
+[ext_resource type="PackedScene" uid="uid://bvbg34m2kdcbl" path="res://npc/villager/villager.tscn" id="1_smuv2"]
+[ext_resource type="Script" path="res://general_scripts/dialog_scripts/single_dialog.gd" id="2_lwyib"]
+[ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_guarana.gd" id="3_k2ggj"]
+[ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_kill_dialog.gd" id="4_efs5o"]
+[ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_spawn.gd" id="5_ppneo"]
+
+[node name="Cacique" instance=ExtResource("1_smuv2")]
+modulate = Color(0.78, 0.1326, 0.1326, 1)
+
+[node name="SingleDialog" type="Node" parent="DialogSequence" index="3"]
+script = ExtResource("2_lwyib")
+text = "Seja bem vinda a vila, você tem uma árdua missão, mas antes de continuar, porque não tira um tempo para aperfeiçoar as suas habilidades? Comece coletando seu primeiro guaraná. Encontre um pé de guaraná e interaja com ele para coletar as frutas."
+
+[node name="AfterGuarana" type="Node" parent="DialogSequence" index="4"]
+script = ExtResource("3_k2ggj")
+required_quantity = 103
+text = "Muito bem, o guaraná pode ser usado para melhorar sua lança, seu arco, sua vida e suas poções, agora você parece pronta para o combate. Derrote uma gosma amarela."
+
+[node name="AfterKillSime" type="Node" parent="DialogSequence" index="5"]
+script = ExtResource("4_efs5o")
+victim_name = "Slime"
+text = "Parabéns, não foi muito difícil certo? Não se acostume, desafios maiores ainda estão por vir. Mas para chegar lá você precisa aprender a explorar a floresta, procure por outras fogueiras como está da nossa vila, elas servem para você reabastecer suas energias e suprimentos. Tem uma ao sul daqui, mas ela está cercada por gosmas, não tenha medo."
+
+[node name="AfterNewSpawn" type="Node" parent="DialogSequence" index="6"]
+script = ExtResource("5_ppneo")
+text = "Você é realmente a melhor pessoa para este trabalho, você está finalmente pronta para começar a sua grande jornada. Lembre-se, sempre que estiver em dificuldades, fale com o Klebinho, ele vai te ajudar desde que você tenha guaraná o suficiente hahahaha."
+
+[node name="AfterNewSpawn2" type="Node" parent="DialogSequence" index="7"]
+script = ExtResource("5_ppneo")
+text = "Agora vamos falar sério, seu verdadeiro objetivo é derrotar o Deus sombrio Anhangá, você sabe onde ele está? Não? Nem eu, mas eu sei quem pode ajudar, viaje até o extremo Sul, lá você pode encontrar um antigo espirito protetor da floresta e dos animais, o Boitatá. Ele deve saber de algo que posso te ajudar em sua jornada."

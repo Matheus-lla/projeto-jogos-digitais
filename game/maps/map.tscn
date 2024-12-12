@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cy6n5kjownfd7"]
+[gd_scene load_steps=34 format=3 uid="uid://cy6n5kjownfd7"]
 
 [ext_resource type="Script" path="res://maps/map.gd" id="1_gr1uc"]
 [ext_resource type="PackedScene" uid="uid://ctp446wbt3g8p" path="res://tile_maps/terrain.tscn" id="1_uo6ai"]
@@ -23,19 +23,15 @@
 [ext_resource type="PackedScene" uid="uid://e3iitwvkrig5" path="res://props/burnig_trees/burningtree1.tscn" id="17_24lf3"]
 [ext_resource type="PackedScene" uid="uid://c4qvk4shsrvj5" path="res://maps/final_map.tscn" id="18_6qe4n"]
 [ext_resource type="PackedScene" uid="uid://chuojaodpl3jo" path="res://props/stones/bones.tscn" id="19_gplrp"]
-[ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_kill_dialog.gd" id="22_aptqm"]
 [ext_resource type="PackedScene" uid="uid://bbcflnq12i654" path="res://props/bridge/bridge.tscn" id="22_lfujk"]
-[ext_resource type="Script" path="res://general_scripts/dialog_scripts/single_dialog.gd" id="22_un8qy"]
-[ext_resource type="Texture2D" uid="uid://bngd6pn58eq7u" path="res://npc/cacique.webp" id="23_4io7p"]
-[ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_guarana.gd" id="23_crb8e"]
 [ext_resource type="PackedScene" uid="uid://bxnynmne8hsl2" path="res://enemys/goblin/goblin.tscn" id="23_rhsfu"]
-[ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_spawn.gd" id="25_2cuk0"]
 [ext_resource type="PackedScene" uid="uid://cobps4btqiqs5" path="res://enemys/boitata/boitata.tscn" id="25_faf6i"]
 [ext_resource type="PackedScene" uid="uid://cwxk7x12kuq4y" path="res://props/ultimo mapa objetos/corrupted_tree.tscn" id="31_a0s1a"]
 [ext_resource type="PackedScene" uid="uid://bsrn3e7383s62" path="res://props/ultimo mapa objetos/Temple.tscn" id="32_i6k0i"]
 [ext_resource type="PackedScene" uid="uid://dglm2ngfsfou3" path="res://props/ultimo mapa objetos/big_corrupted_tree.tscn" id="33_oba6c"]
 [ext_resource type="PackedScene" uid="uid://boil42dotsryp" path="res://props/portal/portal.tscn" id="34_m6bbv"]
 [ext_resource type="PackedScene" uid="uid://blp5sco6ipc5c" path="res://enemys/anhanga/anhanga.tscn" id="35_n2yrq"]
+[ext_resource type="PackedScene" uid="uid://bs8tanhfmemj4" path="res://npc/cacique/cacique.tscn" id="37_a8lov"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_83ml1"]
 radius = 800.0
@@ -2415,41 +2411,6 @@ character_name = "João Marcos"
 script = ExtResource("13_rpw2t")
 text = "Todos da vila estão contando com você, sem pressão."
 
-[node name="Cacique" parent="." instance=ExtResource("11_x22vo")]
-unique_name_in_owner = true
-position = Vector2(1219, 73)
-
-[node name="Sprite2D" parent="Cacique/Sprites" index="0"]
-modulate = Color(1, 0.19, 0.19, 1)
-
-[node name="DialogSequence" parent="Cacique" index="4"]
-character_name = "Cacique"
-character_picture = ExtResource("23_4io7p")
-
-[node name="SingleDialog" type="Node" parent="Cacique/DialogSequence" index="3"]
-script = ExtResource("22_un8qy")
-text = "Seja bem vinda a vila, você tem uma árdua missão, mas antes de continuar, porque não tira um tempo para aperfeiçoar as suas habilidades? Comece coletando seu primeiro guaraná. Encontre um pé de guaraná e interaja com ele para coletar as frutas."
-
-[node name="AfterGuarana" type="Node" parent="Cacique/DialogSequence" index="4"]
-script = ExtResource("23_crb8e")
-required_quantity = 103
-text = "Muito bem, o guaraná pode ser usado para melhorar sua lança, seu arco, sua vida e suas poções, agora você parece pronta para o combate. Derrote uma gosma amarela."
-
-[node name="AfterKillSime" type="Node" parent="Cacique/DialogSequence" index="5"]
-script = ExtResource("22_aptqm")
-victim_name = "Slime"
-text = "Parabéns, não foi muito difícil certo? Não se acostume, desafios maiores ainda estão por vir. Mas para chegar lá você precisa aprender a explorar a floresta, procure por outras fogueiras como está da nossa vila, elas servem para você reabastecer suas energias e suprimentos. Tem uma ao sul daqui, mas ela está cercada por gosmas, não tenha medo."
-
-[node name="AfterNewSpawn" type="Node" parent="Cacique/DialogSequence" index="6" node_paths=PackedStringArray("required_spawn")]
-script = ExtResource("25_2cuk0")
-required_spawn = NodePath("../../../Spawn2")
-text = "Você é realmente a melhor pessoa para este trabalho, você está finalmente pronta para começar a sua grande jornada. Lembre-se, sempre que estiver em dificuldades, fale com o Klebinho, ele vai te ajudar desde que você tenha guaraná o suficiente hahahaha."
-
-[node name="AfterNewSpawn2" type="Node" parent="Cacique/DialogSequence" index="7" node_paths=PackedStringArray("required_spawn")]
-script = ExtResource("25_2cuk0")
-required_spawn = NodePath("../../../Spawn2")
-text = "Agora vamos falar sério, seu verdadeiro objetivo é derrotar o Deus sombrio Anhangá, você sabe onde ele está? Não? Nem eu, mas eu sei quem pode ajudar, viaje até o extremo Sul, lá você pode encontrar um antigo espirito protetor da floresta e dos animais, o Boitatá. Ele deve saber de algo que posso te ajudar em sua jornada."
-
 [node name="Villager4" parent="." instance=ExtResource("11_x22vo")]
 position = Vector2(1077, -107)
 
@@ -2595,9 +2556,11 @@ position = Vector2(8004, 2868)
 scale = Vector2(2, 2)
 target_portal = NodePath("../Boitata/Portal")
 
+[node name="Cacique" parent="." instance=ExtResource("37_a8lov")]
+position = Vector2(1281, 91)
+
 [editable path="Villager2"]
 [editable path="Villager"]
-[editable path="Cacique"]
 [editable path="Villager4"]
 [editable path="Villager3"]
 [editable path="Boitata"]
