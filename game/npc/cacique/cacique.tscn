@@ -1,17 +1,209 @@
-[gd_scene load_steps=7 format=3 uid="uid://bs8tanhfmemj4"]
+[gd_scene load_steps=26 format=3 uid="uid://bs8tanhfmemj4"]
 
-[ext_resource type="PackedScene" uid="uid://bvbg34m2kdcbl" path="res://npc/villager/villager.tscn" id="1_smuv2"]
+[ext_resource type="Script" path="res://npc/villager/villager.gd" id="1_8ur4k"]
 [ext_resource type="Texture2D" uid="uid://cdur1pynmhjur" path="res://npc/cacique/cacique.png" id="2_2i5hl"]
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/single_dialog.gd" id="2_lwyib"]
+[ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://effects/Shadow.png" id="3_bxrj7"]
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_guarana.gd" id="3_k2ggj"]
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_kill_dialog.gd" id="4_efs5o"]
+[ext_resource type="PackedScene" uid="uid://bgeelc5dpjqu6" path="res://general_nodes/dialog_sequence/dialog_sequence.tscn" id="4_pprem"]
+[ext_resource type="Texture2D" uid="uid://bngd6pn58eq7u" path="res://npc/cacique/cacique.webp" id="5_c6okt"]
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_spawn.gd" id="5_ppneo"]
+[ext_resource type="Script" path="res://general_scripts/state_machine.gd" id="10_moaki"]
+[ext_resource type="Script" path="res://npc/states/idle.gd" id="11_tyk58"]
+[ext_resource type="Script" path="res://npc/states/wander.gd" id="12_rgcps"]
+[ext_resource type="Script" path="res://npc/states/dialog_state.gd" id="13_es27s"]
 
-[node name="Cacique" instance=ExtResource("1_smuv2")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_xf2nq"]
+radius = 8.06226
 
-[node name="Sprite2D" parent="Sprites" index="0"]
+[sub_resource type="Animation" id="Animation_nnhhg"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [14, 23]
+}
+
+[sub_resource type="Animation" id="Animation_qk4i1"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 18]
+}
+
+[sub_resource type="Animation" id="Animation_imwgl"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [16, 35]
+}
+
+[sub_resource type="Animation" id="Animation_ghd80"]
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [15, 27]
+}
+
+[sub_resource type="Animation" id="Animation_s77ht"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [20, 26]
+}
+
+[sub_resource type="Animation" id="Animation_20xex"]
+resource_name = "walking_left"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.266667, 0.4, 0.533333, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 11, 12]
+}
+
+[sub_resource type="Animation" id="Animation_u4eu8"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.3, 0.433333, 0.566667, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 10]
+}
+
+[sub_resource type="Animation" id="Animation_f3g8v"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.233333, 0.366667, 0.466667, 0.6, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [27, 29, 30, 31, 32, 33, 34]
+}
+
+[sub_resource type="Animation" id="Animation_yglux"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [31]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cejwd"]
+_data = {
+"RESET": SubResource("Animation_yglux"),
+"idle_down": SubResource("Animation_nnhhg"),
+"idle_left": SubResource("Animation_qk4i1"),
+"idle_right": SubResource("Animation_imwgl"),
+"idle_up": SubResource("Animation_ghd80"),
+"walking_down": SubResource("Animation_s77ht"),
+"walking_left": SubResource("Animation_20xex"),
+"walking_right": SubResource("Animation_u4eu8"),
+"walking_up": SubResource("Animation_f3g8v")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f88n2"]
+size = Vector2(18, 29)
+
+[node name="Cacique" type="CharacterBody2D"]
+z_index = 1
+collision_layer = 48
+collision_mask = 16
+script = ExtResource("1_8ur4k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_xf2nq")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+max_polyphony = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cejwd")
+}
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprites"]
+texture_filter = 1
+position = Vector2(1, -14)
 texture = ExtResource("2_2i5hl")
-frame = 28
+hframes = 7
+vframes = 6
+frame = 31
 metadata/_aseprite_wizard_config_ = {
 "i_mode": -1,
 "keep_anim_length": false,
@@ -24,26 +216,64 @@ metadata/_aseprite_wizard_config_ = {
 "slice": "",
 "source": "/home/yamile/projeto-jogos-digitais/aseprite/cacique.aseprite"
 }
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": false,
+"layer_section": false,
+"slice_section": false
+}
 metadata/_aseprite_wizard_source_file_hash_ = "85fad07d6ab08bba37b9bbe364e8d50c"
 
-[node name="SingleDialog" type="Node" parent="DialogSequence" index="3"]
+[node name="Shadow" type="Sprite2D" parent="Sprites"]
+modulate = Color(0, 0, 0, 0.552941)
+show_behind_parent = true
+position = Vector2(0, -16)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_bxrj7")
+offset = Vector2(0, 20)
+
+[node name="DialogSequence" parent="." instance=ExtResource("4_pprem")]
+character_name = "Cacique"
+character_picture = ExtResource("5_c6okt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogSequence"]
+position = Vector2(1, -13.5)
+shape = SubResource("RectangleShape2D_f88n2")
+
+[node name="SingleDialog" type="Node" parent="DialogSequence"]
 script = ExtResource("2_lwyib")
 text = "Seja bem vinda a vila, você tem uma árdua missão, mas antes de continuar, porque não tira um tempo para aperfeiçoar as suas habilidades? Comece coletando seu primeiro guaraná. Encontre um pé de guaraná e interaja com ele para coletar as frutas."
 
-[node name="AfterGuarana" type="Node" parent="DialogSequence" index="4"]
+[node name="AfterGuarana" type="Node" parent="DialogSequence"]
 script = ExtResource("3_k2ggj")
 required_quantity = 103
 text = "Muito bem, o guaraná pode ser usado para melhorar sua lança, seu arco, sua vida e suas poções, agora você parece pronta para o combate. Derrote uma gosma amarela."
 
-[node name="AfterKillSime" type="Node" parent="DialogSequence" index="5"]
+[node name="AfterKillSime" type="Node" parent="DialogSequence"]
 script = ExtResource("4_efs5o")
 victim_name = "Slime"
 text = "Parabéns, não foi muito difícil certo? Não se acostume, desafios maiores ainda estão por vir. Mas para chegar lá você precisa aprender a explorar a floresta, procure por outras fogueiras como está da nossa vila, elas servem para você reabastecer suas energias e suprimentos. Tem uma ao sul daqui, mas ela está cercada por gosmas, não tenha medo."
 
-[node name="AfterNewSpawn" type="Node" parent="DialogSequence" index="6"]
+[node name="AfterNewSpawn" type="Node" parent="DialogSequence"]
 script = ExtResource("5_ppneo")
 text = "Você é realmente a melhor pessoa para este trabalho, você está finalmente pronta para começar a sua grande jornada. Lembre-se, sempre que estiver em dificuldades, fale com o Klebinho, ele vai te ajudar desde que você tenha guaraná o suficiente hahahaha."
 
-[node name="AfterNewSpawn2" type="Node" parent="DialogSequence" index="7"]
+[node name="AfterNewSpawn2" type="Node" parent="DialogSequence"]
 script = ExtResource("5_ppneo")
 text = "Agora vamos falar sério, seu verdadeiro objetivo é derrotar o Deus sombrio Anhangá, você sabe onde ele está? Não? Nem eu, mas eu sei quem pode ajudar, viaje até o extremo Sul, lá você pode encontrar um antigo espirito protetor da floresta e dos animais, o Boitatá. Ele deve saber de algo que posso te ajudar em sua jornada."
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("10_moaki")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("11_tyk58")
+state_duration_max = 1.0
+next_state = NodePath("../Wander")
+
+[node name="Wander" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("12_rgcps")
+walk_speed = 30.0
+state_animation_duration = 1.0
+next_state = NodePath("../Idle")
+
+[node name="Dialog" type="Node" parent="StateMachine"]
+script = ExtResource("13_es27s")

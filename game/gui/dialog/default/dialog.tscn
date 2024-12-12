@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b2e0dh74ehj5j" path="res://gui/dialog/text-bubble.png" id="2_7im42"]
 [ext_resource type="FontFile" uid="uid://cep6b485s004s" path="res://fonts/rainyhearts.ttf" id="3_uu1q5"]
 [ext_resource type="FontFile" uid="uid://dgwh0epw65jju" path="res://fonts/Minecraftia-Regular.ttf" id="4_6hh4f"]
-[ext_resource type="Texture2D" uid="uid://bngd6pn58eq7u" path="res://npc/cacique.webp" id="5_q7due"]
+[ext_resource type="Texture2D" uid="uid://bngd6pn58eq7u" path="res://npc/cacique/cacique.webp" id="5_q7due"]
 
 [sub_resource type="Gradient" id="Gradient_0df0j"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)

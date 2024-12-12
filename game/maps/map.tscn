@@ -2559,6 +2559,12 @@ target_portal = NodePath("../Boitata/Portal")
 [node name="Cacique" parent="." instance=ExtResource("37_a8lov")]
 position = Vector2(1281, 91)
 
+[node name="AfterNewSpawn" parent="Cacique/DialogSequence" index="6" node_paths=PackedStringArray("required_spawn")]
+required_spawn = NodePath("../../../Spawn2")
+
+[node name="AfterNewSpawn2" parent="Cacique/DialogSequence" index="7" node_paths=PackedStringArray("required_spawn")]
+required_spawn = NodePath("../../../Spawn2")
+
 [editable path="Villager2"]
 [editable path="Villager"]
 [editable path="Villager4"]
@@ -2567,3 +2573,4 @@ position = Vector2(1281, 91)
 [editable path="Anhanga"]
 [editable path="Anhanga/VisionArea"]
 [editable path="FinalMap"]
+[editable path="Cacique"]
