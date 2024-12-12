@@ -1,13 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs8tanhfmemj4"]
+[gd_scene load_steps=7 format=3 uid="uid://bs8tanhfmemj4"]
 
 [ext_resource type="PackedScene" uid="uid://bvbg34m2kdcbl" path="res://npc/villager/villager.tscn" id="1_smuv2"]
+[ext_resource type="Texture2D" uid="uid://cdur1pynmhjur" path="res://npc/cacique/cacique.png" id="2_2i5hl"]
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/single_dialog.gd" id="2_lwyib"]
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_guarana.gd" id="3_k2ggj"]
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_kill_dialog.gd" id="4_efs5o"]
 [ext_resource type="Script" path="res://general_scripts/dialog_scripts/after_spawn.gd" id="5_ppneo"]
 
 [node name="Cacique" instance=ExtResource("1_smuv2")]
-modulate = Color(0.78, 0.1326, 0.1326, 1)
+
+[node name="Sprite2D" parent="Sprites" index="0"]
+texture = ExtResource("2_2i5hl")
+frame = 28
+metadata/_aseprite_wizard_config_ = {
+"i_mode": -1,
+"keep_anim_length": false,
+"layer": "",
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": true,
+"player": "AnimationPlayer",
+"slice": "",
+"source": "/home/yamile/projeto-jogos-digitais/aseprite/cacique.aseprite"
+}
+metadata/_aseprite_wizard_source_file_hash_ = "85fad07d6ab08bba37b9bbe364e8d50c"
 
 [node name="SingleDialog" type="Node" parent="DialogSequence" index="3"]
 script = ExtResource("2_lwyib")
