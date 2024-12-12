@@ -6,11 +6,11 @@
 [ext_resource type="FontFile" uid="uid://dgwh0epw65jju" path="res://fonts/Minecraftia-Regular.ttf" id="4_f2ylm"]
 [ext_resource type="Theme" uid="uid://cuqcc8ol8sptm" path="res://gui/default_btn.tres" id="5_wyxqr"]
 
-[sub_resource type="Gradient" id="Gradient_5jnrn"]
+[sub_resource type="Gradient" id="Gradient_alkkl"]
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_xhx4w"]
-gradient = SubResource("Gradient_5jnrn")
+gradient = SubResource("Gradient_alkkl")
 fill_to = Vector2(0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ybw14"]
@@ -109,7 +109,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("4_f2ylm")
-text = "Deus"
+text = "Deus Tupã"
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 modulate = Color(0.12, 0.12, 0.12, 0)

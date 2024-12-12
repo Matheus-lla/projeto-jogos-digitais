@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://cp6p8qd6jkb7g"]
+[gd_scene load_steps=65 format=3 uid="uid://cp6p8qd6jkb7g"]
 
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_cdxps"]
 [ext_resource type="Texture2D" uid="uid://c0tiavk755qy0" path="res://player/sprites/india-sprite-sheet.png" id="2_6vyfa"]
@@ -22,6 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://d00f5crg3io1s" path="res://player/audio/heal.wav" id="17_5uyoa"]
 [ext_resource type="AudioStream" uid="uid://ms0herlnu5uv" path="res://player/audio/drinking.mp3" id="17_55pxg"]
 [ext_resource type="Script" path="res://player/scripts/camera.gd" id="18_iqb8r"]
+[ext_resource type="PackedScene" uid="uid://bl14aei4aqp0p" path="res://gui/death_screen/death.tscn" id="23_2jfm0"]
 
 [sub_resource type="Animation" id="Animation_5nbts"]
 length = 0.001
@@ -841,7 +842,7 @@ position = Vector2(0, -9)
 texture = ExtResource("2_6vyfa")
 hframes = 11
 vframes = 11
-frame = 72
+frame = 101
 metadata/_aseprite_wizard_config_ = {
 "i_mode": -1,
 "keep_anim_length": false,
@@ -882,5 +883,8 @@ visible = false
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="LoadArea"]
 shape = SubResource("CircleShape2D_qc1mn")
 debug_color = Color(0, 0.649767, 0.129053, 0.42)
+
+[node name="Death" parent="." instance=ExtResource("23_2jfm0")]
+visible = false
 
 [connection signal="timeout" from="StateMachine/Dash/GhostTimer" to="StateMachine/Dash" method="_on_ghost_timer_timeout"]

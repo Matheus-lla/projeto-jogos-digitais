@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://bl14aei4aqp0p"]
+
+[ext_resource type="Script" path="res://gui/death_screen/death.gd" id="1_kjdxh"]
+[ext_resource type="FontFile" uid="uid://dgwh0epw65jju" path="res://fonts/Minecraftia-Regular.ttf" id="1_uc4k7"]
+[ext_resource type="Theme" uid="uid://cuqcc8ol8sptm" path="res://gui/default_btn.tres" id="2_okcxi"]
+
+[sub_resource type="Gradient" id="Gradient_5jnrn"]
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_m73wg"]
+gradient = SubResource("Gradient_5jnrn")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ekmjf"]
+
+[node name="Death" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_kjdxh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.121569, 0.121569, 0.121569, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_m73wg")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 173.0
+offset_top = 81.0
+offset_right = 301.0
+offset_bottom = 109.0
+scale = Vector2(1.71022, 1.62436)
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.894118, 0.862745, 0.796078, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("1_uc4k7")
+text = "Você morreu!"
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+modulate = Color(0.12, 0.12, 0.12, 0)
+z_index = 5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_ekmjf")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 227.0
+offset_top = 146.0
+offset_right = 291.0
+offset_bottom = 169.0
+scale = Vector2(1.56516, 1.11111)
+theme = ExtResource("2_okcxi")
+text = "RETRY"
+icon_alignment = 1

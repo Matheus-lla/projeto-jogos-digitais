@@ -14,6 +14,7 @@ var heal = Upgradable.new("Cura", [10, 25, 50], [2, 3, 4, 5])
 @onready var idle: Idle = $StateMachine/Idle
 @onready var melee_hurt_box: HurtBox = $MeleeHurtBox
 @onready var camera: Camera = $Camera
+@onready var death: Death = $Death
 
 func _ready() -> void:
 	GlobalPlayerManager.player = self
@@ -24,6 +25,7 @@ func _ready() -> void:
 	wepon.Upgraded.connect(on_wepon_upgrade)
 	max_hp.Upgraded.connect(on_max_hp_upgrade)
 	heal.Upgraded.connect(on_heal_upgrade)
+	death.restart.connect(on_restart)
 	
 func _process(_delta: float) -> void:
 	direction = Vector2(
@@ -60,12 +62,11 @@ func on_damaged(hurt_box: HurtBox):
 		return
 		
 	update_hp(-hurt_box.damage)
+	CharacterDamaged.emit(hurt_box)
 	
 	if hp <= 0:
-		self.spawn()
+		dead()
 		return	
-	
-	CharacterDamaged.emit(hurt_box)
 
 func spawn(teleport: bool = true):
 	update_hp(max_hp.get_value())
@@ -98,3 +99,15 @@ func on_max_hp_upgrade():
 func on_heal_upgrade():
 	PlayerHud.max_potion = heal.get_value()
 	PlayerHud.update_potion(PlayerHud.max_potion)
+
+func dead():
+	# Time for stun animation to finish
+	await get_tree().create_timer(0.2).timeout
+	death.visible = true
+	get_tree().paused = true
+
+func on_restart():
+	print("oi")
+	death.visible = false
+	get_tree().paused = false
+	spawn()
