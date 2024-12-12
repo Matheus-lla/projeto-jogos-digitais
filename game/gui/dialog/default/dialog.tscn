@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c3w33b8yf8ujd"]
+[gd_scene load_steps=14 format=3 uid="uid://c3w33b8yf8ujd"]
 
 [ext_resource type="Script" path="res://gui/dialog/default/dialog.gd" id="1_xwn46"]
 [ext_resource type="Texture2D" uid="uid://b2e0dh74ehj5j" path="res://gui/dialog/text-bubble.png" id="2_7im42"]
@@ -23,9 +23,6 @@ texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
 texture_margin_bottom = 16.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6rq7a"]
-resource_local_to_scene = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x20sf"]
 bg_color = Color(1, 1, 1, 1)
@@ -138,12 +135,6 @@ text = "Name"
 [node name="PortraitSprite" type="Sprite2D" parent="UI"]
 position = Vector2(58, 240)
 texture = ExtResource("5_q7due")
-
-[node name="PanelContainer2" type="PanelContainer" parent="UI"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_styles/panel = SubResource("StyleBoxEmpty_6rq7a")
 
 [node name="DialogProgress" type="PanelContainer" parent="UI"]
 self_modulate = Color(0.1357, 0.59, 0.150843, 1)

@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cfoqrrqdtryd6"]
+[gd_scene load_steps=10 format=3 uid="uid://cfoqrrqdtryd6"]
 
 [ext_resource type="Script" path="res://gui/dialog/shop/shop.gd" id="1_jtdkp"]
 [ext_resource type="Texture2D" uid="uid://b2e0dh74ehj5j" path="res://gui/dialog/text-bubble.png" id="2_kiabx"]
+[ext_resource type="Texture2D" uid="uid://bne0lyj6plf4a" path="res://npc/villager/indio.webp" id="4_chlhv"]
 [ext_resource type="FontFile" uid="uid://btlftr7loqd5u" path="res://fonts/Abaddon Bold.ttf" id="4_grb4r"]
-[ext_resource type="Texture2D" uid="uid://bk65lxbyacy4j" path="res://icon.svg" id="5_0xxqo"]
 [ext_resource type="Texture2D" uid="uid://by42y36e5bj5b" path="res://gui/player_hud/guarana/guaraná.png" id="5_cymvw"]
 
 [sub_resource type="Gradient" id="Gradient_ne6n8"]
@@ -23,6 +23,8 @@ texture_margin_left = 16.0
 texture_margin_top = 16.0
 texture_margin_right = 16.0
 texture_margin_bottom = 16.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_hp0tr"]
 
 [node name="Shop" type="CanvasLayer"]
 script = ExtResource("1_jtdkp")
@@ -73,10 +75,22 @@ theme_override_constants/shadow_outline_size = 5
 theme_override_fonts/font = ExtResource("4_grb4r")
 text = "Name"
 
+[node name="NinePatchRect" type="NinePatchRect" parent="UI"]
+modulate = Color(0.28, 0.15078, 0.0812, 1)
+offset_left = 5.0
+offset_top = 163.0
+offset_right = 105.0
+offset_bottom = 315.0
+texture = SubResource("CanvasTexture_hp0tr")
+draw_center = false
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+
 [node name="PortraitSprite" type="Sprite2D" parent="UI"]
-position = Vector2(55, 241)
-scale = Vector2(0.75, 1.15625)
-texture = ExtResource("5_0xxqo")
+position = Vector2(55, 239)
+texture = ExtResource("4_chlhv")
 
 [node name="Wepon" type="Button" parent="UI"]
 layout_mode = 0
