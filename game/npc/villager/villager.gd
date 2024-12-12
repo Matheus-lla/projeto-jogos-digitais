@@ -7,6 +7,7 @@ var player: Player
 @onready var idle: NPCIdle = $StateMachine/Idle
 
 func _ready() -> void:
+	super._ready()
 	state_machine.init(self)
 	player = GlobalPlayerManager.player
 	dialog_sequence.area_entered.connect(on_dialog_enter)

@@ -7,6 +7,7 @@ var player : Player
 @onready var hit_box : HitBox = $HitBox
 
 func _ready():
+	super._ready()
 	state_machine.init( self )
 	player = GlobalPlayerManager.player
 	hit_box.Damaged.connect(_take_damage)

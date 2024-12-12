@@ -3,6 +3,9 @@ class_name Character extends CharacterBody2D
 var cardinal_direction: Vector2 = Vector2.DOWN
 var direction: Vector2 = Vector2.ZERO
 var invulnerable: bool = false
+var initial_hp: int
+var initial_position: Vector2
+
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
 @export var hp: int
@@ -13,6 +16,15 @@ const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 signal DirectionChanged(new_directions: Vector2)
 signal CharacterDamaged(hurt_box: HurtBox)
 signal CharacterDestroyed(hurt_box: HurtBox)
+
+func _ready() -> void:
+	initial_hp = hp
+	initial_position = global_position
+	GlobalPlayerManager.player_respawn.connect(on_respawn)
+
+func on_respawn():
+	global_position = initial_position
+	hp = initial_hp
 
 func _physics_process(_delta: float) -> void:
 	move_and_slide()

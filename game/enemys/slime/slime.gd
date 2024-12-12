@@ -7,6 +7,7 @@ var player: Player
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
+	super._ready()
 	state_machine.init(self)
 	player = GlobalPlayerManager.player
 	hit_box.Damaged.connect(on_damaged)

@@ -7,6 +7,7 @@ var player: Player
 @onready var area_2d: Sell = $Sell
 
 func _ready() -> void:
+	super._ready()
 	state_machine.init(self)
 	player = GlobalPlayerManager.player
 	area_2d.area_entered.connect(on_dialog_enter)

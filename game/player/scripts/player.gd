@@ -107,7 +107,7 @@ func dead():
 	get_tree().paused = true
 
 func on_restart():
-	print("oi")
+	GlobalPlayerManager.player_respawn.emit()
 	death.visible = false
 	get_tree().paused = false
 	spawn()

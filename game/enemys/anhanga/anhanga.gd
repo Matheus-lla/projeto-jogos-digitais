@@ -15,6 +15,7 @@ var dialog_count = 0
 @onready var enemy_spawn: EnemySpawn = $EnemySpawn
 
 func _ready():
+	super._ready()
 	state_machine.init( self )
 	player = GlobalPlayerManager.player
 	hit_box.Damaged.connect(_take_damage)
@@ -25,6 +26,9 @@ func _ready():
 	invulnerable = true
 	
 func _process(_delta: float) -> void:
+	if not player:
+		return
+	
 	var distance : Vector2 = player.global_position - global_position
 	chase_speed = distance.length() * 0.75
 	

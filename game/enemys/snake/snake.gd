@@ -9,6 +9,7 @@ var player : Player
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 func _ready():
+	super._ready()
 	state_machine.init( self )
 	player = GlobalPlayerManager.player
 	hit_box.Damaged.connect(_take_damage)

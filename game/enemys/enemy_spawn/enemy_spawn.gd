@@ -6,7 +6,7 @@ class_name EnemySpawn extends Node2D
 @export var spawn_cooldown: float = 1.0
 @export var spawn_radius: float = 50.0
 @export var start_when_ready: bool
-@export var parent: Node2D
+@export var parent: Node
 
 var active = false
 var timer: float
