@@ -1,14 +1,19 @@
-[gd_scene load_steps=34 format=3 uid="uid://cy6n5kjownfd7"]
+[gd_scene load_steps=44 format=3 uid="uid://cy6n5kjownfd7"]
 
 [ext_resource type="Script" path="res://maps/map.gd" id="1_gr1uc"]
 [ext_resource type="PackedScene" uid="uid://ctp446wbt3g8p" path="res://tile_maps/terrain.tscn" id="1_uo6ai"]
 [ext_resource type="PackedScene" uid="uid://dl5dkj6nkf43v" path="res://enemys/snake/snake.tscn" id="3_fhrwj"]
+[ext_resource type="AudioStream" uid="uid://dm6maj6rjt7dp" path="res://music/The wall fight.mp3" id="4_8rltg"]
+[ext_resource type="AudioStream" uid="uid://ci3rvyf35ejgq" path="res://music/Lava lake.mp3" id="4_gsevn"]
+[ext_resource type="AudioStream" uid="uid://bysf3h63sgr7c" path="res://music/The fire serpent fight.mp3" id="5_6bk7v"]
 [ext_resource type="PackedScene" uid="uid://0a35r0d3rnn7" path="res://props/hut/hut.tscn" id="5_71r4l"]
 [ext_resource type="PackedScene" uid="uid://d4g0yvj01mxhw" path="res://props/spawn/spawn.tscn" id="5_ab8ve"]
 [ext_resource type="PackedScene" uid="uid://cbrqu0ljsvhhi" path="res://props/trees/tree1.tscn" id="6_fl1ub"]
+[ext_resource type="AudioStream" uid="uid://yu0cpk7l18kc" path="res://music/Anhangá fight_.mp3" id="6_xk78a"]
 [ext_resource type="PackedScene" uid="uid://b677pllce5nsa" path="res://props/bush/bush.tscn" id="7_i8s12"]
 [ext_resource type="PackedScene" uid="uid://5h833b6p2xh0" path="res://props/structures/pillar.tscn" id="8_74xx4"]
 [ext_resource type="PackedScene" uid="uid://cp6p8qd6jkb7g" path="res://player/player.tscn" id="9_57pim"]
+[ext_resource type="AudioStream" uid="uid://b5lvubo5aghcl" path="res://music/The last village_.mp3" id="9_agx7t"]
 [ext_resource type="PackedScene" uid="uid://b88rtmgccpgu0" path="res://enemys/slime/slime.tscn" id="9_qxiuk"]
 [ext_resource type="PackedScene" uid="uid://dhxoilxb2hwdb" path="res://props/guarana/Guarana.tscn" id="10_ggnas"]
 [ext_resource type="PackedScene" uid="uid://bv2jvfq78tpuu" path="res://props/burnig_trees/burningtree2.tscn" id="10_snsbh"]
@@ -29,9 +34,22 @@
 [ext_resource type="PackedScene" uid="uid://cwxk7x12kuq4y" path="res://props/ultimo mapa objetos/corrupted_tree.tscn" id="31_a0s1a"]
 [ext_resource type="PackedScene" uid="uid://bsrn3e7383s62" path="res://props/ultimo mapa objetos/Temple.tscn" id="32_i6k0i"]
 [ext_resource type="PackedScene" uid="uid://dglm2ngfsfou3" path="res://props/ultimo mapa objetos/big_corrupted_tree.tscn" id="33_oba6c"]
+[ext_resource type="PackedScene" uid="uid://bap5bicwfy8xg" path="res://general_nodes/music_area/music_area.tscn" id="33_tk3ou"]
 [ext_resource type="PackedScene" uid="uid://boil42dotsryp" path="res://props/portal/portal.tscn" id="34_m6bbv"]
 [ext_resource type="PackedScene" uid="uid://blp5sco6ipc5c" path="res://enemys/anhanga/anhanga.tscn" id="35_n2yrq"]
 [ext_resource type="PackedScene" uid="uid://bs8tanhfmemj4" path="res://npc/cacique/cacique.tscn" id="37_a8lov"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80opd"]
+size = Vector2(2423, 1817)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vbsq"]
+size = Vector2(2058, 885)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cp18m"]
+size = Vector2(626, 386)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_retdu"]
+size = Vector2(2701.5, 1858)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_83ml1"]
 radius = 800.0
@@ -40,6 +58,52 @@ radius = 800.0
 y_sort_enabled = true
 position = Vector2(711, 769)
 script = ExtResource("1_gr1uc")
+
+[node name="MusicLastVillage" parent="." instance=ExtResource("33_tk3ou")]
+position = Vector2(829, 75)
+sound_track = ExtResource("9_agx7t")
+
+[node name="AudioStreamPlayer" parent="MusicLastVillage" index="0"]
+stream = ExtResource("9_agx7t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicLastVillage/Area2D" index="0"]
+shape = SubResource("RectangleShape2D_80opd")
+
+[node name="MusicTheWall" parent="." instance=ExtResource("33_tk3ou")]
+position = Vector2(790, 1554)
+
+[node name="AudioStreamPlayer" parent="MusicTheWall" index="0"]
+stream = ExtResource("4_8rltg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicTheWall/Area2D" index="0"]
+shape = SubResource("RectangleShape2D_5vbsq")
+
+[node name="MusicLava" parent="." instance=ExtResource("33_tk3ou")]
+position = Vector2(629, 3351)
+
+[node name="AudioStreamPlayer" parent="MusicLava" index="0"]
+stream = ExtResource("4_gsevn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MusicLava/Area2D" index="0"]
+polygon = PackedVector2Array(-2235, -1239, 2174, -1286, 2157, 804, -2187, 788, -2211, 76, -947, 100, -931, -428, -2243, -460)
+
+[node name="MusicBoitata" parent="." instance=ExtResource("33_tk3ou")]
+position = Vector2(-838, 3182)
+
+[node name="AudioStreamPlayer" parent="MusicBoitata" index="0"]
+stream = ExtResource("5_6bk7v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicBoitata/Area2D" index="0"]
+shape = SubResource("RectangleShape2D_cp18m")
+
+[node name="MusicArea" parent="." instance=ExtResource("33_tk3ou")]
+position = Vector2(8024, 2365)
+
+[node name="AudioStreamPlayer" parent="MusicArea" index="0"]
+stream = ExtResource("6_xk78a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicArea/Area2D" index="0"]
+shape = SubResource("RectangleShape2D_retdu")
 
 [node name="Terrain" parent="." instance=ExtResource("1_uo6ai")]
 position = Vector2(-189, -483)
@@ -2565,6 +2629,11 @@ required_spawn = NodePath("../../../Spawn2")
 [node name="AfterNewSpawn2" parent="Cacique/DialogSequence" index="7" node_paths=PackedStringArray("required_spawn")]
 required_spawn = NodePath("../../../Spawn2")
 
+[editable path="MusicLastVillage"]
+[editable path="MusicTheWall"]
+[editable path="MusicLava"]
+[editable path="MusicBoitata"]
+[editable path="MusicArea"]
 [editable path="Villager2"]
 [editable path="Villager"]
 [editable path="Villager4"]

@@ -13,7 +13,7 @@ config_version=5
 config/name="Aianá"
 run/main_scene="res://gui/menu/TitleScreen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://gui/menu/assets/logo_150px.png"
 
 [aseprite_importers]
 
@@ -42,7 +42,7 @@ window/stretch/mode="viewport"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
+enabled=PackedStringArray()
 
 [gui]
 
@@ -101,6 +101,7 @@ use_potion={
 2d_physics/layer_1="Player"
 2d_physics/layer_2="PlayerHurt"
 2d_physics/layer_3="PlayerInteract"
+2d_physics/layer_4="PlayerMusic"
 2d_physics/layer_5="Walls"
 2d_physics/layer_6="Npc"
 2d_physics/layer_9="Enemy"

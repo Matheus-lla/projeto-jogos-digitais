@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://yu0cpk7l18kc"
+path="res://.godot/imported/Anhangá fight_.mp3-0052c6c8ed52ae3298a1f95089e84ec1.mp3str"
+
+[deps]
+
+source_file="res://music/Anhangá fight_.mp3"
+dest_files=["res://.godot/imported/Anhangá fight_.mp3-0052c6c8ed52ae3298a1f95089e84ec1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

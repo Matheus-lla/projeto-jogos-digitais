@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ci3rvyf35ejgq"
+path="res://.godot/imported/Lava lake.mp3-8a32f3cdab77c25e5d8af250a2f2522b.mp3str"
+
+[deps]
+
+source_file="res://music/Lava lake.mp3"
+dest_files=["res://.godot/imported/Lava lake.mp3-8a32f3cdab77c25e5d8af250a2f2522b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

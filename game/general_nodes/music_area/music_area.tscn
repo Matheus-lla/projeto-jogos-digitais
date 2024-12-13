@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bap5bicwfy8xg"]
+
+[ext_resource type="Script" path="res://general_nodes/music_area/music_area.gd" id="1_sy38k"]
+
+[node name="MusicArea" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_sy38k")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+monitorable = false

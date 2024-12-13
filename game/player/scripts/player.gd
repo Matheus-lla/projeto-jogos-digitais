@@ -15,6 +15,7 @@ var heal = Upgradable.new("Cura", [10, 25, 50], [2, 3, 4, 5])
 @onready var melee_hurt_box: HurtBox = $MeleeHurtBox
 @onready var camera: Camera = $Camera
 @onready var death: Death = $Death
+@onready var music_area: Area2D = $MusicArea
 
 func _ready() -> void:
 	GlobalPlayerManager.player = self

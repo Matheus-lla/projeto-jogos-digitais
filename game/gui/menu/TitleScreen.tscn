@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://chuy0afpcj02i"]
+[gd_scene load_steps=9 format=3 uid="uid://chuy0afpcj02i"]
 
 [ext_resource type="Script" path="res://gui/menu/title_screen.gd" id="1_nfoxw"]
 [ext_resource type="Texture2D" uid="uid://cv0fl7endt6c2" path="res://gui/menu/assets/Menu - Jogo.png" id="1_wbhog"]
 [ext_resource type="Theme" uid="uid://cuqcc8ol8sptm" path="res://gui/default_btn.tres" id="3_mo3qn"]
 [ext_resource type="Texture2D" uid="uid://c30ijptrupglf" path="res://gui/menu/assets/logo_menor (1).png" id="5_j8tb4"]
+[ext_resource type="AudioStream" uid="uid://b5lvubo5aghcl" path="res://music/The last village_.mp3" id="5_mj35y"]
 
 [sub_resource type="Animation" id="Animation_dn4a7"]
 length = 0.001
@@ -132,6 +133,10 @@ libraries = {
 "": SubResource("AnimationLibrary_te75y")
 }
 autoplay = "reveal"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_mj35y")
+autoplay = true
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_btn" to="." method="_on_start_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/credits_btn" to="." method="_on_credits_btn_pressed"]

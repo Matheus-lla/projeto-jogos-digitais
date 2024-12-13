@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b5lvubo5aghcl"
+path="res://.godot/imported/The last village_.mp3-05bf36440252d3f4f0d2b4ffc78ef31f.mp3str"
+
+[deps]
+
+source_file="res://music/The last village_.mp3"
+dest_files=["res://.godot/imported/The last village_.mp3-05bf36440252d3f4f0d2b4ffc78ef31f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

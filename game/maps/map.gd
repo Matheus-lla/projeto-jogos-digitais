@@ -14,7 +14,7 @@ func _ready() -> void:
 	player = GlobalPlayerManager.player
 	
 	for child in get_children():
-		if child is Node2D and child != terrain:
+		if child is Node2D and child != terrain and child is not MusicArea:
 			chilren.append(child)
 			
 
