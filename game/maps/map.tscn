@@ -2599,7 +2599,7 @@ position = Vector2(8109, 2770)
 scale = Vector2(1, 1)
 
 [node name="Anhanga" parent="." instance=ExtResource("35_n2yrq")]
-position = Vector2(7883, 2441)
+position = Vector2(7961, 2320)
 scale = Vector2(2, 2)
 
 [node name="Corrupted tree4" parent="." instance=ExtResource("31_a0s1a")]
