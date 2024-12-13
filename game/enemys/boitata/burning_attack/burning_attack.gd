@@ -74,6 +74,7 @@ func _physics_process(delta: float) -> void:
 			
 			for i in randi_range(3, 10):
 				var fire = FIRE_CENE.instantiate() as Fire
+				fire.damage = 2
 				fire.start(
 					global_position + Vector2(randf_range(-60.0, 60.0), randf_range(-60.0, 60.0)),
 					randf_range(2.0, 10.0)

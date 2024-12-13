@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4g0yvj01mxhw"]
+[gd_scene load_steps=6 format=3 uid="uid://d4g0yvj01mxhw"]
 
 [ext_resource type="Script" path="res://props/spawn/spawn.gd" id="1_w6xyg"]
 [ext_resource type="Texture2D" uid="uid://c3jcfmpli0rtq" path="res://tile_maps/sprites/tilemap/fogueira.png" id="2_a2a8u"]
 [ext_resource type="Script" path="res://general_nodes/interact_area/interact_area.gd" id="3_qvo1l"]
+[ext_resource type="PackedScene" uid="uid://bgjbl4yqfjwgx" path="res://props/fire/fire.tscn" id="4_qurb1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y3usd"]
 radius = 14.0
@@ -55,3 +56,7 @@ theme_override_font_sizes/font_size = 0
 text = "Checkpoint Updated"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Fire" parent="." instance=ExtResource("4_qurb1")]
+position = Vector2(0, 2)
+damage = 0

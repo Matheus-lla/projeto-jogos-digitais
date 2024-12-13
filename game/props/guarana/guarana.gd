@@ -5,6 +5,7 @@ class_name Guarana
 
 @onready var full_sprite: Sprite2D = $FullSprite
 @onready var empty_sprite: Sprite2D = $EmptySprite
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var catch: bool = false
 var trees: Array = []
@@ -22,8 +23,9 @@ func update_sprite():
 func on_interaction():
 	if catch:
 		return
-		
-	PlayerHud.update_guarana(3)
+	
+	audio_stream_player_2d.play()
+	PlayerHud.update_guarana(5)
 	catch = true
 	update_sprite()
 

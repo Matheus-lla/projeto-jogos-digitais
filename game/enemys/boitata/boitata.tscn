@@ -300,7 +300,7 @@ z_index = 1
 collision_layer = 16
 collision_mask = 0
 script = ExtResource("1_u8ci2")
-hp = 30
+hp = 70
 
 [node name="HitBox" parent="." instance=ExtResource("3_qjoyx")]
 

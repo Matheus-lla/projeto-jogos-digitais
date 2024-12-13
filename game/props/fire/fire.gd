@@ -17,9 +17,11 @@ var burn_time: float
 const START_TIME = 1.0
 const END_TIME = 1.0
 
+@export var damage: int = 1
+
 func _ready() -> void:
 	if state == States.NULL:
-		start(global_position, 12.0)
+		start(global_position, INF)
 		
 	global_position = start_position
 	
@@ -54,6 +56,7 @@ func start(_position: Vector2, _burn_time) -> void:
 	start_position = _position
 	animation_player  = $AnimationPlayer
 	hurt_box = $HurtBox
+	hurt_box.damage = damage
 	timer = START_TIME
 	state = States.START
 	update_animation("start")

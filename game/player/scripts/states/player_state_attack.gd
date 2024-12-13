@@ -14,11 +14,15 @@ const ANIMATION_CANCEL_TIME = 0.5
 @export var attack_sound: AudioStream
 @export_range(1, 20, 0.5) var decelerate_speed: float = 10
 
+var old_sound: float
+
 func enter() -> void:
 	timer = ANIMATION_CANCEL_TIME
 	player.update_animation("spear_attack")
 	attack_animation.animation_finished.connect(end_attack)
 	audio.stream = attack_sound
+	old_sound = audio.volume_db
+	audio.volume_db = 10
 	audio.pitch_scale = randf_range(0.9, 1.1)
 	audio.play()
 	attacking = true
@@ -26,6 +30,7 @@ func enter() -> void:
 	hurt_box.monitoring = true
 
 func exit() -> void:
+	audio.volume_db = old_sound
 	attack_animation.animation_finished.disconnect(end_attack)
 	attacking = false
 	hurt_box.monitoring = false

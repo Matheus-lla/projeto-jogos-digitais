@@ -8,10 +8,10 @@
 [ext_resource type="Script" path="res://player/scripts/states/player_state_walk.gd" id="5_7x5vp"]
 [ext_resource type="Script" path="res://player/scripts/states/player_state_attack.gd" id="6_uq3q5"]
 [ext_resource type="Script" path="res://general_scripts/state_machine.gd" id="7_i27r4"]
-[ext_resource type="AudioStream" uid="uid://bt47elq3aco7w" path="res://player/audio/SwordSwoosh.wav" id="8_i7ip4"]
 [ext_resource type="Script" path="res://general_scripts/update_rotation.gd" id="10_10sp5"]
 [ext_resource type="PackedScene" uid="uid://bi537x71g5dm3" path="res://general_nodes/hurt_box/hurt_box.tscn" id="10_aoesj"]
 [ext_resource type="Script" path="res://player/scripts/states/player_state_stun.gd" id="11_8opwu"]
+[ext_resource type="AudioStream" uid="uid://c8a1gwlcc2310" path="res://player/audio/sword-sound-260274.mp3" id="11_i4biw"]
 [ext_resource type="Script" path="res://player/scripts/states/player_state_dash.gd" id="11_rq1l8"]
 [ext_resource type="Script" path="res://player/scripts/states/shoot_arrow.gd" id="12_lugk0"]
 [ext_resource type="AudioStream" uid="uid://ctdwiam17n70r" path="res://player/audio/arrow.wav" id="12_v80to"]
@@ -811,7 +811,7 @@ script = ExtResource("5_7x5vp")
 
 [node name="Attack" type="Node" parent="StateMachine"]
 script = ExtResource("6_uq3q5")
-attack_sound = ExtResource("8_i7ip4")
+attack_sound = ExtResource("11_i4biw")
 
 [node name="Stun" type="Node" parent="StateMachine"]
 script = ExtResource("11_8opwu")
@@ -846,7 +846,7 @@ position = Vector2(0, -9)
 texture = ExtResource("2_6vyfa")
 hframes = 11
 vframes = 11
-frame = 101
+frame = 43
 metadata/_aseprite_wizard_config_ = {
 "i_mode": -1,
 "keep_anim_length": false,

@@ -97,7 +97,7 @@ theme_override_colors/default_color = Color(0.372591, 0.298667, 0.23252, 1)
 theme_override_fonts/normal_font = ExtResource("3_prnss")
 theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
-text = "Oi minha pequena Aianá, minha guerreira. Eu tenho um chamado para você, cada dia que passa as florestas e os animais estão sendo mais acuados, um mal terrível reina sobre essas terras, e você é a única que pode salvar esse mundo. Anhangá, o Deus sombrio pretende controlar a todos com sua escuridão, essa pequena vila é o último refugio de luz em toda floresta, você precisa encontra-lo e derrota-lo, antes que seja tarde demais. Não se preocupe, você vai conseguir, você é a única que consegue. E quando se sentir perdida, seu Cacique deve te orientar."
+text = "Oi minha pequena Aianá, minha guerreira. Eu tenho um chamado para você, cada dia que passa as florestas e os animais estão sendo mais acuados, um mal terrível reina sobre essas terras, e você é a única que pode salvar esse mundo. Anhangá, o Deus sombrio pretende controlar a todos com sua escuridão, essa pequena aldeia é o último refugio de luz em toda floresta, você precisa encontra-lo e derrota-lo, antes que seja tarde demais. Não se preocupe, você vai conseguir, você é a única que consegue. E quando se sentir perdida, seu Cacique deve te orientar."
 
 [node name="Label" type="Label" parent="."]
 offset_left = 71.0

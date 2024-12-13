@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://blp5sco6ipc5c"]
+[gd_scene load_steps=58 format=3 uid="uid://blp5sco6ipc5c"]
 
 [ext_resource type="Script" path="res://enemys/anhanga/anhanga.gd" id="1_5b681"]
 [ext_resource type="Texture2D" uid="uid://68bp5a2wtksi" path="res://enemys/anhanga/anhanga.png" id="2_ntfqo"]
@@ -679,7 +679,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_r56nj"]
 resource_name = "stun_down"
-length = 0.15
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -722,7 +722,7 @@ tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_g8ur2"]
 resource_name = "stun_left"
-length = 0.15
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -808,7 +808,7 @@ tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_n1eg1"]
 resource_name = "stun_up"
-length = 0.15
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1007,12 +1007,14 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_atugb"]
 radius = 300.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ocmto"]
+
 [node name="Anhanga" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 272
 collision_mask = 16
 script = ExtResource("1_5b681")
-hp = 30
+hp = 120
 
 [node name="StaticHurtBox" parent="." instance=ExtResource("5_dkfur")]
 monitoring = false
@@ -1057,10 +1059,6 @@ script = ExtResource("9_df6j1")
 victim_name = "Anhanga"
 text = "NÃÃÃÃÃÃÃÃO, esse não será o fim! Eu não vou voltar para a escuridão."
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(7.875, -57)
-polygon = PackedVector2Array(-16, 55, -12, 40, -1, 40, 3, 55)
-
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0.875, -52)
 max_polyphony = 7
@@ -1083,30 +1081,30 @@ script = ExtResource("5_6701d")
 
 [node name="Stun" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("5_sxm3i")
-knockback_speed = 0.0
-decelerate_speed = 0.0
+knockback_speed = 50.0
 next_state = NodePath("../Idle")
 
 [node name="BasicAttack" type="Node" parent="StateMachine"]
 script = ExtResource("7_nwysc")
 anim_name = "fast_attack"
 turn_rate = 0.4
-damage = 1
+damage = 4
 
 [node name="StrongAttack" type="Node" parent="StateMachine"]
 script = ExtResource("7_nwysc")
 anim_name = "strong_attack"
-damage = 1
+damage = 8
 
 [node name="BasicAttack2" type="Node" parent="StateMachine"]
 script = ExtResource("7_nwysc")
 anim_name = "fast_attack"
 turn_rate = 0.4
-damage = 1
+damage = 4
 
 [node name="StrongAttack2" type="Node" parent="StateMachine"]
 script = ExtResource("7_nwysc")
 anim_name = "strong_attack"
+turn_rate = 8.0
 damage = 1
 
 [node name="Chase" type="Node" parent="StateMachine"]
@@ -1163,3 +1161,7 @@ spawn_radius = 300.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemySpawn"]
 shape = SubResource("CircleShape2D_atugb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -8)
+shape = SubResource("CircleShape2D_ocmto")

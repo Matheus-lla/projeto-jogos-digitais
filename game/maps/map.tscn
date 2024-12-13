@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cy6n5kjownfd7"]
+[gd_scene load_steps=46 format=3 uid="uid://cy6n5kjownfd7"]
 
 [ext_resource type="Script" path="res://maps/map.gd" id="1_gr1uc"]
 [ext_resource type="PackedScene" uid="uid://ctp446wbt3g8p" path="res://tile_maps/terrain.tscn" id="1_uo6ai"]
@@ -38,6 +38,9 @@
 [ext_resource type="PackedScene" uid="uid://boil42dotsryp" path="res://props/portal/portal.tscn" id="34_m6bbv"]
 [ext_resource type="PackedScene" uid="uid://blp5sco6ipc5c" path="res://enemys/anhanga/anhanga.tscn" id="35_n2yrq"]
 [ext_resource type="PackedScene" uid="uid://bs8tanhfmemj4" path="res://npc/cacique/cacique.tscn" id="37_a8lov"]
+[ext_resource type="PackedScene" uid="uid://0dtpkqs71lll" path="res://props/trees/tree.tscn" id="39_vmapq"]
+[ext_resource type="Texture2D" uid="uid://c0xd65aht6oif" path="res://tile_maps/sprites/tree.png" id="40_y2mdu"]
+[ext_resource type="PackedScene" uid="uid://6ibum3fcvmub" path="res://props/vulcans/vulcan new.tscn" id="41_jiyet"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80opd"]
 size = Vector2(2423, 1817)
@@ -51,9 +54,6 @@ size = Vector2(626, 386)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_retdu"]
 size = Vector2(2701.5, 1858)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_83ml1"]
-radius = 800.0
-
 [node name="Map" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(711, 769)
@@ -65,6 +65,7 @@ sound_track = ExtResource("9_agx7t")
 
 [node name="AudioStreamPlayer" parent="MusicLastVillage" index="0"]
 stream = ExtResource("9_agx7t")
+volume_db = -10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MusicLastVillage/Area2D" index="0"]
 shape = SubResource("RectangleShape2D_80opd")
@@ -125,7 +126,7 @@ position = Vector2(8014, 2710)
 
 [node name="Player" parent="." node_paths=PackedStringArray("spawn_place") instance=ExtResource("9_57pim")]
 position = Vector2(-847, 3331)
-spawn_place = NodePath("../Spawn")
+spawn_place = NodePath("../Spawn4")
 
 [node name="Spawn" parent="." instance=ExtResource("5_ab8ve")]
 position = Vector2(1279, -1)
@@ -137,16 +138,16 @@ position = Vector2(-810, 3763)
 position = Vector2(1008, -15)
 
 [node name="Slime2" parent="." instance=ExtResource("9_qxiuk")]
-position = Vector2(834, -114)
+position = Vector2(392, 61)
 
 [node name="Slime3" parent="." instance=ExtResource("9_qxiuk")]
-position = Vector2(780, 53)
+position = Vector2(1492, 441)
 
 [node name="Slime4" parent="." instance=ExtResource("9_qxiuk")]
-position = Vector2(699, -142)
+position = Vector2(230, -124)
 
 [node name="Slime5" parent="." instance=ExtResource("9_qxiuk")]
-position = Vector2(569, 149)
+position = Vector2(526, 302)
 
 [node name="Slime6" parent="." instance=ExtResource("9_qxiuk")]
 position = Vector2(1039, 1334)
@@ -1078,10 +1079,10 @@ position = Vector2(461, 2350)
 position = Vector2(485, 2350)
 
 [node name="Burningtree98" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1389, 3911)
+position = Vector2(1386, 3942)
 
 [node name="Burningtree99" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1413, 3913)
+position = Vector2(1410, 3944)
 
 [node name="Burningtree100" parent="." instance=ExtResource("17_24lf3")]
 position = Vector2(1134, 3888)
@@ -2006,9 +2007,6 @@ position = Vector2(1010, 3685)
 [node name="Animalskull23" parent="." instance=ExtResource("15_5gggo")]
 position = Vector2(947, 3764)
 
-[node name="Vulcan13" parent="." instance=ExtResource("13_82v6d")]
-position = Vector2(2134, 3839)
-
 [node name="Vulcan14" parent="." instance=ExtResource("11_s6fov")]
 position = Vector2(998, 3524)
 
@@ -2022,64 +2020,64 @@ position = Vector2(1339, 3740)
 position = Vector2(1332, 4000)
 
 [node name="Burningtree101" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1436, 3913)
+position = Vector2(1433, 3944)
 
 [node name="Burningtree102" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1460, 3913)
+position = Vector2(1457, 3944)
 
 [node name="Burningtree103" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1484, 3912)
+position = Vector2(1481, 3943)
 
 [node name="Burningtree104" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1508, 3912)
+position = Vector2(1505, 3943)
 
 [node name="Burningtree105" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1532, 3913)
+position = Vector2(1529, 3944)
 
 [node name="Burningtree106" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1556, 3913)
+position = Vector2(1553, 3944)
 
 [node name="Burningtree107" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1580, 3913)
+position = Vector2(1577, 3944)
 
 [node name="Burningtree108" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1605, 3913)
+position = Vector2(1602, 3944)
 
 [node name="Burningtree109" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1629, 3913)
+position = Vector2(1626, 3944)
 
 [node name="Burningtree110" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1653, 3913)
+position = Vector2(1650, 3944)
 
 [node name="Burningtree111" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1678, 3913)
+position = Vector2(1675, 3944)
 
 [node name="Burningtree112" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1703, 3914)
+position = Vector2(1700, 3945)
 
 [node name="Burningtree113" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1727, 3913)
+position = Vector2(1724, 3944)
 
 [node name="Burningtree114" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1751, 3913)
+position = Vector2(1748, 3944)
 
 [node name="Burningtree115" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1774, 3913)
+position = Vector2(1771, 3944)
 
 [node name="Burningtree116" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1798, 3913)
+position = Vector2(1795, 3944)
 
 [node name="Burningtree117" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1822, 3913)
+position = Vector2(1819, 3944)
 
 [node name="Burningtree118" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1846, 3913)
+position = Vector2(1843, 3944)
 
 [node name="Burningtree119" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1870, 3914)
+position = Vector2(1867, 3945)
 
 [node name="Burningtree120" parent="." instance=ExtResource("17_24lf3")]
-position = Vector2(1893, 3913)
+position = Vector2(1890, 3944)
 
 [node name="Muralha18" parent="." instance=ExtResource("8_74xx4")]
 position = Vector2(-523, 2587)
@@ -2214,9 +2212,6 @@ position = Vector2(2133, 3177)
 
 [node name="Burningtree133" parent="." instance=ExtResource("17_24lf3")]
 position = Vector2(2177, 3096)
-
-[node name="Vulcan36" parent="." instance=ExtResource("13_82v6d")]
-position = Vector2(289, 3007)
 
 [node name="Bones5" parent="." instance=ExtResource("19_gplrp")]
 position = Vector2(153, 2870)
@@ -2420,10 +2415,10 @@ position = Vector2(-376, 2460)
 position = Vector2(472, 3149)
 
 [node name="Guarana10" parent="." instance=ExtResource("10_ggnas")]
-position = Vector2(286, 3757)
+position = Vector2(247, 3801)
 
 [node name="Guarana11" parent="." instance=ExtResource("10_ggnas")]
-position = Vector2(283, 3927)
+position = Vector2(248, 3835)
 
 [node name="Guarana12" parent="." instance=ExtResource("10_ggnas")]
 position = Vector2(-797, 3955)
@@ -2511,7 +2506,7 @@ position = Vector2(310, -100)
 position = Vector2(63, 3920)
 
 [node name="Goblin5" parent="." instance=ExtResource("23_rhsfu")]
-position = Vector2(227, 3736)
+position = Vector2(334, 3690)
 
 [node name="Goblin6" parent="." instance=ExtResource("23_rhsfu")]
 position = Vector2(2098, 3725)
@@ -2533,7 +2528,6 @@ position = Vector2(378, 154)
 
 [node name="Boitata" parent="." instance=ExtResource("25_faf6i")]
 position = Vector2(-856, 3092)
-hp = 5
 
 [node name="CollisionShape2D" parent="Boitata/VisionArea" index="0"]
 position = Vector2(11, 100.875)
@@ -2553,13 +2547,6 @@ position = Vector2(2, -64)
 position = Vector2(-133, 175)
 scale = Vector2(1.5, 1.5)
 target_portal = NodePath("../../Portal")
-
-[node name="Anhanga" parent="." instance=ExtResource("35_n2yrq")]
-position = Vector2(8005, 2367)
-scale = Vector2(1.5, 1.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Anhanga/VisionArea" index="0"]
-shape = SubResource("CircleShape2D_83ml1")
 
 [node name="FinalMap" parent="." instance=ExtResource("18_6qe4n")]
 position = Vector2(8005, 2127)
@@ -2611,6 +2598,10 @@ z_index = 1
 position = Vector2(8109, 2770)
 scale = Vector2(1, 1)
 
+[node name="Anhanga" parent="." instance=ExtResource("35_n2yrq")]
+position = Vector2(7883, 2441)
+scale = Vector2(2, 2)
+
 [node name="Corrupted tree4" parent="." instance=ExtResource("31_a0s1a")]
 position = Vector2(7883, 2441)
 scale = Vector2(2, 2)
@@ -2629,6 +2620,552 @@ required_spawn = NodePath("../../../Spawn2")
 [node name="AfterNewSpawn2" parent="Cacique/DialogSequence" index="7" node_paths=PackedStringArray("required_spawn")]
 required_spawn = NodePath("../../../Spawn2")
 
+[node name="Tree104" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(231, 1824)
+
+[node name="Tree105" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(1401, 1322)
+
+[node name="Tree106" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(1034, 1888)
+
+[node name="Tree107" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(435, 1301)
+
+[node name="Tree108" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(761, 1222)
+
+[node name="Tree109" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(36, 1884)
+
+[node name="Tree110" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(1283, 595)
+
+[node name="Tree111" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(1434, 625)
+
+[node name="Tree112" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(1261, 906)
+
+[node name="Tree113" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(706, 330)
+
+[node name="Tree114" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(495, -672)
+
+[node name="Tree115" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(595, -671)
+
+[node name="Tree116" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(677, -673)
+
+[node name="Tree117" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(759, -671)
+
+[node name="Tree118" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(832, -670)
+
+[node name="Tree119" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(910, -675)
+
+[node name="Tree120" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(994, -671)
+
+[node name="Tree121" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(1085, -668)
+
+[node name="Tree122" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(1188, -677)
+
+[node name="Tree123" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(1274, -673)
+
+[node name="Tree124" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(1359, -673)
+
+[node name="Tree125" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(1452, -675)
+
+[node name="Tree126" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(1543, -671)
+
+[node name="Tree127" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(1639, -670)
+
+[node name="Tree128" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(1723, -670)
+
+[node name="Tree129" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(1824, -673)
+
+[node name="Tree130" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(1919, -675)
+
+[node name="Tree131" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(1659, -374)
+
+[node name="Tree132" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(1596, -529)
+
+[node name="Tree133" type="Sprite2D" parent="."]
+position = Vector2(1266, -542)
+texture = ExtResource("40_y2mdu")
+
+[node name="Tree134" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(1293, -486)
+
+[node name="Tree135" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(1609, 75)
+
+[node name="Tree136" parent="." instance=ExtResource("39_vmapq")]
+position = Vector2(107, -81)
+
+[node name="bush8" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(1328, 1452)
+
+[node name="bush12" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(320, 1410)
+
+[node name="bush13" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(209, 1854)
+
+[node name="bush14" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(1456, 1864)
+
+[node name="bush15" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(1558, 1487)
+
+[node name="bush16" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(1161, 1262)
+
+[node name="bush17" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(937, 1289)
+
+[node name="bush18" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(-66, 1584)
+
+[node name="bush19" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(817, 1310)
+
+[node name="bush20" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(1127, 518)
+
+[node name="bush21" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(1130, 616)
+
+[node name="bush22" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(1170, 822)
+
+[node name="bush23" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(889, 946)
+
+[node name="bush24" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(889, 913)
+
+[node name="bush25" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(891, 877)
+
+[node name="bush26" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(974, 949)
+
+[node name="bush27" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(975, 923)
+
+[node name="bush28" parent="." instance=ExtResource("7_i8s12")]
+position = Vector2(974, 891)
+
+[node name="Burningtree164" parent="." instance=ExtResource("17_24lf3")]
+position = Vector2(438, 1923)
+
+[node name="Burningtree165" parent="." instance=ExtResource("10_snsbh")]
+position = Vector2(338, 1848)
+
+[node name="Burningtree166" parent="." instance=ExtResource("17_24lf3")]
+position = Vector2(1162, 1880)
+
+[node name="Burningtree167" parent="." instance=ExtResource("10_snsbh")]
+position = Vector2(806, 1735)
+
+[node name="Burningtree168" parent="." instance=ExtResource("17_24lf3")]
+position = Vector2(610, 1731)
+
+[node name="Burningtree169" parent="." instance=ExtResource("10_snsbh")]
+position = Vector2(1152, 1666)
+
+[node name="Guarana17" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(1335, 1852)
+
+[node name="Guarana18" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(139, 1574)
+
+[node name="Guarana19" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(185, 762)
+
+[node name="Guarana20" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(344, 576)
+
+[node name="Guarana21" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(147, 575)
+
+[node name="Guarana22" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(1365, 708)
+
+[node name="Guarana23" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(1398, 876)
+
+[node name="Guarana24" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(23, -79)
+
+[node name="Guarana25" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(4, -15)
+
+[node name="Guarana26" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(-8, 47)
+
+[node name="Guarana27" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(-10, 109)
+
+[node name="Guarana28" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(455, -446)
+
+[node name="Guarana29" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(427, -367)
+
+[node name="Guarana30" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(1670, -591)
+
+[node name="Guarana31" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(1621, -419)
+
+[node name="Guarana32" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(1348, -532)
+
+[node name="Guarana33" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(1515, -504)
+
+[node name="Guarana34" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(1478, -517)
+
+[node name="Guarana35" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(1574, -514)
+
+[node name="Guarana36" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(394, 1288)
+
+[node name="Guarana37" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(-994, 2504)
+
+[node name="Guarana38" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(-853, 2483)
+
+[node name="Guarana39" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(-695, 2464)
+
+[node name="Guarana40" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(508, 2475)
+
+[node name="Guarana41" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(914, 2477)
+
+[node name="Guarana42" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(727, 2355)
+
+[node name="Guarana43" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(1493, 2546)
+
+[node name="Guarana44" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(1617, 2540)
+
+[node name="Guarana45" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(2340, 3106)
+
+[node name="Guarana46" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(1945, 3009)
+
+[node name="VulcanNew2" parent="." instance=ExtResource("41_jiyet")]
+position = Vector2(2164, 3896)
+scale = Vector2(4.8, 4.8)
+
+[node name="Guarana47" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(2145, 3986)
+
+[node name="Guarana48" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(1058, 3692)
+
+[node name="Guarana49" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(1281, 3789)
+
+[node name="Guarana50" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(938, 3885)
+
+[node name="Guarana51" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(177, 3801)
+
+[node name="Guarana52" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(197, 3799)
+
+[node name="Guarana53" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(221, 3802)
+
+[node name="Guarana54" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(199, 3831)
+
+[node name="Guarana55" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(225, 3832)
+
+[node name="Guarana56" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(178, 3827)
+
+[node name="Guarana57" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(-896, 3717)
+
+[node name="Guarana58" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(-712, 3730)
+
+[node name="Guarana59" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(-960, 3871)
+
+[node name="Guarana60" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(7630, 2866)
+
+[node name="Guarana61" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(7659, 2388)
+
+[node name="Guarana62" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(8473, 2545)
+
+[node name="Guarana63" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(7823, 2223)
+
+[node name="Guarana64" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(8483, 2323)
+
+[node name="Guarana65" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(8160, 2857)
+
+[node name="Guarana66" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(8520, 2723)
+
+[node name="Guarana67" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(7648, 2615)
+
+[node name="Guarana68" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(7475, 2462)
+
+[node name="Guarana69" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(8134, 2528)
+
+[node name="Guarana70" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(7864, 2561)
+
+[node name="Guarana71" parent="." instance=ExtResource("10_ggnas")]
+position = Vector2(8253, 2231)
+
+[node name="Slime10" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(170, 1632)
+
+[node name="Slime11" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(402, 1352)
+
+[node name="Slime12" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(694, 1801)
+
+[node name="Slime13" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(1417, 1655)
+
+[node name="Slime14" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(707, 1264)
+
+[node name="Slime15" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(198, 1342)
+
+[node name="Slime16" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(-62, 1705)
+
+[node name="Slime17" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(1180, 1773)
+
+[node name="Slime18" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(281, 1541)
+
+[node name="Slime19" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(315, 736)
+
+[node name="Slime20" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(465, 772)
+
+[node name="Slime21" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(649, 707)
+
+[node name="Slime22" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(247, 457)
+
+[node name="Slime23" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(1307, 641)
+
+[node name="Slime24" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(1179, 588)
+
+[node name="Slime25" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(1341, 940)
+
+[node name="Slime26" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(1460, 725)
+
+[node name="Slime27" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(1175, 749)
+
+[node name="Slime28" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(638, -417)
+
+[node name="Slime29" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(644, -381)
+
+[node name="Slime30" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(638, -342)
+
+[node name="Slime31" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(635, -303)
+
+[node name="Slime32" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(1444, -624)
+
+[node name="Slime33" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(1168, -604)
+
+[node name="Slime34" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(1188, -440)
+
+[node name="Slime35" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(1705, -351)
+
+[node name="Slime36" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(1777, -548)
+
+[node name="Goblin10" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(1344, -635)
+
+[node name="Goblin11" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(1576, -648)
+
+[node name="Goblin12" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(1518, -421)
+
+[node name="Goblin13" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(577, -421)
+
+[node name="Goblin14" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(571, -343)
+
+[node name="Goblin15" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(600, 692)
+
+[node name="Goblin16" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(259, 800)
+
+[node name="Goblin17" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(1446, 779)
+
+[node name="Goblin18" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(984, 1438)
+
+[node name="Goblin19" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(839, 1405)
+
+[node name="Goblin20" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(515, 1423)
+
+[node name="Goblin21" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(595, 1379)
+
+[node name="Goblin22" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(756, 1789)
+
+[node name="Goblin23" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(640, 2471)
+
+[node name="Goblin24" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(1524, 2590)
+
+[node name="Goblin25" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(1520, 2288)
+
+[node name="Goblin26" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(2083, 3121)
+
+[node name="Goblin27" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(2326, 3952)
+
+[node name="Goblin28" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(1191, 3710)
+
+[node name="Muralha23" parent="." instance=ExtResource("8_74xx4")]
+position = Vector2(642, 3660)
+
+[node name="Goblin29" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(280, 3935)
+
+[node name="Goblin30" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(59, 3701)
+
+[node name="Snake5" parent="." instance=ExtResource("3_fhrwj")]
+position = Vector2(-799, 2490)
+
+[node name="VulcanNew" parent="." instance=ExtResource("41_jiyet")]
+position = Vector2(409, 3053)
+scale = Vector2(5, 5)
+
+[node name="Snake6" parent="." instance=ExtResource("3_fhrwj")]
+position = Vector2(505, 3163)
+
+[node name="Snake7" parent="." instance=ExtResource("3_fhrwj")]
+position = Vector2(250, 2856)
+
+[node name="Snake8" parent="." instance=ExtResource("3_fhrwj")]
+position = Vector2(1928, 3708)
+
+[node name="Snake9" parent="." instance=ExtResource("3_fhrwj")]
+position = Vector2(1327, 3580)
+
+[node name="Snake10" parent="." instance=ExtResource("3_fhrwj")]
+position = Vector2(899, 3141)
+
+[node name="Snake11" parent="." instance=ExtResource("3_fhrwj")]
+position = Vector2(1728, 3129)
+
+[node name="Goblin31" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(419, 1761)
+
+[node name="Goblin32" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(315, 1451)
+
+[node name="Goblin33" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(996, 1670)
+
+[node name="Goblin34" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(671, 1199)
+
+[node name="Goblin35" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(675, 1604)
+
+[node name="Goblin36" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(1275, 1352)
+
+[node name="Goblin37" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(106, 1298)
+
+[node name="Goblin38" parent="." instance=ExtResource("23_rhsfu")]
+position = Vector2(1161, 1576)
+
+[node name="Slime37" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(866, 1276)
+
+[node name="Slime38" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(592, 1570)
+
+[node name="Slime39" parent="." instance=ExtResource("9_qxiuk")]
+position = Vector2(755, 1634)
+
 [editable path="MusicLastVillage"]
 [editable path="MusicTheWall"]
 [editable path="MusicLava"]
@@ -2639,7 +3176,5 @@ required_spawn = NodePath("../../../Spawn2")
 [editable path="Villager4"]
 [editable path="Villager3"]
 [editable path="Boitata"]
-[editable path="Anhanga"]
-[editable path="Anhanga/VisionArea"]
 [editable path="FinalMap"]
 [editable path="Cacique"]

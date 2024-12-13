@@ -21,8 +21,9 @@ func _ready() -> void:
 	GlobalPlayerManager.player = self
 	state_machine.init(self)
 	hit_box.Damaged.connect(on_damaged)
+	#spawn_place.fire.start(spawn_place.global_position, INF)
 	spawn()
-	PlayerHud.update_guarana(100)
+	#PlayerHud.update_guarana(100)
 	wepon.Upgraded.connect(on_wepon_upgrade)
 	max_hp.Upgraded.connect(on_max_hp_upgrade)
 	heal.Upgraded.connect(on_heal_upgrade)
