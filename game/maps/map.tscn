@@ -38,7 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://boil42dotsryp" path="res://props/portal/portal.tscn" id="34_m6bbv"]
 [ext_resource type="PackedScene" uid="uid://blp5sco6ipc5c" path="res://enemys/anhanga/anhanga.tscn" id="35_n2yrq"]
 [ext_resource type="PackedScene" uid="uid://bs8tanhfmemj4" path="res://npc/cacique/cacique.tscn" id="37_a8lov"]
-[ext_resource type="PackedScene" uid="uid://0dtpkqs71lll" path="res://props/trees/tree.tscn" id="39_vmapq"]
+[ext_resource type="PackedScene" uid="uid://0dtpkqs71lll" path="res://tile_maps/sprites/tree.tscn" id="39_vmapq"]
 [ext_resource type="Texture2D" uid="uid://c0xd65aht6oif" path="res://tile_maps/sprites/tree.png" id="40_y2mdu"]
 [ext_resource type="PackedScene" uid="uid://6ibum3fcvmub" path="res://props/vulcans/vulcan new.tscn" id="41_jiyet"]
 
@@ -126,7 +126,7 @@ position = Vector2(8014, 2710)
 
 [node name="Player" parent="." node_paths=PackedStringArray("spawn_place") instance=ExtResource("9_57pim")]
 position = Vector2(-847, 3331)
-spawn_place = NodePath("../Spawn4")
+spawn_place = NodePath("../Spawn3")
 
 [node name="Spawn" parent="." instance=ExtResource("5_ab8ve")]
 position = Vector2(1279, -1)
@@ -2261,6 +2261,9 @@ position = Vector2(-646, 3705)
 [node name="Burningtree143" parent="." instance=ExtResource("17_24lf3")]
 position = Vector2(-612, 3881)
 
+[node name="Burningtree170" parent="." instance=ExtResource("17_24lf3")]
+position = Vector2(119, 4086)
+
 [node name="Burningtree144" parent="." instance=ExtResource("17_24lf3")]
 position = Vector2(-738, 3845)
 
@@ -2308,6 +2311,12 @@ position = Vector2(-220, 3836)
 [node name="Bones11" parent="." instance=ExtResource("19_gplrp")]
 position = Vector2(-420, 3832)
 
+[node name="Bones12" parent="." instance=ExtResource("19_gplrp")]
+position = Vector2(-420, 3832)
+
+[node name="Bones13" parent="." instance=ExtResource("19_gplrp")]
+position = Vector2(144, 4082)
+
 [node name="skull27" parent="." instance=ExtResource("16_26cuq")]
 position = Vector2(-569, 3774)
 
@@ -2333,6 +2342,9 @@ position = Vector2(-456, 3776)
 position = Vector2(-438, 3774)
 
 [node name="skull35" parent="." instance=ExtResource("16_26cuq")]
+position = Vector2(-419, 3775)
+
+[node name="skull55" parent="." instance=ExtResource("16_26cuq")]
 position = Vector2(-419, 3775)
 
 [node name="skull36" parent="." instance=ExtResource("16_26cuq")]
@@ -2503,7 +2515,7 @@ position = Vector2(924, 1127)
 position = Vector2(310, -100)
 
 [node name="Goblin4" parent="." instance=ExtResource("23_rhsfu")]
-position = Vector2(63, 3920)
+position = Vector2(38, 3928)
 
 [node name="Goblin5" parent="." instance=ExtResource("23_rhsfu")]
 position = Vector2(334, 3690)
@@ -2599,7 +2611,7 @@ position = Vector2(8109, 2770)
 scale = Vector2(1, 1)
 
 [node name="Anhanga" parent="." instance=ExtResource("35_n2yrq")]
-position = Vector2(7961, 2320)
+position = Vector2(7961, 2318)
 scale = Vector2(2, 2)
 
 [node name="Corrupted tree4" parent="." instance=ExtResource("31_a0s1a")]
@@ -2938,7 +2950,7 @@ position = Vector2(8473, 2545)
 position = Vector2(7823, 2223)
 
 [node name="Guarana64" parent="." instance=ExtResource("10_ggnas")]
-position = Vector2(8483, 2323)
+position = Vector2(8488, 2343)
 
 [node name="Guarana65" parent="." instance=ExtResource("10_ggnas")]
 position = Vector2(8160, 2857)

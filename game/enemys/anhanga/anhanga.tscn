@@ -1081,7 +1081,8 @@ script = ExtResource("5_6701d")
 
 [node name="Stun" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("5_sxm3i")
-knockback_speed = 50.0
+knockback_speed = 5.0
+decelerate_speed = 5.0
 next_state = NodePath("../Idle")
 
 [node name="BasicAttack" type="Node" parent="StateMachine"]
