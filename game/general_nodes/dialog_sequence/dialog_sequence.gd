@@ -7,7 +7,6 @@ var next_dialog: DialogItem
 var icon_up: bool = false
 
 @onready var animation_dialog: AnimationPlayer = $AnimationPlayer
-@onready var original_color = Dialog.dialog_progress.self_modulate 
 
 @export var character_name: String
 @export var character_picture: Texture2D
@@ -54,19 +53,22 @@ func use_dialog(dialog: DialogItem):
 	
 func on_interaction():
 	super.on_interaction()
-	Dialog.dialog_progress.self_modulate = original_color
 	
 	var dialog = get_next_dialog()
 	
+	# Closes infinity reapeat dialog
+	if Dialog.ui.visible and dialog.name == "DialogItem":
+		end_dialog()
+		return
+		
 	if !dialog:
 		end_dialog()
 		return
+		
+	print(dialog.name)
 	
 	use_dialog(dialog)
 	next_dialog = get_next_dialog()
 	var button_text = "Next" if next_dialog else "End"
 	
-	if !next_dialog:
-		Dialog.dialog_progress.self_modulate = Color.ORANGE_RED
-		
 	Dialog.show_dialog(character_name, dialog.text, button_text, character_picture)
