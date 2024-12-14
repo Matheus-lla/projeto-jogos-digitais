@@ -7,7 +7,7 @@ extends CanvasLayer
 func _ready() -> void:
 	hide_dialog()
 
-func show_dialog(character_name: String, text: String, button_text: String, character_picture: Texture2D):
+func show_dialog(character_name: String, text: String, character_picture: Texture2D):
 	portrait_sprite.texture = character_picture
 	ui.visible = true
 	ui.process_mode = Node.PROCESS_MODE_ALWAYS

@@ -1164,10 +1164,11 @@ next_state = NodePath("../EnemyStateIdle")
 script = ExtResource("11_wyovq")
 next_state = NodePath("../EnemyStateChaseInfinity")
 
-[node name="EnemyStateChaseInfinity" type="Node" parent="StateMachine"]
+[node name="EnemyStateChaseInfinity" type="Node" parent="StateMachine" node_paths=PackedStringArray("vision_area")]
 script = ExtResource("13_bwxfb")
 anim_name = "walk"
 chase_speed = 135.0
+vision_area = NodePath("../../VisionArea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, -4)

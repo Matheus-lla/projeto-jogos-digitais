@@ -799,9 +799,10 @@ vision_area = NodePath("../../Rotation/VisionArea")
 attack_area = NodePath("../../Sprite2D/AttackHurtBox")
 next_state = NodePath("../Idle")
 
-[node name="ChaseInfinity" type="Node" parent="StateMachine" node_paths=PackedStringArray("attack_area")]
+[node name="ChaseInfinity" type="Node" parent="StateMachine" node_paths=PackedStringArray("vision_area", "attack_area")]
 script = ExtResource("13_iofnn")
 chase_speed = 80.0
+vision_area = NodePath("../../Rotation/VisionArea")
 attack_area = NodePath("../../Sprite2D/AttackHurtBox")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

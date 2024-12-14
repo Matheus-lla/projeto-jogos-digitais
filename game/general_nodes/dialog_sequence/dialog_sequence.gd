@@ -56,19 +56,15 @@ func on_interaction():
 	
 	var dialog = get_next_dialog()
 	
+	if !dialog:
+		end_dialog()
+		return
+	
 	# Closes infinity reapeat dialog
 	if Dialog.ui.visible and dialog.name == "DialogItem":
 		end_dialog()
 		return
 		
-	if !dialog:
-		end_dialog()
-		return
-		
-	print(dialog.name)
-	
 	use_dialog(dialog)
-	next_dialog = get_next_dialog()
-	var button_text = "Next" if next_dialog else "End"
 	
-	Dialog.show_dialog(character_name, dialog.text, button_text, character_picture)
+	Dialog.show_dialog(character_name, dialog.text, character_picture)
