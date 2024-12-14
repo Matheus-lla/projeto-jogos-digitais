@@ -77,7 +77,7 @@ func _physics_process(delta: float) -> void:
 				fire.damage = 2
 				fire.start(
 					global_position + Vector2(randf_range(-60.0, 60.0), randf_range(-60.0, 60.0)),
-					randf_range(2.0, 10.0)
+					randf_range(2.0, 8.0)
 				)
 				add_sibling(fire)
 
