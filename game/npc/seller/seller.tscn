@@ -1,11 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://boe42hfwok07e"]
+[gd_scene load_steps=19 format=3 uid="uid://boe42hfwok07e"]
 
 [ext_resource type="Script" path="res://npc/seller/seller.gd" id="1_fq5cw"]
 [ext_resource type="Texture2D" uid="uid://cs54t8ututf1j" path="res://npc/villager/NPC_indiozinho.png" id="2_kloeu"]
 [ext_resource type="Texture2D" uid="uid://caa7m1vx0vlxe" path="res://effects/Shadow.png" id="3_7nu6u"]
 [ext_resource type="Script" path="res://general_scripts/state_machine.gd" id="5_c5s47"]
 [ext_resource type="Script" path="res://npc/states/idle.gd" id="6_0b3r1"]
-[ext_resource type="Script" path="res://npc/states/wander.gd" id="7_456jy"]
 [ext_resource type="Script" path="res://npc/states/dialog_state.gd" id="8_mrp8s"]
 [ext_resource type="PackedScene" uid="uid://cb4ta8l8k60on" path="res://general_nodes/sell/sell.tscn" id="8_qg6mw"]
 
@@ -213,16 +212,9 @@ offset = Vector2(0, 20)
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("5_c5s47")
 
-[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
+[node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("6_0b3r1")
 state_duration_max = 1.0
-next_state = NodePath("../Wander")
-
-[node name="Wander" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
-script = ExtResource("7_456jy")
-walk_speed = 30.0
-state_animation_duration = 1.0
-next_state = NodePath("../Idle")
 
 [node name="Dialog" type="Node" parent="StateMachine"]
 script = ExtResource("8_mrp8s")

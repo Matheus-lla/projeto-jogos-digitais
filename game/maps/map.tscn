@@ -122,20 +122,20 @@ position = Vector2(99, 3038)
 position = Vector2(1324, 3161)
 
 [node name="Spawn4" parent="." instance=ExtResource("5_ab8ve")]
-position = Vector2(8014, 2710)
+position = Vector2(8011, 2754)
 
 [node name="Player" parent="." node_paths=PackedStringArray("spawn_place") instance=ExtResource("9_57pim")]
 position = Vector2(-847, 3331)
-spawn_place = NodePath("../Spawn3")
+spawn_place = NodePath("../Spawn")
 
 [node name="Spawn" parent="." instance=ExtResource("5_ab8ve")]
 position = Vector2(1279, -1)
 
+[node name="Seller3" parent="." instance=ExtResource("12_rbau8")]
+position = Vector2(-857, 3754)
+
 [node name="Spawn3" parent="." instance=ExtResource("5_ab8ve")]
 position = Vector2(-810, 3763)
-
-[node name="Slime" parent="." instance=ExtResource("9_qxiuk")]
-position = Vector2(1008, -15)
 
 [node name="Slime2" parent="." instance=ExtResource("9_qxiuk")]
 position = Vector2(392, 61)
@@ -668,6 +668,9 @@ position = Vector2(769, 2236)
 
 [node name="Burningtree151" parent="." instance=ExtResource("10_snsbh")]
 position = Vector2(750, 2076)
+
+[node name="Seller2" parent="." instance=ExtResource("12_rbau8")]
+position = Vector2(694, 2106)
 
 [node name="Burningtree152" parent="." instance=ExtResource("10_snsbh")]
 position = Vector2(693, 2075)
@@ -2412,7 +2415,7 @@ rotation = 3.14159
 scale = Vector2(0.942578, -1)
 
 [node name="Guarana" parent="." instance=ExtResource("10_ggnas")]
-position = Vector2(1128, -86)
+position = Vector2(873, -29)
 
 [node name="Guarana2" parent="." instance=ExtResource("10_ggnas")]
 position = Vector2(1164, 244)
@@ -2457,7 +2460,7 @@ position = Vector2(612, 1655)
 position = Vector2(612, 1760)
 
 [node name="Guarana3" parent="." instance=ExtResource("10_ggnas")]
-position = Vector2(1119, 49)
+position = Vector2(955, 192)
 
 [node name="Villager2" parent="." instance=ExtResource("11_x22vo")]
 position = Vector2(1436, 130)
@@ -2470,7 +2473,7 @@ script = ExtResource("13_rpw2t")
 text = "Você é a nossa salvadora? Não parece."
 
 [node name="Seller" parent="." instance=ExtResource("12_rbau8")]
-position = Vector2(1480, 14)
+position = Vector2(1337, -1)
 
 [node name="Villager" parent="." instance=ExtResource("11_x22vo")]
 position = Vector2(1377, -78)

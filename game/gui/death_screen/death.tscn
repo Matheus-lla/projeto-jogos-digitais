@@ -4,11 +4,11 @@
 [ext_resource type="FontFile" uid="uid://dgwh0epw65jju" path="res://fonts/Minecraftia-Regular.ttf" id="1_uc4k7"]
 [ext_resource type="Theme" uid="uid://cuqcc8ol8sptm" path="res://gui/default_btn.tres" id="2_okcxi"]
 
-[sub_resource type="Gradient" id="Gradient_5jnrn"]
+[sub_resource type="Gradient" id="Gradient_8iijy"]
 colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_m73wg"]
-gradient = SubResource("Gradient_5jnrn")
+gradient = SubResource("Gradient_8iijy")
 fill_to = Vector2(0, 1)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_ekmjf"]

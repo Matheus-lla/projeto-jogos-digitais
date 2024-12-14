@@ -19,7 +19,8 @@ func on_area_entered(area: Area2D):
 func on_interaction():
 	super.on_interaction()
 	
-	if Dialog.ui.visible:
+	if Shop.ui.visible:
+		Shop.hide_shop()
 		return
 	
 	Shop.show_shop(character_name)

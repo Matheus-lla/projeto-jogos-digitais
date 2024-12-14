@@ -54,6 +54,9 @@ func unpause():
 		link_prev_modes = link_prev_modes.next
 
 func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		PauseScreen.switch()
+	
 	if player.global_position == last_player_pos:
 		return
 		

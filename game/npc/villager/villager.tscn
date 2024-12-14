@@ -246,6 +246,7 @@ next_state = NodePath("../Wander")
 script = ExtResource("6_h1fd5")
 walk_speed = 30.0
 state_animation_duration = 1.0
+state_cicles_max = 2
 next_state = NodePath("../Idle")
 
 [node name="Dialog" type="Node" parent="StateMachine"]
