@@ -7,6 +7,7 @@ radius = 10.1184
 height = 61.2813
 
 [node name="Tree" type="Node2D"]
+z_index = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(18, -96)

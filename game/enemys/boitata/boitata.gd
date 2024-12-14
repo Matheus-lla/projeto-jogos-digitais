@@ -50,7 +50,7 @@ func _take_damage( hurt_box : HurtBox ) -> void:
 		
 func start_combat():		
 	is_in_combat = true
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.05).timeout
 	door.set_collision_layer_value(5, true)
 	camera_2d.make_current()
 	invulnerable = false

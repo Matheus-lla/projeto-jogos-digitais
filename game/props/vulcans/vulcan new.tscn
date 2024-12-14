@@ -18,6 +18,7 @@ physics_layer_0/collision_layer = 16
 sources/1 = SubResource("TileSetAtlasSource_jfjr2")
 
 [node name="VulcanNew" type="Node2D"]
+z_index = 1
 position = Vector2(10, 0)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
