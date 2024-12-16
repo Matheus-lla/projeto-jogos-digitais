@@ -24,6 +24,7 @@ func process( delta : float ) -> State:
 	_direction = lerp( _direction, new_dir.normalized(), turn_rate )
 	character.velocity = _direction * character.chase_speed
 	
+	
 	if character.set_direction( _direction ):
 		character.update_animation( anim_name )
 	

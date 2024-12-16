@@ -65,6 +65,5 @@ func on_interaction():
 		end_dialog()
 		return
 		
-	use_dialog(dialog)
-	
 	Dialog.show_dialog(character_name, dialog.text, character_picture)
+	use_dialog(dialog)

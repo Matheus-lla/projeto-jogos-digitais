@@ -1,9 +1,9 @@
 class_name Player extends Character
 
-var wepon = Upgradable.new("Arma", [20, 40, 80], [2, 4, 6, 8])
-var bow = Upgradable.new("Arco", [15, 30, 60], [1, 2, 3, 4])
-var max_hp = Upgradable.new("Vida", [10, 30, 100], [2, 4, 6, 8])
-var heal = Upgradable.new("Cura", [10, 25, 50], [2, 3, 4, 5])
+var wepon = Upgradable.new("Arma", [30, 60, 120], [2, 4, 6, 8])
+var bow = Upgradable.new("Arco", [25, 50, 110], [1, 2, 3, 4])
+var max_hp = Upgradable.new("Vida", [15, 45, 135], [2, 4, 6, 8])
+var heal = Upgradable.new("Cura", [20, 40, 100], [2, 3, 4, 5])
 
 @export var spawn_place: Spawn
 

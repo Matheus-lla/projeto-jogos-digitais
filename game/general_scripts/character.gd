@@ -40,7 +40,7 @@ func set_direction(_new_direction: Vector2) -> bool:
 	
 	if new_direction == cardinal_direction:
 		return false
-		
+	
 	cardinal_direction = new_direction
 	DirectionChanged.emit(new_direction)
 	return true

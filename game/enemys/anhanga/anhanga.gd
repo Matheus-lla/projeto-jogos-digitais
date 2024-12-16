@@ -27,6 +27,7 @@ func _ready():
 	
 func _process(_delta: float) -> void:
 	if not player:
+		player = GlobalPlayerManager.player
 		return
 	
 	var distance : Vector2 = player.global_position - global_position
@@ -37,7 +38,7 @@ func _process(_delta: float) -> void:
 	
 	if chase_speed <= 6.0:
 		chase_speed = 0.0
-
+		
 func on_dialog_ended():
 	dialog_count += 1
 	

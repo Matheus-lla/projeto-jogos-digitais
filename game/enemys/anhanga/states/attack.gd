@@ -36,8 +36,8 @@ func process( delta: float) -> State:
 	if finished:
 		return self
 	
-	var new_dir : Vector2 = character.global_position.direction_to( player.global_position )
-	_direction = lerp( _direction, new_dir, turn_rate )
+	var new_dir : Vector2 = player.global_position - character.global_position
+	_direction = lerp( _direction.normalized(), new_dir.normalized(), turn_rate ).normalized()
 	character.velocity = _direction * character.chase_speed
 	
 	if character.set_direction( _direction ):

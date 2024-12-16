@@ -1078,10 +1078,11 @@ next_state = NodePath(".")
 
 [node name="Destroy" type="Node" parent="StateMachine"]
 script = ExtResource("5_6701d")
+reward = 150
 
 [node name="Stun" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("5_sxm3i")
-knockback_speed = 5.0
+knockback_speed = 0.0
 decelerate_speed = 5.0
 next_state = NodePath("../Idle")
 

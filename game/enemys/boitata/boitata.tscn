@@ -381,7 +381,7 @@ script = ExtResource("13_4p6cc")
 
 [node name="Destroy" type="Node" parent="StateMachine"]
 script = ExtResource("10_4cy8m")
-reward = 10
+reward = 75
 
 [node name="Stun" type="Node" parent="StateMachine"]
 script = ExtResource("11_mhlnh")
