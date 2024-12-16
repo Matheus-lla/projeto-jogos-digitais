@@ -22,7 +22,7 @@ func _ready() -> void:
 	state_machine.init(self)
 	hit_box.Damaged.connect(on_damaged)
 	spawn()
-	PlayerHud.update_guarana(1000)
+	#PlayerHud.update_guarana(1000)
 	wepon.Upgraded.connect(on_wepon_upgrade)
 	max_hp.Upgraded.connect(on_max_hp_upgrade)
 	heal.Upgraded.connect(on_heal_upgrade)
