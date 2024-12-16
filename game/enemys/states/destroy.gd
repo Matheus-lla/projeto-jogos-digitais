@@ -33,5 +33,5 @@ func on_destroyed(_hurt_box: HurtBox):
 	state_machine.change_state(self)
 
 func on_animation_finished(_current_animation: String):
-	KillsRecord.killed(character.name)
+	KillsRecord.killed(character.get_class())
 	character.queue_free()

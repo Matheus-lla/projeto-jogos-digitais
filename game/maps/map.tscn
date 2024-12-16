@@ -126,7 +126,7 @@ position = Vector2(8011, 2754)
 
 [node name="Player" parent="." node_paths=PackedStringArray("spawn_place") instance=ExtResource("9_57pim")]
 position = Vector2(-847, 3331)
-spawn_place = NodePath("../Spawn")
+spawn_place = NodePath("../Spawn4")
 
 [node name="Spawn" parent="." instance=ExtResource("5_ab8ve")]
 position = Vector2(1279, -1)
@@ -2601,6 +2601,9 @@ position = Vector2(7485, 2254)
 [node name="Corrupted tree big7" parent="." instance=ExtResource("33_oba6c")]
 position = Vector2(7587, 2263)
 
+[node name="Corrupted tree big9" parent="." instance=ExtResource("33_oba6c")]
+position = Vector2(7587, 2263)
+
 [node name="Corrupted tree big8" parent="." instance=ExtResource("33_oba6c")]
 position = Vector2(8479, 2418)
 
@@ -2620,6 +2623,26 @@ scale = Vector2(2, 2)
 [node name="Corrupted tree4" parent="." instance=ExtResource("31_a0s1a")]
 position = Vector2(7883, 2441)
 scale = Vector2(2, 2)
+
+[node name="Corrupted tree6" parent="." instance=ExtResource("31_a0s1a")]
+position = Vector2(8693, 2795)
+scale = Vector2(0.903208, 1.02869)
+
+[node name="Corrupted tree9" parent="." instance=ExtResource("31_a0s1a")]
+position = Vector2(8692, 2783)
+scale = Vector2(0.903208, 1.02869)
+
+[node name="Corrupted tree10" parent="." instance=ExtResource("31_a0s1a")]
+position = Vector2(8690, 2770)
+scale = Vector2(0.903208, 1.02869)
+
+[node name="Corrupted tree7" parent="." instance=ExtResource("31_a0s1a")]
+position = Vector2(7424, 2759)
+scale = Vector2(0.903208, 1.02869)
+
+[node name="Corrupted tree8" parent="." instance=ExtResource("31_a0s1a")]
+position = Vector2(7403, 2771)
+scale = Vector2(0.903208, 1.02869)
 
 [node name="Portal" parent="." node_paths=PackedStringArray("target_portal") instance=ExtResource("34_m6bbv")]
 position = Vector2(8004, 2868)
@@ -2974,7 +2997,7 @@ position = Vector2(8134, 2528)
 position = Vector2(7864, 2561)
 
 [node name="Guarana71" parent="." instance=ExtResource("10_ggnas")]
-position = Vector2(8253, 2231)
+position = Vector2(8223, 2203)
 
 [node name="Slime10" parent="." instance=ExtResource("9_qxiuk")]
 position = Vector2(170, 1632)

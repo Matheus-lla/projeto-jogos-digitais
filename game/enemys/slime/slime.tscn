@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bcmmwvpbdj7th" path="res://effects/DestroySmoke.png" id="9_fq4vu"]
 [ext_resource type="Script" path="res://general_scripts/state_machine.gd" id="9_h4sm4"]
 [ext_resource type="Script" path="res://enemys/states/stun.gd" id="10_skgr3"]
-[ext_resource type="Script" path="res://enemys/states/destroy.gd" id="12_lxhb6"]
+[ext_resource type="Script" path="res://enemys/slime/destroy_slime_state.gd" id="13_cwpwy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qckk6"]
 radius = 15.0
@@ -883,6 +883,6 @@ script = ExtResource("10_skgr3")
 next_state = NodePath("../Idle")
 
 [node name="Destroy" type="Node" parent="StateMachine" node_paths=PackedStringArray("hurt_box")]
-script = ExtResource("12_lxhb6")
+script = ExtResource("13_cwpwy")
 hurt_box = NodePath("../../HurtBox")
 reward = 3

@@ -1083,7 +1083,7 @@ reward = 150
 [node name="Stun" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
 script = ExtResource("5_sxm3i")
 knockback_speed = 0.0
-decelerate_speed = 5.0
+decelerate_speed = 0.0
 next_state = NodePath("../Idle")
 
 [node name="BasicAttack" type="Node" parent="StateMachine"]

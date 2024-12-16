@@ -241,12 +241,12 @@ shape = SubResource("RectangleShape2D_f88n2")
 
 [node name="SingleDialog" type="Node" parent="DialogSequence"]
 script = ExtResource("2_lwyib")
-text = "Seja bem vinda a vila, você tem uma árdua missão, mas antes de continuar, porque não tira um tempo para aperfeiçoar as suas habilidades? Comece coletando seu primeiro guaraná. Encontre um pé de guaraná e interaja com ele para coletar as frutas."
+text = "Seja bem vinda a aldeia, você tem uma árdua missão, mas antes de continuar, porque não tira um tempo para aperfeiçoar as suas habilidades? Comece coletando seu primeiro guaraná. Encontre um pé de guaraná e interaja com ele para coletar as frutas."
 
 [node name="AfterGuarana" type="Node" parent="DialogSequence"]
 script = ExtResource("3_k2ggj")
-required_quantity = 103
-text = "Muito bem, o guaraná pode ser usado para melhorar sua lança, seu arco, sua vida e suas poções, agora você parece pronta para o combate. Derrote uma gosma amarela."
+required_quantity = 5
+text = "Muito bem, o guaraná pode ser usado para melhorar sua lança, seu arco, sua vida máxima e suas poções, agora você parece pronta para o combate. Derrote uma gosma amarela."
 
 [node name="AfterKillSime" type="Node" parent="DialogSequence"]
 script = ExtResource("4_efs5o")
